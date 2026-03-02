@@ -28,7 +28,7 @@ const Footer = () => {
             <div className="flex gap-3">
               {[
                 { icon: Facebook, href: "https://facebook.com" },
-                { icon: Instagram, href: "https://www.instagram.com/sugs_vlado_tasevski/?hl=en" },
+                { icon: Instagram, href: "https://www.instagram.com/sugs_vlado_tasevski/" },
                 { icon: Youtube, href: "https://youtube.com" },
               ].map((social, i) => (
                 <a
@@ -65,13 +65,18 @@ const Footer = () => {
           <div>
             <h4 className="font-heading font-bold mb-4">Струки</h4>
             <ul className="space-y-2">
-              {["Електротехничар", "Машински техничар", "Сообраќајна струка", "Компјутерска техника", "Енергетика"].map((item) => (
-                <li key={item}>
-                  <Link to="/nastava" className="text-primary-foreground/60 hover:text-primary-foreground text-sm transition-colors">
-                    {item}
-                  </Link>
-                </li>
-              ))}
+              {["Електротехничар", "Машински техничар", "Сообраќајна струка", "Компјутерска техника", "Енергетика"].map(
+                (item) => (
+                  <li key={item}>
+                    <Link
+                      to="/nastava"
+                      className="text-primary-foreground/60 hover:text-primary-foreground text-sm transition-colors"
+                    >
+                      {item}
+                    </Link>
+                  </li>
+                ),
+              )}
             </ul>
           </div>
 
