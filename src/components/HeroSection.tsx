@@ -1,10 +1,11 @@
 import { motion } from "framer-motion";
+import { Link } from "react-router-dom";
 import { ChevronDown } from "lucide-react";
 import heroImage from "@/assets/hero-school.jpg";
 
 const HeroSection = () => {
   return (
-    <section id="home" className="relative min-h-screen flex items-center overflow-hidden">
+    <section className="relative min-h-screen flex items-center overflow-hidden">
       {/* Background image */}
       <div className="absolute inset-0">
         <img
@@ -53,31 +54,30 @@ const HeroSection = () => {
             transition={{ duration: 0.7, delay: 0.45 }}
             className="flex flex-wrap gap-4"
           >
-            <a
-              href="#contact"
-              className="px-8 py-4 rounded-xl bg-gradient-secondary font-heading font-bold text-secondary-foreground hover:opacity-90 transition-all shadow-lg hover:shadow-xl transform hover:-translate-y-0.5"
+            <Link
+              to="/kontakt"
+              className="px-8 py-4 rounded-xl bg-gradient-secondary font-heading font-bold text-secondary-foreground hover:opacity-90 transition-all shadow-lg hover:shadow-xl transform hover:-translate-y-0.5 active:scale-95"
             >
               Запиши се →
-            </a>
-            <a
-              href="#programs"
-              className="px-8 py-4 rounded-xl bg-primary-foreground/10 backdrop-blur-sm border border-primary-foreground/20 text-primary-foreground font-heading font-semibold hover:bg-primary-foreground/20 transition-all"
+            </Link>
+            <Link
+              to="/nastava"
+              className="px-8 py-4 rounded-xl bg-primary-foreground/10 backdrop-blur-sm border border-primary-foreground/20 text-primary-foreground font-heading font-semibold hover:bg-primary-foreground/20 transition-all active:scale-95"
             >
               Види струки
-            </a>
+            </Link>
           </motion.div>
         </div>
       </div>
 
       {/* Scroll indicator */}
-      <motion.a
-        href="#about"
+      <motion.div
         animate={{ y: [0, 8, 0] }}
         transition={{ duration: 2, repeat: Infinity }}
-        className="absolute bottom-8 left-1/2 -translate-x-1/2 text-primary-foreground/60 hover:text-primary-foreground transition-colors"
+        className="absolute bottom-8 left-1/2 -translate-x-1/2 text-primary-foreground/60"
       >
         <ChevronDown size={32} />
-      </motion.a>
+      </motion.div>
     </section>
   );
 };

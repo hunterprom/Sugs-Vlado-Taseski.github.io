@@ -37,7 +37,7 @@ const ProgramsSection = () => {
   const inView = useInView(ref, { once: true, margin: "-100px" });
 
   return (
-    <section id="programs" className="section-padding bg-background" ref={ref}>
+    <section className="section-padding bg-background pt-28 md:pt-32" ref={ref}>
       <div className="max-w-7xl mx-auto">
         <motion.div
           initial={{ opacity: 0, y: 30 }}

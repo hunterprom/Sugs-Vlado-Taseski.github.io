@@ -1,7 +1,7 @@
 import PageTransition from "@/components/PageTransition";
 import HeroSection from "@/components/HeroSection";
 
-const Index = () => {
+const HomePage = () => {
   return (
     <PageTransition>
       <HeroSection />
@@ -9,4 +9,4 @@ const Index = () => {
   );
 };
 
-export default Index;
+export default HomePage;

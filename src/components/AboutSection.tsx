@@ -1,5 +1,4 @@
-import { motion } from "framer-motion";
-import { useInView } from "framer-motion";
+import { motion, useInView } from "framer-motion";
 import { useRef, useEffect, useState } from "react";
 import { GraduationCap, Users, Award, BookOpen } from "lucide-react";
 
@@ -36,7 +35,7 @@ const AboutSection = () => {
   const inView = useInView(ref, { once: true, margin: "-100px" });
 
   return (
-    <section id="about" className="section-padding bg-muted" ref={ref}>
+    <section className="section-padding bg-muted pt-28 md:pt-32" ref={ref}>
       <div className="max-w-7xl mx-auto">
         {/* Section header */}
         <motion.div

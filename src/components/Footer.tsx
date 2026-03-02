@@ -1,4 +1,13 @@
+import { Link } from "react-router-dom";
 import { Facebook, Instagram, Youtube } from "lucide-react";
+
+const footerLinks = [
+  { label: "Дома", to: "/" },
+  { label: "За нас", to: "/za-nas" },
+  { label: "Настава", to: "/nastava" },
+  { label: "Активности", to: "/aktivnosti" },
+  { label: "Контакт", to: "/kontakt" },
+];
 
 const Footer = () => {
   return (
@@ -7,12 +16,12 @@ const Footer = () => {
         <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-10">
           {/* Brand */}
           <div className="sm:col-span-2 lg:col-span-1">
-            <div className="flex items-center gap-3 mb-4">
+            <Link to="/" className="flex items-center gap-3 mb-4">
               <div className="w-10 h-10 rounded-lg bg-gradient-primary flex items-center justify-center">
                 <span className="text-primary-foreground font-heading font-bold text-lg">ВТ</span>
               </div>
               <span className="font-heading font-bold text-lg">СУГС Владо Тасевски</span>
-            </div>
+            </Link>
             <p className="text-primary-foreground/60 text-sm leading-relaxed mb-5">
               Модерно техничко училиште во Скопје – повеќе од 65 години образование за иднината.
             </p>
@@ -39,13 +48,14 @@ const Footer = () => {
           <div>
             <h4 className="font-heading font-bold mb-4">Линкови</h4>
             <ul className="space-y-2">
-              {["Дома", "За нас", "Настава", "Активности", "Контакт"].map((item) => (
-                <li key={item}>
-                  <a href={`#${item === "Дома" ? "home" : item === "За нас" ? "about" : item === "Настава" ? "programs" : item === "Активности" ? "activities" : "contact"}`}
+              {footerLinks.map((item) => (
+                <li key={item.to}>
+                  <Link
+                    to={item.to}
                     className="text-primary-foreground/60 hover:text-primary-foreground text-sm transition-colors"
                   >
-                    {item}
-                  </a>
+                    {item.label}
+                  </Link>
                 </li>
               ))}
             </ul>
@@ -57,7 +67,9 @@ const Footer = () => {
             <ul className="space-y-2">
               {["Електротехничар", "Машински техничар", "Сообраќајна струка", "Компјутерска техника", "Енергетика"].map((item) => (
                 <li key={item}>
-                  <span className="text-primary-foreground/60 text-sm">{item}</span>
+                  <Link to="/nastava" className="text-primary-foreground/60 hover:text-primary-foreground text-sm transition-colors">
+                    {item}
+                  </Link>
                 </li>
               ))}
             </ul>
