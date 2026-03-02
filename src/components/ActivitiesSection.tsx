@@ -1,19 +1,34 @@
 import { motion, useInView } from "framer-motion";
-import { useRef } from "react";
+import { useRef, useEffect } from "react";
+import { useLocation } from "react-router-dom";
 import { Trophy, Globe, Plane, Camera, Calendar } from "lucide-react";
 import activitiesImg from "@/assets/students-activities.jpg";
 
 const activities = [
-  { icon: Trophy, title: "Натпревари", desc: "Учество на национални и меѓународни натпревари по техника, роботика и иновации." },
-  { icon: Globe, title: "Еразмус+", desc: "Меѓународни проекти и размена на ученици со европски училишта." },
-  { icon: Plane, title: "Екскурзии", desc: "Едукативни патувања низ Македонија и Европа за практично учење." },
-  { icon: Camera, title: "Проекти", desc: "Ученички проекти, работилници и хакатони за развој на креативноста." },
-  { icon: Calendar, title: "Настани", desc: "Училишни приредби, денови на отворени врати и кариерни саеми." },
+  { icon: Trophy, title: "Натпревари", id: "natprevari", desc: "Учество на национални и меѓународни натпревари по техника, роботика и иновации." },
+  { icon: Globe, title: "Еразмус+", id: "erazmus", desc: "Меѓународни проекти и размена на ученици со европски училишта." },
+  { icon: Plane, title: "Екскурзии", id: "ekskurzii", desc: "Едукативни патувања низ Македонија и Европа за практично учење." },
+  { icon: Camera, title: "Проекти", id: "proekti", desc: "Ученички проекти, работилници и хакатони за развој на креативноста." },
+  { icon: Calendar, title: "Настани", id: "nastani", desc: "Училишни приредби, денови на отворени врати и кариерни саеми." },
 ];
 
 const ActivitiesSection = () => {
   const ref = useRef(null);
   const inView = useInView(ref, { once: true, margin: "-100px" });
+  const location = useLocation();
+
+  useEffect(() => {
+    if (location.hash) {
+      setTimeout(() => {
+        const el = document.getElementById(location.hash.slice(1));
+        if (el) {
+          el.scrollIntoView({ behavior: "smooth", block: "center" });
+          el.classList.add("ring-2", "ring-primary", "ring-offset-2");
+          setTimeout(() => el.classList.remove("ring-2", "ring-primary", "ring-offset-2"), 2000);
+        }
+      }, 400);
+    }
+  }, [location.hash]);
 
   return (
     <section className="section-padding bg-muted pt-28 md:pt-32" ref={ref}>
@@ -36,7 +51,6 @@ const ActivitiesSection = () => {
         </motion.div>
 
         <div className="grid lg:grid-cols-2 gap-12 items-center">
-          {/* Image */}
           <motion.div
             initial={{ opacity: 0, x: -40 }}
             animate={inView ? { opacity: 1, x: 0 } : {}}
@@ -52,15 +66,15 @@ const ActivitiesSection = () => {
             <div className="absolute inset-0 bg-gradient-to-t from-foreground/30 to-transparent" />
           </motion.div>
 
-          {/* Activity list */}
           <div className="space-y-5">
             {activities.map((act, i) => (
               <motion.div
                 key={act.title}
+                id={act.id}
                 initial={{ opacity: 0, x: 40 }}
                 animate={inView ? { opacity: 1, x: 0 } : {}}
                 transition={{ duration: 0.4, delay: i * 0.1 }}
-                className="flex gap-4 bg-card rounded-xl p-5 border border-border hover:border-primary/30 transition-all"
+                className="flex gap-4 bg-card rounded-xl p-5 border border-border hover:border-primary/30 transition-all scroll-mt-32"
                 style={{ boxShadow: "var(--shadow-card)" }}
               >
                 <div className="flex-shrink-0 w-12 h-12 rounded-xl bg-gradient-primary flex items-center justify-center">
