@@ -86,8 +86,8 @@ const StaticHomePage = () => {
               <h1>Твојата иднина <br /> започнува тука</h1>
               <p>СУГС „Владо Тасевски" – модерно училиште за електротехника, машинство и сообраќај. Стекни знаење, практика и диплома за успешна кариера.</p>
               <div className="hero-buttons">
-                <a href="#" className="btn-primary"><i className="fas fa-arrow-right"></i> Запиши се</a>
-                <a href="#" className="btn-secondary"><i className="fas fa-info-circle"></i> За нас</a>
+                <a href="#" className="btn-primary"><i className="fas fa-arrow-right"></i> Запиши се →</a>
+                <a href="#" className="btn-secondary"><i className="fas fa-info-circle"></i> Види струки</a>
               </div>
             </div>
             <div className="hero-stats gallery-carousel">
