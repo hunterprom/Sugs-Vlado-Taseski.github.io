@@ -59,8 +59,8 @@ const StaticHomePage = () => {
                 <i className="fas fa-school"></i>
               </div>
               <div className="logo-text">
-                <h1>СОВРЕМЕНА ШКОЛА</h1>
-                <span>образование • иновација • знаење</span>
+                <h1>СУГС „Владо Тасевски"</h1>
+                <span>електротехника • машинство • сообраќај</span>
               </div>
             </div>
             <div className="nav-links">
@@ -82,12 +82,12 @@ const StaticHomePage = () => {
         <section className="hero">
           <div className="container hero-grid">
             <div className="hero-content">
-              <span className="badge"><i className="fas fa-star-of-life"></i> Врвно образование</span>
-              <h1>Иновативен пристап кон <br /> знаењето</h1>
-              <p>Современа школа нуди динамична настава, дигитални ресурси и поддршка за секој ученик. Заедно градиме иднина.</p>
+              <span className="badge"><i className="fas fa-star-of-life"></i> 📚 Упис 2025/2026</span>
+              <h1>Твојата иднина <br /> започнува тука</h1>
+              <p>СУГС „Владо Тасевски" – модерно училиште за електротехника, машинство и сообраќај. Стекни знаење, практика и диплома за успешна кариера.</p>
               <div className="hero-buttons">
-                <a href="#" className="btn-primary"><i className="fas fa-arrow-right"></i> Запиши се</a>
-                <a href="#" className="btn-secondary"><i className="fas fa-info-circle"></i> За нас</a>
+                <a href="#" className="btn-primary"><i className="fas fa-arrow-right"></i> Запиши се →</a>
+                <a href="#" className="btn-secondary"><i className="fas fa-info-circle"></i> Види струки</a>
               </div>
             </div>
             <div className="hero-stats gallery-carousel">
@@ -134,26 +134,26 @@ const StaticHomePage = () => {
         <section className="features">
           <div className="container">
             <div className="section-header">
-              <h2>Зошто да ја изберете нашата школа?</h2>
-              <p>Модерни училници, искусен кадар и иновативни методи на учење.</p>
+              <h2>Зошто СУГС „Владо Тасевски"?</h2>
+              <p>Повеќе од 65 години искуство во техничкото образование во Скопје.</p>
             </div>
             <div className="cards-grid">
               <div className="card">
-                <div className="card-icon"><i className="fas fa-laptop-code"></i></div>
-                <h3>Дигитална настава</h3>
-                <p>Интерактивни табли, е-дневник, online ресурси и пристап до Microsoft 365 за секој ученик.</p>
+                <div className="card-icon"><i className="fas fa-bolt"></i></div>
+                <h3>Електротехника</h3>
+                <p>Електротехничар, компјутерска техника и автоматика – современи лаборатории и практична настава.</p>
                 <a href="#" className="card-link">Дознај повеќе <i className="fas fa-chevron-right"></i></a>
               </div>
               <div className="card">
-                <div className="card-icon"><i className="fas fa-chalkboard-user"></i></div>
-                <h3>Квалитетен кадар</h3>
-                <p>Искусни професори, менторска поддршка и индивидуален пристап кон развојот на секое дете.</p>
+                <div className="card-icon"><i className="fas fa-cogs"></i></div>
+                <h3>Машинство</h3>
+                <p>Машински техничар, CNC технологија и енергетика – подготовка за индустријата на иднината.</p>
                 <a href="#" className="card-link">Дознај повеќе <i className="fas fa-chevron-right"></i></a>
               </div>
               <div className="card">
-                <div className="card-icon"><i className="fas fa-futbol"></i></div>
-                <h3>Спорт &amp; креативност</h3>
-                <p>Спортски терени, ликовни работилници, драмски секции и натпревари за сестрана иднина.</p>
+                <div className="card-icon"><i className="fas fa-car"></i></div>
+                <h3>Сообраќај</h3>
+                <p>Сообраќајна струка – техничар за транспорт и шпедиција, логистика и безбедност.</p>
                 <a href="#" className="card-link">Дознај повеќе <i className="fas fa-chevron-right"></i></a>
               </div>
             </div>
