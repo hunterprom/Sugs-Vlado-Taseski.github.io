@@ -134,8 +134,8 @@ const StaticHomePage = () => {
         <section className="features">
           <div className="container">
             <div className="section-header">
-              <h2>Зошто да ја изберете нашата школа?</h2>
-              <p>Модерни училници, искусен кадар и иновативни методи на учење.</p>
+              <h2>Зошто СУГС „Владо Тасевски"?</h2>
+              <p>Повеќе од 65 години искуство во техничкото образование во Скопје.</p>
             </div>
             <div className="cards-grid">
               <div className="card">
