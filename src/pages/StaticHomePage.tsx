@@ -139,21 +139,21 @@ const StaticHomePage = () => {
             </div>
             <div className="cards-grid">
               <div className="card">
-                <div className="card-icon"><i className="fas fa-laptop-code"></i></div>
-                <h3>Дигитална настава</h3>
-                <p>Интерактивни табли, е-дневник, online ресурси и пристап до Microsoft 365 за секој ученик.</p>
+                <div className="card-icon"><i className="fas fa-bolt"></i></div>
+                <h3>Електротехника</h3>
+                <p>Електротехничар, компјутерска техника и автоматика – современи лаборатории и практична настава.</p>
                 <a href="#" className="card-link">Дознај повеќе <i className="fas fa-chevron-right"></i></a>
               </div>
               <div className="card">
-                <div className="card-icon"><i className="fas fa-chalkboard-user"></i></div>
-                <h3>Квалитетен кадар</h3>
-                <p>Искусни професори, менторска поддршка и индивидуален пристап кон развојот на секое дете.</p>
+                <div className="card-icon"><i className="fas fa-cogs"></i></div>
+                <h3>Машинство</h3>
+                <p>Машински техничар, CNC технологија и енергетика – подготовка за индустријата на иднината.</p>
                 <a href="#" className="card-link">Дознај повеќе <i className="fas fa-chevron-right"></i></a>
               </div>
               <div className="card">
-                <div className="card-icon"><i className="fas fa-futbol"></i></div>
-                <h3>Спорт &amp; креативност</h3>
-                <p>Спортски терени, ликовни работилници, драмски секции и натпревари за сестрана иднина.</p>
+                <div className="card-icon"><i className="fas fa-car"></i></div>
+                <h3>Сообраќај</h3>
+                <p>Сообраќајна струка – техничар за транспорт и шпедиција, логистика и безбедност.</p>
                 <a href="#" className="card-link">Дознај повеќе <i className="fas fa-chevron-right"></i></a>
               </div>
             </div>
