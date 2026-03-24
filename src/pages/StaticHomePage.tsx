@@ -59,8 +59,8 @@ const StaticHomePage = () => {
                 <i className="fas fa-school"></i>
               </div>
               <div className="logo-text">
-                <h1>СОВРЕМЕНА ШКОЛА</h1>
-                <span>образование • иновација • знаење</span>
+                <h1>СУГС „Владо Тасевски"</h1>
+                <span>електротехника • машинство • сообраќај</span>
               </div>
             </div>
             <div className="nav-links">
