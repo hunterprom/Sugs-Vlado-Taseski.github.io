@@ -11,6 +11,9 @@ import SoobrakajnaPage from "./pages/Soobrakajna";
 import KontaktPage from "./pages/KontaktPage";
 import SportPage from "./pages/SportPage";
 import ProektiPage from "./pages/ProektiPage";
+import NastavniciPage from "./pages/NastavniciPage";
+import NoviniPage from "./pages/NoviniPage";
+import UpisiPage from "./pages/UpisiPage";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -30,6 +33,9 @@ const App = () => (
           <Route path="/kontakt" element={<KontaktPage />} />
           <Route path="/sport" element={<SportPage />} />
           <Route path="/proekti" element={<ProektiPage />} />
+          <Route path="/nastavnici" element={<NastavniciPage />} />
+          <Route path="/novini" element={<NoviniPage />} />
+          <Route path="/upisi" element={<UpisiPage />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
       </BrowserRouter>
