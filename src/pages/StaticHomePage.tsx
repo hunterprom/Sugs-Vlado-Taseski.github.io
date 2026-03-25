@@ -121,9 +121,6 @@ const StaticHomePage = () => {
             ))}
           </div>
         </section>
-            </motion.div>
-          </div>
-        </section>
 
         {/* Marquee ticker */}
         <div className="marquee-section">
