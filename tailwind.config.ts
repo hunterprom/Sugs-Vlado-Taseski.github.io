@@ -16,6 +16,7 @@ export default {
       fontFamily: {
         heading: ["Inter", "sans-serif"],
         body: ["Inter", "sans-serif"],
+        display: ["Playfair Display", "Georgia", "serif"],
       },
       colors: {
         border: "hsl(var(--border))",
