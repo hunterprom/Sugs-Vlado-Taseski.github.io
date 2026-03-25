@@ -5,10 +5,12 @@ import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import StaticHomePage from "./pages/StaticHomePage";
 import ZaNasPage from "./pages/ZaNasPage";
-import StrukiPage from "./pages/StrukiPage";
-import AktivnostiPage from "./pages/AktivnostiPage";
+import ElektrotehnickaPage from "./pages/ElektrotehnickaPage";
+import MasinskaPage from "./pages/MasinskaPage";
+import SoobrakajnaPage from "./pages/Soobrakajna";
 import KontaktPage from "./pages/KontaktPage";
-import UpisiPage from "./pages/UpisiPage";
+import SportPage from "./pages/SportPage";
+import ProektiPage from "./pages/ProektiPage";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -22,10 +24,12 @@ const App = () => (
         <Routes>
           <Route path="/" element={<StaticHomePage />} />
           <Route path="/za-nas" element={<ZaNasPage />} />
-          <Route path="/struki" element={<StrukiPage />} />
-          <Route path="/aktivnosti" element={<AktivnostiPage />} />
+          <Route path="/elektrotehnicka" element={<ElektrotehnickaPage />} />
+          <Route path="/masinska" element={<MasinskaPage />} />
+          <Route path="/soobrakajna" element={<SoobrakajnaPage />} />
           <Route path="/kontakt" element={<KontaktPage />} />
-          <Route path="/upisi" element={<UpisiPage />} />
+          <Route path="/sport" element={<SportPage />} />
+          <Route path="/proekti" element={<ProektiPage />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
       </BrowserRouter>
