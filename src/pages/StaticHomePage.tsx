@@ -47,77 +47,80 @@ const StaticHomePage = () => {
       <SiteHeader />
       <main>
         {/* Hero with typography animations */}
-        <section className="hero">
-          <div className="container hero-grid">
-            <div className="hero-content">
-              <motion.span
-                className="badge"
-                initial={{ opacity: 0, scale: 0.8 }}
-                animate={{ opacity: 1, scale: 1 }}
-                transition={{ duration: 0.5, delay: 0.2 }}
-              >
-                <i className="fas fa-star-of-life"></i> ПОДОБРО ОБРАЗОВАНИЕ, ПОДОБРА ИДНИНА!
-              </motion.span>
+        {/* Full-width hero with carousel background and overlay text */}
+        <section
+          className="hero-fullscreen"
+          onMouseEnter={() => { if (intervalRef.current) clearInterval(intervalRef.current); }}
+          onMouseLeave={startCarousel}
+        >
+          {/* Background slides */}
+          <div className="hero-slides">
+            {slides.map((slide, i) => (
+              <div key={i} className={`hero-slide ${i === currentSlide ? "active" : ""}`}>
+                <img src={slide.img} alt={slide.caption} />
+              </div>
+            ))}
+            <div className="hero-overlay" />
+          </div>
 
-              <h1 className="hero-title-animated">
-                <LineReveal delay={0.3}>
-                  <span className="font-display" style={{ fontStyle: "italic", letterSpacing: "-0.02em" }}>
-                    СУГС
-                  </span>{" "}
-                  <span style={{ letterSpacing: "0.08em", fontWeight: 800 }}>
-                    „Владо Тасевски"
-                  </span>
-                </LineReveal>
-                <LineReveal delay={0.5}>
-                  <span className="font-display" style={{ fontWeight: 400, fontStyle: "italic", fontSize: "0.7em", letterSpacing: "0.15em" }}>
-                    Скопје
-                  </span>
-                </LineReveal>
-              </h1>
-
-              <motion.p
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6, delay: 0.8 }}
-              >
-                We are the Team VLADO TASEVSKI! Воспитанието и образованието се темелите на една држава. Се гордееме со сите генерации кои минале низ нашите училници.
-              </motion.p>
-
-              <motion.div
-                className="hero-buttons"
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.5, delay: 1.0 }}
-              >
-                <a href="#" className="btn-primary"><i className="fas fa-arrow-right"></i> Запиши се</a>
-                <Link to="/za-nas" className="btn-secondary"><i className="fas fa-info-circle"></i> Нашата историја</Link>
-              </motion.div>
-            </div>
-            <motion.div
-              className="hero-stats gallery-carousel"
-              initial={{ opacity: 0, x: 60 }}
-              animate={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.8, delay: 0.5, ease: [0.33, 1, 0.68, 1] }}
-              onMouseEnter={() => { if (intervalRef.current) clearInterval(intervalRef.current); }}
-              onMouseLeave={startCarousel}
+          {/* Text content on top */}
+          <div className="hero-overlay-content">
+            <motion.span
+              className="badge badge-light"
+              initial={{ opacity: 0, scale: 0.8 }}
+              animate={{ opacity: 1, scale: 1 }}
+              transition={{ duration: 0.5, delay: 0.2 }}
             >
-              <div className="carousel-container">
-                {slides.map((slide, i) => (
-                  <div key={i} className={`carousel-slide ${i === currentSlide ? "active" : ""}`}>
-                    <img src={slide.img} alt={slide.caption} />
-                    <div className="carousel-caption"><h3>{slide.caption}</h3></div>
-                  </div>
-                ))}
-              </div>
-              <div className="carousel-dots">
-                {slides.map((_, i) => (
-                  <span
-                    key={i}
-                    className={`dot ${i === currentSlide ? "active-dot" : ""}`}
-                    onClick={() => { goToSlide(i); clearInterval(intervalRef.current!); startCarousel(); }}
-                  />
-                ))}
-              </div>
+              <i className="fas fa-star-of-life"></i> ПОДОБРО ОБРАЗОВАНИЕ, ПОДОБРА ИДНИНА!
+            </motion.span>
+
+            <h1 className="hero-title-fullscreen">
+              <LineReveal delay={0.3}>
+                <span className="font-display" style={{ fontStyle: "italic", letterSpacing: "-0.02em" }}>
+                  СУГС
+                </span>{" "}
+                <span style={{ letterSpacing: "0.08em", fontWeight: 800 }}>
+                  „Владо Тасевски"
+                </span>
+              </LineReveal>
+              <LineReveal delay={0.5}>
+                <span className="font-display" style={{ fontWeight: 400, fontStyle: "italic", fontSize: "0.7em", letterSpacing: "0.15em" }}>
+                  Скопје
+                </span>
+              </LineReveal>
+            </h1>
+
+            <motion.p
+              className="hero-subtitle-light"
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.8 }}
+            >
+              We are the Team VLADO TASEVSKI! Воспитанието и образованието се темелите на една држава.
+            </motion.p>
+
+            <motion.div
+              className="hero-buttons"
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5, delay: 1.0 }}
+            >
+              <a href="#" className="btn-primary"><i className="fas fa-arrow-right"></i> Запиши се</a>
+              <Link to="/za-nas" className="btn-secondary btn-secondary-light"><i className="fas fa-info-circle"></i> Нашата историја</Link>
+            </motion.div>
+          </div>
+
+          {/* Dots */}
+          <div className="hero-dots">
+            {slides.map((_, i) => (
+              <span
+                key={i}
+                className={`dot ${i === currentSlide ? "active-dot" : ""}`}
+                onClick={() => { goToSlide(i); clearInterval(intervalRef.current!); startCarousel(); }}
+              />
+            ))}
+          </div>
+        </section>
             </motion.div>
           </div>
         </section>
