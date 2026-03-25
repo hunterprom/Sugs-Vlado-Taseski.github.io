@@ -348,6 +348,27 @@
   background: #FBC02D;
 }
 
+/* Marquee Section */
+.marquee-section {
+  background: #2196F3;
+  padding: 14px 0;
+  overflow: hidden;
+}
+
+.marquee-text {
+  font-family: "Playfair Display", Georgia, serif;
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: white;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.section-title-reveal {
+  font-family: "Playfair Display", Georgia, serif;
+  letter-spacing: -0.01em;
+}
+
 .badge {
   background: #FFF8E1;
   padding: 4px 12px;
