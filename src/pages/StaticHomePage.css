@@ -1307,13 +1307,13 @@
 
 /* Responsive Design */
 @media (max-width: 992px) {
-  .hero-grid, .contact-grid {
+  .contact-grid {
     grid-template-columns: 1fr;
     gap: 30px;
   }
-  
-  .hero-content h1 {
-    font-size: 1.8rem;
+
+  .hero-title-fullscreen {
+    font-size: 2.2rem;
   }
 }
 
