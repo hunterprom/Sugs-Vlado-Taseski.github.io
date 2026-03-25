@@ -1257,6 +1257,22 @@
   .dropdown.active .dropdown-menu {
     display: block;
   }
+
+  .dropdown-nested .dropdown-submenu {
+    position: static;
+    opacity: 1;
+    visibility: visible;
+    display: none;
+    box-shadow: none;
+    padding-left: 15px;
+    background: #E3F2FD;
+    margin-top: 5px;
+    border-radius: 8px;
+  }
+
+  .dropdown-nested.active .dropdown-submenu {
+    display: block;
+  }
   
   .hero {
     padding: 30px 0;
