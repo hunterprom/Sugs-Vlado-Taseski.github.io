@@ -248,6 +248,37 @@
 .hero {
   padding: 40px 0;
   background: white;
+  overflow: hidden;
+}
+
+.hero-title-animated {
+  font-size: 2rem;
+  font-weight: 800;
+  line-height: 1.2;
+  color: #2196F3;
+  margin-bottom: 15px;
+}
+
+/* Marquee Section */
+.marquee-section {
+  background: #2196F3;
+  padding: 14px 0;
+  overflow: hidden;
+}
+
+.marquee-text {
+  font-family: "Playfair Display", Georgia, serif;
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: white;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+/* Section title reveal */
+.section-title-reveal {
+  font-family: "Playfair Display", Georgia, serif;
+  letter-spacing: -0.01em;
 }
 
 .hero-grid {
