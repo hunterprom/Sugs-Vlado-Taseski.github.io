@@ -2,6 +2,8 @@ import { Link } from "react-router-dom";
 import SiteHeader from "../components/SiteHeader";
 import SiteFooter from "../components/SiteFooter";
 import "../pages/StaticHomePage.css";
+import ucilnicaImg from "@/assets/училница-1.png";
+import ucilisteNadvor from "@/assets/училиште-надвор.png";
 
 const novini = [
   {
