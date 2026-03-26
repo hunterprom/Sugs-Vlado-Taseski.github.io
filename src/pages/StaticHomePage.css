@@ -698,7 +698,43 @@
   margin-bottom: 10px;
 }
 
-/* Contact Page */
+.leader-photo {
+  width: 100%;
+  max-width: 200px;
+  height: 150px;
+  object-fit: cover;
+  border-radius: 12px;
+  margin-bottom: 12px;
+}
+
+.leadership-gallery {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.leadership-gallery img {
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  transition: transform 0.3s;
+}
+
+.leadership-gallery img:hover {
+  transform: scale(1.03);
+}
+
+@media (max-width: 768px) {
+  .leadership-gallery {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+
 .contact-hero {
   padding: 40px 0 20px;
   background: white;
