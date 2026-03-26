@@ -156,15 +156,15 @@ const StaticHomePage = () => {
             <FadeUpSection delay={0.15}>
               <div className="stat-card">
                 <i className="fas fa-chalkboard-user"></i>
-                <h3>+</h3>
+                <h3><AnimatedNumber target={90} animate={statsAnimated} />+</h3>
                 <p>Професори</p>
               </div>
             </FadeUpSection>
             <FadeUpSection delay={0.3}>
               <div className="stat-card">
                 <i className="fas fa-user-graduate"></i>
-                <h3><AnimatedNumber target={22000} animate={statsAnimated} />+</h3>
-                <p>Дипломирани ученици</p>
+                <h3><AnimatedNumber target={900} animate={statsAnimated} />+</h3>
+                <p>Ученици</p>
               </div>
             </FadeUpSection>
           </div>
