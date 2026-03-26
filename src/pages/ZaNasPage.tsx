@@ -8,6 +8,16 @@ import rakovodstvo4 from "@/assets/rakovodstvo-4.png";
 import rakovodstvo5 from "@/assets/rakovodstvo-5.png";
 import rakovodstvo6 from "@/assets/rakovodstvo-6.png";
 import rakovodstvo7 from "@/assets/rakovodstvo-7.png";
+import vladoTasevski from "@/assets/vlado-tasevski.png";
+import istorija1 from "@/assets/istorija-1.png";
+import istorija2 from "@/assets/istorija-2.png";
+import istorija3 from "@/assets/istorija-3.png";
+import istorija4 from "@/assets/istorija-4.png";
+import istorija5 from "@/assets/istorija-5.png";
+import istorija6 from "@/assets/istorija-6.png";
+import istorija7 from "@/assets/istorija-7.png";
+import istorija8 from "@/assets/istorija-8.png";
+import istorija9 from "@/assets/istorija-9.png";
 
 const ZaNasPage = () => {
   return (
