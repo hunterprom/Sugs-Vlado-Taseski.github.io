@@ -74,7 +74,7 @@ export const translations: Record<Language, Record<string, string>> = {
     "home.newsSubtitle": "Најновите случувања во нашето училиште",
     // Upisi page
     "upisi.badge": "Уписи 2025/2026",
-    "upisi.title": "Запишете се во СУГС 'Владо Тасевски`",
+    "upisi.title": "Запишете се во СУГС 'Владо Тасевски'",
     "upisi.subtitle": "Изберете ја вашата иднина! Ние сме тука за да ви помогнеме.",
     "upisi.availableDept": "Достапни струки за упис",
     "upisi.chooseDept": "Одберете ја струката што најмногу ви одговара",
@@ -91,7 +91,7 @@ export const translations: Record<Language, Record<string, string>> = {
     "zanas.story1": "Нашата приказна започна во далечната 1959 година, кога Работничкиот совет на Железничко-транспортното претпријатие Скопје, во согласност со Уредбата за центрите за стручно образование на работници, ја донесе Одлуката за формирање Центар на железничарите за стручно образование на младинци и возрасни.",
     "zanas.story2": "Од 1961 година почнува со работа Железничкото техничко училиште за сообраќајно-транспортни струки со интернатско сместување. По катастрофалниот земјотрес во 1963 година, училиштето привремено беше преместено во Белград.",
     "zanas.story3": "На 15 април 1979 година, со Одлука на Работничкиот совет, Центарот го добива името на првоборецот-железничар Владо Тасевски.",
-    "zanas.story4": "Учебната 1983/84 година се воведоа нови профили од областа на ПТТ сообраќајот и телекомуникациите, со што училиштето го доби името Училишен центар за железнички и ПТТ сообраќај 'Владо Тасевски`. Во 2004 година, со процесот на децентрализација, училиштето преминува под ингеренција на Град Скопје и станува СУГС \u201EВладо Тасевски".",
+    "zanas.story4": "Учебната 1983/84 година се воведоа нови профили од областа на ПТТ сообраќајот и телекомуникациите, со што училиштето го доби името Училишен центар за железнички и ПТТ сообраќај 'Владо Тасевски`. Во 2004 година, со процесот на децентрализација, училиштето преминува под ингеренција на Град Скопје и станува СУГС 'Владо Тасевски".",
     "zanas.quote": "'Просториите на СУГС 'Владо Тасевски` се исполнети со младост, убавина, љубов, смеа, палавост и со помалку или повеќе учење."",
     // Kontakt
     "kontakt.title": "Контактирајте не",
@@ -183,9 +183,9 @@ export const translations: Record<Language, Record<string, string>> = {
     "misija.qualityDesc": "Стремеж кон највисоки стандарди во образованието и воспитувањето.",
     // Direktor
     "direktor.title": "Директор",
-    "direktor.subtitle": "Раководство на СУГС 'Владо Тасевски`",
+    "direktor.subtitle": "Раководство на СУГС 'Владо Тасевски'",
     "direktor.name": "Добре Михајлов",
-    "direktor.role": "Директор на СУГС 'Владо Тасевски`",
+    "direktor.role": "Директор на СУГС 'Владо Тасевски'",
     "direktor.bio1": "Добре Михајлов е директор на СУГС 'Владо Тасевски` – Скопје. Под неговото раководство, училиштето продолжува да се развива како модерна образовна институција која образува кадри за потребите на пазарот на трудот.",
     "direktor.bio2": "Директорот активно работи на подобрување на условите за настава, воведување на нови технологии и модернизација на образовниот процес.",
     "direktor.gallery": "Галерија",
@@ -211,7 +211,7 @@ export const translations: Record<Language, Record<string, string>> = {
     "nastavnici.aktivi": "Активи",
     // Vonredni
     "vonredni.title": "Вонредни ученици",
-    "vonredni.subtitle": "Информации за вонредно школување во СУГС 'Владо Тасевски`",
+    "vonredni.subtitle": "Информации за вонредно школување во СУГС 'Владо Тасевски'",
     "vonredni.pricing": "Ценовник",
     "vonredni.payment": "Уплатница",
     "vonredni.examApp": "Пријава за испит",
@@ -222,7 +222,7 @@ export const translations: Record<Language, Record<string, string>> = {
     "vonredni.commissions": "Комисии за испитни сесии",
     // Rezultati
     "rezultati.title": "Резултати од уписи",
-    "rezultati.subtitle": "Прелиминарни и конечни резултати од уписите во СУГС 'Владо Тасевски`",
+    "rezultati.subtitle": "Прелиминарни и конечни резултати од уписите во СУГС 'Владо Тасевски'",
     "rezultati.back": "Назад кон уписи",
     // Novini
     "novini.title": "Новости и настани",
@@ -325,7 +325,7 @@ export const translations: Record<Language, Record<string, string>> = {
     "home.newsSubtitle": "Ngjarjet më të fundit në shkollën tonë",
     // Upisi
     "upisi.badge": "Regjistrimi 2025/2026",
-    "upisi.title": "Regjistrohu në SHMA 'Vllado Tasevski`",
+    "upisi.title": "Regjistrohu në SHMA 'Vllado Tasevski'",
     "upisi.subtitle": "Zgjidhni ardhmërinë tuaj! Ne jemi këtu për t'ju ndihmuar.",
     "upisi.availableDept": "Drejtimet e disponueshme për regjistrim",
     "upisi.chooseDept": "Zgjidhni drejtimin që ju përshtatet më shumë",
@@ -342,7 +342,7 @@ export const translations: Record<Language, Record<string, string>> = {
     "zanas.story1": "Historia jonë filloi në vitin e largët 1959, kur Këshilli i punëtorëve të ndërmarrjes hekurudhore-transportuese të Shkupit, në përputhje me Rregulloren për qendrat e arsimit profesional të punëtorëve, mori Vendimin për formimin e Qendrës së hekurudhorëve për arsimin profesional të të rinjve dhe të rriturve.",
     "zanas.story2": "Nga viti 1961 fillon punën Shkolla Teknike Hekurudhore për drejtimin e komunikacionit-transportit me vendosje në internat. Pas tërmetit katastrofik në vitin 1963, shkolla u zhvendos përkohësisht në Beograd.",
     "zanas.story3": "Më 15 prill 1979, me Vendim të Këshillit të punëtorëve, Qendra e mori emrin e luftëtarit-hekurudhor Vllado Tasevski.",
-    "zanas.story4": "Viti shkollor 1983/84 u futën profile të reja nga fusha e komunikacionit PTT dhe telekomunikacionit, me çka shkolla e mori emrin Qendra Shkollore për komunikacion hekurudhor dhe PTT 'Vllado Tasevski`. Në vitin 2004, me procesin e decentralizimit, shkolla kalon nën ingerencën e Qytetit të Shkupit dhe bëhet SHMA \u201EVllado Tasevski".",
+    "zanas.story4": "Viti shkollor 1983/84 u futën profile të reja nga fusha e komunikacionit PTT dhe telekomunikacionit, me çka shkolla e mori emrin Qendra Shkollore për komunikacion hekurudhor dhe PTT 'Vllado Tasevski`. Në vitin 2004, me procesin e decentralizimit, shkolla kalon nën ingerencën e Qytetit të Shkupit dhe bëhet SHMA 'Vllado Tasevski".",
     "zanas.quote": "'Hapësirat e SHMA 'Vllado Tasevski` janë të mbushura me rini, bukuri, dashuri, gëzim, shkathtësi dhe me pak ose më shumë mësim."",
     // Kontakt
     "kontakt.title": "Na kontaktoni",
@@ -434,9 +434,9 @@ export const translations: Record<Language, Record<string, string>> = {
     "misija.qualityDesc": "Përpjekje drejt standardeve më të larta në arsim dhe edukim.",
     // Direktor
     "direktor.title": "Drejtori",
-    "direktor.subtitle": "Udhëheqësia e SHMA 'Vllado Tasevski`",
+    "direktor.subtitle": "Udhëheqësia e SHMA 'Vllado Tasevski'",
     "direktor.name": "Dobre Mihajlov",
-    "direktor.role": "Drejtor i SHMA 'Vllado Tasevski`",
+    "direktor.role": "Drejtor i SHMA 'Vllado Tasevski'",
     "direktor.bio1": "Dobre Mihajlov është drejtor i SHMA 'Vllado Tasevski` – Shkup. Nën udhëheqjen e tij, shkolla vazhdon të zhvillohet si institucion arsimor modern që edukon kuadro për nevojat e tregut të punës.",
     "direktor.bio2": "Drejtori punon aktivisht në përmirësimin e kushteve për mësimdhënie, futjen e teknologjive të reja dhe modernizimin e procesit arsimor.",
     "direktor.gallery": "Galeria",
@@ -462,7 +462,7 @@ export const translations: Record<Language, Record<string, string>> = {
     "nastavnici.aktivi": "Aktivet",
     // Vonredni
     "vonredni.title": "Nxënës të jashtëm",
-    "vonredni.subtitle": "Informata për shkollim të jashtëm në SHMA 'Vllado Tasevski`",
+    "vonredni.subtitle": "Informata për shkollim të jashtëm në SHMA 'Vllado Tasevski'",
     "vonredni.pricing": "Çmimorja",
     "vonredni.payment": "Fletëpagesa",
     "vonredni.examApp": "Paraqitja për provim",
@@ -473,7 +473,7 @@ export const translations: Record<Language, Record<string, string>> = {
     "vonredni.commissions": "Komisionet për sesionet e provimeve",
     // Rezultati
     "rezultati.title": "Rezultatet e regjistrimit",
-    "rezultati.subtitle": "Rezultate preliminare dhe përfundimtare nga regjistrimet në SHMA 'Vllado Tasevski`",
+    "rezultati.subtitle": "Rezultate preliminare dhe përfundimtare nga regjistrimet në SHMA 'Vllado Tasevski'",
     "rezultati.back": "Kthehu te regjistrimi",
     // Novini
     "novini.title": "Lajme dhe ngjarje",
