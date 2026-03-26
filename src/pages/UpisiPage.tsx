@@ -1,11 +1,12 @@
 import { Link } from "react-router-dom";
 import "./StaticHomePage.css";
-import PageHeader from "../components/PageHeader";
+import SiteHeader from "../components/SiteHeader";
+import SiteFooter from "../components/SiteFooter";
 
 const UpisiPage = () => {
   return (
     <>
-      <PageHeader />
+      <SiteHeader />
       <main>
         <section className="hero" style={{ padding: "40px 0 50px" }}>
           <div className="container">
@@ -61,13 +62,7 @@ const UpisiPage = () => {
           </div>
         </section>
       </main>
-      <footer className="footer">
-        <div className="container">
-          <div className="copyright">
-            <p>© Copyright 2026 СУГС „Владо Тасевски" - Скопје</p>
-          </div>
-        </div>
-      </footer>
+      <SiteFooter />
     </>
   );
 };

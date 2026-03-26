@@ -29,7 +29,10 @@ const SiteFooter = () => {
           <div className="footer-col"></div>
         </div>
         <div className="copyright">
-          <p>© 2026 СУГС „Владо Тасевски" - Скопје. Сите права се задржани.</p>
+          <p>© Copyright 2026 СУГС „Владо Тасевски" - Скопје. Сите права се задржани.</p>
+          <p style={{ marginTop: '8px', fontSize: '0.75rem', opacity: 0.8 }}>
+            Изработено од: Гордан Стојановски, Марко Дојчиновски, Матеј Илиоски, Томче Златановски
+          </p>
         </div>
       </div>
     </footer>
