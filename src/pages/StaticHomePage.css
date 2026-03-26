@@ -98,6 +98,8 @@
   font-size: 1.2rem;
   font-weight: 700;
   color: #4B8BBE;
+  font-family: 'Inter', sans-serif !important;
+  letter-spacing: 0;
 }
 
 .logo-text span {
