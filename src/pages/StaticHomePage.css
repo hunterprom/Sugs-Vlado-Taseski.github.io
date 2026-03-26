@@ -1215,13 +1215,14 @@
   background: #F5F9FF;
   border-radius: 24px;
   padding: 30px;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
   border: 1px solid #E8EDF3;
+  transform-style: preserve-3d;
 }
 
 .profil-card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+  transform: translateY(-8px) rotateY(-3deg);
+  box-shadow: 0 20px 40px rgba(75, 139, 190, 0.18);
 }
 
 .profil-icon {
