@@ -27,6 +27,7 @@ const ElektrotehnickaPage = () => {
               <div className="profil-card">
                 <div className="profil-icon"><i className="fas fa-mobile-alt"></i></div>
                 <h3>Електротехничар за електроника и телекомуникации</h3>
+                <img src={elektroTelekom} alt="Електротехничар за електроника и телекомуникации" className="profil-card-img" />
                 <p>Учениците се оспособуваат за работа со електронски уреди, телекомуникациски системи, мобилни технологии и дигитална електроника.</p>
                 <ul className="profil-opsii">
                   <li><i className="fas fa-check-circle"></i> Дигитална електроника</li>
