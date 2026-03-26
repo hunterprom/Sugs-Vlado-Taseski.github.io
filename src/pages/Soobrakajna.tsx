@@ -2,6 +2,8 @@ import { Link } from "react-router-dom";
 import SiteHeader from "../components/SiteHeader";
 import SiteFooter from "../components/SiteFooter";
 import "./StaticHomePage.css";
+import soobrakajTransport from "@/assets/soobrakaj-transport.png";
+import zeleznicka from "@/assets/zeleznicki-soobrakaj.png";
 
 const SoobrakajnaPage = () => {
   return (

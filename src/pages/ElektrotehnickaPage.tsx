@@ -2,6 +2,8 @@ import { Link } from "react-router-dom";
 import SiteHeader from "../components/SiteHeader";
 import SiteFooter from "../components/SiteFooter";
 import "./StaticHomePage.css";
+import elektroTelekom from "@/assets/elektro-telekom.png";
+import kompjuterskaAvtomatika from "@/assets/kompjuterska-avtomatika.png";
 
 const ElektrotehnickaPage = () => {
   return (
