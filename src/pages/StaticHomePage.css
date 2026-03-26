@@ -1108,6 +1108,14 @@
   line-height: 1.4;
 }
 
+.profil-card-img {
+  width: 100%;
+  max-height: 220px;
+  object-fit: cover;
+  border-radius: 16px;
+  margin-bottom: 15px;
+}
+
 .profil-card p {
   color: #64B5F6;
   font-size: 0.85rem;

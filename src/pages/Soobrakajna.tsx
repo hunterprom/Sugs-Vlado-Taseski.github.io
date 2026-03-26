@@ -2,6 +2,8 @@ import { Link } from "react-router-dom";
 import SiteHeader from "../components/SiteHeader";
 import SiteFooter from "../components/SiteFooter";
 import "./StaticHomePage.css";
+import soobrakajTransport from "@/assets/soobrakaj-transport.png";
+import zeleznicka from "@/assets/zeleznicki-soobrakaj.png";
 
 const SoobrakajnaPage = () => {
   return (
@@ -25,6 +27,7 @@ const SoobrakajnaPage = () => {
               <div className="profil-card">
                 <div className="profil-icon"><i className="fas fa-shipping-fast"></i></div>
                 <h3>Техничар за транспорт и шпедиција</h3>
+                <img src={soobrakajTransport} alt="Техничар за транспорт и шпедиција" className="profil-card-img" />
                 <p>Образование за логистика, транспортни системи, шпедиција, царинско работење и организација на транспортот.</p>
                 <ul className="profil-opsii">
                   <li><i className="fas fa-check-circle"></i> Логистика и синџири на снабдување</li>
@@ -47,6 +50,7 @@ const SoobrakajnaPage = () => {
               <div className="profil-card">
                 <div className="profil-icon"><i className="fas fa-subway"></i></div>
                 <h3>Техничар за железнички сообраќај</h3>
+                <img src={zeleznicka} alt="Техничар за железнички сообраќај" className="profil-card-img" />
                 <p>Образование за организација на железнички транспорт, управување со возен ред, сигнални системи и безбедност на железница.</p>
                 <ul className="profil-opsii">
                   <li><i className="fas fa-check-circle"></i> Железнички транспорт</li>

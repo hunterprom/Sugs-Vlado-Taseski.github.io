@@ -2,6 +2,9 @@ import { Link } from "react-router-dom";
 import SiteHeader from "../components/SiteHeader";
 import SiteFooter from "../components/SiteFooter";
 import "./StaticHomePage.css";
+import masinskaStruka from "@/assets/masinska-struka.png";
+import masinskaEnergetski from "@/assets/masinska-energetski.png";
+import proizvodnoMasinstvo from "@/assets/proizvodno-masinstvo.png";
 
 const MasinskaPage = () => {
   return (
@@ -25,6 +28,7 @@ const MasinskaPage = () => {
               <div className="profil-card">
                 <div className="profil-icon"><i className="fas fa-fire"></i></div>
                 <h3>Машинско-енергетски техничар</h3>
+                <img src={masinskaEnergetski} alt="Машинско-енергетски техничар" className="profil-card-img" />
                 <p>Специјализација за енергетски системи, термотехника, греење, климатизација и енергетска ефикасност.</p>
                 <ul className="profil-opsii">
                   <li><i className="fas fa-check-circle"></i> Термотехника</li>
@@ -36,6 +40,7 @@ const MasinskaPage = () => {
               <div className="profil-card">
                 <div className="profil-icon"><i className="fas fa-industry"></i></div>
                 <h3>Техничар за производно машинство</h3>
+                <img src={proizvodnoMasinstvo} alt="Техничар за производно машинство" className="profil-card-img" />
                 <p>Образование за производствени процеси, CNC машини, технологија на обработка и квалитет на производи.</p>
                 <ul className="profil-opsii">
                   <li><i className="fas fa-check-circle"></i> CNC програмирање</li>

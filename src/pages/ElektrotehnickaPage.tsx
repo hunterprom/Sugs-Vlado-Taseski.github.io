@@ -2,6 +2,8 @@ import { Link } from "react-router-dom";
 import SiteHeader from "../components/SiteHeader";
 import SiteFooter from "../components/SiteFooter";
 import "./StaticHomePage.css";
+import elektroTelekom from "@/assets/elektro-telekom.png";
+import kompjuterskaAvtomatika from "@/assets/kompjuterska-avtomatika.png";
 
 const ElektrotehnickaPage = () => {
   return (
@@ -25,6 +27,7 @@ const ElektrotehnickaPage = () => {
               <div className="profil-card">
                 <div className="profil-icon"><i className="fas fa-mobile-alt"></i></div>
                 <h3>Електротехничар за електроника и телекомуникации</h3>
+                <img src={elektroTelekom} alt="Електротехничар за електроника и телекомуникации" className="profil-card-img" />
                 <p>Учениците се оспособуваат за работа со електронски уреди, телекомуникациски системи, мобилни технологии и дигитална електроника.</p>
                 <ul className="profil-opsii">
                   <li><i className="fas fa-check-circle"></i> Дигитална електроника</li>
@@ -36,6 +39,7 @@ const ElektrotehnickaPage = () => {
               <div className="profil-card">
                 <div className="profil-icon"><i className="fas fa-robot"></i></div>
                 <h3>Електротехничар за компјутерска техника и автоматика</h3>
+                <img src={kompjuterskaAvtomatika} alt="Електротехничар за компјутерска техника и автоматика" className="profil-card-img" />
                 <p>Профил кој опфаќа програмирање на PLC контролери, роботика, индустриска автоматизација и компјутерски системи.</p>
                 <ul className="profil-opsii">
                   <li><i className="fas fa-check-circle"></i> PLC програмирање</li>
