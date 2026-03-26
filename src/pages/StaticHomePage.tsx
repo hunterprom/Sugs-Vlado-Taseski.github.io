@@ -156,15 +156,15 @@ const StaticHomePage = () => {
             <FadeUpSection delay={0.15}>
               <div className="stat-card">
                 <i className="fas fa-chalkboard-user"></i>
-                <h3>+</h3>
+                <h3><AnimatedNumber target={90} animate={statsAnimated} />+</h3>
                 <p>Професори</p>
               </div>
             </FadeUpSection>
             <FadeUpSection delay={0.3}>
               <div className="stat-card">
                 <i className="fas fa-user-graduate"></i>
-                <h3><AnimatedNumber target={22000} animate={statsAnimated} />+</h3>
-                <p>Дипломирани ученици</p>
+                <h3><AnimatedNumber target={900} animate={statsAnimated} />+</h3>
+                <p>Ученици</p>
               </div>
             </FadeUpSection>
           </div>
@@ -185,7 +185,7 @@ const StaticHomePage = () => {
               {[
                 { icon: "fas fa-laptop-code", title: "Дигитална настава", desc: "Интерактивни табли, е-дневник и online ресурси за секој ученик.", link: "/elektrotehnicka" },
                 { icon: "fas fa-chalkboard-user", title: "Квалитетен кадар", desc: "Искусни професори и менторска поддршка за секој ученик.", link: "/za-nas" },
-                { icon: "fas fa-futbol", title: "Спорт & креативност", desc: "Спортски терени, работилници и натпревари за сестрана иднина.", link: "/sport" },
+                { icon: "fas fa-futbol", title: "Спорт креативност", desc: "Спортски терени, работилници и натпревари за сестрана иднина.", link: "/sport" },
               ].map((card, i) => (
                 <FadeUpSection key={i} delay={i * 0.15}>
                   <div className="card">
