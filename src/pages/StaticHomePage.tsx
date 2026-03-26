@@ -69,7 +69,7 @@ const StaticHomePage = () => {
 
               <h1 className="hero-title-split">
                 <LineReveal delay={0.3}>
-                  <span className="font-display" style={{ fontStyle: "italic", letterSpacing: "-0.02em" }}>
+                  <span className="font-serif" style={{ fontStyle: "italic", letterSpacing: "-0.02em" }}>
                     {t("hero.school")}
                   </span>{" "}
                   <span style={{ letterSpacing: "0.08em", fontWeight: 800 }}>
