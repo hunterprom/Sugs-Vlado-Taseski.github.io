@@ -1,6 +1,8 @@
 import SiteHeader from "../components/SiteHeader";
 import SiteFooter from "../components/SiteFooter";
 import "./StaticHomePage.css";
+import ucilnica2 from "@/assets/училница-2.png";
+import fontana from "@/assets/училиште-фонтана.png";
 
 const SportPage = () => {
   return (
