@@ -161,20 +161,9 @@ const SiteHeader = () => {
                   {t("nav.students")} <i className="fas fa-chevron-down"></i>
                 </a>
                 <ul className="dropdown-menu">
-                  <li><Link to="/upisi">{t("nav.enrollment")}</Link></li>
                   <li><Link to="/vonredni">{t("nav.external")}</Link></li>
                   <li><Link to="/rezultati">Резултати од уписи</Link></li>
                   <li><Link to="/poeni-kalkulator">Калкулатор за поени</Link></li>
-                  <li className={`dropdown-nested ${activeSubmenu === "portali" ? "active" : ""}`}>
-                    <a href="#" onClick={(e) => handleSubmenuClick("portali", e)}>
-                      {t("nav.portals")} <i className="fas fa-chevron-right"></i>
-                    </a>
-                    <ul className="dropdown-submenu">
-                      <li><a href="https://ednevnik.edu.mk/" target="_blank" rel="noopener noreferrer">{t("top.eDiary")}</a></li>
-                      <li><a href="https://e-uslugi.mon.gov.mk/" target="_blank" rel="noopener noreferrer">{t("top.monServices")}</a></li>
-                      <li><a href="https://lms.schools.mk/" target="_blank" rel="noopener noreferrer">{t("top.lms")}</a></li>
-                    </ul>
-                  </li>
                 </ul>
               </li>
 
