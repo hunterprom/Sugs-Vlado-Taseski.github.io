@@ -27,6 +27,7 @@ const SoobrakajnaPage = () => {
               <div className="profil-card">
                 <div className="profil-icon"><i className="fas fa-shipping-fast"></i></div>
                 <h3>Техничар за транспорт и шпедиција</h3>
+                <img src={soobrakajTransport} alt="Техничар за транспорт и шпедиција" className="profil-card-img" />
                 <p>Образование за логистика, транспортни системи, шпедиција, царинско работење и организација на транспортот.</p>
                 <ul className="profil-opsii">
                   <li><i className="fas fa-check-circle"></i> Логистика и синџири на снабдување</li>
