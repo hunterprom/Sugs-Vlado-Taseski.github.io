@@ -71,7 +71,7 @@ const liquidVariants = {
   exit: {
     clipPath: "circle(0% at 50% 50%)",
     transition: {
-      duration: 0.5,
+      duration: 0.3,
       ease,
     },
   },
