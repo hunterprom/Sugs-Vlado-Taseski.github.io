@@ -1,6 +1,7 @@
 import SiteHeader from "../components/SiteHeader";
 import SiteFooter from "../components/SiteFooter";
 import "../pages/StaticHomePage.css";
+import nastavniciGroup from "@/assets/nastavnici-group.png";
 
 const aktivi = [
   {
@@ -56,6 +57,12 @@ const NastavniciPage = () => {
           </div>
           <h1>Наставен кадар</h1>
           <p>Нашите наставници се срцето на училиштето — професионални, посветени и секогаш подготвени да ги инспирираат учениците.</p>
+        </div>
+      </section>
+
+      <section className="profili-section" style={{ paddingTop: 0 }}>
+        <div className="container" style={{ textAlign: 'center', marginBottom: '2rem' }}>
+          <img src={nastavniciGroup} alt="Наставен кадар" style={{ width: '100%', maxWidth: '900px', borderRadius: '16px', boxShadow: '0 8px 24px rgba(0,0,0,0.1)' }} />
         </div>
       </section>
 

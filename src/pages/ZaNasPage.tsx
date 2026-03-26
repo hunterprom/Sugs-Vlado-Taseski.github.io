@@ -1,6 +1,13 @@
 import SiteHeader from "../components/SiteHeader";
 import SiteFooter from "../components/SiteFooter";
 import "./StaticHomePage.css";
+import rakovodstvo1 from "@/assets/rakovodstvo-1.png";
+import rakovodstvo2 from "@/assets/rakovodstvo-2.png";
+import rakovodstvo3 from "@/assets/rakovodstvo-3.png";
+import rakovodstvo4 from "@/assets/rakovodstvo-4.png";
+import rakovodstvo5 from "@/assets/rakovodstvo-5.png";
+import rakovodstvo6 from "@/assets/rakovodstvo-6.png";
+import rakovodstvo7 from "@/assets/rakovodstvo-7.png";
 
 const ZaNasPage = () => {
   return (
@@ -51,7 +58,7 @@ const ZaNasPage = () => {
             </div>
             <div className="leadership-grid">
               <div className="leader-card">
-                <i className="fas fa-user-tie"></i>
+                <img src={rakovodstvo7} alt="Добре Михајлов" className="leader-photo" />
                 <h3>Добре Михајлов</h3>
                 <p>Директор</p>
               </div>
@@ -70,6 +77,19 @@ const ZaNasPage = () => {
                 <h3>Елена Димитрова</h3>
                 <p>Психолог</p>
               </div>
+            </div>
+
+            {/* Галерија од раководство */}
+            <h3 style={{ textAlign: 'center', marginTop: '3rem', marginBottom: '1.5rem', color: '#1565C0', fontSize: '1.5rem' }}>
+              <i className="fas fa-images"></i> Галерија
+            </h3>
+            <div className="leadership-gallery">
+              <img src={rakovodstvo1} alt="Раководство 1" />
+              <img src={rakovodstvo2} alt="Раководство 2" />
+              <img src={rakovodstvo3} alt="Раководство 3" />
+              <img src={rakovodstvo4} alt="Раководство 4" />
+              <img src={rakovodstvo5} alt="Раководство 5" />
+              <img src={rakovodstvo6} alt="Раководство 6" />
             </div>
           </div>
         </section>
