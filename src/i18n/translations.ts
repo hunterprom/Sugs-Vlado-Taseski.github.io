@@ -140,7 +140,7 @@ export const translations: Record<Language, Record<string, string>> = {
     // Footer
     "footer.usefulLinks": "Lidhje të dobishme",
     "footer.contact": "Kontakt",
-    "footer.copyright": "© Copyright 2026 SHMA „Vllado Tasevski" - Shkup. Të gjitha të drejtat e rezervuara.",
+    "footer.copyright": "© Copyright 2026 SHMA \u201EVllado Tasevski\u201C - Shkup. T\u00eb gjitha t\u00eb drejtat e rezervuara.",
     "footer.madeBy": "Punuar nga: Gordan Stojanovski, Marko Dojçinovski, Matej Ilioski, Tomçe Zllatanovski",
     // Back
     "back": "Kthehu në fillim",
