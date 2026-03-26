@@ -116,7 +116,7 @@ export const translations: Record<Language, Record<string, string>> = {
     // Hero
     "hero.badge": "ARSIM MË I MIRË, ARDHMËRI MË E MIRË!",
     "hero.school": "SHMA",
-    "hero.name": "„Vllado Tasevski"",
+    "hero.name": "\u201EVllado Tasevski\u201C",
     "hero.city": "Shkup",
     "hero.subtitle": "Ne jemi Ekipi VLLADO TASEVSKI! Edukimi dhe arsimi janë themelet e një shteti. Krenarohemi me të gjitha gjeneratat që kanë kaluar nëpër klasat tona.",
     "hero.enroll": "Regjistrohu",
