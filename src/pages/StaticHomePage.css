@@ -12,7 +12,7 @@
 
 /* Top Bar */
 .top-bar {
-  background-color: #2196F3;
+  background-color: #4B8BBE;
   color: white;
   padding: 8px 0;
   font-size: 0.8rem;
@@ -33,7 +33,7 @@
 }
 
 .quick-link {
-  color: #E3F2FD;
+  color: #E8EDF3;
   text-decoration: none;
   transition: 0.2s;
   font-weight: 500;
@@ -83,7 +83,7 @@
 }
 
 .logo-icon {
-  background: #2196F3;
+  background: #4B8BBE;
   width: 42px;
   height: 42px;
   border-radius: 12px;
@@ -97,12 +97,12 @@
 .logo-text h1 {
   font-size: 1.2rem;
   font-weight: 700;
-  color: #2196F3;
+  color: #4B8BBE;
 }
 
 .logo-text span {
   font-size: 0.65rem;
-  color: #90CAF9;
+  color: #9FBDD6;
 }
 
 /* Hamburger Menu */
@@ -111,7 +111,7 @@
   background: none;
   border: none;
   font-size: 1.5rem;
-  color: #2196F3;
+  color: #4B8BBE;
   cursor: pointer;
   padding: 8px;
 }
@@ -130,7 +130,7 @@
 .nav-links a {
   text-decoration: none;
   font-weight: 600;
-  color: #2196F3;
+  color: #4B8BBE;
   transition: 0.2s;
   font-size: 0.85rem;
   display: flex;
@@ -140,7 +140,7 @@
 
 .nav-links a:hover,
 .nav-links a.active {
-  color: #42A5F5;
+  color: #6BA3C8;
 }
 
 /* Dropdown */
@@ -168,15 +168,15 @@
 .dropdown-menu a {
   padding: 8px 20px;
   font-size: 0.8rem;
-  color: #1565C0;
+  color: #2E6899;
   display: flex;
   align-items: center;
   justify-content: space-between;
 }
 
 .dropdown-menu a:hover {
-  background: #E3F2FD;
-  color: #2196F3;
+  background: #E8EDF3;
+  color: #4B8BBE;
 }
 
 /* Nested dropdown (sub-dropdown) */
@@ -213,23 +213,23 @@
 .dropdown-submenu a {
   padding: 8px 20px;
   font-size: 0.8rem;
-  color: #1565C0;
+  color: #2E6899;
   display: block;
 }
 
 .dropdown-submenu a:hover {
-  background: #E3F2FD;
-  color: #2196F3;
+  background: #E8EDF3;
+  color: #4B8BBE;
 }
 
 .btn-outline-blue {
   background: transparent;
-  border: 1.5px solid #2196F3;
+  border: 1.5px solid #4B8BBE;
   padding: 6px 16px;
   border-radius: 40px;
   font-weight: 600;
   text-decoration: none;
-  color: #2196F3;
+  color: #4B8BBE;
   transition: 0.2s;
   font-size: 0.8rem;
   white-space: nowrap;
@@ -240,13 +240,13 @@
 }
 
 .btn-outline-blue:hover {
-  background: #2196F3;
+  background: #4B8BBE;
   color: white;
 }
 
 /* Hero Split Layout */
 .hero-split {
-  background: linear-gradient(135deg, #0D47A1 0%, #1565C0 40%, #1976D2 100%);
+  background: linear-gradient(135deg, #1E4D7A 0%, #2E6899 40%, #3A7AAA 100%);
   padding: 60px 0;
   min-height: 70vh;
   display: flex;
@@ -375,7 +375,7 @@
 
 /* Marquee Section */
 .marquee-section {
-  background: #2196F3;
+  background: #4B8BBE;
   padding: 14px 0;
   overflow: hidden;
 }
@@ -409,7 +409,7 @@
   font-size: 2rem;
   font-weight: 800;
   line-height: 1.2;
-  color: #2196F3;
+  color: #4B8BBE;
   margin-bottom: 15px;
 }
 
@@ -427,7 +427,7 @@
 
 .btn-primary {
   background: #FBC02D;
-  color: #1565C0;
+  color: #2E6899;
   padding: 10px 22px;
   border-radius: 40px;
   text-decoration: none;
@@ -452,7 +452,7 @@
   border-radius: 40px;
   text-decoration: none;
   font-weight: 600;
-  color: #2196F3;
+  color: #4B8BBE;
   font-size: 0.85rem;
 }
 
@@ -461,7 +461,7 @@
 }
 
 .btn-secondary:hover {
-  border-color: #2196F3;
+  border-color: #4B8BBE;
   background: #F5F9FF;
 }
 
@@ -568,20 +568,20 @@
 
 .stat-card i {
   font-size: 2rem;
-  color: #2196F3;
+  color: #4B8BBE;
   margin-bottom: 12px;
 }
 
 .stat-card h3 {
   font-size: 1.6rem;
   font-weight: 800;
-  color: #2196F3;
+  color: #4B8BBE;
   margin-bottom: 5px;
 }
 
 .stat-card p {
   font-size: 0.8rem;
-  color: #90CAF9;
+  color: #9FBDD6;
 }
 
 /* Features Section */
@@ -598,11 +598,11 @@
 .section-header h2 {
   font-size: 1.6rem;
   font-weight: 700;
-  color: #2196F3;
+  color: #4B8BBE;
 }
 
 .section-header p {
-  color: #90CAF9;
+  color: #9FBDD6;
   font-size: 0.9rem;
 }
 
@@ -617,7 +617,7 @@
   border-radius: 24px;
   padding: 28px 20px;
   box-shadow: 0 8px 20px rgba(30, 58, 95, 0.06);
-  border: 1px solid #E3F2FD;
+  border: 1px solid #E8EDF3;
   transition: 0.2s;
 }
 
@@ -628,14 +628,14 @@
 
 .card-icon {
   font-size: 2.2rem;
-  color: #2196F3;
+  color: #4B8BBE;
   margin-bottom: 15px;
 }
 
 .card h3 {
   font-size: 1.2rem;
   margin-bottom: 10px;
-  color: #2196F3;
+  color: #4B8BBE;
 }
 
 .card p {
@@ -648,7 +648,7 @@
   display: inline-flex;
   align-items: center;
   gap: 5px;
-  color: #2196F3;
+  color: #4B8BBE;
   text-decoration: none;
   font-weight: 600;
   font-size: 0.85rem;
@@ -667,14 +667,14 @@
 .history-content p {
   margin-bottom: 20px;
   line-height: 1.7;
-  color: #1565C0;
+  color: #2E6899;
 }
 
 .history-content .quote {
   font-style: italic;
   padding: 20px;
   background: #F5F9FF;
-  border-left: 4px solid #2196F3;
+  border-left: 4px solid #4B8BBE;
   border-radius: 12px;
 }
 
@@ -693,7 +693,7 @@
 
 .mission-card i {
   font-size: 2rem;
-  color: #2196F3;
+  color: #4B8BBE;
   margin-bottom: 15px;
 }
 
@@ -719,7 +719,7 @@
 
 .leader-card i {
   font-size: 2.2rem;
-  color: #2196F3;
+  color: #4B8BBE;
   margin-bottom: 10px;
 }
 
@@ -786,19 +786,19 @@
   background: #F5F9FF;
   padding: 20px;
   border-radius: 20px;
-  border-left: 4px solid #2196F3;
+  border-left: 4px solid #4B8BBE;
 }
 
 .info-card i {
   font-size: 1.5rem;
-  color: #2196F3;
+  color: #4B8BBE;
   margin-bottom: 10px;
 }
 
 .info-card h3 {
   font-size: 1.1rem;
   margin-bottom: 10px;
-  color: #2196F3;
+  color: #4B8BBE;
 }
 
 .info-card p, .info-card a {
@@ -808,7 +808,7 @@
 }
 
 .info-card a:hover {
-  color: #2196F3;
+  color: #4B8BBE;
 }
 
 .social-links {
@@ -828,7 +828,7 @@
 .team-motto {
   font-weight: 600;
   margin-top: 10px;
-  color: #2196F3 !important;
+  color: #4B8BBE !important;
 }
 
 /* Contact Form */
@@ -841,7 +841,7 @@
 .contact-form-container h3 {
   font-size: 1.3rem;
   margin-bottom: 20px;
-  color: #2196F3;
+  color: #4B8BBE;
 }
 
 .contact-form {
@@ -865,7 +865,7 @@
 .form-group label {
   font-weight: 500;
   font-size: 0.85rem;
-  color: #2196F3;
+  color: #4B8BBE;
 }
 
 .form-group input,
@@ -881,7 +881,7 @@
 .form-group input:focus,
 .form-group textarea:focus {
   outline: none;
-  border-color: #2196F3;
+  border-color: #4B8BBE;
   box-shadow: 0 0 0 2px rgba(30, 58, 95, 0.1);
 }
 
@@ -912,7 +912,7 @@
 }
 
 .btn-submit {
-  background: #2196F3;
+  background: #4B8BBE;
   color: white;
   border: none;
   padding: 12px 24px;
@@ -929,7 +929,7 @@
 }
 
 .btn-submit:hover {
-  background: #1976D2;
+  background: #3A7AAA;
   transform: translateY(-2px);
 }
 
@@ -952,8 +952,8 @@
 
 /* Footer */
 .footer {
-  background: #2196F3;
-  color: #E3F2FD;
+  background: #4B8BBE;
+  color: #E8EDF3;
   padding: 40px 0 20px;
   margin-top: 40px;
 }
@@ -983,7 +983,7 @@
 }
 
 .footer-col a {
-  color: #E3F2FD;
+  color: #E8EDF3;
   text-decoration: none;
 }
 
@@ -1052,29 +1052,29 @@
 
 .sport-card i {
   font-size: 2.5rem;
-  color: #2196F3;
+  color: #4B8BBE;
   margin-bottom: 15px;
 }
 
 .sport-card h3 {
   font-size: 1.2rem;
   margin-bottom: 10px;
-  color: #2196F3;
+  color: #4B8BBE;
 }
 
 /* Struka Pages */
 .struka-hero {
   padding: 60px 0;
   background: linear-gradient(135deg, #F5F9FF 0%, #FFFFFF 100%);
-  border-bottom: 1px solid #E3F2FD;
+  border-bottom: 1px solid #E8EDF3;
 }
 
 .elektro-hero {
-  border-top: 4px solid #2196F3;
+  border-top: 4px solid #4B8BBE;
 }
 
 .masinski-hero {
-  border-top: 4px solid #42A5F5;
+  border-top: 4px solid #6BA3C8;
 }
 
 .soobrakaj-hero {
@@ -1090,7 +1090,7 @@
 .struka-icon {
   width: 100px;
   height: 100px;
-  background: #2196F3;
+  background: #4B8BBE;
   border-radius: 50%;
   display: flex;
   align-items: center;
@@ -1105,13 +1105,13 @@
 
 .struka-header h1 {
   font-size: 2.2rem;
-  color: #2196F3;
+  color: #4B8BBE;
   margin-bottom: 15px;
 }
 
 .struka-header p {
   font-size: 1rem;
-  color: #90CAF9;
+  color: #9FBDD6;
   line-height: 1.6;
 }
 
@@ -1123,7 +1123,7 @@
 .section-title {
   text-align: center;
   font-size: 1.8rem;
-  color: #2196F3;
+  color: #4B8BBE;
   margin-bottom: 40px;
 }
 
@@ -1138,7 +1138,7 @@
   border-radius: 24px;
   padding: 30px;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
-  border: 1px solid #E3F2FD;
+  border: 1px solid #E8EDF3;
 }
 
 .profil-card:hover {
@@ -1149,7 +1149,7 @@
 .profil-icon {
   width: 60px;
   height: 60px;
-  background: #2196F3;
+  background: #4B8BBE;
   border-radius: 16px;
   display: flex;
   align-items: center;
@@ -1164,7 +1164,7 @@
 
 .profil-card h3 {
   font-size: 1.2rem;
-  color: #2196F3;
+  color: #4B8BBE;
   margin-bottom: 15px;
   line-height: 1.4;
 }
@@ -1192,14 +1192,14 @@
 .profil-opsii li {
   margin-bottom: 8px;
   font-size: 0.8rem;
-  color: #1565C0;
+  color: #2E6899;
   display: flex;
   align-items: center;
   gap: 8px;
 }
 
 .profil-opsii li i {
-  color: #2196F3;
+  color: #4B8BBE;
   font-size: 0.7rem;
 }
 
@@ -1211,7 +1211,7 @@
 .moznosti-content h2 {
   text-align: center;
   font-size: 1.6rem;
-  color: #2196F3;
+  color: #4B8BBE;
   margin-bottom: 40px;
 }
 
@@ -1231,7 +1231,7 @@
   border-radius: 20px;
   text-align: center;
   transition: transform 0.3s ease;
-  border: 1px solid #E3F2FD;
+  border: 1px solid #E8EDF3;
 }
 
 .moznost-card:hover {
@@ -1240,19 +1240,19 @@
 
 .moznost-card i {
   font-size: 2rem;
-  color: #2196F3;
+  color: #4B8BBE;
   margin-bottom: 15px;
 }
 
 .moznost-card h3 {
   font-size: 1rem;
-  color: #2196F3;
+  color: #4B8BBE;
   margin-bottom: 10px;
 }
 
 .moznost-card p {
   font-size: 0.8rem;
-  color: #90CAF9;
+  color: #9FBDD6;
 }
 
 .nastava-section {
@@ -1272,12 +1272,12 @@
   background: #F5F9FF;
   padding: 30px;
   border-radius: 24px;
-  border-left: 4px solid #2196F3;
+  border-left: 4px solid #4B8BBE;
 }
 
 .nastava-card h3 {
   font-size: 1.2rem;
-  color: #2196F3;
+  color: #4B8BBE;
   margin-bottom: 20px;
 }
 
@@ -1294,7 +1294,7 @@
   margin-bottom: 10px;
   padding-left: 20px;
   position: relative;
-  color: #1565C0;
+  color: #2E6899;
   font-size: 0.85rem;
 }
 
@@ -1302,7 +1302,7 @@
   content: "▹";
   position: absolute;
   left: 0;
-  color: #2196F3;
+  color: #4B8BBE;
 }
 
 .back-section {
@@ -1315,7 +1315,7 @@
   display: inline-flex;
   align-items: center;
   gap: 10px;
-  background: #2196F3;
+  background: #4B8BBE;
   color: white;
   padding: 12px 28px;
   border-radius: 40px;
@@ -1325,7 +1325,7 @@
 }
 
 .back-button:hover {
-  background: #1976D2;
+  background: #3A7AAA;
   transform: translateY(-2px);
   color: white;
 }
@@ -1358,14 +1358,14 @@
 
 .project-card i {
   font-size: 2rem;
-  color: #2196F3;
+  color: #4B8BBE;
   margin-bottom: 15px;
 }
 
 .project-card h3 {
   font-size: 1.1rem;
   margin-bottom: 10px;
-  color: #2196F3;
+  color: #4B8BBE;
 }
 
 .project-card p {
@@ -1446,7 +1446,7 @@
     display: none;
     box-shadow: none;
     padding-left: 15px;
-    background: #E3F2FD;
+    background: #E8EDF3;
     margin-top: 5px;
     border-radius: 8px;
   }
@@ -1594,7 +1594,7 @@
   width: 60px;
   height: 60px;
   border-radius: 50%;
-  background: linear-gradient(135deg, #1565C0, #42A5F5);
+  background: linear-gradient(135deg, #2E6899, #6BA3C8);
   color: white;
   border: none;
   cursor: pointer;
@@ -1631,7 +1631,7 @@
 }
 
 .chatbot-header {
-  background: linear-gradient(135deg, #1565C0, #42A5F5);
+  background: linear-gradient(135deg, #2E6899, #6BA3C8);
   color: white;
   padding: 14px 18px;
   display: flex;
@@ -1679,7 +1679,7 @@
   line-height: 1.5;
 }
 .chatbot-bubble.user {
-  background: #1565C0;
+  background: #2E6899;
   color: white;
   border-bottom-right-radius: 4px;
 }
@@ -1695,7 +1695,7 @@
   padding-left: 18px;
   margin: 4px 0;
 }
-.chatbot-bubble.assistant strong { color: #1565C0; }
+.chatbot-bubble.assistant strong { color: #2E6899; }
 
 .chatbot-typing {
   display: flex;
@@ -1705,7 +1705,7 @@
 .chatbot-typing span {
   width: 8px;
   height: 8px;
-  background: #90CAF9;
+  background: #9FBDD6;
   border-radius: 50%;
   animation: typingBounce 1.4s infinite ease-in-out;
 }
@@ -1723,8 +1723,8 @@
   gap: 6px;
 }
 .chatbot-quick-btn {
-  background: #E3F2FD;
-  color: #1565C0;
+  background: #E8EDF3;
+  color: #2E6899;
   border: 1px solid #BBDEFB;
   border-radius: 20px;
   padding: 6px 14px;
@@ -1751,12 +1751,12 @@
   outline: none;
   transition: border-color 0.2s;
 }
-.chatbot-input:focus { border-color: #42A5F5; }
+.chatbot-input:focus { border-color: #6BA3C8; }
 .chatbot-send {
   width: 40px;
   height: 40px;
   border-radius: 50%;
-  background: #1565C0;
+  background: #2E6899;
   color: white;
   border: none;
   cursor: pointer;
@@ -1765,7 +1765,7 @@
   justify-content: center;
   transition: background 0.2s;
 }
-.chatbot-send:hover { background: #0D47A1; }
+.chatbot-send:hover { background: #1E4D7A; }
 .chatbot-send:disabled { background: #B0BEC5; cursor: not-allowed; }
 
 @media (max-width: 480px) {
