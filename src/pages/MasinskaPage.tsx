@@ -5,6 +5,7 @@ import "./StaticHomePage.css";
 import masinskaStruka from "@/assets/masinska-struka.png";
 import masinskaEnergetski from "@/assets/masinska-energetski.png";
 import proizvodnoMasinstvo from "@/assets/proizvodno-masinstvo.png";
+import kompjuterskoUpravuvanje from "@/assets/kompjutersko-upravuvanje.png";
 
 const MasinskaPage = () => {
   return (
