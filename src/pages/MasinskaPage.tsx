@@ -84,6 +84,8 @@ const MasinskaPage = () => {
                   <li><i className="fas fa-check-circle"></i> Компјутерско управување</li>
                 </ul>
               </div>
+            </div>
+          </div>
         </section>
 
         <section className="moznosti-section">
