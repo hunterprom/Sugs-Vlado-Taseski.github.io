@@ -33,6 +33,14 @@ const ProektiPage = () => {
                 <p>Ден на социјална одговорност каде учениците волонтираат и придонесуваат за заедницата.</p>
               </div>
             </div>
+            <div className="section-header" style={{ marginTop: '3rem' }}>
+              <h2>Нашите простории</h2>
+            </div>
+            <div className="leadership-gallery">
+              <img src={ucilnica3} alt="Училница" style={{ borderRadius: '16px' }} />
+              <img src={konferenciска} alt="Конференциска сала" style={{ borderRadius: '16px' }} />
+              <img src={lobi} alt="Лоби на училиштето" style={{ borderRadius: '16px' }} />
+            </div>
           </div>
         </section>
       </main>

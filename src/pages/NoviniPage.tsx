@@ -88,6 +88,18 @@ const NoviniPage = () => {
         </div>
       </section>
 
+      <section className="history-section">
+        <div className="container">
+          <div className="section-header">
+            <h2>Нашето училиште</h2>
+          </div>
+          <div className="leadership-gallery" style={{ gridTemplateColumns: 'repeat(2, 1fr)' }}>
+            <img src={ucilnicaImg} alt="Училница" style={{ borderRadius: '16px' }} />
+            <img src={ucilisteNadvor} alt="Училиште - надворешност" style={{ borderRadius: '16px' }} />
+          </div>
+        </div>
+      </section>
+
       <section className="back-section">
         <div className="container">
           <Link to="/" className="back-button">
