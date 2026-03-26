@@ -61,7 +61,7 @@ const MasinskaPage = () => {
                   <li><i className="fas fa-check-circle"></i> Сервисирање и одржување</li>
                 </ul>
               </div>
-              <div className="profil-card">
+               <div className="profil-card">
                 <div className="profil-icon"><i className="fas fa-train"></i></div>
                 <h3>Машински техничар за шински возила</h3>
                 <p>Специјализација за одржување и поправка на железнички возила, дизел мотори и електро-влечни средства.</p>
@@ -72,8 +72,18 @@ const MasinskaPage = () => {
                   <li><i className="fas fa-check-circle"></i> Безбедност во железница</li>
                 </ul>
               </div>
-            </div>
-          </div>
+              <div className="profil-card">
+                <div className="profil-icon"><i className="fas fa-desktop"></i></div>
+                <h3>Техничар за компјутерско управување</h3>
+                <img src={kompjuterskoUpravuvanje} alt="Техничар за компјутерско управување" className="profil-card-img" />
+                <p>Нов профил од машинска струка со траење од 4 години. Учениците учат да работат со CNC машини, автоматизирани системи и индустриски роботи.</p>
+                <ul className="profil-opsii">
+                  <li><i className="fas fa-check-circle"></i> CNC машини</li>
+                  <li><i className="fas fa-check-circle"></i> Автоматизирани системи</li>
+                  <li><i className="fas fa-check-circle"></i> Индустриски роботи</li>
+                  <li><i className="fas fa-check-circle"></i> Компјутерско управување</li>
+                </ul>
+              </div>
         </section>
 
         <section className="moznosti-section">

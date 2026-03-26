@@ -60,6 +60,12 @@ const NastavniciPage = () => {
         </div>
       </section>
 
+      <section className="profili-section" style={{ paddingTop: 0 }}>
+        <div className="container" style={{ textAlign: 'center', marginBottom: '2rem' }}>
+          <img src={nastavniciGroup} alt="Наставен кадар" style={{ width: '100%', maxWidth: '900px', borderRadius: '16px', boxShadow: '0 8px 24px rgba(0,0,0,0.1)' }} />
+        </div>
+      </section>
+
       <section className="profili-section">
         <div className="container">
           <h2 className="section-title"><i className="fas fa-users"></i> Активи</h2>
