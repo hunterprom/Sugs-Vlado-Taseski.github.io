@@ -6,7 +6,7 @@ import SiteFooter from "../components/SiteFooter";
 const UpisiPage = () => {
   return (
     <>
-      <PageHeader />
+      <SiteHeader />
       <main>
         <section className="hero" style={{ padding: "40px 0 50px" }}>
           <div className="container">
