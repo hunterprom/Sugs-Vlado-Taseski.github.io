@@ -27,7 +27,7 @@ const pageVariants = {
     filter: "blur(6px)",
     borderRadius: "30px",
     transition: {
-      duration: 0.4,
+      duration: 0.25,
       ease,
     },
   },
@@ -42,16 +42,16 @@ const overlayVariants = {
     scaleY: 0,
     originY: 0,
     transition: {
-      duration: 0.7,
+      duration: 0.4,
       ease,
-      delay: 0.1,
+      delay: 0.05,
     },
   },
   exit: {
     scaleY: 1,
     originY: 1,
     transition: {
-      duration: 0.5,
+      duration: 0.3,
       ease,
     },
   },
