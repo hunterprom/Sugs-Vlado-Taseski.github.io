@@ -44,7 +44,7 @@ export const translations: Record<Language, Record<string, string>> = {
     // Hero
     "hero.badge": "ПОДОБРО ОБРАЗОВАНИЕ, ПОДОБРА ИДНИНА!",
     "hero.school": "СУГС",
-    "hero.name": "„Владо Тасевски"",
+    "hero.name": "\u201EВладо Тасевски\u201C",
     "hero.city": "Скопје",
     "hero.subtitle": "We are the Team VLADO TASEVSKI! Воспитанието и образованието се темелите на една држава. Се гордееме со сите генерации кои минале низ нашите училници.",
     "hero.enroll": "Запиши се",
