@@ -15,6 +15,7 @@ import NastavniciPage from "./pages/NastavniciPage";
 import NoviniPage from "./pages/NoviniPage";
 import UpisiPage from "./pages/UpisiPage";
 import NotFound from "./pages/NotFound";
+import EnrollmentChatbot from "./components/EnrollmentChatbot";
 
 const queryClient = new QueryClient();
 
@@ -38,6 +39,7 @@ const App = () => (
           <Route path="/upisi" element={<UpisiPage />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
+        <EnrollmentChatbot />
       </BrowserRouter>
     </TooltipProvider>
   </QueryClientProvider>
