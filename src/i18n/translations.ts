@@ -40,7 +40,7 @@ export const translations: Record<Language, Record<string, string>> = {
     // Hero
     "hero.badge": "ПОДОБРО ОБРАЗОВАНИЕ, ПОДОБРА ИДНИНА!",
     "hero.school": "СУГС",
-    "hero.name": "\u201EВладо Тасевски\u201C",
+    "hero.name": `„Владо Тасевски“`,
     "hero.city": "Скопје",
     "hero.subtitle": "We are the Team VLADO TASEVSKI! Воспитанието и образованието се темелите на една држава. Се гордееме со сите генерации кои минале низ нашите училници.",
     "hero.enroll": "Запиши се",
@@ -65,7 +65,7 @@ export const translations: Record<Language, Record<string, string>> = {
     // Footer
     "footer.usefulLinks": "Корисни линкови",
     "footer.contact": "Контакт",
-    "footer.copyright": "© Copyright 2026 СУГС \u201EВладо Тасевски\u201C - Скопје. Сите права се задржани.",
+    "footer.copyright": `© Copyright 2026 СУГС „Владо Тасевски“ - Скопје. Сите права се задржани.`,
     "footer.madeBy": "Изработено од: Гордан Стојановски, Марко Дојчиновски, Матеј Илиоски, Томче Златановски",
     // Back
     "back": "Назад кон почетна",
@@ -74,7 +74,7 @@ export const translations: Record<Language, Record<string, string>> = {
     "home.newsSubtitle": "Најновите случувања во нашето училиште",
     // Upisi page
     "upisi.badge": "Уписи 2025/2026",
-    "upisi.title": "Запишете се во СУГС \u201EВладо Тасевски"",
+    "upisi.title": `Запишете се во СУГС „Владо Тасевски`",
     "upisi.subtitle": "Изберете ја вашата иднина! Ние сме тука за да ви помогнеме.",
     "upisi.availableDept": "Достапни струки за упис",
     "upisi.chooseDept": "Одберете ја струката што најмногу ви одговара",
@@ -91,8 +91,8 @@ export const translations: Record<Language, Record<string, string>> = {
     "zanas.story1": "Нашата приказна започна во далечната 1959 година, кога Работничкиот совет на Железничко-транспортното претпријатие Скопје, во согласност со Уредбата за центрите за стручно образование на работници, ја донесе Одлуката за формирање Центар на железничарите за стручно образование на младинци и возрасни.",
     "zanas.story2": "Од 1961 година почнува со работа Железничкото техничко училиште за сообраќајно-транспортни струки со интернатско сместување. По катастрофалниот земјотрес во 1963 година, училиштето привремено беше преместено во Белград.",
     "zanas.story3": "На 15 април 1979 година, со Одлука на Работничкиот совет, Центарот го добива името на првоборецот-железничар Владо Тасевски.",
-    "zanas.story4": "Учебната 1983/84 година се воведоа нови профили од областа на ПТТ сообраќајот и телекомуникациите, со што училиштето го доби името Училишен центар за железнички и ПТТ сообраќај \u201EВладо Тасевски". Во 2004 година, со процесот на децентрализација, училиштето преминува под ингеренција на Град Скопје и станува СУГС \u201EВладо Тасевски".",
-    "zanas.quote": "\u201EПросториите на СУГС \u201EВладо Тасевски" се исполнети со младост, убавина, љубов, смеа, палавост и со помалку или повеќе учење."",
+    "zanas.story4": `Учебната 1983/84 година се воведоа нови профили од областа на ПТТ сообраќајот и телекомуникациите, со што училиштето го доби името Училишен центар за железнички и ПТТ сообраќај „Владо Тасевски`. Во 2004 година, со процесот на децентрализација, училиштето преминува под ингеренција на Град Скопје и станува СУГС \u201EВладо Тасевски".",
+    "zanas.quote": `„Просториите на СУГС „Владо Тасевски` се исполнети со младост, убавина, љубов, смеа, палавост и со помалку или повеќе учење."",
     // Kontakt
     "kontakt.title": "Контактирајте не",
     "kontakt.subtitle": "Овде можете да не контактирате за било какви прашања",
@@ -169,7 +169,7 @@ export const translations: Record<Language, Record<string, string>> = {
     "misija.title": "Мисија и Визија",
     "misija.subtitle": "Нашите цели и визија за иднината на образованието",
     "misija.missionTitle": "Нашата Мисија",
-    "misija.missionText": "Средното училиште на Град Скопје \u201EВладо Тасевски" – Скопје е современа образовна институција која образува кадри за потребите на пазарот на трудот, преку реализирање на современи и флексибилни наставни планови и програми.",
+    "misija.missionText": `Средното училиште на Град Скопје „Владо Тасевски` – Скопје е современа образовна институција која образува кадри за потребите на пазарот на трудот, преку реализирање на современи и флексибилни наставни планови и програми.",
     "misija.visionTitle": "Нашата Визија",
     "misija.visionText": "Да израснеме во ефикасно, ефективно, модерно и меѓуетничко интегрирано училиште, во кое ученикот и неговите потреби ќе бидат во центарот на вниманието.",
     "misija.values": "Нашите вредности",
@@ -183,10 +183,10 @@ export const translations: Record<Language, Record<string, string>> = {
     "misija.qualityDesc": "Стремеж кон највисоки стандарди во образованието и воспитувањето.",
     // Direktor
     "direktor.title": "Директор",
-    "direktor.subtitle": "Раководство на СУГС \u201EВладо Тасевски"",
+    "direktor.subtitle": `Раководство на СУГС „Владо Тасевски`",
     "direktor.name": "Добре Михајлов",
-    "direktor.role": "Директор на СУГС \u201EВладо Тасевски"",
-    "direktor.bio1": "Добре Михајлов е директор на СУГС \u201EВладо Тасевски" – Скопје. Под неговото раководство, училиштето продолжува да се развива како модерна образовна институција која образува кадри за потребите на пазарот на трудот.",
+    "direktor.role": `Директор на СУГС „Владо Тасевски`",
+    "direktor.bio1": `Добре Михајлов е директор на СУГС „Владо Тасевски` – Скопје. Под неговото раководство, училиштето продолжува да се развива како модерна образовна институција која образува кадри за потребите на пазарот на трудот.",
     "direktor.bio2": "Директорот активно работи на подобрување на условите за настава, воведување на нови технологии и модернизација на образовниот процес.",
     "direktor.gallery": "Галерија",
     "direktor.back": "Назад кон За нас",
@@ -196,7 +196,7 @@ export const translations: Record<Language, Record<string, string>> = {
     "strucna.pomosnk": "Помошник директор",
     "strucna.pedagog": "Педагог",
     "strucna.psiholog": "Психолог",
-    "strucna.desc": "Стручната служба на СУГС \u201EВладо Тасевски" е составена од педагог и психолог кои се достапни за сите ученици, родители и наставници.",
+    "strucna.desc": `Стручната служба на СУГС „Владо Тасевски` е составена од педагог и психолог кои се достапни за сите ученици, родители и наставници.",
     "strucna.roleTitle": "Нивната улога вклучува:",
     "strucna.role1": "Советување на ученици за образовни и лични прашања",
     "strucna.role2": "Поддршка при професионална ориентација",
@@ -211,7 +211,7 @@ export const translations: Record<Language, Record<string, string>> = {
     "nastavnici.aktivi": "Активи",
     // Vonredni
     "vonredni.title": "Вонредни ученици",
-    "vonredni.subtitle": "Информации за вонредно школување во СУГС \u201EВладо Тасевски"",
+    "vonredni.subtitle": `Информации за вонредно школување во СУГС „Владо Тасевски`",
     "vonredni.pricing": "Ценовник",
     "vonredni.payment": "Уплатница",
     "vonredni.examApp": "Пријава за испит",
@@ -222,11 +222,11 @@ export const translations: Record<Language, Record<string, string>> = {
     "vonredni.commissions": "Комисии за испитни сесии",
     // Rezultati
     "rezultati.title": "Резултати од уписи",
-    "rezultati.subtitle": "Прелиминарни и конечни резултати од уписите во СУГС \u201EВладо Тасевски"",
+    "rezultati.subtitle": `Прелиминарни и конечни резултати од уписите во СУГС „Владо Тасевски`",
     "rezultati.back": "Назад кон уписи",
     // Novini
     "novini.title": "Новости и настани",
-    "novini.subtitle": "Бидете во тек со најновите случувања, огласи и достигнувања на СУГС \u201EВладо Тасевски".",
+    "novini.subtitle": `Бидете во тек со најновите случувања, огласи и достигнувања на СУГС „Владо Тасевски`.",
     "novini.schoolTitle": "Нашето училиште",
     // Proekti
     "proekti.title": "Проекти",
@@ -291,7 +291,7 @@ export const translations: Record<Language, Record<string, string>> = {
     // Hero
     "hero.badge": "ARSIM MË I MIRË, ARDHMËRI MË E MIRË!",
     "hero.school": "SHMA",
-    "hero.name": "\u201EVllado Tasevski\u201C",
+    "hero.name": `„Vllado Tasevski“`,
     "hero.city": "Shkup",
     "hero.subtitle": "Ne jemi Ekipi VLLADO TASEVSKI! Edukimi dhe arsimi janë themelet e një shteti. Krenarohemi me të gjitha gjeneratat që kanë kaluar nëpër klasat tona.",
     "hero.enroll": "Regjistrohu",
@@ -316,7 +316,7 @@ export const translations: Record<Language, Record<string, string>> = {
     // Footer
     "footer.usefulLinks": "Lidhje të dobishme",
     "footer.contact": "Kontakt",
-    "footer.copyright": "© Copyright 2026 SHMA \u201EVllado Tasevski\u201C - Shkup. Të gjitha të drejtat e rezervuara.",
+    "footer.copyright": `© Copyright 2026 SHMA „Vllado Tasevski“ - Shkup. Të gjitha të drejtat e rezervuara.`,
     "footer.madeBy": "Punuar nga: Gordan Stojanovski, Marko Dojçinovski, Matej Ilioski, Tomçe Zllatanovski",
     // Back
     "back": "Kthehu në fillim",
@@ -325,7 +325,7 @@ export const translations: Record<Language, Record<string, string>> = {
     "home.newsSubtitle": "Ngjarjet më të fundit në shkollën tonë",
     // Upisi
     "upisi.badge": "Regjistrimi 2025/2026",
-    "upisi.title": "Regjistrohu në SHMA \u201EVllado Tasevski"",
+    "upisi.title": `Regjistrohu në SHMA „Vllado Tasevski`",
     "upisi.subtitle": "Zgjidhni ardhmërinë tuaj! Ne jemi këtu për t'ju ndihmuar.",
     "upisi.availableDept": "Drejtimet e disponueshme për regjistrim",
     "upisi.chooseDept": "Zgjidhni drejtimin që ju përshtatet më shumë",
@@ -342,8 +342,8 @@ export const translations: Record<Language, Record<string, string>> = {
     "zanas.story1": "Historia jonë filloi në vitin e largët 1959, kur Këshilli i punëtorëve të ndërmarrjes hekurudhore-transportuese të Shkupit, në përputhje me Rregulloren për qendrat e arsimit profesional të punëtorëve, mori Vendimin për formimin e Qendrës së hekurudhorëve për arsimin profesional të të rinjve dhe të rriturve.",
     "zanas.story2": "Nga viti 1961 fillon punën Shkolla Teknike Hekurudhore për drejtimin e komunikacionit-transportit me vendosje në internat. Pas tërmetit katastrofik në vitin 1963, shkolla u zhvendos përkohësisht në Beograd.",
     "zanas.story3": "Më 15 prill 1979, me Vendim të Këshillit të punëtorëve, Qendra e mori emrin e luftëtarit-hekurudhor Vllado Tasevski.",
-    "zanas.story4": "Viti shkollor 1983/84 u futën profile të reja nga fusha e komunikacionit PTT dhe telekomunikacionit, me çka shkolla e mori emrin Qendra Shkollore për komunikacion hekurudhor dhe PTT \u201EVllado Tasevski". Në vitin 2004, me procesin e decentralizimit, shkolla kalon nën ingerencën e Qytetit të Shkupit dhe bëhet SHMA \u201EVllado Tasevski".",
-    "zanas.quote": "\u201EHapësirat e SHMA \u201EVllado Tasevski" janë të mbushura me rini, bukuri, dashuri, gëzim, shkathtësi dhe me pak ose më shumë mësim."",
+    "zanas.story4": `Viti shkollor 1983/84 u futën profile të reja nga fusha e komunikacionit PTT dhe telekomunikacionit, me çka shkolla e mori emrin Qendra Shkollore për komunikacion hekurudhor dhe PTT „Vllado Tasevski`. Në vitin 2004, me procesin e decentralizimit, shkolla kalon nën ingerencën e Qytetit të Shkupit dhe bëhet SHMA \u201EVllado Tasevski".",
+    "zanas.quote": `„Hapësirat e SHMA „Vllado Tasevski` janë të mbushura me rini, bukuri, dashuri, gëzim, shkathtësi dhe me pak ose më shumë mësim."",
     // Kontakt
     "kontakt.title": "Na kontaktoni",
     "kontakt.subtitle": "Këtu mund të na kontaktoni për çdo pyetje",
@@ -420,7 +420,7 @@ export const translations: Record<Language, Record<string, string>> = {
     "misija.title": "Misioni dhe Vizioni",
     "misija.subtitle": "Qëllimet tona dhe vizioni për ardhmërinë e arsimit",
     "misija.missionTitle": "Misioni ynë",
-    "misija.missionText": "Shkolla e mesme e Qytetit të Shkupit \u201EVllado Tasevski" – Shkup është institucion arsimor bashkëkohor që edukon kuadro për nevojat e tregut të punës, përmes realizimit të planeve dhe programeve mësimore bashkëkohore dhe fleksibile.",
+    "misija.missionText": `Shkolla e mesme e Qytetit të Shkupit „Vllado Tasevski` – Shkup është institucion arsimor bashkëkohor që edukon kuadro për nevojat e tregut të punës, përmes realizimit të planeve dhe programeve mësimore bashkëkohore dhe fleksibile.",
     "misija.visionTitle": "Vizioni ynë",
     "misija.visionText": "Të rritemi në shkollë efikase, efektive, moderne dhe të integruar ndëretnike, ku nxënësi dhe nevojat e tij do të jenë në qendër të vëmendjes.",
     "misija.values": "Vlerat tona",
@@ -434,10 +434,10 @@ export const translations: Record<Language, Record<string, string>> = {
     "misija.qualityDesc": "Përpjekje drejt standardeve më të larta në arsim dhe edukim.",
     // Direktor
     "direktor.title": "Drejtori",
-    "direktor.subtitle": "Udhëheqësia e SHMA \u201EVllado Tasevski"",
+    "direktor.subtitle": `Udhëheqësia e SHMA „Vllado Tasevski`",
     "direktor.name": "Dobre Mihajlov",
-    "direktor.role": "Drejtor i SHMA \u201EVllado Tasevski"",
-    "direktor.bio1": "Dobre Mihajlov është drejtor i SHMA \u201EVllado Tasevski" – Shkup. Nën udhëheqjen e tij, shkolla vazhdon të zhvillohet si institucion arsimor modern që edukon kuadro për nevojat e tregut të punës.",
+    "direktor.role": `Drejtor i SHMA „Vllado Tasevski`",
+    "direktor.bio1": `Dobre Mihajlov është drejtor i SHMA „Vllado Tasevski` – Shkup. Nën udhëheqjen e tij, shkolla vazhdon të zhvillohet si institucion arsimor modern që edukon kuadro për nevojat e tregut të punës.",
     "direktor.bio2": "Drejtori punon aktivisht në përmirësimin e kushteve për mësimdhënie, futjen e teknologjive të reja dhe modernizimin e procesit arsimor.",
     "direktor.gallery": "Galeria",
     "direktor.back": "Kthehu te Për ne",
@@ -447,7 +447,7 @@ export const translations: Record<Language, Record<string, string>> = {
     "strucna.pomosnk": "Ndihmës drejtor",
     "strucna.pedagog": "Pedagog",
     "strucna.psiholog": "Psikolog",
-    "strucna.desc": "Shërbimi profesional i SHMA \u201EVllado Tasevski" përbëhet nga pedagogu dhe psikologu që janë në dispozicion për të gjithë nxënësit, prindërit dhe mësuesit.",
+    "strucna.desc": `Shërbimi profesional i SHMA „Vllado Tasevski` përbëhet nga pedagogu dhe psikologu që janë në dispozicion për të gjithë nxënësit, prindërit dhe mësuesit.",
     "strucna.roleTitle": "Roli i tyre përfshin:",
     "strucna.role1": "Këshillim i nxënësve për çështje arsimore dhe personale",
     "strucna.role2": "Mbështetje gjatë orientimit profesional",
@@ -462,7 +462,7 @@ export const translations: Record<Language, Record<string, string>> = {
     "nastavnici.aktivi": "Aktivet",
     // Vonredni
     "vonredni.title": "Nxënës të jashtëm",
-    "vonredni.subtitle": "Informata për shkollim të jashtëm në SHMA \u201EVllado Tasevski"",
+    "vonredni.subtitle": `Informata për shkollim të jashtëm në SHMA „Vllado Tasevski`",
     "vonredni.pricing": "Çmimorja",
     "vonredni.payment": "Fletëpagesa",
     "vonredni.examApp": "Paraqitja për provim",
@@ -473,11 +473,11 @@ export const translations: Record<Language, Record<string, string>> = {
     "vonredni.commissions": "Komisionet për sesionet e provimeve",
     // Rezultati
     "rezultati.title": "Rezultatet e regjistrimit",
-    "rezultati.subtitle": "Rezultate preliminare dhe përfundimtare nga regjistrimet në SHMA \u201EVllado Tasevski"",
+    "rezultati.subtitle": `Rezultate preliminare dhe përfundimtare nga regjistrimet në SHMA „Vllado Tasevski`",
     "rezultati.back": "Kthehu te regjistrimi",
     // Novini
     "novini.title": "Lajme dhe ngjarje",
-    "novini.subtitle": "Qëndroni të informuar me ngjarjet, njoftimet dhe arritjet më të fundit të SHMA \u201EVllado Tasevski".",
+    "novini.subtitle": `Qëndroni të informuar me ngjarjet, njoftimet dhe arritjet më të fundit të SHMA „Vllado Tasevski`.",
     "novini.schoolTitle": "Shkolla jonë",
     // Proekti
     "proekti.title": "Projektet",
@@ -576,7 +576,7 @@ export const translations: Record<Language, Record<string, string>> = {
     "home.newsSubtitle": "Latest events at our school",
     // Upisi
     "upisi.badge": "Enrollment 2025/2026",
-    "upisi.title": "Enroll at MHSS \"Vlado Tasevski\"",
+    "upisi.title": `Enroll at MHSS \"Vlado Tasevski\"`,
     "upisi.subtitle": "Choose your future! We are here to help you.",
     "upisi.availableDept": "Available departments for enrollment",
     "upisi.chooseDept": "Choose the department that suits you best",
@@ -593,8 +593,8 @@ export const translations: Record<Language, Record<string, string>> = {
     "zanas.story1": "Our story began in 1959, when the Workers' Council of the Railway Transport Enterprise Skopje, in accordance with the Regulation on Centers for Professional Education of Workers, made the Decision to establish the Railway Workers' Center for Professional Education of Youth and Adults.",
     "zanas.story2": "From 1961, the Railway Technical School for traffic-transport departments started operating with boarding accommodation. After the catastrophic earthquake in 1963, the school was temporarily relocated to Belgrade.",
     "zanas.story3": "On April 15, 1979, by Decision of the Workers' Council, the Center was named after the first-fighter-railwayman Vlado Tasevski.",
-    "zanas.story4": "In the school year 1983/84, new profiles from the field of PTT traffic and telecommunications were introduced, giving the school the name School Center for Railway and PTT Traffic \"Vlado Tasevski\". In 2004, with the decentralization process, the school came under the jurisdiction of the City of Skopje and became MHSS \"Vlado Tasevski\".",
-    "zanas.quote": "\"The premises of MHSS \"Vlado Tasevski\" are filled with youth, beauty, love, laughter, playfulness and with less or more studying.\"",
+    "zanas.story4": `In the school year 1983/84, new profiles from the field of PTT traffic and telecommunications were introduced, giving the school the name School Center for Railway and PTT Traffic \"Vlado Tasevski\". In 2004, with the decentralization process, the school came under the jurisdiction of the City of Skopje and became MHSS \"Vlado Tasevski\".`,
+    "zanas.quote": `\"The premises of MHSS \"Vlado Tasevski\" are filled with youth, beauty, love, laughter, playfulness and with less or more studying.\"`,
     // Kontakt
     "kontakt.title": "Contact Us",
     "kontakt.subtitle": "You can contact us here for any questions",
@@ -671,7 +671,7 @@ export const translations: Record<Language, Record<string, string>> = {
     "misija.title": "Mission & Vision",
     "misija.subtitle": "Our goals and vision for the future of education",
     "misija.missionTitle": "Our Mission",
-    "misija.missionText": "The Municipal High School of the City of Skopje \"Vlado Tasevski\" – Skopje is a modern educational institution that educates personnel for the needs of the labor market, through the implementation of modern and flexible curricula.",
+    "misija.missionText": `The Municipal High School of the City of Skopje \"Vlado Tasevski\" – Skopje is a modern educational institution that educates personnel for the needs of the labor market, through the implementation of modern and flexible curricula.`,
     "misija.visionTitle": "Our Vision",
     "misija.visionText": "To grow into an efficient, effective, modern and interethnic integrated school, where the student and their needs will be at the center of attention.",
     "misija.values": "Our Values",
@@ -685,10 +685,10 @@ export const translations: Record<Language, Record<string, string>> = {
     "misija.qualityDesc": "Striving for the highest standards in education and upbringing.",
     // Direktor
     "direktor.title": "Director",
-    "direktor.subtitle": "Leadership of MHSS \"Vlado Tasevski\"",
+    "direktor.subtitle": `Leadership of MHSS \"Vlado Tasevski\"`,
     "direktor.name": "Dobre Mihajlov",
-    "direktor.role": "Director of MHSS \"Vlado Tasevski\"",
-    "direktor.bio1": "Dobre Mihajlov is the director of MHSS \"Vlado Tasevski\" – Skopje. Under his leadership, the school continues to develop as a modern educational institution that educates personnel for the needs of the labor market.",
+    "direktor.role": `Director of MHSS \"Vlado Tasevski\"`,
+    "direktor.bio1": `Dobre Mihajlov is the director of MHSS \"Vlado Tasevski\" – Skopje. Under his leadership, the school continues to develop as a modern educational institution that educates personnel for the needs of the labor market.`,
     "direktor.bio2": "The director actively works on improving teaching conditions, introducing new technologies and modernizing the educational process.",
     "direktor.gallery": "Gallery",
     "direktor.back": "Back to About",
@@ -698,7 +698,7 @@ export const translations: Record<Language, Record<string, string>> = {
     "strucna.pomosnk": "Assistant Director",
     "strucna.pedagog": "Pedagogue",
     "strucna.psiholog": "Psychologist",
-    "strucna.desc": "The professional service of MHSS \"Vlado Tasevski\" consists of a pedagogue and psychologist who are available to all students, parents and teachers.",
+    "strucna.desc": `The professional service of MHSS \"Vlado Tasevski\" consists of a pedagogue and psychologist who are available to all students, parents and teachers.`,
     "strucna.roleTitle": "Their role includes:",
     "strucna.role1": "Counseling students on educational and personal matters",
     "strucna.role2": "Support in professional orientation",
@@ -713,7 +713,7 @@ export const translations: Record<Language, Record<string, string>> = {
     "nastavnici.aktivi": "Departments",
     // Vonredni
     "vonredni.title": "External Students",
-    "vonredni.subtitle": "Information about external education at MHSS \"Vlado Tasevski\"",
+    "vonredni.subtitle": `Information about external education at MHSS \"Vlado Tasevski\"`,
     "vonredni.pricing": "Pricing",
     "vonredni.payment": "Payment",
     "vonredni.examApp": "Exam Application",
@@ -724,11 +724,11 @@ export const translations: Record<Language, Record<string, string>> = {
     "vonredni.commissions": "Exam Session Commissions",
     // Rezultati
     "rezultati.title": "Enrollment Results",
-    "rezultati.subtitle": "Preliminary and final enrollment results at MHSS \"Vlado Tasevski\"",
+    "rezultati.subtitle": `Preliminary and final enrollment results at MHSS \"Vlado Tasevski\"`,
     "rezultati.back": "Back to enrollment",
     // Novini
     "novini.title": "News & Events",
-    "novini.subtitle": "Stay up to date with the latest events, announcements and achievements of MHSS \"Vlado Tasevski\".",
+    "novini.subtitle": `Stay up to date with the latest events, announcements and achievements of MHSS \"Vlado Tasevski\".`,
     "novini.schoolTitle": "Our School",
     // Proekti
     "proekti.title": "Projects",
