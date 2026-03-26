@@ -64,7 +64,7 @@ const liquidVariants = {
   animate: {
     clipPath: "circle(150% at 50% 50%)",
     transition: {
-      duration: 0.8,
+      duration: 0.45,
       ease,
     },
   },
