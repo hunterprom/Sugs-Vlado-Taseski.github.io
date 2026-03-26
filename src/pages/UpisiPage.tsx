@@ -33,6 +33,7 @@ const UpisiPage = () => {
                 <ul style={{ paddingLeft: "20px", color: "var(--text-medium)", lineHeight: 2 }}>
                   <li>Техничар за транспорт и шпедиција</li>
                   <li>Техничар за железнички сообраќај</li>
+                  <li>Техничар за влеча – машиновозач</li>
                 </ul>
               </div>
               <div className="card">
@@ -48,16 +49,23 @@ const UpisiPage = () => {
                 <h3>Машинска струка</h3>
                 <ul style={{ paddingLeft: "20px", color: "var(--text-medium)", lineHeight: 2 }}>
                   <li>Машинско-енергетски техничар</li>
-                  <li>Техничар за производно машинство</li>
+                  <li>Техничар за производство и машинство</li>
                   <li>Инсталатер за греење и климатизација</li>
+                  <li>Техничар за компјутерско управување</li>
                 </ul>
               </div>
             </div>
 
-            <div style={{ textAlign: "center", marginTop: "40px" }}>
+            <div style={{ display: "flex", gap: "15px", justifyContent: "center", flexWrap: "wrap", marginTop: "40px" }}>
               <a href="https://sugsvladotasevski.edu.mk/upisi/" target="_blank" rel="noopener noreferrer" className="btn-primary" style={{ fontSize: "1rem", padding: "14px 36px" }}>
                 <i className="fas fa-external-link-alt"></i> Повеќе информации за уписи
               </a>
+              <Link to="/poeni-kalkulator" className="btn-secondary" style={{ fontSize: "1rem", padding: "14px 36px" }}>
+                <i className="fas fa-calculator"></i> Калкулатор за поени
+              </Link>
+              <Link to="/rezultati" className="btn-secondary" style={{ fontSize: "1rem", padding: "14px 36px" }}>
+                <i className="fas fa-list-ol"></i> Резултати од уписи
+              </Link>
             </div>
           </div>
         </section>

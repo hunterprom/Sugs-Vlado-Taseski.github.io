@@ -7,7 +7,7 @@ const SiteFooter = () => {
   return (
     <footer className="footer">
       <div className="container">
-        <div className="footer-grid">
+        <div className="footer-grid" style={{ gridTemplateColumns: "repeat(auto-fit, minmax(250px, 1fr))" }}>
           <div className="footer-col">
             <h4><i className="fas fa-school"></i> СУГС „Владо Тасевски"</h4>
             <ul>
@@ -27,13 +27,6 @@ const SiteFooter = () => {
               <li><a href="https://ednevnik.edu.mk" target="_blank" rel="noopener noreferrer"><i className="fas fa-chevron-right"></i> {t("top.eDiary")}</a></li>
               <li><a href="https://massum.org/mk/" target="_blank" rel="noopener noreferrer"><i className="fas fa-chevron-right"></i> МАССУМ</a></li>
               <li><Link to="/kontakt"><i className="fas fa-chevron-right"></i> {t("footer.contact")}</Link></li>
-            </ul>
-          </div>
-          <div className="footer-col">
-            <h4>Работно време</h4>
-            <ul>
-              <li><i className="fas fa-clock"></i> Пон - Пет: 08:00 - 15:00</li>
-              <li><i className="fas fa-clock"></i> Секретаријат: 08:00 - 14:00</li>
             </ul>
           </div>
         </div>
