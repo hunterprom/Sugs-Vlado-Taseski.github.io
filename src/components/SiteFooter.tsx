@@ -1,6 +1,9 @@
 import { Link } from "react-router-dom";
+import { useLanguage } from "@/i18n/LanguageContext";
 
 const SiteFooter = () => {
+  const { t } = useLanguage();
+
   return (
     <footer className="footer">
       <div className="container">
@@ -19,19 +22,25 @@ const SiteFooter = () => {
             </div>
           </div>
           <div className="footer-col">
-            <h4>Корисни линкови</h4>
+            <h4>{t("footer.usefulLinks")}</h4>
             <ul>
-              <li><a href="https://ednevnik.edu.mk" target="_blank" rel="noopener noreferrer"><i className="fas fa-chevron-right"></i> Е-Дневник</a></li>
+              <li><a href="https://ednevnik.edu.mk" target="_blank" rel="noopener noreferrer"><i className="fas fa-chevron-right"></i> {t("top.eDiary")}</a></li>
               <li><a href="https://massum.org/mk/" target="_blank" rel="noopener noreferrer"><i className="fas fa-chevron-right"></i> МАССУМ</a></li>
-              <li><Link to="/kontakt"><i className="fas fa-chevron-right"></i> Контакт</Link></li>
+              <li><Link to="/kontakt"><i className="fas fa-chevron-right"></i> {t("footer.contact")}</Link></li>
             </ul>
           </div>
-          <div className="footer-col"></div>
+          <div className="footer-col">
+            <h4>Работно време</h4>
+            <ul>
+              <li><i className="fas fa-clock"></i> Пон - Пет: 08:00 - 15:00</li>
+              <li><i className="fas fa-clock"></i> Секретаријат: 08:00 - 14:00</li>
+            </ul>
+          </div>
         </div>
         <div className="copyright">
-          <p>© Copyright 2026 СУГС „Владо Тасевски" - Скопје. Сите права се задржани.</p>
+          <p>{t("footer.copyright")}</p>
           <p style={{ marginTop: '8px', fontSize: '0.75rem', opacity: 0.8 }}>
-            Изработено од: Гордан Стојановски, Марко Дојчиновски, Матеј Илиоски, Томче Златановски
+            {t("footer.madeBy")}
           </p>
         </div>
       </div>

@@ -1,18 +1,26 @@
 import { useState, useEffect, useRef } from "react";
 import { Link, useLocation } from "react-router-dom";
+import { useLanguage } from "@/i18n/LanguageContext";
+import { Language } from "@/i18n/translations";
 import schoolLogo from "@/assets/school-logo.png";
+
+const langLabels: Record<Language, string> = { mk: "МК", sq: "SQ", en: "EN" };
+const langFlags: Record<Language, string> = { mk: "🇲🇰", sq: "🇦🇱", en: "🇬🇧" };
 
 const SiteHeader = () => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [activeDropdown, setActiveDropdown] = useState<string | null>(null);
   const [activeSubmenu, setActiveSubmenu] = useState<string | null>(null);
+  const [langOpen, setLangOpen] = useState(false);
   const navRef = useRef<HTMLDivElement>(null);
   const location = useLocation();
+  const { language, setLanguage, t } = useLanguage();
 
   useEffect(() => {
     setMobileMenuOpen(false);
     setActiveDropdown(null);
     setActiveSubmenu(null);
+    setLangOpen(false);
   }, [location]);
 
   useEffect(() => {
@@ -21,6 +29,7 @@ const SiteHeader = () => {
         setMobileMenuOpen(false);
         setActiveDropdown(null);
         setActiveSubmenu(null);
+        setLangOpen(false);
       }
     };
     document.addEventListener("mousedown", handleClickOutside);
@@ -49,21 +58,46 @@ const SiteHeader = () => {
         <div className="container top-flex">
           <div className="quick-links">
             <a href="https://ednevnik.edu.mk" className="quick-link" target="_blank" rel="noopener noreferrer">
-              <i className="fas fa-envelope"></i> <span>Е-Дневник</span>
+              <i className="fas fa-envelope"></i> <span>{t("top.eDiary")}</span>
             </a>
             <a href="https://e-uslugi.mon.gov.mk" className="quick-link" target="_blank" rel="noopener noreferrer">
-              <i className="fas fa-calendar-alt"></i> <span>МОН Е-услуги</span>
+              <i className="fas fa-calendar-alt"></i> <span>{t("top.monServices")}</span>
             </a>
             <a href="https://lms.schools.mk" className="quick-link" target="_blank" rel="noopener noreferrer">
-              <i className="fas fa-laptop"></i> <span>LMS Schools</span>
+              <i className="fas fa-laptop"></i> <span>{t("top.lms")}</span>
             </a>
             <a href="https://na.org.mk/Home/ErasmusPlus" className="quick-link" target="_blank" rel="noopener noreferrer">
-              <i className="fas fa-globe-europe"></i> <span>Erasmus+</span>
+              <i className="fas fa-globe-europe"></i> <span>{t("top.erasmus")}</span>
             </a>
           </div>
-          <div className="school-badge">
-            <i className="fas fa-graduation-cap"></i>
-            <span>Основано 1959 • Член на МАССУМ</span>
+          <div className="top-right-area">
+            {/* Language Switcher */}
+            <div className="lang-switcher" style={{ position: "relative" }}>
+              <button
+                className="lang-btn"
+                onClick={() => setLangOpen(!langOpen)}
+                aria-label="Change language"
+              >
+                <span>{langFlags[language]}</span> {langLabels[language]} <i className="fas fa-chevron-down" style={{ fontSize: "0.6rem", marginLeft: "4px" }}></i>
+              </button>
+              {langOpen && (
+                <div className="lang-dropdown">
+                  {(Object.keys(langLabels) as Language[]).map((lang) => (
+                    <button
+                      key={lang}
+                      className={`lang-option ${lang === language ? "active" : ""}`}
+                      onClick={() => { setLanguage(lang); setLangOpen(false); }}
+                    >
+                      <span>{langFlags[lang]}</span> {langLabels[lang]}
+                    </button>
+                  ))}
+                </div>
+              )}
+            </div>
+            <div className="school-badge">
+              <i className="fas fa-graduation-cap"></i>
+              <span>{t("top.founded")}</span>
+            </div>
           </div>
         </div>
       </div>
@@ -85,65 +119,58 @@ const SiteHeader = () => {
           <div className={`nav-links ${mobileMenuOpen ? "active" : ""}`}>
             <ul>
               <li>
-                <Link to="/" className={location.pathname === "/" ? "active" : ""}>ПОЧЕТНА</Link>
+                <Link to="/" className={location.pathname === "/" ? "active" : ""}>{t("nav.home")}</Link>
               </li>
 
-              {/* ЗА НАС - with sub-dropdown */}
+              {/* ЗА НАС */}
               <li className={`dropdown ${activeDropdown === "za-nas" ? "active" : ""}`}>
                 <a href="#" onClick={(e) => handleDropdownClick("za-nas", e)}>
-                  ЗА НАС <i className="fas fa-chevron-down"></i>
+                  {t("nav.about")} <i className="fas fa-chevron-down"></i>
                 </a>
                 <ul className="dropdown-menu">
-                  <li><Link to="/za-nas">Историјат</Link></li>
-                  <li><Link to="/za-nas#misija">Мисија и Визија</Link></li>
-                  <li><Link to="/nastavnici">Наставен кадар</Link></li>
-                  {/* Sub-dropdown: Раководство */}
+                  <li><Link to="/za-nas">{t("nav.history")}</Link></li>
+                  <li><Link to="/za-nas#misija">{t("nav.mission")}</Link></li>
+                  <li><Link to="/nastavnici">{t("nav.staff")}</Link></li>
                   <li className={`dropdown-nested ${activeSubmenu === "rakovodstvo" ? "active" : ""}`}>
                     <a href="#" onClick={(e) => handleSubmenuClick("rakovodstvo", e)}>
-                      Раководство <i className="fas fa-chevron-right"></i>
+                      {t("nav.leadership")} <i className="fas fa-chevron-right"></i>
                     </a>
                     <ul className="dropdown-submenu">
-                      <li><Link to="/za-nas#direktor">Директор</Link></li>
-                      <li><a href="https://sugsvladotasevski.edu.mk/стручна-служба" target="_blank" rel="noopener noreferrer">Стручна служба</a></li>
-                      <li><a href="https://sugsvladotasevski.edu.mk/uchenichki-sovet/" target="_blank" rel="noopener noreferrer">Ученички совет</a></li>
+                      <li><Link to="/za-nas#direktor">{t("nav.director")}</Link></li>
+                      <li><Link to="/za-nas#rukovodstvo">{t("nav.professional")}</Link></li>
+                      <li><Link to="/za-nas#rukovodstvo">{t("nav.studentCouncil")}</Link></li>
                     </ul>
                   </li>
-                  <li><a href="https://sugsvladotasevski.edu.mk/кодекс" target="_blank" rel="noopener noreferrer">Кодекс</a></li>
-                  <li><a href="https://sugsvladotasevski.edu.mk/ресурси" target="_blank" rel="noopener noreferrer">Ресурси</a></li>
                 </ul>
               </li>
 
-              {/* СТРУКИ - with sub-dropdown */}
+              {/* СТРУКИ */}
               <li className={`dropdown ${activeDropdown === "struki" ? "active" : ""}`}>
                 <a href="#" onClick={(e) => handleDropdownClick("struki", e)}>
-                  СТРУКИ <i className="fas fa-chevron-down"></i>
+                  {t("nav.departments")} <i className="fas fa-chevron-down"></i>
                 </a>
                 <ul className="dropdown-menu">
-                  <li><Link to="/elektrotehnicka">Електротехничка</Link></li>
-                  <li><Link to="/masinska">Машинска</Link></li>
-                  <li><Link to="/soobrakajna">Сообраќајна</Link></li>
+                  <li><Link to="/elektrotehnicka">{t("nav.elektro")}</Link></li>
+                  <li><Link to="/masinska">{t("nav.masinska")}</Link></li>
+                  <li><Link to="/soobrakajna">{t("nav.soobrakaj")}</Link></li>
                 </ul>
               </li>
 
-              {/* УЧЕНИЦИ - new dropdown with sub-dropdowns */}
+              {/* УЧЕНИЦИ */}
               <li className={`dropdown ${activeDropdown === "uchenici" ? "active" : ""}`}>
                 <a href="#" onClick={(e) => handleDropdownClick("uchenici", e)}>
-                  УЧЕНИЦИ <i className="fas fa-chevron-down"></i>
+                  {t("nav.students")} <i className="fas fa-chevron-down"></i>
                 </a>
                 <ul className="dropdown-menu">
-                  <li><Link to="/upisi">Уписи 2025/2026</Link></li>
-                  <li><a href="https://sugsvladotasevski.edu.mk/распоред-на-часови/" target="_blank" rel="noopener noreferrer">Распоред на часови</a></li>
-                  <li><a href="https://sugsvladotasevski.edu.mk/матура" target="_blank" rel="noopener noreferrer">Матура</a></li>
-                  <li><a href="https://sugsvladotasevski.edu.mk/вонредни-ученици" target="_blank" rel="noopener noreferrer">Вонредни ученици</a></li>
-                  {/* Sub-dropdown: Портали */}
+                  <li><Link to="/upisi">{t("nav.enrollment")}</Link></li>
                   <li className={`dropdown-nested ${activeSubmenu === "portali" ? "active" : ""}`}>
                     <a href="#" onClick={(e) => handleSubmenuClick("portali", e)}>
-                      Портали <i className="fas fa-chevron-right"></i>
+                      {t("nav.portals")} <i className="fas fa-chevron-right"></i>
                     </a>
                     <ul className="dropdown-submenu">
-                      <li><a href="https://ednevnik.edu.mk/" target="_blank" rel="noopener noreferrer">Е-Дневник</a></li>
-                      <li><a href="https://e-uslugi.mon.gov.mk/" target="_blank" rel="noopener noreferrer">МОН Е-Услуги</a></li>
-                      <li><a href="https://lms.schools.mk/" target="_blank" rel="noopener noreferrer">LMS Schools</a></li>
+                      <li><a href="https://ednevnik.edu.mk/" target="_blank" rel="noopener noreferrer">{t("top.eDiary")}</a></li>
+                      <li><a href="https://e-uslugi.mon.gov.mk/" target="_blank" rel="noopener noreferrer">{t("top.monServices")}</a></li>
+                      <li><a href="https://lms.schools.mk/" target="_blank" rel="noopener noreferrer">{t("top.lms")}</a></li>
                     </ul>
                   </li>
                 </ul>
@@ -152,25 +179,24 @@ const SiteHeader = () => {
               {/* НОВОСТИ */}
               <li className={`dropdown ${activeDropdown === "novosti" ? "active" : ""}`}>
                 <a href="#" onClick={(e) => handleDropdownClick("novosti", e)}>
-                  НОВОСТИ <i className="fas fa-chevron-down"></i>
+                  {t("nav.news")} <i className="fas fa-chevron-down"></i>
                 </a>
                 <ul className="dropdown-menu">
-                  <li><Link to="/novini">Сите новости</Link></li>
-                  <li><Link to="/proekti">Проекти</Link></li>
-                  <li><a href="https://sugsvladotasevski.edu.mk/активности" target="_blank" rel="noopener noreferrer">Активности</a></li>
+                  <li><Link to="/novini">{t("nav.allNews")}</Link></li>
+                  <li><Link to="/proekti">{t("nav.projects")}</Link></li>
                 </ul>
               </li>
 
               <li>
-                <Link to="/sport" className={location.pathname === "/sport" ? "active" : ""}>СПОРТ</Link>
+                <Link to="/sport" className={location.pathname === "/sport" ? "active" : ""}>{t("nav.sport")}</Link>
               </li>
               <li>
-                <Link to="/kontakt" className={location.pathname === "/kontakt" ? "active" : ""}>КОНТАКТ</Link>
+                <Link to="/kontakt" className={location.pathname === "/kontakt" ? "active" : ""}>{t("nav.contact")}</Link>
               </li>
             </ul>
           </div>
 
-          <Link to="/upisi" className="btn-outline-blue"><i className="fas fa-user-graduate"></i> Уписи</Link>
+          <Link to="/upisi" className="btn-outline-blue"><i className="fas fa-user-graduate"></i> {t("nav.enroll")}</Link>
         </div>
       </div>
     </header>

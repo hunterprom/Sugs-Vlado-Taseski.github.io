@@ -119,44 +119,26 @@ const KontaktPage = () => {
             </div>
           </div>
         </section>
-      </main>
 
-      <footer className="footer">
-        <div className="container">
-          <div className="footer-grid">
-            <div className="footer-col">
-              <h4><i className="fas fa-school"></i> СУГС „Владо Тасевски"</h4>
-              <ul>
-                <li><i className="fas fa-map-marker-alt"></i> III Македонска бригада бб, 1000 Скопје</li>
-                <li><i className="fas fa-phone"></i> <a href="tel:+38922400040">02 2400 040</a></li>
-                <li><i className="fas fa-envelope"></i> <a href="mailto:sugs-vladotasevski-skopje@schools.mk">sugs-vladotasevski-skopje@schools.mk</a></li>
-              </ul>
-              <div className="social-icons">
-                <a href="https://www.facebook.com/VladoTasevskiPtt/" target="_blank" rel="noopener noreferrer"><i className="fab fa-facebook-f"></i></a>
-                <a href="https://www.instagram.com/sugs_vlado_tasevski/" target="_blank" rel="noopener noreferrer"><i className="fab fa-instagram"></i></a>
-                <a href="https://www.youtube.com/@sugsvladotasevski-skopje" target="_blank" rel="noopener noreferrer"><i className="fab fa-youtube"></i></a>
-              </div>
-            </div>
-            <div className="footer-col">
-              <h4>Корисни линкови</h4>
-              <ul>
-                <li><a href="https://ednevnik.edu.mk" target="_blank" rel="noopener noreferrer"><i className="fas fa-chevron-right"></i> Е-Дневник</a></li>
-                <li><a href="https://massum.org/mk/" target="_blank" rel="noopener noreferrer"><i className="fas fa-chevron-right"></i> МАССУМ</a></li>
-              </ul>
-            </div>
-            <div className="footer-col">
-              <h4>Работно време</h4>
-              <ul>
-                <li><i className="fas fa-clock"></i> Пон - Пет: 08:00 - 15:00</li>
-                <li><i className="fas fa-clock"></i> Секретаријат: 08:00 - 14:00</li>
-              </ul>
+        {/* Google Maps embed */}
+        <section style={{ padding: '0 0 40px' }}>
+          <div className="container">
+            <div style={{ borderRadius: '16px', overflow: 'hidden', boxShadow: '0 4px 20px rgba(0,0,0,0.1)' }}>
+              <iframe
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2965.5!2d21.4294!3d41.9981!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zNDHCsDU5JzUzLjIiTiAyMcKwMjUnNDUuOCJF!5e0!3m2!1smk!2smk!4v1"
+                width="100%"
+                height="350"
+                style={{ border: 0 }}
+                allowFullScreen
+                loading="lazy"
+                referrerPolicy="no-referrer-when-downgrade"
+                title="Локација на СУГС Владо Тасевски"
+              ></iframe>
             </div>
           </div>
-          <div className="copyright">
-            <p>© 2026 СУГС „Владо Тасевски" - Скопје. Сите права се задржани.</p>
-          </div>
-        </div>
-      </footer>
+        </section>
+      </main>
+      <SiteFooter />
     </>
   );
 };

@@ -89,7 +89,7 @@ const PageTransition = ({ children }: { children: ReactNode }) => {
           position: "fixed",
           inset: 0,
           zIndex: 50,
-          background: "linear-gradient(135deg, #1565C0, #42A5F5)",
+          background: "linear-gradient(135deg, #3A6B8C, #6BA3C8)",
           pointerEvents: "none",
         }}
       />
