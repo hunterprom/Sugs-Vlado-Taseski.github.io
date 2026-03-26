@@ -71,9 +71,7 @@ const SiteHeader = () => {
       <div className="main-nav" ref={navRef}>
         <div className="container nav-container">
           <Link to="/" className="logo-area">
-            <div className="logo-icon">
-              <i className="fas fa-train"></i>
-            </div>
+            <img src={schoolLogo} alt="СУГС Владо Тасевски лого" className="logo-img" style={{ height: '52px', width: 'auto' }} />
             <div className="logo-text">
               <h1>СУГС „Владо Тасевски"</h1>
               <span>образование • иновација • традиција</span>
