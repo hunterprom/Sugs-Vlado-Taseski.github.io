@@ -6,6 +6,12 @@ import SiteFooter from "../components/SiteFooter";
 import { TextReveal, LineReveal, MarqueeTicker, FadeUpSection } from "../components/TypographyEffects";
 import "./StaticHomePage.css";
 
+import heroImg1 from "@/assets/училница-1.png";
+import heroImg2 from "@/assets/училница-2.png";
+import heroImg3 from "@/assets/училиште-надвор.png";
+import heroImg4 from "@/assets/училиште-лоби.png";
+import heroImg5 from "@/assets/училиште-фонтана.png";
+
 const StaticHomePage = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
   const intervalRef = useRef<ReturnType<typeof setInterval>>();
@@ -13,10 +19,11 @@ const StaticHomePage = () => {
   const [statsAnimated, setStatsAnimated] = useState(false);
 
   const slides = [
-    { img: "https://images.pexels.com/photos/5212345/pexels-photo-5212345.jpeg?w=600&h=400&fit=crop", caption: "Модерни училници" },
-    { img: "https://images.pexels.com/photos/8613089/pexels-photo-8613089.jpeg?w=600&h=400&fit=crop", caption: "Спорт & рекреација" },
-    { img: "https://images.pexels.com/photos/5428835/pexels-photo-5428835.jpeg?w=600&h=400&fit=crop", caption: "Проектни активности" },
-    { img: "https://images.pexels.com/photos/256468/pexels-photo-256468.jpeg?w=600&h=400&fit=crop", caption: "Современа библиотека" },
+    { img: heroImg1, caption: "Модерни училници" },
+    { img: heroImg2, caption: "Спорт & рекреација" },
+    { img: heroImg3, caption: "Нашето училиште" },
+    { img: heroImg4, caption: "Лоби" },
+    { img: heroImg5, caption: "Дворот на училиштето" },
   ];
 
   const goToSlide = useCallback((index: number) => setCurrentSlide(index), []);
