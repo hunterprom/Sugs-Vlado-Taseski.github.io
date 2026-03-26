@@ -4,6 +4,7 @@ import SiteFooter from "../components/SiteFooter";
 import "./StaticHomePage.css";
 import soobrakajTransport from "@/assets/soobrakaj-transport.png";
 import zeleznicka from "@/assets/zeleznicki-soobrakaj.png";
+import ImageModal from "../components/ImageModal";
 
 const SoobrakajnaPage = () => {
   return (
@@ -27,7 +28,7 @@ const SoobrakajnaPage = () => {
               <div className="profil-card">
                 <div className="profil-icon"><i className="fas fa-shipping-fast"></i></div>
                 <h3>Техничар за транспорт и шпедиција</h3>
-                <img src={soobrakajTransport} alt="Техничар за транспорт и шпедиција" className="profil-card-img" />
+                <ImageModal src={soobrakajTransport} alt="Техничар за транспорт и шпедиција" className="profil-card-img" />
                 <p>Образование за логистика, транспортни системи, шпедиција, царинско работење и организација на транспортот.</p>
                 <ul className="profil-opsii">
                   <li><i className="fas fa-check-circle"></i> Логистика и синџири на снабдување</li>
@@ -37,20 +38,9 @@ const SoobrakajnaPage = () => {
                 </ul>
               </div>
               <div className="profil-card">
-                <div className="profil-icon"><i className="fas fa-bus"></i></div>
-                <h3>Сообраќаен транспортен техничар</h3>
-                <p>Специјализација за патниот сообраќај, организација на јавен превоз, безбедност во сообраќајот и транспортни системи.</p>
-                <ul className="profil-opsii">
-                  <li><i className="fas fa-check-circle"></i> Организација на јавен превоз</li>
-                  <li><i className="fas fa-check-circle"></i> Безбедност во сообраќајот</li>
-                  <li><i className="fas fa-check-circle"></i> Патничка логистика</li>
-                  <li><i className="fas fa-check-circle"></i> Сообраќајно планирање</li>
-                </ul>
-              </div>
-              <div className="profil-card">
                 <div className="profil-icon"><i className="fas fa-subway"></i></div>
                 <h3>Техничар за железнички сообраќај</h3>
-                <img src={zeleznicka} alt="Техничар за железнички сообраќај" className="profil-card-img" />
+                <ImageModal src={zeleznicka} alt="Техничар за железнички сообраќај" className="profil-card-img" />
                 <p>Образование за организација на железнички транспорт, управување со возен ред, сигнални системи и безбедност на железница.</p>
                 <ul className="profil-opsii">
                   <li><i className="fas fa-check-circle"></i> Железнички транспорт</li>
@@ -61,12 +51,12 @@ const SoobrakajnaPage = () => {
               </div>
               <div className="profil-card">
                 <div className="profil-icon"><i className="fas fa-train"></i></div>
-                <h3>Машиновозач на дизел и електро влечни средства</h3>
-                <p>Специјализација за управување и одржување на локомотиви, дизел мотори и електро-влечни средства за железница.</p>
+                <h3>Техничар за влеча – машиновозач</h3>
+                <p>Специјализација за управување и одржување на локомотиви, влечни средства и железнички возила.</p>
                 <ul className="profil-opsii">
                   <li><i className="fas fa-check-circle"></i> Управување со локомотиви</li>
-                  <li><i className="fas fa-check-circle"></i> Дизел мотори</li>
-                  <li><i className="fas fa-check-circle"></i> Електро-влечни средства</li>
+                  <li><i className="fas fa-check-circle"></i> Влечни средства</li>
+                  <li><i className="fas fa-check-circle"></i> Одржување на возила</li>
                   <li><i className="fas fa-check-circle"></i> Безбедносни процедури</li>
                 </ul>
               </div>

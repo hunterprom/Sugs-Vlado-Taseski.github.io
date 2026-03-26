@@ -4,6 +4,7 @@ import SiteFooter from "../components/SiteFooter";
 import "./StaticHomePage.css";
 import elektroTelekom from "@/assets/elektro-telekom.png";
 import kompjuterskaAvtomatika from "@/assets/kompjuterska-avtomatika.png";
+import ImageModal from "../components/ImageModal";
 
 const ElektrotehnickaPage = () => {
   return (
@@ -15,7 +16,7 @@ const ElektrotehnickaPage = () => {
             <div className="struka-header">
               <div className="struka-icon"><i className="fas fa-microchip"></i></div>
               <h1>Електротехничка струка</h1>
-              <p>Образование за иднината - електроника, автоматика, енергетика и телекомуникации</p>
+              <p>Образование за иднината - електроника, автоматика и телекомуникации</p>
             </div>
           </div>
         </section>
@@ -27,7 +28,7 @@ const ElektrotehnickaPage = () => {
               <div className="profil-card">
                 <div className="profil-icon"><i className="fas fa-mobile-alt"></i></div>
                 <h3>Електротехничар за електроника и телекомуникации</h3>
-                <img src={elektroTelekom} alt="Електротехничар за електроника и телекомуникации" className="profil-card-img" />
+                <ImageModal src={elektroTelekom} alt="Електротехничар за електроника и телекомуникации" className="profil-card-img" />
                 <p>Учениците се оспособуваат за работа со електронски уреди, телекомуникациски системи, мобилни технологии и дигитална електроника.</p>
                 <ul className="profil-opsii">
                   <li><i className="fas fa-check-circle"></i> Дигитална електроника</li>
@@ -39,35 +40,13 @@ const ElektrotehnickaPage = () => {
               <div className="profil-card">
                 <div className="profil-icon"><i className="fas fa-robot"></i></div>
                 <h3>Електротехничар за компјутерска техника и автоматика</h3>
-                <img src={kompjuterskaAvtomatika} alt="Електротехничар за компјутерска техника и автоматика" className="profil-card-img" />
+                <ImageModal src={kompjuterskaAvtomatika} alt="Електротехничар за компјутерска техника и автоматика" className="profil-card-img" />
                 <p>Профил кој опфаќа програмирање на PLC контролери, роботика, индустриска автоматизација и компјутерски системи.</p>
                 <ul className="profil-opsii">
                   <li><i className="fas fa-check-circle"></i> PLC програмирање</li>
                   <li><i className="fas fa-check-circle"></i> Индустриска роботика</li>
                   <li><i className="fas fa-check-circle"></i> Автоматизација на процеси</li>
                   <li><i className="fas fa-check-circle"></i> Микроконтролери</li>
-                </ul>
-              </div>
-              <div className="profil-card">
-                <div className="profil-icon"><i className="fas fa-solar-panel"></i></div>
-                <h3>Електротехничар за енергетика</h3>
-                <p>Специјализација за електроенергетски системи, обновливи извори на енергија, дистрибуција и пренос на електрична енергија.</p>
-                <ul className="profil-opsii">
-                  <li><i className="fas fa-check-circle"></i> Електроенергетски системи</li>
-                  <li><i className="fas fa-check-circle"></i> Соларни панели и ветерници</li>
-                  <li><i className="fas fa-check-circle"></i> Дистрибуција на струја</li>
-                  <li><i className="fas fa-check-circle"></i> Енергетска ефикасност</li>
-                </ul>
-              </div>
-              <div className="profil-card">
-                <div className="profil-icon"><i className="fas fa-tower-cell"></i></div>
-                <h3>Техничар за телекомуникации</h3>
-                <p>Образование за фиксна и мобилна телефонија, оптички мрежи, сателитски комуникации и мрежна инфраструктура.</p>
-                <ul className="profil-opsii">
-                  <li><i className="fas fa-check-circle"></i> Оптички мрежи</li>
-                  <li><i className="fas fa-check-circle"></i> Мобилни комуникации (4G/5G)</li>
-                  <li><i className="fas fa-check-circle"></i> Сателитски системи</li>
-                  <li><i className="fas fa-check-circle"></i> Мрежна инфраструктура</li>
                 </ul>
               </div>
             </div>
@@ -94,7 +73,7 @@ const ElektrotehnickaPage = () => {
             <div className="nastava-grid">
               <div className="nastava-card">
                 <h3><i className="fas fa-book"></i> Теоретски предмети</h3>
-                <ul><li>Електротехника</li><li>Електроника</li><li>Дигитална електроника</li><li>Микропроцесори</li><li>Телекомуникации</li><li>Енергетика</li></ul>
+                <ul><li>Електротехника</li><li>Електроника</li><li>Дигитална електроника</li><li>Микропроцесори</li><li>Телекомуникации</li></ul>
               </div>
               <div className="nastava-card">
                 <h3><i className="fas fa-flask"></i> Практична настава</h3>

@@ -120,12 +120,12 @@ const KontaktPage = () => {
           </div>
         </section>
 
-        {/* Google Maps embed */}
+        {/* Google Maps embed - correct location */}
         <section style={{ padding: '0 0 40px' }}>
           <div className="container">
             <div style={{ borderRadius: '16px', overflow: 'hidden', boxShadow: '0 4px 20px rgba(0,0,0,0.1)' }}>
               <iframe
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2965.5!2d21.4294!3d41.9981!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zNDHCsDU5JzUzLjIiTiAyMcKwMjUnNDUuOCJF!5e0!3m2!1smk!2smk!4v1"
+                src="https://www.google.com/maps?q=СУГС+Владо+Тасевски+Скопје&output=embed"
                 width="100%"
                 height="350"
                 style={{ border: 0 }}

@@ -2,10 +2,10 @@ import { Link } from "react-router-dom";
 import SiteHeader from "../components/SiteHeader";
 import SiteFooter from "../components/SiteFooter";
 import "./StaticHomePage.css";
-import masinskaStruka from "@/assets/masinska-struka.png";
 import masinskaEnergetski from "@/assets/masinska-energetski.png";
 import proizvodnoMasinstvo from "@/assets/proizvodno-masinstvo.png";
 import kompjuterskoUpravuvanje from "@/assets/kompjutersko-upravuvanje.png";
+import ImageModal from "../components/ImageModal";
 
 const MasinskaPage = () => {
   return (
@@ -29,7 +29,7 @@ const MasinskaPage = () => {
               <div className="profil-card">
                 <div className="profil-icon"><i className="fas fa-fire"></i></div>
                 <h3>Машинско-енергетски техничар</h3>
-                <img src={masinskaEnergetski} alt="Машинско-енергетски техничар" className="profil-card-img" />
+                <ImageModal src={masinskaEnergetski} alt="Машинско-енергетски техничар" className="profil-card-img" />
                 <p>Специјализација за енергетски системи, термотехника, греење, климатизација и енергетска ефикасност.</p>
                 <ul className="profil-opsii">
                   <li><i className="fas fa-check-circle"></i> Термотехника</li>
@@ -40,8 +40,8 @@ const MasinskaPage = () => {
               </div>
               <div className="profil-card">
                 <div className="profil-icon"><i className="fas fa-industry"></i></div>
-                <h3>Техничар за производно машинство</h3>
-                <img src={proizvodnoMasinstvo} alt="Техничар за производно машинство" className="profil-card-img" />
+                <h3>Техничар за производство и машинство</h3>
+                <ImageModal src={proizvodnoMasinstvo} alt="Техничар за производство и машинство" className="profil-card-img" />
                 <p>Образование за производствени процеси, CNC машини, технологија на обработка и квалитет на производи.</p>
                 <ul className="profil-opsii">
                   <li><i className="fas fa-check-circle"></i> CNC програмирање</li>
@@ -61,21 +61,10 @@ const MasinskaPage = () => {
                   <li><i className="fas fa-check-circle"></i> Сервисирање и одржување</li>
                 </ul>
               </div>
-               <div className="profil-card">
-                <div className="profil-icon"><i className="fas fa-train"></i></div>
-                <h3>Машински техничар за шински возила</h3>
-                <p>Специјализација за одржување и поправка на железнички возила, дизел мотори и електро-влечни средства.</p>
-                <ul className="profil-opsii">
-                  <li><i className="fas fa-check-circle"></i> Дизел мотори</li>
-                  <li><i className="fas fa-check-circle"></i> Електро-влечни средства</li>
-                  <li><i className="fas fa-check-circle"></i> Одржување на возила</li>
-                  <li><i className="fas fa-check-circle"></i> Безбедност во железница</li>
-                </ul>
-              </div>
               <div className="profil-card">
                 <div className="profil-icon"><i className="fas fa-desktop"></i></div>
                 <h3>Техничар за компјутерско управување</h3>
-                <img src={kompjuterskoUpravuvanje} alt="Техничар за компјутерско управување" className="profil-card-img" />
+                <ImageModal src={kompjuterskoUpravuvanje} alt="Техничар за компјутерско управување" className="profil-card-img" />
                 <p>Нов профил од машинска струка со траење од 4 години. Учениците учат да работат со CNC машини, автоматизирани системи и индустриски роботи.</p>
                 <ul className="profil-opsii">
                   <li><i className="fas fa-check-circle"></i> CNC машини</li>
@@ -95,7 +84,7 @@ const MasinskaPage = () => {
               <div className="moznosti-grid">
                 <div className="moznost-card"><i className="fas fa-industry"></i><h3>Производствени компании</h3><p>Фабрики, производствени погони, CNC центри</p></div>
                 <div className="moznost-card"><i className="fas fa-wrench"></i><h3>Сервиси за греење и клими</h3><p>Монтажа и сервисирање на климатизација и греење</p></div>
-                <div className="moznost-card"><i className="fas fa-train"></i><h3>Железнички транспорт</h3><p>Македонски железници, одржување на возила</p></div>
+                <div className="moznost-card"><i className="fas fa-cog"></i><h3>Автоматизација</h3><p>Индустриска автоматизација и компјутерско управување</p></div>
                 <div className="moznost-card"><i className="fas fa-chart-line"></i><h3>Енергетски компании</h3><p>Енергетика, термоелектрани, топлификации</p></div>
               </div>
             </div>
