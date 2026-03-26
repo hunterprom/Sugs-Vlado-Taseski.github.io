@@ -59,6 +59,9 @@ const ZaNasPage = () => {
                 <img src={istorija1} alt="Електроника" />
                 <img src={istorija2} alt="Опрема" />
                 <img src={istorija9} alt="Работилница" />
+                <img src={istorija10} alt="Машинска работилница" />
+                <img src={istorija11} alt="Планирање на училиштето" />
+                <img src={istorija12} alt="Изградба на училиштето" />
               </div>
             </div>
           </div>
