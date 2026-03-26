@@ -1,6 +1,9 @@
 import SiteHeader from "../components/SiteHeader";
 import SiteFooter from "../components/SiteFooter";
 import "./StaticHomePage.css";
+import ucilnica3 from "@/assets/училница-3.png";
+import konferenciска from "@/assets/конференциска-сала.png";
+import lobi from "@/assets/училиште-лоби.png";
 
 const ProektiPage = () => {
   return (
