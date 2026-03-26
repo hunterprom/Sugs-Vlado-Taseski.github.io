@@ -1,6 +1,13 @@
 import SiteHeader from "../components/SiteHeader";
 import SiteFooter from "../components/SiteFooter";
 import "./StaticHomePage.css";
+import rakovodstvo1 from "@/assets/rakovodstvo-1.png";
+import rakovodstvo2 from "@/assets/rakovodstvo-2.png";
+import rakovodstvo3 from "@/assets/rakovodstvo-3.png";
+import rakovodstvo4 from "@/assets/rakovodstvo-4.png";
+import rakovodstvo5 from "@/assets/rakovodstvo-5.png";
+import rakovodstvo6 from "@/assets/rakovodstvo-6.png";
+import rakovodstvo7 from "@/assets/rakovodstvo-7.png";
 
 const ZaNasPage = () => {
   return (
