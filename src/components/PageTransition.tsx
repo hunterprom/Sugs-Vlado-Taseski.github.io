@@ -1,6 +1,8 @@
 import { motion } from "framer-motion";
 import { ReactNode } from "react";
 
+const ease = [0.76, 0, 0.24, 1] as [number, number, number, number];
+
 const pageVariants = {
   initial: {
     opacity: 0,
@@ -15,7 +17,7 @@ const pageVariants = {
     borderRadius: "0px",
     transition: {
       duration: 0.6,
-      ease: [0.76, 0, 0.24, 1],
+      ease,
       staggerChildren: 0.08,
     },
   },
@@ -26,7 +28,7 @@ const pageVariants = {
     borderRadius: "30px",
     transition: {
       duration: 0.4,
-      ease: [0.76, 0, 0.24, 1],
+      ease,
     },
   },
 };
@@ -41,7 +43,7 @@ const overlayVariants = {
     originY: 0,
     transition: {
       duration: 0.7,
-      ease: [0.76, 0, 0.24, 1],
+      ease,
       delay: 0.1,
     },
   },
@@ -50,7 +52,7 @@ const overlayVariants = {
     originY: 1,
     transition: {
       duration: 0.5,
-      ease: [0.76, 0, 0.24, 1],
+      ease,
     },
   },
 };
@@ -63,14 +65,14 @@ const liquidVariants = {
     clipPath: "circle(150% at 50% 50%)",
     transition: {
       duration: 0.8,
-      ease: [0.76, 0, 0.24, 1],
+      ease,
     },
   },
   exit: {
     clipPath: "circle(0% at 50% 50%)",
     transition: {
       duration: 0.5,
-      ease: [0.76, 0, 0.24, 1],
+      ease,
     },
   },
 };
@@ -78,7 +80,6 @@ const liquidVariants = {
 const PageTransition = ({ children }: { children: ReactNode }) => {
   return (
     <div style={{ position: "relative", overflow: "hidden" }}>
-      {/* Liquid morph overlay */}
       <motion.div
         variants={overlayVariants}
         initial="initial"
@@ -92,8 +93,6 @@ const PageTransition = ({ children }: { children: ReactNode }) => {
           pointerEvents: "none",
         }}
       />
-
-      {/* Content with morphing clip + blur */}
       <motion.div
         variants={liquidVariants}
         initial="initial"
