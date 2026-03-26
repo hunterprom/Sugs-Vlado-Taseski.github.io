@@ -62,13 +62,7 @@ const UpisiPage = () => {
           </div>
         </section>
       </main>
-      <footer className="footer">
-        <div className="container">
-          <div className="copyright">
-            <p>© Copyright 2026 СУГС „Владо Тасевски" - Скопје</p>
-          </div>
-        </div>
-      </footer>
+      <SiteFooter />
     </>
   );
 };
