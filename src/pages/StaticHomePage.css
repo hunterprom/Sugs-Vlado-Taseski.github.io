@@ -56,6 +56,72 @@
   font-size: 0.75rem;
 }
 
+.top-right-area {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+/* Language Switcher */
+.lang-switcher {
+  position: relative;
+}
+
+.lang-btn {
+  background: rgba(255, 255, 255, 0.15);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  color: white;
+  padding: 4px 12px;
+  border-radius: 20px;
+  cursor: pointer;
+  font-size: 0.75rem;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  transition: background 0.2s;
+}
+
+.lang-btn:hover {
+  background: rgba(255, 255, 255, 0.25);
+}
+
+.lang-dropdown {
+  position: absolute;
+  top: calc(100% + 6px);
+  right: 0;
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+  overflow: hidden;
+  z-index: 200;
+  min-width: 90px;
+}
+
+.lang-option {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  width: 100%;
+  padding: 8px 14px;
+  border: none;
+  background: none;
+  cursor: pointer;
+  font-size: 0.8rem;
+  font-weight: 500;
+  color: #2E6899;
+  transition: background 0.2s;
+}
+
+.lang-option:hover {
+  background: #F0F4F8;
+}
+
+.lang-option.active {
+  background: #E8EDF3;
+  font-weight: 700;
+}
+
 /* Main Navigation */
 .main-nav {
   background: white;
@@ -566,6 +632,13 @@
   padding: 25px 15px;
   border-radius: 20px;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+  transform-style: preserve-3d;
+}
+
+.stat-card:hover {
+  transform: translateY(-6px) scale(1.03);
+  box-shadow: 0 12px 30px rgba(75, 139, 190, 0.2);
 }
 
 .stat-card i {
@@ -620,12 +693,14 @@
   padding: 28px 20px;
   box-shadow: 0 8px 20px rgba(30, 58, 95, 0.06);
   border: 1px solid #E8EDF3;
-  transition: 0.2s;
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+  perspective: 800px;
+  transform-style: preserve-3d;
 }
 
 .card:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 12px 28px rgba(30, 58, 95, 0.1);
+  transform: translateY(-8px) rotateX(2deg) rotateY(-2deg);
+  box-shadow: 0 20px 40px rgba(30, 58, 95, 0.15);
 }
 
 .card-icon {
@@ -1044,12 +1119,13 @@
   padding: 30px;
   border-radius: 24px;
   text-align: center;
-  transition: 0.2s;
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+  transform-style: preserve-3d;
 }
 
 .sport-card:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.05);
+  transform: translateY(-8px) rotateX(3deg);
+  box-shadow: 0 16px 32px rgba(75, 139, 190, 0.15);
 }
 
 .sport-card i {
@@ -1139,13 +1215,14 @@
   background: #F5F9FF;
   border-radius: 24px;
   padding: 30px;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
   border: 1px solid #E8EDF3;
+  transform-style: preserve-3d;
 }
 
 .profil-card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+  transform: translateY(-8px) rotateY(-3deg);
+  box-shadow: 0 20px 40px rgba(75, 139, 190, 0.18);
 }
 
 .profil-icon {
@@ -1350,12 +1427,13 @@
   padding: 25px;
   border-radius: 24px;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
-  transition: 0.2s;
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+  transform-style: preserve-3d;
 }
 
 .project-card:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.1);
+  transform: translateY(-8px) rotateX(2deg) rotateY(2deg);
+  box-shadow: 0 16px 36px rgba(75, 139, 190, 0.18);
 }
 
 .project-card i {

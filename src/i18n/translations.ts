@@ -1,0 +1,220 @@
+export type Language = "mk" | "sq" | "en";
+
+export const translations: Record<Language, Record<string, string>> = {
+  mk: {
+    // Nav
+    "nav.home": "ПОЧЕТНА",
+    "nav.about": "ЗА НАС",
+    "nav.departments": "СТРУКИ",
+    "nav.students": "УЧЕНИЦИ",
+    "nav.news": "НОВОСТИ",
+    "nav.sport": "СПОРТ",
+    "nav.contact": "КОНТАКТ",
+    "nav.enroll": "Уписи",
+    // About dropdown
+    "nav.history": "Историјат",
+    "nav.mission": "Мисија и Визија",
+    "nav.staff": "Наставен кадар",
+    "nav.leadership": "Раководство",
+    "nav.director": "Директор",
+    "nav.professional": "Стручна служба",
+    "nav.studentCouncil": "Ученички совет",
+    "nav.codex": "Кодекс",
+    "nav.resources": "Ресурси",
+    // Departments
+    "nav.elektro": "Електротехничка",
+    "nav.masinska": "Машинска",
+    "nav.soobrakaj": "Сообраќајна",
+    // Students
+    "nav.enrollment": "Уписи 2025/2026",
+    "nav.schedule": "Распоред на часови",
+    "nav.matura": "Матура",
+    "nav.external": "Вонредни ученици",
+    "nav.portals": "Портали",
+    // News dropdown
+    "nav.allNews": "Сите новости",
+    "nav.projects": "Проекти",
+    "nav.activities": "Активности",
+    // Top bar
+    "top.eDiary": "Е-Дневник",
+    "top.monServices": "МОН Е-услуги",
+    "top.lms": "LMS Schools",
+    "top.erasmus": "Erasmus+",
+    "top.founded": "Основано 1959 • Член на МАССУМ",
+    // Hero
+    "hero.badge": "ПОДОБРО ОБРАЗОВАНИЕ, ПОДОБРА ИДНИНА!",
+    "hero.school": "СУГС",
+    "hero.name": "\u201EВладо Тасевски\u201C",
+    "hero.city": "Скопје",
+    "hero.subtitle": "We are the Team VLADO TASEVSKI! Воспитанието и образованието се темелите на една држава. Се гордееме со сите генерации кои минале низ нашите училници.",
+    "hero.enroll": "Запиши се",
+    "hero.history": "Нашата историја",
+    // Marquee
+    "marquee": "ЕЛЕКТРОТЕХНИКА ✦ МАШИНСТВО ✦ СООБРАЌАЈ ✦ ИДНИНАТА Е ТУКА",
+    // Stats
+    "stats.years": "Години традиција",
+    "stats.teachers": "Професори",
+    "stats.students": "Ученици",
+    // Features
+    "features.title": "Зошто да ја изберете нашата школа?",
+    "features.subtitle": "Модерни училници, искусен кадар и иновативни методи на учење",
+    "features.digital": "Дигитална настава",
+    "features.digitalDesc": "Интерактивни табли, е-дневник и online ресурси за секој ученик.",
+    "features.quality": "Квалитетен кадар",
+    "features.qualityDesc": "Искусни професори и менторска поддршка за секој ученик.",
+    "features.sport": "Спорт креативност",
+    "features.sportDesc": "Спортски терени, работилници и натпревари за сестрана иднина.",
+    "features.learnMore": "Дознај повеќе",
+    // Footer
+    "footer.usefulLinks": "Корисни линкови",
+    "footer.contact": "Контакт",
+    "footer.copyright": "© Copyright 2026 СУГС \u201EВладо Тасевски\u201C - Скопје. Сите права се задржани.",
+    "footer.madeBy": "Изработено од: Гордан Стојановски, Марко Дојчиновски, Матеј Илиоски, Томче Златановски",
+    // Back
+    "back": "Назад кон почетна",
+  },
+  sq: {
+    // Nav
+    "nav.home": "FILLIMI",
+    "nav.about": "PËR NE",
+    "nav.departments": "DREJTIMET",
+    "nav.students": "NXËNËSIT",
+    "nav.news": "LAJME",
+    "nav.sport": "SPORT",
+    "nav.contact": "KONTAKT",
+    "nav.enroll": "Regjistrimi",
+    // About dropdown
+    "nav.history": "Historia",
+    "nav.mission": "Misioni dhe Vizioni",
+    "nav.staff": "Stafi mësimor",
+    "nav.leadership": "Udhëheqësia",
+    "nav.director": "Drejtori",
+    "nav.professional": "Shërbimi profesional",
+    "nav.studentCouncil": "Këshilli i nxënësve",
+    "nav.codex": "Kodeksi",
+    "nav.resources": "Resurset",
+    // Departments
+    "nav.elektro": "Elektroteknikë",
+    "nav.masinska": "Makinerike",
+    "nav.soobrakaj": "Komunikacion",
+    // Students
+    "nav.enrollment": "Regjistrimi 2025/2026",
+    "nav.schedule": "Orari i mësimit",
+    "nav.matura": "Matura",
+    "nav.external": "Nxënës të jashtëm",
+    "nav.portals": "Portalet",
+    // News dropdown
+    "nav.allNews": "Të gjitha lajmet",
+    "nav.projects": "Projektet",
+    "nav.activities": "Aktivitetet",
+    // Top bar
+    "top.eDiary": "E-Ditar",
+    "top.monServices": "MASH E-shërbime",
+    "top.lms": "LMS Schools",
+    "top.erasmus": "Erasmus+",
+    "top.founded": "Themeluar 1959 • Anëtar i MASSUMM",
+    // Hero
+    "hero.badge": "ARSIM MË I MIRË, ARDHMËRI MË E MIRË!",
+    "hero.school": "SHMA",
+    "hero.name": "\u201EVllado Tasevski\u201C",
+    "hero.city": "Shkup",
+    "hero.subtitle": "Ne jemi Ekipi VLLADO TASEVSKI! Edukimi dhe arsimi janë themelet e një shteti. Krenarohemi me të gjitha gjeneratat që kanë kaluar nëpër klasat tona.",
+    "hero.enroll": "Regjistrohu",
+    "hero.history": "Historia jonë",
+    // Marquee
+    "marquee": "ELEKTROTEKNIKË ✦ MAKINERI ✦ KOMUNIKACION ✦ E ARDHMJA ËSHTË KËTU",
+    // Stats
+    "stats.years": "Vite traditë",
+    "stats.teachers": "Profesorë",
+    "stats.students": "Nxënës",
+    // Features
+    "features.title": "Pse të zgjidhni shkollën tonë?",
+    "features.subtitle": "Klasa moderne, staf me përvojë dhe metoda inovative të mësimit",
+    "features.digital": "Mësim digjital",
+    "features.digitalDesc": "Tabela interaktive, e-ditar dhe resurse online për çdo nxënës.",
+    "features.quality": "Staf cilësor",
+    "features.qualityDesc": "Profesorë me përvojë dhe mbështetje mentorimi për çdo nxënës.",
+    "features.sport": "Sport kreativitet",
+    "features.sportDesc": "Fusha sportive, punëtori dhe gara për ardhmëri gjithëpërfshirëse.",
+    "features.learnMore": "Mëso më shumë",
+    // Footer
+    "footer.usefulLinks": "Lidhje të dobishme",
+    "footer.contact": "Kontakt",
+    "footer.copyright": "© Copyright 2026 SHMA \u201EVllado Tasevski\u201C - Shkup. T\u00eb gjitha t\u00eb drejtat e rezervuara.",
+    "footer.madeBy": "Punuar nga: Gordan Stojanovski, Marko Dojçinovski, Matej Ilioski, Tomçe Zllatanovski",
+    // Back
+    "back": "Kthehu në fillim",
+  },
+  en: {
+    // Nav
+    "nav.home": "HOME",
+    "nav.about": "ABOUT",
+    "nav.departments": "DEPARTMENTS",
+    "nav.students": "STUDENTS",
+    "nav.news": "NEWS",
+    "nav.sport": "SPORT",
+    "nav.contact": "CONTACT",
+    "nav.enroll": "Enroll",
+    // About dropdown
+    "nav.history": "History",
+    "nav.mission": "Mission & Vision",
+    "nav.staff": "Teaching Staff",
+    "nav.leadership": "Leadership",
+    "nav.director": "Director",
+    "nav.professional": "Professional Services",
+    "nav.studentCouncil": "Student Council",
+    "nav.codex": "Code of Conduct",
+    "nav.resources": "Resources",
+    // Departments
+    "nav.elektro": "Electrical Engineering",
+    "nav.masinska": "Mechanical Engineering",
+    "nav.soobrakaj": "Traffic & Transport",
+    // Students
+    "nav.enrollment": "Enrollment 2025/2026",
+    "nav.schedule": "Class Schedule",
+    "nav.matura": "Graduation Exams",
+    "nav.external": "External Students",
+    "nav.portals": "Portals",
+    // News dropdown
+    "nav.allNews": "All News",
+    "nav.projects": "Projects",
+    "nav.activities": "Activities",
+    // Top bar
+    "top.eDiary": "E-Diary",
+    "top.monServices": "MON E-Services",
+    "top.lms": "LMS Schools",
+    "top.erasmus": "Erasmus+",
+    "top.founded": "Founded 1959 • Member of MASSUM",
+    // Hero
+    "hero.badge": "BETTER EDUCATION, BETTER FUTURE!",
+    "hero.school": "MHSS",
+    "hero.name": '"Vlado Tasevski"',
+    "hero.city": "Skopje",
+    "hero.subtitle": "We are the Team VLADO TASEVSKI! Education is the foundation of every nation. We are proud of every generation that passed through our classrooms.",
+    "hero.enroll": "Enroll Now",
+    "hero.history": "Our History",
+    // Marquee
+    "marquee": "ELECTRICAL ENGINEERING ✦ MECHANICAL ENGINEERING ✦ TRAFFIC ✦ THE FUTURE IS HERE",
+    // Stats
+    "stats.years": "Years of tradition",
+    "stats.teachers": "Teachers",
+    "stats.students": "Students",
+    // Features
+    "features.title": "Why choose our school?",
+    "features.subtitle": "Modern classrooms, experienced staff and innovative learning methods",
+    "features.digital": "Digital Learning",
+    "features.digitalDesc": "Interactive boards, e-diary and online resources for every student.",
+    "features.quality": "Quality Staff",
+    "features.qualityDesc": "Experienced teachers and mentoring support for every student.",
+    "features.sport": "Sport & Creativity",
+    "features.sportDesc": "Sports fields, workshops and competitions for an all-round future.",
+    "features.learnMore": "Learn more",
+    // Footer
+    "footer.usefulLinks": "Useful Links",
+    "footer.contact": "Contact",
+    "footer.copyright": '© Copyright 2026 MHSS "Vlado Tasevski" - Skopje. All rights reserved.',
+    "footer.madeBy": "Made by: Gordan Stojanovski, Marko Dojchinovski, Matej Ilioski, Tomche Zlatanovski",
+    // Back
+    "back": "Back to home",
+  },
+};
