@@ -16,9 +16,9 @@ const pageVariants = {
     filter: "blur(0px)",
     borderRadius: "0px",
     transition: {
-      duration: 0.35,
+      duration: 0.5,
       ease,
-      staggerChildren: 0.04,
+      staggerChildren: 0.05,
     },
   },
   exit: {
@@ -27,7 +27,7 @@ const pageVariants = {
     filter: "blur(6px)",
     borderRadius: "30px",
     transition: {
-      duration: 0.25,
+      duration: 0.4,
       ease,
     },
   },
@@ -42,16 +42,16 @@ const overlayVariants = {
     scaleY: 0,
     originY: 0,
     transition: {
-      duration: 0.4,
+      duration: 0.6,
       ease,
-      delay: 0.05,
+      delay: 0.15,
     },
   },
   exit: {
     scaleY: 1,
     originY: 1,
     transition: {
-      duration: 0.3,
+      duration: 0.5,
       ease,
     },
   },
@@ -64,14 +64,14 @@ const liquidVariants = {
   animate: {
     clipPath: "circle(150% at 50% 50%)",
     transition: {
-      duration: 0.45,
+      duration: 0.7,
       ease,
     },
   },
   exit: {
     clipPath: "circle(0% at 50% 50%)",
     transition: {
-      duration: 0.3,
+      duration: 0.5,
       ease,
     },
   },
