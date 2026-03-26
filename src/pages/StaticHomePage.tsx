@@ -5,6 +5,7 @@ import SiteHeader from "../components/SiteHeader";
 import SiteFooter from "../components/SiteFooter";
 import { TextReveal, LineReveal, MarqueeTicker, FadeUpSection } from "../components/TypographyEffects";
 import { useLanguage } from "@/i18n/LanguageContext";
+import { noviniData } from "../data/noviniData";
 import "./StaticHomePage.css";
 
 import heroImg1 from "@/assets/училница-1.png";
@@ -50,6 +51,8 @@ const StaticHomePage = () => {
     observer.observe(statsRef.current);
     return () => observer.disconnect();
   }, [statsAnimated]);
+
+  const latestNews = noviniData.slice(0, 3);
 
   return (
     <>
@@ -179,7 +182,7 @@ const StaticHomePage = () => {
             <div className="cards-grid">
               {[
                 { icon: "fas fa-laptop-code", title: t("features.digital"), desc: t("features.digitalDesc"), link: "/elektrotehnicka" },
-                { icon: "fas fa-chalkboard-user", title: t("features.quality"), desc: t("features.qualityDesc"), link: "/za-nas" },
+                { icon: "fas fa-chalkboard-user", title: t("features.quality"), desc: t("features.qualityDesc"), link: "/nastavnici" },
                 { icon: "fas fa-futbol", title: t("features.sport"), desc: t("features.sportDesc"), link: "/sport" },
               ].map((card, i) => (
                 <FadeUpSection key={i} delay={i * 0.15}>
@@ -195,7 +198,7 @@ const StaticHomePage = () => {
           </div>
         </section>
 
-        {/* News preview section on homepage */}
+        {/* News preview section - clickable */}
         <section className="projects-section">
           <div className="container">
             <div className="section-header">
@@ -203,35 +206,16 @@ const StaticHomePage = () => {
               <p>Најновите случувања во нашето училиште</p>
             </div>
             <div className="projects-grid">
-              {[
-                {
-                  icon: "fas fa-bullhorn",
-                  title: "Јавен оглас за ученички правобранител",
-                  desc: "ОТВОРЕН ПОВИК ЗА ИЗБОР УЧЕНИЧКИ ПРАВОБРАНИТЕЛ СУГС Владо Тасевски - Скопје.",
-                  date: "10 Дек 2025",
-                },
-                {
-                  icon: "fas fa-plane",
-                  title: "Повик за Ерасмус+ мобилност",
-                  desc: "Повик за интерес за мобилност на ученици за Ерасмус+ проект со можност за практична работа.",
-                  date: "5 Ное 2025",
-                },
-                {
-                  icon: "fas fa-trophy",
-                  title: "Честитки за Ива Богдановска 🎉",
-                  desc: "Честитки за Ива Богдановска за освоеното трето место на Европското јуниорско првенство во џудо!",
-                  date: "6 Авг 2025",
-                },
-              ].map((item, i) => (
+              {latestNews.map((item, i) => (
                 <FadeUpSection key={i} delay={i * 0.1}>
-                  <div className="project-card">
+                  <Link to={`/novini/${item.slug}`} className="project-card" style={{ textDecoration: "none", display: "block" }}>
                     <i className={item.icon}></i>
                     <div style={{ display: 'flex', gap: '10px', marginBottom: '8px', alignItems: 'center' }}>
                       <span style={{ fontSize: '0.7rem', color: '#9FBDD6' }}>{item.date}</span>
                     </div>
                     <h3>{item.title}</h3>
-                    <p>{item.desc}</p>
-                  </div>
+                    <p>{item.description}</p>
+                  </Link>
                 </FadeUpSection>
               ))}
             </div>

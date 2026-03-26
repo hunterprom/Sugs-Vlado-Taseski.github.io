@@ -14,7 +14,14 @@ import SportPage from "./pages/SportPage";
 import ProektiPage from "./pages/ProektiPage";
 import NastavniciPage from "./pages/NastavniciPage";
 import NoviniPage from "./pages/NoviniPage";
+import NovostPage from "./pages/NovostPage";
 import UpisiPage from "./pages/UpisiPage";
+import MisijaVizijaPage from "./pages/MisijaVizijaPage";
+import DirektorPage from "./pages/DirektorPage";
+import StrucnaSluzbaPage from "./pages/StrucnaSluzbaPage";
+import PoeniKalkulatorPage from "./pages/PoeniKalkulatorPage";
+import RezultatiPage from "./pages/RezultatiPage";
+import VonredniPage from "./pages/VonredniPage";
 import NotFound from "./pages/NotFound";
 import EnrollmentChatbot from "./components/EnrollmentChatbot";
 
@@ -38,7 +45,14 @@ const App = () => (
             <Route path="/proekti" element={<ProektiPage />} />
             <Route path="/nastavnici" element={<NastavniciPage />} />
             <Route path="/novini" element={<NoviniPage />} />
+            <Route path="/novini/:slug" element={<NovostPage />} />
             <Route path="/upisi" element={<UpisiPage />} />
+            <Route path="/misija-vizija" element={<MisijaVizijaPage />} />
+            <Route path="/direktor" element={<DirektorPage />} />
+            <Route path="/strucna-sluzba" element={<StrucnaSluzbaPage />} />
+            <Route path="/poeni-kalkulator" element={<PoeniKalkulatorPage />} />
+            <Route path="/rezultati" element={<RezultatiPage />} />
+            <Route path="/vonredni" element={<VonredniPage />} />
             <Route path="*" element={<NotFound />} />
           </Routes>
           <EnrollmentChatbot />

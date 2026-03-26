@@ -1,13 +1,6 @@
 import SiteHeader from "../components/SiteHeader";
 import SiteFooter from "../components/SiteFooter";
 import "./StaticHomePage.css";
-import rakovodstvo1 from "@/assets/rakovodstvo-1.png";
-import rakovodstvo2 from "@/assets/rakovodstvo-2.png";
-import rakovodstvo3 from "@/assets/rakovodstvo-3.png";
-import rakovodstvo4 from "@/assets/rakovodstvo-4.png";
-import rakovodstvo5 from "@/assets/rakovodstvo-5.png";
-import rakovodstvo6 from "@/assets/rakovodstvo-6.png";
-import rakovodstvo7 from "@/assets/rakovodstvo-7.png";
 import vladoTasevski from "@/assets/vlado-tasevski.png";
 import istorija1 from "@/assets/istorija-1.png";
 import istorija2 from "@/assets/istorija-2.png";
@@ -21,6 +14,7 @@ import istorija9 from "@/assets/istorija-9.png";
 import istorija10 from "@/assets/istorija-10.png";
 import istorija11 from "@/assets/istorija-11.png";
 import istorija12 from "@/assets/istorija-12.png";
+import ImageModal from "../components/ImageModal";
 
 const ZaNasPage = () => {
   return (
@@ -35,7 +29,7 @@ const ZaNasPage = () => {
             </div>
             <div className="history-content">
               <div style={{ float: 'left', marginRight: '20px', marginBottom: '10px', textAlign: 'center' }}>
-                <img src={vladoTasevski} alt="Владо Тасевски" style={{ width: '160px', borderRadius: '12px', boxShadow: '0 4px 12px rgba(0,0,0,0.15)' }} />
+                <ImageModal src={vladoTasevski} alt="Владо Тасевски" style={{ width: '160px', borderRadius: '12px', boxShadow: '0 4px 12px rgba(0,0,0,0.15)' }} />
                 <p style={{ fontSize: '0.8rem', color: '#1565C0', fontWeight: 600, marginTop: '6px' }}>Владо Тасевски</p>
               </div>
               <p><strong>Нашата приказна започна во далечната 1959 година</strong>, кога Работничкиот совет на Железничко-транспортното претпријатие Скопје, во согласност со Уредбата за центрите за стручно образование на работници, ја донесе Одлуката за формирање Центар на железничарите за стручно образование на младинци и возрасни.</p>
@@ -45,88 +39,23 @@ const ZaNasPage = () => {
               <p className="quote">„Просториите на СУГС „Владо Тасевски" се исполнети со младост, убавина, љубов, смеа, палавост и со помалку или повеќе учење."</p>
               <div style={{ clear: 'both' }}></div>
 
-              {/* Историска галерија */}
               <h3 style={{ textAlign: 'center', marginTop: '2.5rem', marginBottom: '1.5rem', color: '#1565C0', fontSize: '1.4rem' }}>
                 <i className="fas fa-camera-retro"></i> Од нашата историја
               </h3>
               <div className="leadership-gallery">
-                <img src={istorija7} alt="Архитектонски план" />
-                <img src={istorija3} alt="Ученици од минатото" />
-                <img src={istorija4} alt="Практична настава" />
-                <img src={istorija8} alt="Наставници" />
-                <img src={istorija5} alt="Телекомуникации" />
-                <img src={istorija6} alt="Лабораторија" />
-                <img src={istorija1} alt="Електроника" />
-                <img src={istorija2} alt="Опрема" />
-                <img src={istorija9} alt="Работилница" />
-                <img src={istorija10} alt="Машинска работилница" />
-                <img src={istorija11} alt="Планирање на училиштето" />
-                <img src={istorija12} alt="Изградба на училиштето" />
+                <ImageModal src={istorija7} alt="Архитектонски план" />
+                <ImageModal src={istorija3} alt="Ученици од минатото" />
+                <ImageModal src={istorija4} alt="Практична настава" />
+                <ImageModal src={istorija8} alt="Наставници" />
+                <ImageModal src={istorija5} alt="Телекомуникации" />
+                <ImageModal src={istorija6} alt="Лабораторија" />
+                <ImageModal src={istorija1} alt="Електроника" />
+                <ImageModal src={istorija2} alt="Опрема" />
+                <ImageModal src={istorija9} alt="Работилница" />
+                <ImageModal src={istorija10} alt="Машинска работилница" />
+                <ImageModal src={istorija11} alt="Планирање на училиштето" />
+                <ImageModal src={istorija12} alt="Изградба на училиштето" />
               </div>
-            </div>
-          </div>
-        </section>
-
-        <section className="mission-section" id="misija">
-          <div className="container">
-            <div className="section-header">
-              <h2>Мисија &amp; Визија</h2>
-            </div>
-            <div className="mission-flex">
-              <div className="mission-card">
-                <i className="fas fa-bullseye"></i>
-                <h3>Нашата Мисија</h3>
-                <p>Средното училиште на Град Скопје „Владо Тасевски" – Скопје е современа образовна институција која образува кадри за потребите на пазарот на трудот, преку реализирање на современи и флексибилни наставни планови и програми.</p>
-              </div>
-              <div className="mission-card">
-                <i className="fas fa-eye"></i>
-                <h3>Нашата Визија</h3>
-                <p>Да израснеме во ефикасно, ефективно, модерно и меѓуетничко интегрирано училиште, во кое ученикот и неговите потреби ќе бидат во центарот на вниманието.</p>
-              </div>
-            </div>
-          </div>
-        </section>
-
-        <section className="leadership-section" id="rukovodstvo">
-          <div className="container">
-            <div className="section-header">
-              <h2>Раководство</h2>
-              <p>Тимот кој ја води нашата школа</p>
-            </div>
-            <div className="leadership-grid">
-              <div className="leader-card">
-                <img src={rakovodstvo7} alt="Добре Михајлов" className="leader-photo" />
-                <h3>Добре Михајлов</h3>
-                <p>Директор</p>
-              </div>
-              <div className="leader-card">
-                <i className="fas fa-chalkboard-user"></i>
-                <h3>Марија Петровска</h3>
-                <p>Помошник директор</p>
-              </div>
-              <div className="leader-card">
-                <i className="fas fa-handshake"></i>
-                <h3>Ана Стојановска</h3>
-                <p>Педагог</p>
-              </div>
-              <div className="leader-card">
-                <i className="fas fa-heart"></i>
-                <h3>Елена Димитрова</h3>
-                <p>Психолог</p>
-              </div>
-            </div>
-
-            {/* Галерија од раководство */}
-            <h3 style={{ textAlign: 'center', marginTop: '3rem', marginBottom: '1.5rem', color: '#1565C0', fontSize: '1.5rem' }}>
-              <i className="fas fa-images"></i> Галерија
-            </h3>
-            <div className="leadership-gallery">
-              <img src={rakovodstvo1} alt="Раководство 1" />
-              <img src={rakovodstvo2} alt="Раководство 2" />
-              <img src={rakovodstvo3} alt="Раководство 3" />
-              <img src={rakovodstvo4} alt="Раководство 4" />
-              <img src={rakovodstvo5} alt="Раководство 5" />
-              <img src={rakovodstvo6} alt="Раководство 6" />
             </div>
           </div>
         </section>

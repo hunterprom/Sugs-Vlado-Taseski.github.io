@@ -129,16 +129,15 @@ const SiteHeader = () => {
                 </a>
                 <ul className="dropdown-menu">
                   <li><Link to="/za-nas">{t("nav.history")}</Link></li>
-                  <li><Link to="/za-nas#misija">{t("nav.mission")}</Link></li>
+                  <li><Link to="/misija-vizija">{t("nav.mission")}</Link></li>
                   <li><Link to="/nastavnici">{t("nav.staff")}</Link></li>
                   <li className={`dropdown-nested ${activeSubmenu === "rakovodstvo" ? "active" : ""}`}>
                     <a href="#" onClick={(e) => handleSubmenuClick("rakovodstvo", e)}>
                       {t("nav.leadership")} <i className="fas fa-chevron-right"></i>
                     </a>
                     <ul className="dropdown-submenu">
-                      <li><Link to="/za-nas#direktor">{t("nav.director")}</Link></li>
-                      <li><Link to="/za-nas#rukovodstvo">{t("nav.professional")}</Link></li>
-                      <li><Link to="/za-nas#rukovodstvo">{t("nav.studentCouncil")}</Link></li>
+                      <li><Link to="/direktor">{t("nav.director")}</Link></li>
+                      <li><Link to="/strucna-sluzba">{t("nav.professional")}</Link></li>
                     </ul>
                   </li>
                 </ul>
@@ -163,6 +162,9 @@ const SiteHeader = () => {
                 </a>
                 <ul className="dropdown-menu">
                   <li><Link to="/upisi">{t("nav.enrollment")}</Link></li>
+                  <li><Link to="/vonredni">{t("nav.external")}</Link></li>
+                  <li><Link to="/rezultati">Резултати од уписи</Link></li>
+                  <li><Link to="/poeni-kalkulator">Калкулатор за поени</Link></li>
                   <li className={`dropdown-nested ${activeSubmenu === "portali" ? "active" : ""}`}>
                     <a href="#" onClick={(e) => handleSubmenuClick("portali", e)}>
                       {t("nav.portals")} <i className="fas fa-chevron-right"></i>
