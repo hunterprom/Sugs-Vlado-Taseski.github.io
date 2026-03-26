@@ -65,7 +65,7 @@ const StaticHomePage = () => {
                 animate={{ opacity: 1, scale: 1 }}
                 transition={{ duration: 0.5, delay: 0.2 }}
               >
-                <i className="fas fa-star-of-life"></i> ПОДОБРО ОБРАЗОВАНИЕ, ПОДОБРА ИДНИНА!
+                <i className="fas fa-star-of-life text-3xl"></i> ПОДОБРО ОБРАЗОВАНИЕ, ПОДОБРА ИДНИНА!
               </motion.span>
 
               <h1 className="hero-title-split">
