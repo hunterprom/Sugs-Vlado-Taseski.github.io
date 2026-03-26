@@ -68,7 +68,7 @@ export const translations: Record<Language, Record<string, string>> = {
     // Footer
     "footer.usefulLinks": "Корисни линкови",
     "footer.contact": "Контакт",
-    "footer.copyright": "© Copyright 2026 СУГС „Владо Тасевски" - Скопје. Сите права се задржани.",
+    "footer.copyright": "© Copyright 2026 СУГС \u201EВладо Тасевски\u201C - Скопје. Сите права се задржани.",
     "footer.madeBy": "Изработено од: Гордан Стојановски, Марко Дојчиновски, Матеј Илиоски, Томче Златановски",
     // Back
     "back": "Назад кон почетна",
