@@ -1,7 +1,7 @@
 import { motion } from "framer-motion";
 import { ReactNode } from "react";
 
-const ease = [0.76, 0, 0.24, 1] as [number, number, number, number];
+const ease = [0.65, 0, 0.35, 1] as [number, number, number, number];
 
 const pageVariants = {
   initial: {
