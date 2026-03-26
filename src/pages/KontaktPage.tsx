@@ -1,9 +1,11 @@
 import { useState } from "react";
 import SiteHeader from "../components/SiteHeader";
 import SiteFooter from "../components/SiteFooter";
+import { useLanguage } from "@/i18n/LanguageContext";
 import "./StaticHomePage.css";
 
 const KontaktPage = () => {
+  const { t } = useLanguage();
   const [formMessage, setFormMessage] = useState<{ text: string; type: string } | null>(null);
 
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
@@ -16,19 +18,19 @@ const KontaktPage = () => {
     const human = (form.elements.namedItem("human") as HTMLInputElement)?.checked;
 
     if (!ime || !prezime || !email || !poraka) {
-      setFormMessage({ text: "Ве молиме пополнете ги сите задолжителни полиња.", type: "error" });
+      setFormMessage({ text: t("kontakt.fillAll"), type: "error" });
       return;
     }
     if (!human) {
-      setFormMessage({ text: "Ве молиме потврдете дека сте човек.", type: "error" });
+      setFormMessage({ text: t("kontakt.confirmHuman"), type: "error" });
       return;
     }
     if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
-      setFormMessage({ text: "Ве молиме внесете валидна е-пошта адреса.", type: "error" });
+      setFormMessage({ text: t("kontakt.invalidEmail"), type: "error" });
       return;
     }
 
-    setFormMessage({ text: "Вашата порака е успешно испратена! Ќе ве контактираме наскоро.", type: "success" });
+    setFormMessage({ text: t("kontakt.success"), type: "success" });
     form.reset();
     setTimeout(() => setFormMessage(null), 5000);
   };
@@ -40,8 +42,8 @@ const KontaktPage = () => {
         <section className="contact-hero">
           <div className="container">
             <div className="section-header">
-              <h2>Контактирајте не</h2>
-              <p>Овде можете да не контактирате за било какви прашања</p>
+              <h2>{t("kontakt.title")}</h2>
+              <p>{t("kontakt.subtitle")}</p>
             </div>
           </div>
         </section>
@@ -51,22 +53,22 @@ const KontaktPage = () => {
             <div className="contact-info">
               <div className="info-card">
                 <i className="fas fa-map-marker-alt"></i>
-                <h3>Локација</h3>
+                <h3>{t("kontakt.location")}</h3>
                 <p>СУГС „Владо Тасевски" - Скопје<br />III Македонска бригада бб<br />1000 Скопје</p>
               </div>
               <div className="info-card">
                 <i className="fas fa-phone-alt"></i>
-                <h3>Телефон</h3>
+                <h3>{t("kontakt.phone")}</h3>
                 <p><a href="tel:+38922400040">+389 2 240 00 40</a></p>
               </div>
               <div className="info-card">
                 <i className="fas fa-envelope"></i>
-                <h3>Е-Пошта</h3>
+                <h3>{t("kontakt.email")}</h3>
                 <p><a href="mailto:sugs-vladotasevski-skopje@schools.mk">sugs-vladotasevski-skopje@schools.mk</a></p>
               </div>
               <div className="info-card social-info">
                 <i className="fas fa-share-alt"></i>
-                <h3>Социјални медиуми</h3>
+                <h3>{t("kontakt.social")}</h3>
                 <div className="social-links">
                   <a href="https://www.facebook.com/VladoTasevskiPtt/" target="_blank" rel="noopener noreferrer"><i className="fab fa-facebook-f"></i> Facebook</a>
                   <a href="https://www.instagram.com/sugs_vlado_tasevski/" target="_blank" rel="noopener noreferrer"><i className="fab fa-instagram"></i> Instagram</a>
@@ -77,28 +79,28 @@ const KontaktPage = () => {
             </div>
 
             <div className="contact-form-container">
-              <h3>Директно испратете ни порака</h3>
+              <h3>{t("kontakt.sendMessage")}</h3>
               <form className="contact-form" onSubmit={handleSubmit}>
                 <div className="form-row">
                   <div className="form-group half">
-                    <label htmlFor="ime">Име *</label>
+                    <label htmlFor="ime">{t("kontakt.firstName")} *</label>
                     <input type="text" id="ime" name="ime" required />
                   </div>
                   <div className="form-group half">
-                    <label htmlFor="prezime">Презиме *</label>
+                    <label htmlFor="prezime">{t("kontakt.lastName")} *</label>
                     <input type="text" id="prezime" name="prezime" required />
                   </div>
                 </div>
                 <div className="form-group">
-                  <label htmlFor="email">Е-Пошта *</label>
+                  <label htmlFor="email">{t("kontakt.emailLabel")} *</label>
                   <input type="email" id="email" name="email" required />
                 </div>
                 <div className="form-group">
-                  <label htmlFor="telefon">Телефонски број (Не е задолжително)</label>
+                  <label htmlFor="telefon">{t("kontakt.phoneLabel")}</label>
                   <input type="tel" id="telefon" name="telefon" />
                 </div>
                 <div className="form-group">
-                  <label htmlFor="poraka">Порака *</label>
+                  <label htmlFor="poraka">{t("kontakt.message")} *</label>
                   <textarea id="poraka" name="poraka" rows={5} required></textarea>
                 </div>
                 <div className="form-group captcha-group">
@@ -111,7 +113,7 @@ const KontaktPage = () => {
                     <span>Accessibility - Terms</span>
                   </div>
                 </div>
-                <button type="submit" className="btn-submit"><i className="fas fa-paper-plane"></i> Испрати порака</button>
+                <button type="submit" className="btn-submit"><i className="fas fa-paper-plane"></i> {t("kontakt.submit")}</button>
               </form>
               {formMessage && (
                 <div className={`form-message ${formMessage.type}`}>{formMessage.text}</div>
@@ -120,7 +122,6 @@ const KontaktPage = () => {
           </div>
         </section>
 
-        {/* Google Maps embed - correct location */}
         <section style={{ padding: '0 0 40px' }}>
           <div className="container">
             <div style={{ borderRadius: '16px', overflow: 'hidden', boxShadow: '0 4px 20px rgba(0,0,0,0.1)' }}>
@@ -132,7 +133,7 @@ const KontaktPage = () => {
                 allowFullScreen
                 loading="lazy"
                 referrerPolicy="no-referrer-when-downgrade"
-                title="Локација на СУГС Владо Тасевски"
+                title={t("kontakt.location")}
               ></iframe>
             </div>
           </div>

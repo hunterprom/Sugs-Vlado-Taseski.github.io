@@ -1,5 +1,6 @@
 import SiteHeader from "../components/SiteHeader";
 import SiteFooter from "../components/SiteFooter";
+import { useLanguage } from "@/i18n/LanguageContext";
 import "./StaticHomePage.css";
 import vladoTasevski from "@/assets/vlado-tasevski.png";
 import istorija1 from "@/assets/istorija-1.png";
@@ -17,6 +18,7 @@ import istorija12 from "@/assets/istorija-12.png";
 import ImageModal from "../components/ImageModal";
 
 const ZaNasPage = () => {
+  const { t } = useLanguage();
   return (
     <>
       <SiteHeader />
@@ -24,23 +26,23 @@ const ZaNasPage = () => {
         <section className="history-section" id="istorija">
           <div className="container">
             <div className="section-header">
-              <h2>Нашата историја</h2>
-              <p>66 години традиција и квалитетно образование</p>
+              <h2>{t("zanas.title")}</h2>
+              <p>{t("zanas.subtitle")}</p>
             </div>
             <div className="history-content">
               <div style={{ float: 'left', marginRight: '20px', marginBottom: '10px', textAlign: 'center' }}>
                 <ImageModal src={vladoTasevski} alt="Владо Тасевски" style={{ width: '160px', borderRadius: '12px', boxShadow: '0 4px 12px rgba(0,0,0,0.15)' }} />
                 <p style={{ fontSize: '0.8rem', color: '#1565C0', fontWeight: 600, marginTop: '6px' }}>Владо Тасевски</p>
               </div>
-              <p><strong>Нашата приказна започна во далечната 1959 година</strong>, кога Работничкиот совет на Железничко-транспортното претпријатие Скопје, во согласност со Уредбата за центрите за стручно образование на работници, ја донесе Одлуката за формирање Центар на железничарите за стручно образование на младинци и возрасни.</p>
-              <p>Од 1961 година почнува со работа Железничкото техничко училиште за сообраќајно-транспортни струки со интернатско сместување. По катастрофалниот земјотрес во 1963 година, училиштето привремено беше преместено во Белград.</p>
-              <p>На <strong>15 април 1979 година</strong>, со Одлука на Работничкиот совет, Центарот го добива името на првоборецот-железничар <strong>Владо Тасевски</strong>.</p>
-              <p>Учебната 1983/84 година се воведоа нови профили од областа на ПТТ сообраќајот и телекомуникациите, со што училиштето го доби името Училишен центар за железнички и ПТТ сообраќај „Владо Тасевски". Во 2004 година, со процесот на децентрализација, училиштето преминува под ингеренција на Град Скопје и станува СУГС „Владо Тасевски".</p>
-              <p className="quote">„Просториите на СУГС „Владо Тасевски" се исполнети со младост, убавина, љубов, смеа, палавост и со помалку или повеќе учење."</p>
+              <p><strong>{t("zanas.story1")}</strong></p>
+              <p>{t("zanas.story2")}</p>
+              <p>{t("zanas.story3")}</p>
+              <p>{t("zanas.story4")}</p>
+              <p className="quote">{t("zanas.quote")}</p>
               <div style={{ clear: 'both' }}></div>
 
               <h3 style={{ textAlign: 'center', marginTop: '2.5rem', marginBottom: '1.5rem', color: '#1565C0', fontSize: '1.4rem' }}>
-                <i className="fas fa-camera-retro"></i> Од нашата историја
+                <i className="fas fa-camera-retro"></i> {t("zanas.galleryTitle")}
               </h3>
               <div className="leadership-gallery">
                 <ImageModal src={istorija7} alt="Архитектонски план" />
