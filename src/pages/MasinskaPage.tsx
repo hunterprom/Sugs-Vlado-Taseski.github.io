@@ -28,6 +28,7 @@ const MasinskaPage = () => {
               <div className="profil-card">
                 <div className="profil-icon"><i className="fas fa-fire"></i></div>
                 <h3>Машинско-енергетски техничар</h3>
+                <img src={masinskaEnergetski} alt="Машинско-енергетски техничар" className="profil-card-img" />
                 <p>Специјализација за енергетски системи, термотехника, греење, климатизација и енергетска ефикасност.</p>
                 <ul className="profil-opsii">
                   <li><i className="fas fa-check-circle"></i> Термотехника</li>
