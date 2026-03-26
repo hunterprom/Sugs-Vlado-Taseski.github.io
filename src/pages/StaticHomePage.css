@@ -686,12 +686,14 @@
   padding: 28px 20px;
   box-shadow: 0 8px 20px rgba(30, 58, 95, 0.06);
   border: 1px solid #E8EDF3;
-  transition: 0.2s;
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+  perspective: 800px;
+  transform-style: preserve-3d;
 }
 
 .card:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 12px 28px rgba(30, 58, 95, 0.1);
+  transform: translateY(-8px) rotateX(2deg) rotateY(-2deg);
+  box-shadow: 0 20px 40px rgba(30, 58, 95, 0.15);
 }
 
 .card-icon {
