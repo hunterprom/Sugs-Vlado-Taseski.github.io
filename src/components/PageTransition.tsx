@@ -16,9 +16,9 @@ const pageVariants = {
     filter: "blur(0px)",
     borderRadius: "0px",
     transition: {
-      duration: 0.6,
+      duration: 0.35,
       ease,
-      staggerChildren: 0.08,
+      staggerChildren: 0.04,
     },
   },
   exit: {
