@@ -2,20 +2,20 @@ import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
 import { useNavigate } from "react-router-dom";
 
-import gallery1 from "@/assets/gallery-1.jpg";
-import gallery2 from "@/assets/gallery-2.jpg";
-import gallery3 from "@/assets/gallery-3.jpg";
-import gallery4 from "@/assets/gallery-4.jpg";
-import gallery5 from "@/assets/gallery-5.jpg";
-import gallery6 from "@/assets/gallery-6.jpg";
+import gallery1 from "@/assets/училница-1.png";
+import gallery2 from "@/assets/училница-2.png";
+import gallery3 from "@/assets/училница-3.png";
+import gallery4 from "@/assets/училиште-надвор.png";
+import gallery5 from "@/assets/училиште-лоби.png";
+import gallery6 from "@/assets/училиште-фонтана.png";
 
 const images = [
-  { src: gallery1, alt: "Ученици во електро лабораторија", label: "Практична настава", link: "/nastava" },
-  { src: gallery2, alt: "Победа на натпревар", label: "Натпревари", link: "/aktivnosti#natprevari" },
-  { src: gallery3, alt: "Компјутерска лабораторија", label: "ИТ настава", link: "/nastava" },
-  { src: gallery4, alt: "Матурска прослава", label: "Матура", link: "/aktivnosti#nastani" },
-  { src: gallery5, alt: "Екскурзија во фабрика", label: "Екскурзии", link: "/aktivnosti#ekskurzii" },
-  { src: gallery6, alt: "Научен саем", label: "Проекти", link: "/aktivnosti#proekti" },
+  { src: gallery1, alt: "Модерна училница", label: "Училници", link: "/za-nas" },
+  { src: gallery2, alt: "Училница со опрема", label: "Настава", link: "/za-nas" },
+  { src: gallery3, alt: "Светла училница", label: "Простории", link: "/za-nas" },
+  { src: gallery4, alt: "Училиште - надворешност", label: "Нашата зграда", link: "/za-nas" },
+  { src: gallery5, alt: "Лоби на училиштето", label: "Лоби", link: "/za-nas" },
+  { src: gallery6, alt: "Фонтана во дворот", label: "Двор", link: "/za-nas" },
 ];
 
 const HomeGallery = () => {
