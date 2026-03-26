@@ -2,20 +2,22 @@ import { Link } from "react-router-dom";
 import "./StaticHomePage.css";
 import SiteHeader from "../components/SiteHeader";
 import SiteFooter from "../components/SiteFooter";
+import { useLanguage } from "@/i18n/LanguageContext";
 
 const UpisiPage = () => {
+  const { t } = useLanguage();
   return (
     <>
       <SiteHeader />
       <main>
         <section className="hero" style={{ padding: "40px 0 50px" }}>
           <div className="container">
-            <span className="badge"><i className="fas fa-user-graduate"></i> Уписи 2025/2026</span>
+            <span className="badge"><i className="fas fa-user-graduate"></i> {t("upisi.badge")}</span>
             <h1 style={{ fontSize: "2.5rem", fontWeight: 800, color: "var(--primary-dark)", marginTop: "16px", marginBottom: "20px" }}>
-              Запишете се во СУГС „Владо Тасевски"
+              {t("upisi.title")}
             </h1>
             <p style={{ fontSize: "1.05rem", color: "var(--text-medium)", maxWidth: "700px" }}>
-              Изберете ја вашата иднина! Ние сме тука за да ви помогнеме.
+              {t("upisi.subtitle")}
             </p>
           </div>
         </section>
@@ -23,48 +25,48 @@ const UpisiPage = () => {
         <section className="features" style={{ padding: "50px 0" }}>
           <div className="container">
             <div className="section-header">
-              <h2>Достапни струки за упис</h2>
-              <p>Одберете ја струката што најмногу ви одговара</p>
+              <h2>{t("upisi.availableDept")}</h2>
+              <p>{t("upisi.chooseDept")}</p>
             </div>
             <div className="cards-grid">
               <div className="card">
                 <div className="card-icon"><i className="fas fa-car"></i></div>
-                <h3>Сообраќајна струка</h3>
+                <h3>{t("upisi.soobrakaj")}</h3>
                 <ul style={{ paddingLeft: "20px", color: "var(--text-medium)", lineHeight: 2 }}>
-                  <li>Техничар за транспорт и шпедиција</li>
-                  <li>Техничар за железнички сообраќај</li>
-                  <li>Техничар за влеча – машиновозач</li>
+                  <li>{t("soobrakaj.transport")}</li>
+                  <li>{t("soobrakaj.zeleznica")}</li>
+                  <li>{t("soobrakaj.vleca")}</li>
                 </ul>
               </div>
               <div className="card">
                 <div className="card-icon"><i className="fas fa-bolt"></i></div>
-                <h3>Електротехничка струка</h3>
+                <h3>{t("upisi.elektro")}</h3>
                 <ul style={{ paddingLeft: "20px", color: "var(--text-medium)", lineHeight: 2 }}>
-                  <li>Електротехничар за електроника и телекомуникации</li>
-                  <li>Електротехничар за компјутерска техника и автоматика</li>
+                  <li>{t("elektro.telekom")}</li>
+                  <li>{t("elektro.kompjuterska")}</li>
                 </ul>
               </div>
               <div className="card">
                 <div className="card-icon"><i className="fas fa-cogs"></i></div>
-                <h3>Машинска струка</h3>
+                <h3>{t("upisi.masinska")}</h3>
                 <ul style={{ paddingLeft: "20px", color: "var(--text-medium)", lineHeight: 2 }}>
-                  <li>Машинско-енергетски техничар</li>
-                  <li>Техничар за производство и машинство</li>
-                  <li>Инсталатер за греење и климатизација</li>
-                  <li>Техничар за компјутерско управување</li>
+                  <li>{t("masinska.energetski")}</li>
+                  <li>{t("masinska.proizvodno")}</li>
+                  <li>{t("masinska.instalater")}</li>
+                  <li>{t("masinska.kompjutersko")}</li>
                 </ul>
               </div>
             </div>
 
             <div style={{ display: "flex", gap: "15px", justifyContent: "center", flexWrap: "wrap", marginTop: "40px" }}>
               <a href="/docs/интерен-оглас-второ-пријавување.pdf" target="_blank" rel="noopener noreferrer" className="btn-primary" style={{ fontSize: "1rem", padding: "14px 36px" }}>
-                <i className="fas fa-file-pdf"></i> Повеќе информации за уписи
+                <i className="fas fa-file-pdf"></i> {t("upisi.moreInfo")}
               </a>
               <Link to="/poeni-kalkulator" className="btn-secondary" style={{ fontSize: "1rem", padding: "14px 36px" }}>
-                <i className="fas fa-calculator"></i> Калкулатор за поени
+                <i className="fas fa-calculator"></i> {t("upisi.calculator")}
               </Link>
               <Link to="/rezultati" className="btn-secondary" style={{ fontSize: "1rem", padding: "14px 36px" }}>
-                <i className="fas fa-list-ol"></i> Резултати од уписи
+                <i className="fas fa-list-ol"></i> {t("upisi.results")}
               </Link>
             </div>
           </div>

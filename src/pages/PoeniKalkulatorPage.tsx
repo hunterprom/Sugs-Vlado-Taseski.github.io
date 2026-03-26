@@ -2,16 +2,18 @@ import { useState } from "react";
 import { Link } from "react-router-dom";
 import SiteHeader from "../components/SiteHeader";
 import SiteFooter from "../components/SiteFooter";
+import { useLanguage } from "@/i18n/LanguageContext";
 import "./StaticHomePage.css";
 
-const grades = ["6-то", "7-мо", "8-мо", "9-то"];
+const grades = ["6", "7", "8", "9"];
 
 const PoeniKalkulatorPage = () => {
+  const { t } = useLanguage();
   const [uspeh, setUspeh] = useState(["", "", "", ""]);
   const [makedonski, setMakedonski] = useState(["", "", "", ""]);
   const [angliski, setAngliski] = useState(["", "", "", ""]);
   const [matematika, setMatematika] = useState(["", "", "", ""]);
-  const [fizika, setFizika] = useState(["", ""]); // only 8th and 9th
+  const [fizika, setFizika] = useState(["", ""]);
   const [povedenie, setPovedenie] = useState(["5", "5", "5", "5"]);
   const [diplomi, setDiplomi] = useState("");
   const [result, setResult] = useState<number | null>(null);
@@ -28,26 +30,17 @@ const PoeniKalkulatorPage = () => {
     const fizSum = fizika.reduce((s, v) => s + (parseInt(v) || 0), 0);
     const povSum = povedenie.reduce((s, v) => s + (parseInt(v) || 0), 0);
     const dipVal = parseInt(diplomi) || 0;
-
     const total = (uspehSum * 5) + makSum + angSum + matSum + fizSum + povSum + dipVal;
     setResult(Math.round(total * 100) / 100);
   };
 
   const inputStyle: React.CSSProperties = {
-    width: "70px",
-    padding: "8px",
-    borderRadius: "8px",
-    border: "1px solid #BBDEFB",
-    textAlign: "center",
-    fontSize: "0.9rem",
-    color: "#2E6899",
+    width: "70px", padding: "8px", borderRadius: "8px", border: "1px solid #BBDEFB",
+    textAlign: "center", fontSize: "0.9rem", color: "#2E6899",
   };
 
   const labelStyle: React.CSSProperties = {
-    fontWeight: 600,
-    color: "#2E6899",
-    fontSize: "0.9rem",
-    minWidth: "200px",
+    fontWeight: 600, color: "#2E6899", fontSize: "0.9rem", minWidth: "200px",
   };
 
   return (
@@ -56,33 +49,25 @@ const PoeniKalkulatorPage = () => {
       <main>
         <section className="struka-hero">
           <div className="container struka-header">
-            <div className="struka-icon">
-              <i className="fas fa-calculator"></i>
-            </div>
-            <h1>Пресметка на поени за упис</h1>
-            <p>Пресметајте ги вашите поени за упис во средно училиште</p>
+            <div className="struka-icon"><i className="fas fa-calculator"></i></div>
+            <h1>{t("kalkulator.title")}</h1>
+            <p>{t("kalkulator.subtitle")}</p>
           </div>
         </section>
 
         <section style={{ padding: "50px 0" }}>
           <div className="container" style={{ maxWidth: "900px" }}>
-            <div style={{
-              background: "white",
-              borderRadius: "20px",
-              padding: "30px",
-              boxShadow: "0 4px 20px rgba(0,0,0,0.06)",
-            }}>
-              {/* Header Row */}
+            <div style={{ background: "white", borderRadius: "20px", padding: "30px", boxShadow: "0 4px 20px rgba(0,0,0,0.06)" }}>
               <div style={{ display: "grid", gridTemplateColumns: "200px repeat(4, 1fr)", gap: "10px", marginBottom: "15px", textAlign: "center" }}>
-                <div style={labelStyle}>Предмет / Успех</div>
+                <div style={labelStyle}>{t("kalkulator.subject")}</div>
                 {grades.map((g, i) => (
-                  <div key={i} style={{ fontWeight: 700, color: "#4B8BBE", fontSize: "0.85rem" }}>{g} одд.</div>
+                  <div key={i} style={{ fontWeight: 700, color: "#4B8BBE", fontSize: "0.85rem" }}>{g} {t("kalkulator.grade")}</div>
                 ))}
               </div>
 
-              {/* Среден успех */}
+              {/* GPA */}
               <div style={{ display: "grid", gridTemplateColumns: "200px repeat(4, 1fr)", gap: "10px", marginBottom: "12px", alignItems: "center" }}>
-                <div style={labelStyle}>Среден успех</div>
+                <div style={labelStyle}>{t("kalkulator.gpa")}</div>
                 {grades.map((_, i) => (
                   <div key={i} style={{ textAlign: "center" }}>
                     <input type="number" step="0.01" min="1" max="5" value={uspeh[i]} onChange={e => updateArr(setUspeh, i, e.target.value)} style={inputStyle} placeholder="5.00" />
@@ -90,9 +75,9 @@ const PoeniKalkulatorPage = () => {
                 ))}
               </div>
 
-              {/* Македонски */}
+              {/* Macedonian */}
               <div style={{ display: "grid", gridTemplateColumns: "200px repeat(4, 1fr)", gap: "10px", marginBottom: "12px", alignItems: "center" }}>
-                <div style={labelStyle}>Оценка по македонски</div>
+                <div style={labelStyle}>{t("kalkulator.macedonian")}</div>
                 {grades.map((_, i) => (
                   <div key={i} style={{ textAlign: "center" }}>
                     <input type="number" min="1" max="5" value={makedonski[i]} onChange={e => updateArr(setMakedonski, i, e.target.value)} style={inputStyle} placeholder="5" />
@@ -100,9 +85,9 @@ const PoeniKalkulatorPage = () => {
                 ))}
               </div>
 
-              {/* Англиски */}
+              {/* English */}
               <div style={{ display: "grid", gridTemplateColumns: "200px repeat(4, 1fr)", gap: "10px", marginBottom: "12px", alignItems: "center" }}>
-                <div style={labelStyle}>Оценка по англиски</div>
+                <div style={labelStyle}>{t("kalkulator.english")}</div>
                 {grades.map((_, i) => (
                   <div key={i} style={{ textAlign: "center" }}>
                     <input type="number" min="1" max="5" value={angliski[i]} onChange={e => updateArr(setAngliski, i, e.target.value)} style={inputStyle} placeholder="5" />
@@ -110,9 +95,9 @@ const PoeniKalkulatorPage = () => {
                 ))}
               </div>
 
-              {/* Математика */}
+              {/* Math */}
               <div style={{ display: "grid", gridTemplateColumns: "200px repeat(4, 1fr)", gap: "10px", marginBottom: "12px", alignItems: "center" }}>
-                <div style={labelStyle}>Оценка по математика</div>
+                <div style={labelStyle}>{t("kalkulator.math")}</div>
                 {grades.map((_, i) => (
                   <div key={i} style={{ textAlign: "center" }}>
                     <input type="number" min="1" max="5" value={matematika[i]} onChange={e => updateArr(setMatematika, i, e.target.value)} style={inputStyle} placeholder="5" />
@@ -120,9 +105,9 @@ const PoeniKalkulatorPage = () => {
                 ))}
               </div>
 
-              {/* Физика - only 8th and 9th */}
+              {/* Physics - only 8th and 9th */}
               <div style={{ display: "grid", gridTemplateColumns: "200px repeat(4, 1fr)", gap: "10px", marginBottom: "12px", alignItems: "center" }}>
-                <div style={labelStyle}>Оценка по физика</div>
+                <div style={labelStyle}>{t("kalkulator.physics")}</div>
                 <div style={{ textAlign: "center", color: "#9FBDD6" }}>---</div>
                 <div style={{ textAlign: "center", color: "#9FBDD6" }}>---</div>
                 <div style={{ textAlign: "center" }}>
@@ -133,23 +118,23 @@ const PoeniKalkulatorPage = () => {
                 </div>
               </div>
 
-              {/* Поведение */}
+              {/* Behavior */}
               <div style={{ display: "grid", gridTemplateColumns: "200px repeat(4, 1fr)", gap: "10px", marginBottom: "12px", alignItems: "center" }}>
-                <div style={labelStyle}>Поени од поведение</div>
+                <div style={labelStyle}>{t("kalkulator.behavior")}</div>
                 {grades.map((_, i) => (
                   <div key={i} style={{ textAlign: "center" }}>
                     <select value={povedenie[i]} onChange={e => updateArr(setPovedenie, i, e.target.value)} style={{ ...inputStyle, width: "80px", fontSize: "0.8rem", padding: "6px 4px" }}>
-                      <option value="5">Примерно</option>
-                      <option value="3">Добро</option>
-                      <option value="1">Незадов.</option>
+                      <option value="5">{t("kalkulator.exemplary")}</option>
+                      <option value="3">{t("kalkulator.good")}</option>
+                      <option value="1">{t("kalkulator.unsatisfactory")}</option>
                     </select>
                   </div>
                 ))}
               </div>
 
-              {/* Дипломи */}
+              {/* Diplomas */}
               <div style={{ display: "grid", gridTemplateColumns: "200px 1fr", gap: "10px", marginBottom: "20px", alignItems: "center" }}>
-                <div style={labelStyle}>Поени од дипломи</div>
+                <div style={labelStyle}>{t("kalkulator.diplomas")}</div>
                 <div>
                   <input type="number" min="0" value={diplomi} onChange={e => setDiplomi(e.target.value)} style={{ ...inputStyle, width: "100px" }} placeholder="0" />
                 </div>
@@ -157,27 +142,20 @@ const PoeniKalkulatorPage = () => {
 
               <div style={{ textAlign: "center" }}>
                 <button onClick={calculate} className="btn-primary" style={{ fontSize: "1rem", padding: "14px 40px", cursor: "pointer", border: "none" }}>
-                  <i className="fas fa-calculator"></i> Пресметај поени
+                  <i className="fas fa-calculator"></i> {t("kalkulator.calculate")}
                 </button>
               </div>
 
               {result !== null && (
-                <div style={{
-                  marginTop: "30px",
-                  textAlign: "center",
-                  background: "linear-gradient(135deg, #1E4D7A, #4B8BBE)",
-                  borderRadius: "16px",
-                  padding: "30px",
-                  color: "white",
-                }}>
-                  <p style={{ fontSize: "1rem", opacity: 0.8, marginBottom: "8px" }}>Вкупно поени:</p>
+                <div style={{ marginTop: "30px", textAlign: "center", background: "linear-gradient(135deg, #1E4D7A, #4B8BBE)", borderRadius: "16px", padding: "30px", color: "white" }}>
+                  <p style={{ fontSize: "1rem", opacity: 0.8, marginBottom: "8px" }}>{t("kalkulator.total")}</p>
                   <h2 style={{ fontSize: "3rem", fontWeight: 800, color: "#FBC02D" }}>{result}</h2>
                 </div>
               )}
             </div>
 
             <p style={{ textAlign: "center", marginTop: "20px", color: "#9FBDD6", fontSize: "0.8rem" }}>
-              Изработено од: проф. Сениха Мандал, Мартин Илиев, Сергиј Алексовски
+              {t("kalkulator.credits")}
             </p>
           </div>
         </section>
@@ -185,7 +163,7 @@ const PoeniKalkulatorPage = () => {
         <section className="back-section">
           <div className="container">
             <Link to="/upisi" className="back-button">
-              <i className="fas fa-arrow-left"></i> Назад кон уписи
+              <i className="fas fa-arrow-left"></i> {t("kalkulator.back")}
             </Link>
           </div>
         </section>
