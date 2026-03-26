@@ -74,7 +74,7 @@ const StaticHomePage = () => {
               <i className="fas fa-star-of-life"></i> ПОДОБРО ОБРАЗОВАНИЕ, ПОДОБРА ИДНИНА!
             </motion.span>
 
-            <h1 className="hero-title-fullscreen">
+            <h1 className="hero-title-fullscreen" style={{ fontSize: "9rem", lineHeight: 1 }}>
               <LineReveal delay={0.3}>
                 <span className="font-display" style={{ fontStyle: "italic", letterSpacing: "-0.02em" }}>
                   СУГС
