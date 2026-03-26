@@ -12,7 +12,7 @@ const SiteHeader = () => {
   const [activeDropdown, setActiveDropdown] = useState<string | null>(null);
   const [activeSubmenu, setActiveSubmenu] = useState<string | null>(null);
   const [langOpen, setLangOpen] = useState(false);
-  const navRef = useRef<HTMLDivElement>(null);
+  const headerRef = useRef<HTMLElement>(null);
   const location = useLocation();
   const { language, setLanguage, t } = useLanguage();
 
@@ -25,7 +25,7 @@ const SiteHeader = () => {
 
   useEffect(() => {
     const handleClickOutside = (e: MouseEvent) => {
-      if (navRef.current && !navRef.current.contains(e.target as Node)) {
+      if (headerRef.current && !headerRef.current.contains(e.target as Node)) {
         setMobileMenuOpen(false);
         setActiveDropdown(null);
         setActiveSubmenu(null);
@@ -53,7 +53,7 @@ const SiteHeader = () => {
   };
 
   return (
-    <header className="site-header">
+    <header className="site-header" ref={headerRef}>
       <div className="top-bar">
         <div className="container top-flex">
           <div className="quick-links">
@@ -71,12 +71,13 @@ const SiteHeader = () => {
             </a>
           </div>
           <div className="top-right-area">
-            {/* Language Switcher */}
             <div className="lang-switcher" style={{ position: "relative" }}>
               <button
+                type="button"
                 className="lang-btn"
-                onClick={() => setLangOpen(!langOpen)}
+                onClick={() => setLangOpen((prev) => !prev)}
                 aria-label="Change language"
+                aria-expanded={langOpen}
               >
                 <span>{langFlags[language]}</span> {langLabels[language]} <i className="fas fa-chevron-down" style={{ fontSize: "0.6rem", marginLeft: "4px" }}></i>
               </button>
@@ -85,8 +86,12 @@ const SiteHeader = () => {
                   {(Object.keys(langLabels) as Language[]).map((lang) => (
                     <button
                       key={lang}
+                      type="button"
                       className={`lang-option ${lang === language ? "active" : ""}`}
-                      onClick={() => { setLanguage(lang); setLangOpen(false); }}
+                      onClick={() => {
+                        setLanguage(lang);
+                        setLangOpen(false);
+                      }}
                     >
                       <span>{langFlags[lang]}</span> {langLabels[lang]}
                     </button>
@@ -102,10 +107,10 @@ const SiteHeader = () => {
         </div>
       </div>
 
-      <div className="main-nav" ref={navRef}>
+      <div className="main-nav">
         <div className="container nav-container">
           <Link to="/" className="logo-area">
-            <img src={schoolLogo} alt="СУГС Владо Тасевски лого" className="logo-img" style={{ height: '52px', width: 'auto' }} />
+            <img src={schoolLogo} alt="СУГС Владо Тасевски лого" className="logo-img" style={{ height: "52px", width: "auto" }} />
             <div className="logo-text">
               <h1>СУГС „Владо Тасевски"</h1>
               <span>образование • иновација • традиција</span>
@@ -122,7 +127,6 @@ const SiteHeader = () => {
                 <Link to="/" className={location.pathname === "/" ? "active" : ""}>{t("nav.home")}</Link>
               </li>
 
-              {/* ЗА НАС */}
               <li className={`dropdown ${activeDropdown === "za-nas" ? "active" : ""}`}>
                 <a href="#" onClick={(e) => handleDropdownClick("za-nas", e)}>
                   {t("nav.about")} <i className="fas fa-chevron-down"></i>
@@ -143,7 +147,6 @@ const SiteHeader = () => {
                 </ul>
               </li>
 
-              {/* СТРУКИ */}
               <li className={`dropdown ${activeDropdown === "struki" ? "active" : ""}`}>
                 <a href="#" onClick={(e) => handleDropdownClick("struki", e)}>
                   {t("nav.departments")} <i className="fas fa-chevron-down"></i>
@@ -155,7 +158,6 @@ const SiteHeader = () => {
                 </ul>
               </li>
 
-              {/* УЧЕНИЦИ */}
               <li className={`dropdown ${activeDropdown === "uchenici" ? "active" : ""}`}>
                 <a href="#" onClick={(e) => handleDropdownClick("uchenici", e)}>
                   {t("nav.students")} <i className="fas fa-chevron-down"></i>
@@ -167,7 +169,6 @@ const SiteHeader = () => {
                 </ul>
               </li>
 
-              {/* НОВОСТИ */}
               <li className={`dropdown ${activeDropdown === "novosti" ? "active" : ""}`}>
                 <a href="#" onClick={(e) => handleDropdownClick("novosti", e)}>
                   {t("nav.news")} <i className="fas fa-chevron-down"></i>
