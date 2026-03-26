@@ -40,6 +40,7 @@ const MasinskaPage = () => {
               <div className="profil-card">
                 <div className="profil-icon"><i className="fas fa-industry"></i></div>
                 <h3>Техничар за производно машинство</h3>
+                <img src={proizvodnoMasinstvo} alt="Техничар за производно машинство" className="profil-card-img" />
                 <p>Образование за производствени процеси, CNC машини, технологија на обработка и квалитет на производи.</p>
                 <ul className="profil-opsii">
                   <li><i className="fas fa-check-circle"></i> CNC програмирање</li>

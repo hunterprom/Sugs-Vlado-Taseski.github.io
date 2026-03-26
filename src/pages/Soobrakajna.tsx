@@ -50,6 +50,7 @@ const SoobrakajnaPage = () => {
               <div className="profil-card">
                 <div className="profil-icon"><i className="fas fa-subway"></i></div>
                 <h3>Техничар за железнички сообраќај</h3>
+                <img src={zeleznicka} alt="Техничар за железнички сообраќај" className="profil-card-img" />
                 <p>Образование за организација на железнички транспорт, управување со возен ред, сигнални системи и безбедност на железница.</p>
                 <ul className="profil-opsii">
                   <li><i className="fas fa-check-circle"></i> Железнички транспорт</li>

@@ -39,6 +39,7 @@ const ElektrotehnickaPage = () => {
               <div className="profil-card">
                 <div className="profil-icon"><i className="fas fa-robot"></i></div>
                 <h3>Електротехничар за компјутерска техника и автоматика</h3>
+                <img src={kompjuterskaAvtomatika} alt="Електротехничар за компјутерска техника и автоматика" className="profil-card-img" />
                 <p>Профил кој опфаќа програмирање на PLC контролери, роботика, индустриска автоматизација и компјутерски системи.</p>
                 <ul className="profil-opsii">
                   <li><i className="fas fa-check-circle"></i> PLC програмирање</li>
