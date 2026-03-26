@@ -2,6 +2,8 @@ import { Link } from "react-router-dom";
 import SiteHeader from "../components/SiteHeader";
 import SiteFooter from "../components/SiteFooter";
 import "../pages/StaticHomePage.css";
+import ucilnicaImg from "@/assets/училница-1.png";
+import ucilisteNadvor from "@/assets/училиште-надвор.png";
 
 const novini = [
   {
@@ -82,6 +84,18 @@ const NoviniPage = () => {
                 <p>{item.description}</p>
               </a>
             ))}
+          </div>
+        </div>
+      </section>
+
+      <section className="history-section">
+        <div className="container">
+          <div className="section-header">
+            <h2>Нашето училиште</h2>
+          </div>
+          <div className="leadership-gallery" style={{ gridTemplateColumns: 'repeat(2, 1fr)' }}>
+            <img src={ucilnicaImg} alt="Училница" style={{ borderRadius: '16px' }} />
+            <img src={ucilisteNadvor} alt="Училиште - надворешност" style={{ borderRadius: '16px' }} />
           </div>
         </div>
       </section>

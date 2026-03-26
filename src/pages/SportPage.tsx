@@ -1,6 +1,8 @@
 import SiteHeader from "../components/SiteHeader";
 import SiteFooter from "../components/SiteFooter";
 import "./StaticHomePage.css";
+import ucilnica2 from "@/assets/училница-2.png";
+import fontana from "@/assets/училиште-фонтана.png";
 
 const SportPage = () => {
   return (
@@ -29,6 +31,13 @@ const SportPage = () => {
                 <h3>Теретана</h3>
                 <p>Модерна опрема за вежбање</p>
               </div>
+            </div>
+            <div className="section-header" style={{ marginTop: '3rem' }}>
+              <h2>Нашите простории</h2>
+            </div>
+            <div className="leadership-gallery" style={{ gridTemplateColumns: 'repeat(2, 1fr)' }}>
+              <img src={ucilnica2} alt="Училница" style={{ borderRadius: '16px' }} />
+              <img src={fontana} alt="Дворот на училиштето" style={{ borderRadius: '16px' }} />
             </div>
           </div>
         </section>

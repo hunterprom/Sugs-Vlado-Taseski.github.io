@@ -18,6 +18,9 @@ import istorija6 from "@/assets/istorija-6.png";
 import istorija7 from "@/assets/istorija-7.png";
 import istorija8 from "@/assets/istorija-8.png";
 import istorija9 from "@/assets/istorija-9.png";
+import istorija10 from "@/assets/istorija-10.png";
+import istorija11 from "@/assets/istorija-11.png";
+import istorija12 from "@/assets/istorija-12.png";
 
 const ZaNasPage = () => {
   return (
@@ -56,6 +59,9 @@ const ZaNasPage = () => {
                 <img src={istorija1} alt="Електроника" />
                 <img src={istorija2} alt="Опрема" />
                 <img src={istorija9} alt="Работилница" />
+                <img src={istorija10} alt="Машинска работилница" />
+                <img src={istorija11} alt="Планирање на училиштето" />
+                <img src={istorija12} alt="Изградба на училиштето" />
               </div>
             </div>
           </div>
