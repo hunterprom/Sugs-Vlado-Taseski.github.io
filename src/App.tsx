@@ -39,6 +39,7 @@ const App = () => (
           <Route path="/upisi" element={<UpisiPage />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
+        <EnrollmentChatbot />
       </BrowserRouter>
     </TooltipProvider>
   </QueryClientProvider>
