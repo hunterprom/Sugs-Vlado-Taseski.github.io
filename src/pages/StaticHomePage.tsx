@@ -203,8 +203,8 @@ const StaticHomePage = () => {
         <section className="projects-section">
           <div className="container">
             <div className="section-header">
-              <h2>{t("nav.news")}</h2>
-              <p>Најновите случувања во нашето училиште</p>
+              <h2>{t("home.newsTitle")}</h2>
+              <p>{t("home.newsSubtitle")}</p>
             </div>
             <div className="projects-grid">
               {latestNews.map((item, i) => (
