@@ -138,10 +138,10 @@ const PoeniKalkulatorPage = () => {
                 <div style={labelStyle}>Поени од поведение</div>
                 {grades.map((_, i) => (
                   <div key={i} style={{ textAlign: "center" }}>
-                    <select value={povedenie[i]} onChange={e => updateArr(setPovedenie, i, e.target.value)} style={{ ...inputStyle, width: "auto" }}>
-                      <option value="5">5 - Примерно</option>
-                      <option value="3">3 - Добро</option>
-                      <option value="1">1 - Незадоволително</option>
+                    <select value={povedenie[i]} onChange={e => updateArr(setPovedenie, i, e.target.value)} style={{ ...inputStyle, width: "80px", fontSize: "0.8rem", padding: "6px 4px" }}>
+                      <option value="5">Примерно</option>
+                      <option value="3">Добро</option>
+                      <option value="1">Незадов.</option>
                     </select>
                   </div>
                 ))}

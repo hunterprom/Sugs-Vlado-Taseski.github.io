@@ -57,8 +57,8 @@ const UpisiPage = () => {
             </div>
 
             <div style={{ display: "flex", gap: "15px", justifyContent: "center", flexWrap: "wrap", marginTop: "40px" }}>
-              <a href="https://sugsvladotasevski.edu.mk/upisi/" target="_blank" rel="noopener noreferrer" className="btn-primary" style={{ fontSize: "1rem", padding: "14px 36px" }}>
-                <i className="fas fa-external-link-alt"></i> Повеќе информации за уписи
+              <a href="/docs/интерен-оглас-второ-пријавување.pdf" target="_blank" rel="noopener noreferrer" className="btn-primary" style={{ fontSize: "1rem", padding: "14px 36px" }}>
+                <i className="fas fa-file-pdf"></i> Повеќе информации за уписи
               </a>
               <Link to="/poeni-kalkulator" className="btn-secondary" style={{ fontSize: "1rem", padding: "14px 36px" }}>
                 <i className="fas fa-calculator"></i> Калкулатор за поени

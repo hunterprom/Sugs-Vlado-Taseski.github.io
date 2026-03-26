@@ -102,6 +102,7 @@ const StaticHomePage = () => {
                 transition={{ duration: 0.5, delay: 1.0 }}
               >
                 <Link to="/upisi" className="btn-primary"><i className="fas fa-arrow-right"></i> {t("hero.enroll")}</Link>
+                <Link to="/poeni-kalkulator" className="btn-secondary"><i className="fas fa-calculator"></i> Калкулатор за поени</Link>
                 <Link to="/za-nas" className="btn-secondary"><i className="fas fa-info-circle"></i> {t("hero.history")}</Link>
               </motion.div>
             </div>
