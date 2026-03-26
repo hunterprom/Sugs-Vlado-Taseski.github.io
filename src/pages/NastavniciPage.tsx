@@ -1,6 +1,7 @@
 import SiteHeader from "../components/SiteHeader";
 import SiteFooter from "../components/SiteFooter";
 import "../pages/StaticHomePage.css";
+import nastavniciGroup from "@/assets/nastavnici-group.png";
 
 const aktivi = [
   {
