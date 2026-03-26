@@ -144,7 +144,7 @@ const StaticHomePage = () => {
             <FadeUpSection delay={0.15}>
               <div className="stat-card">
                 <i className="fas fa-chalkboard-user"></i>
-                <h3><AnimatedNumber target={120} animate={statsAnimated} />+</h3>
+                <h3>+</h3>
                 <p>Професори</p>
               </div>
             </FadeUpSection>
