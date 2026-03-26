@@ -342,8 +342,8 @@ export const translations: Record<Language, Record<string, string>> = {
     "zanas.story1": "Historia jonë filloi në vitin e largët 1959, kur Këshilli i punëtorëve të ndërmarrjes hekurudhore-transportuese të Shkupit, në përputhje me Rregulloren për qendrat e arsimit profesional të punëtorëve, mori Vendimin për formimin e Qendrës së hekurudhorëve për arsimin profesional të të rinjve dhe të rriturve.",
     "zanas.story2": "Nga viti 1961 fillon punën Shkolla Teknike Hekurudhore për drejtimin e komunikacionit-transportit me vendosje në internat. Pas tërmetit katastrofik në vitin 1963, shkolla u zhvendos përkohësisht në Beograd.",
     "zanas.story3": "Më 15 prill 1979, me Vendim të Këshillit të punëtorëve, Qendra e mori emrin e luftëtarit-hekurudhor Vllado Tasevski.",
-    "zanas.story4": "Viti shkollor 1983/84 u futën profile të reja nga fusha e komunikacionit PTT dhe telekomunikacionit, me çka shkolla e mori emrin Qendra Shkollore për komunikacion hekurudhor dhe PTT 'Vllado Tasevski'. Në vitin 2004, me procesin e decentralizimit, shkolla kalon nën ingerencën e Qytetit të Shkupit dhe bëhet SHMA 'Vllado Tasevski".",
-    "zanas.quote": "'Hapësirat e SHMA 'Vllado Tasevski' janë të mbushura me rini, bukuri, dashuri, gëzim, shkathtësi dhe me pak ose më shumë mësim."",
+    "zanas.story4": "Viti shkollor 1983/84 u futën profile të reja nga fusha e komunikacionit PTT dhe telekomunikacionit, me çka shkolla e mori emrin Qendra Shkollore për komunikacion hekurudhor dhe PTT 'Vllado Tasevski'. Në vitin 2004, me procesin e decentralizimit, shkolla kalon nën ingerencën e Qytetit të Shkupit dhe bëhet SHMA 'Vllado Tasevski'.",
+    "zanas.quote": "'Hapësirat e SHMA 'Vllado Tasevski' janë të mbushura me rini, bukuri, dashuri, gëzim, shkathtësi dhe me pak ose më shumë mësim.'",
     // Kontakt
     "kontakt.title": "Na kontaktoni",
     "kontakt.subtitle": "Këtu mund të na kontaktoni për çdo pyetje",
