@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
 import "./StaticHomePage.css";
-import PageHeader from "../components/PageHeader";
+import SiteHeader from "../components/SiteHeader";
+import SiteFooter from "../components/SiteFooter";
 
 const UpisiPage = () => {
   return (
