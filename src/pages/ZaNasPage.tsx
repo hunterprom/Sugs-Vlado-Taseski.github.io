@@ -15,6 +15,16 @@ import istorija9 from "@/assets/istorija-9.png";
 import istorija10 from "@/assets/istorija-10.png";
 import istorija11 from "@/assets/istorija-11.png";
 import istorija12 from "@/assets/istorija-12.png";
+import classroom1 from "@/assets/classroom-1.jpg";
+import classroom2 from "@/assets/classroom-2.jpg";
+import classroom3 from "@/assets/classroom-3.jpg";
+import classroom4 from "@/assets/classroom-4.jpg";
+import solarPanels from "@/assets/solar-panels.jpg";
+import outdoorBench from "@/assets/outdoor-bench.jpg";
+import fountain from "@/assets/fountain.jpg";
+import lobbyLogo from "@/assets/lobby-logo.jpg";
+import schoolExterior from "@/assets/school-exterior.jpg";
+import conferenceRoom from "@/assets/conference-room.jpg";
 import ImageModal from "../components/ImageModal";
 
 const ZaNasPage = () => {
