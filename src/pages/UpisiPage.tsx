@@ -35,7 +35,7 @@ const UpisiPage = () => {
                 <ul style={{ paddingLeft: "20px", color: "var(--text-medium)", lineHeight: 2 }}>
                   <li>{t("soobrakaj.transport")}</li>
                   <li>{t("soobrakaj.zeleznica")}</li>
-                  <li>{t("soobrakaj.vleca")}</li>
+                  
                 </ul>
               </div>
               <div className="card">
