@@ -3,7 +3,7 @@ import SiteFooter from "../components/SiteFooter";
 import { useLanguage } from "@/i18n/LanguageContext";
 import "./StaticHomePage.css";
 import ucilnica3 from "@/assets/classroom-main-3.png";
-import konferenciска from "@/assets/конференциска-сала.png";
+import konferenciска from "@/assets/conference-hall.png";
 import lobi from "@/assets/school-lobby.png";
 
 const ProektiPage = () => {
