@@ -319,6 +319,9 @@ const StaticHomePage = () => {
             </div>
           </div>
         </section>
+
+        {/* CTA */}
+        <CTASection />
       </main>
       <SiteFooter />
     </>
