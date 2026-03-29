@@ -3,6 +3,7 @@ import { Link, useLocation } from "react-router-dom";
 import { useLanguage } from "@/i18n/LanguageContext";
 import { Language } from "@/i18n/translations";
 import schoolLogo from "@/assets/school-logo.png";
+import SearchBar from "./SearchBar";
 
 const langLabels: Record<Language, string> = { mk: "МК", sq: "SQ", en: "EN" };
 const langFlags: Record<Language, string> = { mk: "🇲🇰", sq: "🇦🇱", en: "🇬🇧" };
