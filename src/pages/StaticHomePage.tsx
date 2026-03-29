@@ -6,14 +6,9 @@ import SiteFooter from "../components/SiteFooter";
 import { TextReveal, LineReveal, MarqueeTicker, FadeUpSection, ScrollRevealSection, ScrollSlideIn, ScrollZoomReveal, ParallaxSection } from "../components/TypographyEffects";
 import { useLanguage } from "@/i18n/LanguageContext";
 import DepartmentsSection from "../components/DepartmentsSection";
+import CinematicHero from "../components/CinematicHero";
 import { noviniData } from "../data/noviniData";
 import "./StaticHomePage.css";
-
-import heroImg1 from "@/assets/classroom-main-1.png";
-import heroImg2 from "@/assets/classroom-main-2.png";
-import heroImg3 from "@/assets/school-outside.png";
-import heroImg4 from "@/assets/school-lobby.png";
-import heroImg5 from "@/assets/school-fountain.png";
 import classroom1 from "@/assets/classroom-1.jpg";
 import classroom3 from "@/assets/classroom-3.jpg";
 import conferenceRoom from "@/assets/conference-room.jpg";
