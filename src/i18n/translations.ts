@@ -93,6 +93,8 @@ export const translations: Record<Language, Record<string, string>> = {
     // Back
     "back": "Назад кон почетна",
     // Homepage news
+    "home.deptTitle": "Наши струки",
+    "home.deptSubtitle": "Три струки, шест профили — избери ја твојата иднина",
     "home.newsTitle": "Новости",
     "home.newsSubtitle": "Најновите случувања во нашето училиште",
     // Slides
