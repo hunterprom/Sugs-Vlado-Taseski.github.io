@@ -65,6 +65,10 @@ export const translations: Record<Language, Record<string, string>> = {
     "hero.enroll": "Запиши се",
     "hero.history": "Нашата историја",
     "hero.calculator": "Калкулатор за поени",
+    "hero.stat.years": "години",
+    "hero.stat.students": "ученици",
+    "hero.stat.teachers": "професори",
+    "hero.stat.programs": "струки",
     // Marquee
     "marquee": "ЕЛЕКТРОТЕХНИКА ✦ МАШИНСТВО ✦ СООБРАЌАЈ ✦ ИДНИНАТА Е ТУКА",
     // Stats
@@ -518,7 +522,11 @@ export const translations: Record<Language, Record<string, string>> = {
     // Stats
     "stats.years": "Vite tradit\u00EB",
     "stats.teachers": "Profesor\u00EB",
-    "stats.students": "Nx\u00EBn\u00EBs",
+    "stats.students": "Nxënës",
+    "hero.stat.years": "vite",
+    "hero.stat.students": "nxënës",
+    "hero.stat.teachers": "profesorë",
+    "hero.stat.programs": "drejtime",
     // Features
     "features.title": "Pse t\u00EB zgjidhni shkoll\u00EBn ton\u00EB?",
     "features.subtitle": "Klasa moderne, staf me p\u00EBrvoj\u00EB dhe metoda inovative t\u00EB m\u00EBsimit",
@@ -967,6 +975,10 @@ export const translations: Record<Language, Record<string, string>> = {
     "stats.years": "Years of tradition",
     "stats.teachers": "Teachers",
     "stats.students": "Students",
+    "hero.stat.years": "years",
+    "hero.stat.students": "students",
+    "hero.stat.teachers": "teachers",
+    "hero.stat.programs": "programs",
     // Features
     "features.title": "Why choose our school?",
     "features.subtitle": "Modern classrooms, experienced staff and innovative learning methods",
