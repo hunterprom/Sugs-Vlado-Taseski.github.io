@@ -26,7 +26,7 @@ const DirektorPage = () => {
         <section style={{ padding: "50px 0" }}>
           <div className="container" style={{ maxWidth: "900px" }}>
             <div style={{ textAlign: "center", marginBottom: "40px" }}>
-              <ImageModal src={rakovodstvo7} alt={t("direktor.name")} style={{ width: "300px", height: "300px", objectFit: "cover", borderRadius: "50%", boxShadow: "0 8px 30px rgba(0,0,0,0.15)" }} />
+              <ImageModal src={rakovodstvo7} alt={t("direktor.name")} style={{ width: "400px", maxWidth: "100%", height: "auto", objectFit: "cover", borderRadius: "16px", boxShadow: "0 8px 30px rgba(0,0,0,0.15)" }} />
               <h2 style={{ color: "#4B8BBE", marginTop: "20px", fontSize: "1.8rem" }}>{t("direktor.name")}</h2>
               <p style={{ color: "#9FBDD6", fontSize: "1.1rem" }}>{t("direktor.role")}</p>
             </div>

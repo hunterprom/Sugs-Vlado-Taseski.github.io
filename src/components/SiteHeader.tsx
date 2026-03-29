@@ -113,7 +113,7 @@ const SiteHeader = () => {
             <img src={schoolLogo} alt="СУГС Владо Тасевски лого" className="logo-img" style={{ height: "52px", width: "auto" }} />
             <div className="logo-text">
               <h1 style={{ fontFamily: "inherit", fontStyle: "normal", letterSpacing: "normal", fontWeight: 700 }}>СУГС „Владо Тасевски"</h1>
-              <span>образование • иновација • традиција</span>
+              <span>{t("logo.subtitle")}</span>
             </div>
           </Link>
 
