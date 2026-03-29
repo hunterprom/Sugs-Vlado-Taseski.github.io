@@ -1262,5 +1262,16 @@ export const translations: Record<Language, Record<string, string>> = {
     "novost.6.category": "Competitions",
     "novost.6.description": "Congratulations to Iva Bogdanovska for winning third place at the European Junior Judo Championship!",
     "novost.6.content": "Congratulations to Iva Bogdanovska!\n\nWe proudly congratulate our student Iva Bogdanovska for winning third place at the European Junior Judo Championship!\n\nIva, you are the pride of our school!\n\nWE ARE THE TEAM VLADO TASEVSKI!",
+    // Chatbot
+    "chat.greeting": "Hello! 👋 I'm your AI enrollment agent. Ask me about departments, the enrollment process, or to compare programs!",
+    "chat.title": "AI Agent",
+    "chat.subtitle": "Enrollment assistant",
+    "chat.placeholder": "Ask a question about enrollment...",
+    "chat.error": "Error. Please try again.",
+    "chat.commError": "Communication error",
+    "chat.q1": "What departments do you offer?",
+    "chat.q2": "How do I enroll?",
+    "chat.q3": "How many points do I need?",
+    "chat.q4": "Which department is most popular?",
   },
 };
