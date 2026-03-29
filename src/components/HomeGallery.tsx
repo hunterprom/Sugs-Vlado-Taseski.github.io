@@ -1,6 +1,7 @@
 import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
 import { useNavigate } from "react-router-dom";
+import { useLanguage } from "@/i18n/LanguageContext";
 
 import gallery1 from "@/assets/училница-1.png";
 import gallery2 from "@/assets/училница-2.png";
@@ -9,19 +10,20 @@ import gallery4 from "@/assets/училиште-надвор.png";
 import gallery5 from "@/assets/училиште-лоби.png";
 import gallery6 from "@/assets/училиште-фонтана.png";
 
-const images = [
-  { src: gallery1, alt: "Модерна училница", label: "Училници", link: "/za-nas" },
-  { src: gallery2, alt: "Училница со опрема", label: "Настава", link: "/za-nas" },
-  { src: gallery3, alt: "Светла училница", label: "Простории", link: "/za-nas" },
-  { src: gallery4, alt: "Училиште - надворешност", label: "Нашата зграда", link: "/za-nas" },
-  { src: gallery5, alt: "Лоби на училиштето", label: "Лоби", link: "/za-nas" },
-  { src: gallery6, alt: "Фонтана во дворот", label: "Двор", link: "/za-nas" },
-];
-
 const HomeGallery = () => {
   const ref = useRef(null);
   const inView = useInView(ref, { once: true, margin: "-50px" });
   const navigate = useNavigate();
+  const { t } = useLanguage();
+
+  const images = [
+    { src: gallery1, altKey: "gallery.img1", labelKey: "gallery.label1", link: "/za-nas" },
+    { src: gallery2, altKey: "gallery.img2", labelKey: "gallery.label2", link: "/za-nas" },
+    { src: gallery3, altKey: "gallery.img3", labelKey: "gallery.label3", link: "/za-nas" },
+    { src: gallery4, altKey: "gallery.img4", labelKey: "gallery.label4", link: "/za-nas" },
+    { src: gallery5, altKey: "gallery.img5", labelKey: "gallery.label5", link: "/za-nas" },
+    { src: gallery6, altKey: "gallery.img6", labelKey: "gallery.label6", link: "/za-nas" },
+  ];
 
   return (
     <section className="section-padding bg-muted" ref={ref}>
@@ -33,13 +35,13 @@ const HomeGallery = () => {
           className="text-center mb-12"
         >
           <span className="inline-block px-4 py-1.5 rounded-full bg-accent text-accent-foreground font-heading font-semibold text-sm mb-4">
-            📸 Галерија
+            📸 {t("gallery.title")}
           </span>
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-heading font-bold text-foreground mb-4">
-            Погледни го <span className="text-gradient-primary">животот</span> во училиштето
+            {t("gallery.heading")} <span className="text-gradient-primary">{t("gallery.headingHighlight")}</span> {t("gallery.headingEnd")}
           </h2>
           <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-            Нашите ученици учат, создаваат и се забавуваат секој ден.
+            {t("gallery.subtitle")}
           </p>
         </motion.div>
 
@@ -59,19 +61,19 @@ const HomeGallery = () => {
             >
               <img
                 src={img.src}
-                alt={img.alt}
+                alt={t(img.altKey)}
                 className={`w-full object-cover transition-transform duration-500 group-hover:scale-110 ${
                   i === 0 || i === 3 ? "h-64 md:h-full" : "h-48 md:h-56"
                 }`}
               />
               <div className="absolute inset-0 bg-gradient-to-t from-foreground/70 via-foreground/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-5">
                 <span className="text-primary-foreground font-heading font-bold text-lg transform translate-y-4 group-hover:translate-y-0 transition-transform duration-300">
-                  {img.label} →
+                  {t(img.labelKey)} →
                 </span>
               </div>
               <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-foreground/60 to-transparent p-3 md:hidden">
                 <span className="text-primary-foreground font-heading font-semibold text-sm">
-                  {img.label}
+                  {t(img.labelKey)}
                 </span>
               </div>
             </motion.div>

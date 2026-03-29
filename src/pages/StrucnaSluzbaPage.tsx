@@ -32,13 +32,23 @@ const StrucnaSluzbaPage = () => {
               </div>
               <div className="leader-card">
                 <i className="fas fa-handshake" style={{ fontSize: "3rem", color: "#4B8BBE", marginBottom: "15px" }}></i>
-                <h3>Ана Стојановска</h3>
+                <h3>{t("strucna.pedagog")}</h3>
                 <p>{t("strucna.pedagog")}</p>
               </div>
               <div className="leader-card">
                 <i className="fas fa-heart" style={{ fontSize: "3rem", color: "#4B8BBE", marginBottom: "15px" }}></i>
-                <h3>Елена Димитрова</h3>
+                <h3>{t("strucna.psiholog")}</h3>
                 <p>{t("strucna.psiholog")}</p>
+              </div>
+              <div className="leader-card">
+                <i className="fas fa-user-friends" style={{ fontSize: "3rem", color: "#4B8BBE", marginBottom: "15px" }}></i>
+                <h3>{t("strucna.defektolog")}</h3>
+                <p>{t("strucna.defektolog")}</p>
+              </div>
+              <div className="leader-card">
+                <i className="fas fa-users" style={{ fontSize: "3rem", color: "#4B8BBE", marginBottom: "15px" }}></i>
+                <h3>{t("strucna.sociolog")}</h3>
+                <p>{t("strucna.sociolog")}</p>
               </div>
             </div>
 

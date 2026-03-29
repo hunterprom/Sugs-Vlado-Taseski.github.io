@@ -15,7 +15,7 @@ const QUICK_QUESTIONS = [
 const EnrollmentChatbot = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [messages, setMessages] = useState<Msg[]>([
-    { role: "assistant", content: "Здраво! 👋 Јас сум **Владо**, твојот AI помошник за упис. Прашај ме за струките, процесот на запишување, или за споредба на смерови!" },
+    { role: "assistant", content: "Здраво! 👋 Јас сум твојот AI агент за упис. Прашај ме за струките, процесот на запишување, или за споредба на смерови!" },
   ]);
   const [input, setInput] = useState("");
   const [isLoading, setIsLoading] = useState(false);
@@ -100,7 +100,6 @@ const EnrollmentChatbot = () => {
 
   return (
     <>
-      {/* Floating button */}
       <button
         onClick={() => setIsOpen(!isOpen)}
         className="chatbot-fab"
@@ -113,7 +112,6 @@ const EnrollmentChatbot = () => {
         )}
       </button>
 
-      {/* Chat window */}
       {isOpen && (
         <div className="chatbot-window">
           <div className="chatbot-header">
@@ -122,7 +120,7 @@ const EnrollmentChatbot = () => {
                 <i className="fas fa-robot"></i>
               </div>
               <div>
-                <strong style={{ fontSize: "1rem" }}>Владо AI</strong>
+                <strong style={{ fontSize: "1rem" }}>AI Агент</strong>
                 <p style={{ fontSize: "0.75rem", opacity: 0.8, margin: 0 }}>Помошник за упис</p>
               </div>
             </div>
@@ -155,7 +153,6 @@ const EnrollmentChatbot = () => {
             <div ref={messagesEndRef} />
           </div>
 
-          {/* Quick questions */}
           {messages.length <= 1 && (
             <div className="chatbot-quick">
               {QUICK_QUESTIONS.map((q, i) => (
