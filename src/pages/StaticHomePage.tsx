@@ -17,52 +17,7 @@ import lobbyLogo from "@/assets/lobby-logo.jpg";
 import schoolExterior from "@/assets/school-exterior.jpg";
 
 const StaticHomePage = () => {
-  const [currentSlide, setCurrentSlide] = useState(0);
-  const intervalRef = useRef<ReturnType<typeof setInterval>>();
-  const statsRef = useRef<HTMLDivElement>(null);
-  const [statsAnimated, setStatsAnimated] = useState(false);
   const { t } = useLanguage();
-
-  const slideKeys = ["slide.1", "slide.2", "slide.3", "slide.4", "slide.5"];
-  const slides = [
-    { img: heroImg1, captionKey: slideKeys[0] },
-    { img: heroImg2, captionKey: slideKeys[1] },
-    { img: heroImg3, captionKey: slideKeys[2] },
-    { img: heroImg4, captionKey: slideKeys[3] },
-    { img: heroImg5, captionKey: slideKeys[4] },
-  ];
-
-  const goToSlide = useCallback((index: number) => setCurrentSlide(index), []);
-
-  const startCarousel = useCallback(() => {
-    if (intervalRef.current) clearInterval(intervalRef.current);
-    intervalRef.current = setInterval(() => {
-      setCurrentSlide((prev) => (prev + 1) % slides.length);
-    }, 4000);
-  }, [slides.length]);
-
-  useEffect(() => {
-    startCarousel();
-    return () => { if (intervalRef.current) clearInterval(intervalRef.current); };
-  }, [startCarousel]);
-
-  useEffect(() => {
-    if (!statsRef.current) return;
-    const observer = new IntersectionObserver((entries) => {
-      if (entries[0].isIntersecting && !statsAnimated) setStatsAnimated(true);
-    });
-    observer.observe(statsRef.current);
-    return () => observer.disconnect();
-  }, [statsAnimated]);
-
-  // Parallax for hero background
-  const heroRef = useRef(null);
-  const { scrollYProgress: heroScroll } = useScroll({
-    target: heroRef,
-    offset: ["start start", "end start"],
-  });
-  const heroY = useTransform(heroScroll, [0, 1], ["0%", "25%"]);
-  const heroOpacity = useTransform(heroScroll, [0, 0.8], [1, 0]);
 
   const latestNews = noviniData.slice(0, 3);
 
