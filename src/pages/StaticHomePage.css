@@ -1905,3 +1905,234 @@
 .profil-plan-link:hover {
   background: #2E6899;
 }
+
+/* ═══════════════════════════════════════════ */
+/* Scrollytelling Section                      */
+/* ═══════════════════════════════════════════ */
+.scrollytelling-section {
+  padding: 80px 0;
+  background: linear-gradient(180deg, #f8fafd 0%, #e8f0f8 100%);
+  overflow: hidden;
+}
+
+.journey-timeline {
+  position: relative;
+}
+
+.journey-timeline::before {
+  content: '';
+  position: absolute;
+  left: 50%;
+  top: 0;
+  bottom: 0;
+  width: 3px;
+  background: linear-gradient(to bottom, transparent, #4B8BBE, transparent);
+  transform: translateX(-50%);
+}
+
+.journey-step {
+  margin-bottom: 60px;
+}
+
+.journey-card {
+  display: flex;
+  align-items: center;
+  gap: 40px;
+  background: white;
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 8px 40px rgba(0, 0, 0, 0.08);
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.journey-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 16px 48px rgba(75, 139, 190, 0.15);
+}
+
+.journey-card.reverse {
+  flex-direction: row-reverse;
+}
+
+.journey-card-content {
+  flex: 1;
+  padding: 40px;
+  position: relative;
+}
+
+.journey-step-number {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  font-size: 3.5rem;
+  font-weight: 900;
+  color: rgba(75, 139, 190, 0.08);
+  line-height: 1;
+}
+
+.journey-icon {
+  width: 60px;
+  height: 60px;
+  background: linear-gradient(135deg, #4B8BBE, #2E6899);
+  border-radius: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 16px;
+}
+
+.journey-icon i {
+  font-size: 1.5rem;
+  color: white;
+}
+
+.journey-card-content h3 {
+  color: #2E6899;
+  font-size: 1.4rem;
+  margin-bottom: 10px;
+}
+
+.journey-card-content p {
+  color: #6B98B8;
+  line-height: 1.7;
+}
+
+.journey-card-image {
+  flex: 1;
+  min-height: 280px;
+  overflow: hidden;
+}
+
+.journey-card-image img {
+  width: 100%;
+  height: 100%;
+  min-height: 280px;
+  object-fit: cover;
+  transition: transform 0.5s;
+}
+
+.journey-card:hover .journey-card-image img {
+  transform: scale(1.05);
+}
+
+/* Immersive Image Band */
+.immersive-band {
+  position: relative;
+  height: 400px;
+  overflow: hidden;
+}
+
+.immersive-images {
+  display: flex;
+  width: 100%;
+  height: 500px;
+}
+
+.immersive-img {
+  flex: 1;
+  object-fit: cover;
+  width: 33.33%;
+  height: 100%;
+}
+
+.immersive-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(46, 104, 153, 0.75);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 40px;
+}
+
+.immersive-overlay h2 {
+  color: white;
+  font-size: 2.5rem;
+  font-weight: 800;
+  margin-bottom: 16px;
+}
+
+.immersive-overlay p {
+  color: rgba(255, 255, 255, 0.85);
+  font-size: 1.15rem;
+  max-width: 600px;
+}
+
+/* Voice Navigation */
+@keyframes voice-pulse {
+  0% { transform: scale(1); opacity: 1; }
+  50% { transform: scale(1.3); opacity: 0.4; }
+  100% { transform: scale(1.6); opacity: 0; }
+}
+
+.voice-wave {
+  display: flex;
+  align-items: center;
+  gap: 3px;
+  height: 20px;
+}
+
+.voice-wave span {
+  width: 3px;
+  background: #4B8BBE;
+  border-radius: 3px;
+  animation: voice-bar 0.8s ease-in-out infinite;
+}
+
+.voice-wave span:nth-child(1) { height: 8px; animation-delay: 0s; }
+.voice-wave span:nth-child(2) { height: 16px; animation-delay: 0.1s; }
+.voice-wave span:nth-child(3) { height: 12px; animation-delay: 0.2s; }
+.voice-wave span:nth-child(4) { height: 18px; animation-delay: 0.3s; }
+.voice-wave span:nth-child(5) { height: 10px; animation-delay: 0.4s; }
+
+@keyframes voice-bar {
+  0%, 100% { transform: scaleY(0.5); }
+  50% { transform: scaleY(1.5); }
+}
+
+.voice-nav-btn.voice-active {
+  animation: voice-glow 1.5s ease-in-out infinite;
+}
+
+@keyframes voice-glow {
+  0%, 100% { box-shadow: 0 0 0 0 rgba(75, 139, 190, 0.4); }
+  50% { box-shadow: 0 0 0 8px rgba(75, 139, 190, 0); }
+}
+
+/* Mobile Scrollytelling */
+@media (max-width: 768px) {
+  .journey-timeline::before {
+    left: 20px;
+  }
+
+  .journey-card,
+  .journey-card.reverse {
+    flex-direction: column;
+  }
+
+  .journey-card-image {
+    min-height: 200px;
+  }
+
+  .journey-card-image img {
+    min-height: 200px;
+  }
+
+  .journey-card-content {
+    padding: 24px;
+  }
+
+  .immersive-band {
+    height: 300px;
+  }
+
+  .immersive-overlay h2 {
+    font-size: 1.6rem;
+  }
+
+  .immersive-overlay p {
+    font-size: 0.95rem;
+  }
+}

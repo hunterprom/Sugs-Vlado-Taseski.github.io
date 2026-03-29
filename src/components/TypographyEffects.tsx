@@ -1,4 +1,4 @@
-import { motion, useInView } from "framer-motion";
+import { motion, useInView, useScroll, useTransform } from "framer-motion";
 import { useRef } from "react";
 
 /* ── Letter-by-letter reveal (shed.design style) ── */
@@ -127,6 +127,113 @@ export const FadeUpSection = ({
       animate={inView ? { opacity: 1, y: 0 } : {}}
       transition={{ duration: 0.7, delay, ease: [0.33, 1, 0.68, 1] }}
     >
+      {children}
+    </motion.div>
+  );
+};
+
+/* ── Scrollytelling: Parallax Section ── */
+export const ParallaxSection = ({
+  children,
+  className = "",
+  speed = 0.3,
+}: {
+  children: React.ReactNode;
+  className?: string;
+  speed?: number;
+}) => {
+  const ref = useRef(null);
+  const { scrollYProgress } = useScroll({
+    target: ref,
+    offset: ["start end", "end start"],
+  });
+  const y = useTransform(scrollYProgress, [0, 1], [`${speed * 100}px`, `-${speed * 100}px`]);
+
+  return (
+    <div ref={ref} style={{ overflow: "hidden" }}>
+      <motion.div className={className} style={{ y }}>
+        {children}
+      </motion.div>
+    </div>
+  );
+};
+
+/* ── Scrollytelling: Progress-driven reveal ── */
+export const ScrollRevealSection = ({
+  children,
+  className = "",
+}: {
+  children: React.ReactNode;
+  className?: string;
+}) => {
+  const ref = useRef(null);
+  const { scrollYProgress } = useScroll({
+    target: ref,
+    offset: ["start 0.85", "start 0.3"],
+  });
+  const opacity = useTransform(scrollYProgress, [0, 1], [0, 1]);
+  const y = useTransform(scrollYProgress, [0, 1], [80, 0]);
+  const scale = useTransform(scrollYProgress, [0, 1], [0.92, 1]);
+
+  return (
+    <motion.div
+      ref={ref}
+      className={className}
+      style={{ opacity, y, scale }}
+    >
+      {children}
+    </motion.div>
+  );
+};
+
+/* ── Scrollytelling: Horizontal slide-in ── */
+export const ScrollSlideIn = ({
+  children,
+  className = "",
+  direction = "left",
+}: {
+  children: React.ReactNode;
+  className?: string;
+  direction?: "left" | "right";
+}) => {
+  const ref = useRef(null);
+  const { scrollYProgress } = useScroll({
+    target: ref,
+    offset: ["start 0.9", "start 0.35"],
+  });
+  const x = useTransform(
+    scrollYProgress,
+    [0, 1],
+    [direction === "left" ? -120 : 120, 0]
+  );
+  const opacity = useTransform(scrollYProgress, [0, 0.4], [0, 1]);
+
+  return (
+    <motion.div ref={ref} className={className} style={{ x, opacity }}>
+      {children}
+    </motion.div>
+  );
+};
+
+/* ── Scrollytelling: Scale + blur reveal ── */
+export const ScrollZoomReveal = ({
+  children,
+  className = "",
+}: {
+  children: React.ReactNode;
+  className?: string;
+}) => {
+  const ref = useRef(null);
+  const { scrollYProgress } = useScroll({
+    target: ref,
+    offset: ["start 0.9", "start 0.3"],
+  });
+  const scale = useTransform(scrollYProgress, [0, 1], [0.7, 1]);
+  const opacity = useTransform(scrollYProgress, [0, 0.5], [0, 1]);
+  const filter = useTransform(scrollYProgress, [0, 0.6], ["blur(10px)", "blur(0px)"]);
+
+  return (
+    <motion.div ref={ref} className={className} style={{ scale, opacity, filter }}>
       {children}
     </motion.div>
   );

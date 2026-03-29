@@ -1,9 +1,9 @@
 import { useEffect, useRef, useState, useCallback } from "react";
 import { Link } from "react-router-dom";
-import { motion } from "framer-motion";
+import { motion, useScroll, useTransform } from "framer-motion";
 import SiteHeader from "../components/SiteHeader";
 import SiteFooter from "../components/SiteFooter";
-import { TextReveal, LineReveal, MarqueeTicker, FadeUpSection } from "../components/TypographyEffects";
+import { TextReveal, LineReveal, MarqueeTicker, FadeUpSection, ScrollRevealSection, ScrollSlideIn, ScrollZoomReveal, ParallaxSection } from "../components/TypographyEffects";
 import { useLanguage } from "@/i18n/LanguageContext";
 import { noviniData } from "../data/noviniData";
 import "./StaticHomePage.css";
@@ -13,6 +13,12 @@ import heroImg2 from "@/assets/училница-2.png";
 import heroImg3 from "@/assets/училиште-надвор.png";
 import heroImg4 from "@/assets/училиште-лоби.png";
 import heroImg5 from "@/assets/училиште-фонтана.png";
+import classroom1 from "@/assets/classroom-1.jpg";
+import classroom3 from "@/assets/classroom-3.jpg";
+import conferenceRoom from "@/assets/conference-room.jpg";
+import fountain from "@/assets/fountain.jpg";
+import lobbyLogo from "@/assets/lobby-logo.jpg";
+import schoolExterior from "@/assets/school-exterior.jpg";
 
 const StaticHomePage = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
@@ -53,13 +59,30 @@ const StaticHomePage = () => {
     return () => observer.disconnect();
   }, [statsAnimated]);
 
+  // Parallax for hero background
+  const heroRef = useRef(null);
+  const { scrollYProgress: heroScroll } = useScroll({
+    target: heroRef,
+    offset: ["start start", "end start"],
+  });
+  const heroY = useTransform(heroScroll, [0, 1], ["0%", "25%"]);
+  const heroOpacity = useTransform(heroScroll, [0, 0.8], [1, 0]);
+
   const latestNews = noviniData.slice(0, 3);
+
+  const journeySteps = [
+    { icon: "fas fa-school", titleKey: "scroll.step1Title", descKey: "scroll.step1Desc", img: schoolExterior },
+    { icon: "fas fa-chalkboard", titleKey: "scroll.step2Title", descKey: "scroll.step2Desc", img: classroom1 },
+    { icon: "fas fa-flask", titleKey: "scroll.step3Title", descKey: "scroll.step3Desc", img: conferenceRoom },
+    { icon: "fas fa-sun", titleKey: "scroll.step4Title", descKey: "scroll.step4Desc", img: fountain },
+  ];
 
   return (
     <>
       <SiteHeader />
       <main>
-        <section className="hero-split">
+        {/* Hero with parallax */}
+        <motion.section className="hero-split" ref={heroRef} style={{ y: heroY, opacity: heroOpacity }}>
           <div className="container hero-grid">
             <div className="hero-content">
               <motion.span
@@ -135,7 +158,7 @@ const StaticHomePage = () => {
               </div>
             </motion.div>
           </div>
-        </section>
+        </motion.section>
 
         <div className="marquee-section">
           <MarqueeTicker
@@ -145,70 +168,124 @@ const StaticHomePage = () => {
           />
         </div>
 
+        {/* Stats with scroll-driven reveal */}
         <section className="stats-section" ref={statsRef}>
           <div className="container stats-grid">
-            <FadeUpSection delay={0}>
-              <div className="stat-card">
-                <i className="fas fa-calendar-alt"></i>
-                <h3><AnimatedNumber target={66} animate={statsAnimated} />+</h3>
-                <p>{t("stats.years")}</p>
-              </div>
-            </FadeUpSection>
-            <FadeUpSection delay={0.15}>
-              <div className="stat-card">
-                <i className="fas fa-chalkboard-user"></i>
-                <h3><AnimatedNumber target={90} animate={statsAnimated} />+</h3>
-                <p>{t("stats.teachers")}</p>
-              </div>
-            </FadeUpSection>
-            <FadeUpSection delay={0.3}>
-              <div className="stat-card">
-                <i className="fas fa-user-graduate"></i>
-                <h3><AnimatedNumber target={900} animate={statsAnimated} />+</h3>
-                <p>{t("stats.students")}</p>
-              </div>
-            </FadeUpSection>
+            {[
+              { icon: "fas fa-calendar-alt", target: 66, label: t("stats.years") },
+              { icon: "fas fa-chalkboard-user", target: 90, label: t("stats.teachers") },
+              { icon: "fas fa-user-graduate", target: 900, label: t("stats.students") },
+            ].map((stat, i) => (
+              <ScrollRevealSection key={i}>
+                <div className="stat-card">
+                  <i className={stat.icon}></i>
+                  <h3><AnimatedNumber target={stat.target} animate={statsAnimated} />+</h3>
+                  <p>{stat.label}</p>
+                </div>
+              </ScrollRevealSection>
+            ))}
           </div>
         </section>
 
+        {/* Scrollytelling Journey Section */}
+        <section className="scrollytelling-section">
+          <div className="container">
+            <ScrollZoomReveal>
+              <div className="section-header" style={{ marginBottom: "60px" }}>
+                <h2>
+                  <TextReveal text={t("scroll.journeyTitle")} className="section-title-reveal" />
+                </h2>
+                <LineReveal delay={0.2}>
+                  <p>{t("scroll.journeySubtitle")}</p>
+                </LineReveal>
+              </div>
+            </ScrollZoomReveal>
+
+            <div className="journey-timeline">
+              {journeySteps.map((step, i) => (
+                <div className="journey-step" key={i}>
+                  <ScrollSlideIn direction={i % 2 === 0 ? "left" : "right"}>
+                    <div className={`journey-card ${i % 2 !== 0 ? "reverse" : ""}`}>
+                      <div className="journey-card-content">
+                        <div className="journey-step-number">{String(i + 1).padStart(2, "0")}</div>
+                        <div className="journey-icon"><i className={step.icon}></i></div>
+                        <h3>{t(step.titleKey)}</h3>
+                        <p>{t(step.descKey)}</p>
+                      </div>
+                      <ParallaxSection speed={0.15}>
+                        <div className="journey-card-image">
+                          <img src={step.img} alt={t(step.titleKey)} />
+                        </div>
+                      </ParallaxSection>
+                    </div>
+                  </ScrollSlideIn>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        {/* Features with staggered scroll reveal */}
         <section className="features">
           <div className="container">
-            <div className="section-header">
-              <h2>
-                <TextReveal text={t("features.title")} className="section-title-reveal" />
-              </h2>
-              <LineReveal delay={0.3}>
-                <p>{t("features.subtitle")}</p>
-              </LineReveal>
-            </div>
+            <ScrollZoomReveal>
+              <div className="section-header">
+                <h2>
+                  <TextReveal text={t("features.title")} className="section-title-reveal" />
+                </h2>
+                <LineReveal delay={0.3}>
+                  <p>{t("features.subtitle")}</p>
+                </LineReveal>
+              </div>
+            </ScrollZoomReveal>
             <div className="cards-grid">
               {[
                 { icon: "fas fa-laptop-code", title: t("features.digital"), desc: t("features.digitalDesc"), link: "/elektrotehnicka" },
                 { icon: "fas fa-chalkboard-user", title: t("features.quality"), desc: t("features.qualityDesc"), link: "/nastavnici" },
                 { icon: "fas fa-futbol", title: t("features.sport"), desc: t("features.sportDesc"), link: "/sport" },
               ].map((card, i) => (
-                <FadeUpSection key={i} delay={i * 0.15}>
+                <ScrollSlideIn key={i} direction={i % 2 === 0 ? "left" : "right"}>
                   <div className="card">
                     <div className="card-icon"><i className={card.icon}></i></div>
                     <h3 className="font-display">{card.title}</h3>
                     <p>{card.desc}</p>
                     <Link to={card.link} className="card-link">{t("features.learnMore")} <i className="fas fa-chevron-right"></i></Link>
                   </div>
-                </FadeUpSection>
+                </ScrollSlideIn>
               ))}
             </div>
           </div>
         </section>
 
+        {/* Immersive image band */}
+        <section className="immersive-band">
+          <ParallaxSection speed={0.4}>
+            <div className="immersive-images">
+              <img src={lobbyLogo} alt="" className="immersive-img" />
+              <img src={classroom3} alt="" className="immersive-img" />
+              <img src={schoolExterior} alt="" className="immersive-img" />
+            </div>
+          </ParallaxSection>
+          <div className="immersive-overlay">
+            <ScrollZoomReveal>
+              <h2>{t("scroll.immersiveTitle")}</h2>
+              <p>{t("scroll.immersiveDesc")}</p>
+            </ScrollZoomReveal>
+          </div>
+        </section>
+
+        {/* News with scroll reveals */}
         <section className="projects-section">
           <div className="container">
-            <div className="section-header">
-              <h2>{t("home.newsTitle")}</h2>
-              <p>{t("home.newsSubtitle")}</p>
-            </div>
+            <ScrollRevealSection>
+              <div className="section-header">
+                <h2>{t("home.newsTitle")}</h2>
+                <p>{t("home.newsSubtitle")}</p>
+              </div>
+            </ScrollRevealSection>
             <div className="projects-grid">
               {latestNews.map((item, i) => (
-                <FadeUpSection key={i} delay={i * 0.1}>
+                <ScrollSlideIn key={i} direction={i === 1 ? "right" : "left"}>
                   <Link to={`/novini/${item.slug}`} className="project-card" style={{ textDecoration: "none", display: "block" }}>
                     <i className={item.icon}></i>
                     <div style={{ display: 'flex', gap: '10px', marginBottom: '8px', alignItems: 'center' }}>
@@ -217,13 +294,15 @@ const StaticHomePage = () => {
                     <h3>{t(item.titleKey)}</h3>
                     <p>{t(item.descriptionKey)}</p>
                   </Link>
-                </FadeUpSection>
+                </ScrollSlideIn>
               ))}
             </div>
             <div style={{ textAlign: 'center', marginTop: '30px' }}>
-              <Link to="/novini" className="btn-primary">
-                <i className="fas fa-newspaper"></i> {t("nav.allNews")}
-              </Link>
+              <ScrollRevealSection>
+                <Link to="/novini" className="btn-primary">
+                  <i className="fas fa-newspaper"></i> {t("nav.allNews")}
+                </Link>
+              </ScrollRevealSection>
             </div>
           </div>
         </section>
