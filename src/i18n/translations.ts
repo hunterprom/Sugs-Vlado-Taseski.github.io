@@ -95,6 +95,7 @@ export const translations: Record<Language, Record<string, string>> = {
     // Homepage news
     "home.deptTitle": "Наши струки",
     "home.deptSubtitle": "Три струки, шест профили — избери ја твојата иднина",
+    "dept.fourYear": "Четиригодишен профил",
     "home.newsTitle": "Новости",
     "home.newsSubtitle": "Најновите случувања во нашето училиште",
     // Slides
