@@ -52,7 +52,7 @@ const UpisiPage = () => {
                 <ul style={{ paddingLeft: "20px", color: "var(--text-medium)", lineHeight: 2 }}>
                   <li>{t("masinska.energetski")}</li>
                   <li>{t("masinska.proizvodno")}</li>
-                  <li>{t("masinska.instalater")}</li>
+                  
                   <li>{t("masinska.kompjutersko")}</li>
                 </ul>
               </div>
