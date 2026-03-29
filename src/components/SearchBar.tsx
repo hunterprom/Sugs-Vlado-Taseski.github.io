@@ -101,42 +101,63 @@ const SearchBar = () => {
     const recognition = new SpeechRecognition();
     recognitionRef.current = recognition;
 
-    // Map language codes
     const langMap: Record<string, string> = { mk: "mk-MK", sq: "sq-AL", en: "en-US" };
     recognition.lang = langMap[language] || "mk-MK";
-    recognition.continuous = false;
+    recognition.continuous = true;
     recognition.interimResults = true;
     recognition.maxAlternatives = 1;
+
+    let navigated = false;
+    let restartTimeout: ReturnType<typeof setTimeout> | null = null;
 
     recognition.onstart = () => setIsListening(true);
 
     recognition.onresult = (event: any) => {
-      const transcript = event.results[0][0].transcript;
+      // Get the latest result
+      const lastResult = event.results[event.results.length - 1];
+      const transcript = lastResult[0].transcript.trim();
       setQuery(transcript);
 
-      // If final result, try auto-navigate
-      if (event.results[0].isFinal) {
+      if (lastResult.isFinal && !navigated) {
         const match = allPages.find((p) =>
-          p.title.toLowerCase().includes(transcript.toLowerCase())
+          p.title.toLowerCase().includes(transcript.toLowerCase()) ||
+          transcript.toLowerCase().includes(p.title.toLowerCase())
         );
         if (match) {
+          navigated = true;
+          recognition.stop();
           setTimeout(() => {
             navigate(match.path);
             setOpen(false);
             setQuery("");
             setIsListening(false);
-          }, 500);
+          }, 600);
         }
       }
     };
 
-    recognition.onerror = () => {
+    recognition.onerror = (event: any) => {
+      // "no-speech" is not a real error, just means silence — allow restart
+      if (event.error === "no-speech") return;
       setIsListening(false);
+      recognitionRef.current = null;
     };
 
     recognition.onend = () => {
-      setIsListening(false);
-      recognitionRef.current = null;
+      // If we haven't navigated and user didn't manually stop, restart
+      if (!navigated && recognitionRef.current === recognition) {
+        restartTimeout = setTimeout(() => {
+          try {
+            recognition.start();
+          } catch {
+            setIsListening(false);
+            recognitionRef.current = null;
+          }
+        }, 300);
+      } else {
+        setIsListening(false);
+        recognitionRef.current = null;
+      }
     };
 
     recognition.start();
