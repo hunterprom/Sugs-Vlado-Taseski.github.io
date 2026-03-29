@@ -51,6 +51,32 @@ const particles = Array.from({ length: 12 }, (_, i) => ({
   shape: i % 3 === 0 ? "cross" : "circle",
 }));
 
+// Individual card component to avoid hooks-in-loop
+const BentoCard = ({ card, index, springX, springY }: { card: typeof floatingCards[0]; index: number; springX: any; springY: any }) => {
+  const cardX = useTransform(springX, (v: number) => v * (0.3 + index * 0.12));
+  const cardY = useTransform(springY, (v: number) => v * (0.3 + index * 0.12));
+
+  return (
+    <motion.div
+      className={`cinematic-bento-card ${card.circle ? "cinematic-bento-circle" : ""}`}
+      data-index={index}
+      style={{ x: cardX, y: cardY }}
+      initial={{ opacity: 0, scale: 0.8, rotate: card.rot * 2 }}
+      animate={{ opacity: 1, scale: 1, rotate: card.rot }}
+      transition={{ duration: 0.5, delay: card.delay, type: "spring", stiffness: 100 }}
+    >
+      <motion.div
+        className="cinematic-bento-card-inner"
+        animate={{ y: [0, index % 2 === 0 ? -8 : 8, 0] }}
+        transition={{ duration: 3 + index * 0.5, repeat: Infinity, ease: "easeInOut", delay: index * 0.3 }}
+      >
+        <img src={card.img} alt={card.label} />
+        <div className="cinematic-bento-label">{card.label}</div>
+      </motion.div>
+    </motion.div>
+  );
+};
+
 const CinematicHero = () => {
   const { t } = useLanguage();
   const heroRef = useRef<HTMLDivElement>(null);
