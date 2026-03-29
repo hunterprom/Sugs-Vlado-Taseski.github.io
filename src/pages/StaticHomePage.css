@@ -2129,3 +2129,137 @@
     font-size: 0.95rem;
   }
 }
+
+/* ══ Calculator Styles ══ */
+.calc-container {
+  background: white;
+  border-radius: 20px;
+  padding: 30px;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.06);
+}
+
+.calc-desktop { display: block; }
+.calc-mobile { display: none; }
+
+.calc-row {
+  display: grid;
+  grid-template-columns: 200px repeat(4, 1fr) 90px;
+  gap: 10px;
+  margin-bottom: 12px;
+  align-items: center;
+}
+
+.calc-header-row {
+  margin-bottom: 15px;
+}
+
+.calc-label {
+  font-weight: 600;
+  color: #2E6899;
+  font-size: 0.9rem;
+}
+
+.calc-col-header {
+  font-weight: 700;
+  color: #4B8BBE;
+  font-size: 0.85rem;
+  text-align: center;
+}
+
+.calc-input-cell {
+  text-align: center;
+}
+
+.calc-input {
+  width: 70px;
+  padding: 8px;
+  border-radius: 8px;
+  border: 1px solid #BBDEFB;
+  text-align: center;
+  font-size: 0.9rem;
+  color: #2E6899;
+}
+
+.calc-select {
+  width: 80px;
+  padding: 6px 4px;
+  border-radius: 8px;
+  border: 1px solid #BBDEFB;
+  text-align: center;
+  font-size: 0.8rem;
+  color: #2E6899;
+}
+
+.calc-result-cell {
+  font-weight: 700;
+  color: #4B8BBE;
+  font-size: 0.9rem;
+  text-align: center;
+}
+
+/* ── Mobile card layout ── */
+.calc-mobile-card {
+  background: #F5F9FD;
+  border-radius: 14px;
+  padding: 16px;
+  margin-bottom: 12px;
+}
+
+.calc-mobile-card-header {
+  font-weight: 700;
+  color: #2E6899;
+  font-size: 0.95rem;
+  margin-bottom: 12px;
+  padding-bottom: 8px;
+  border-bottom: 2px solid #BBDEFB;
+}
+
+.calc-mobile-card-inputs {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.calc-mobile-field {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+  flex: 1;
+  min-width: 70px;
+}
+
+.calc-mobile-grade {
+  font-size: 0.7rem;
+  font-weight: 600;
+  color: #4B8BBE;
+}
+
+.calc-mobile-result {
+  text-align: right;
+  font-weight: 800;
+  color: #4B8BBE;
+  font-size: 1rem;
+  margin-top: 10px;
+  padding-top: 8px;
+  border-top: 1px solid #BBDEFB;
+}
+
+@media (max-width: 768px) {
+  .calc-desktop { display: none; }
+  .calc-mobile { display: block; }
+
+  .calc-container {
+    padding: 16px;
+  }
+
+  .calc-input {
+    width: 100%;
+    max-width: 65px;
+  }
+
+  .calc-select {
+    width: 100%;
+    max-width: 80px;
+  }
+}
