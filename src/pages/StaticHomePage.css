@@ -1920,14 +1920,7 @@
 }
 
 .journey-timeline::before {
-  content: '';
-  position: absolute;
-  left: 50%;
-  top: 0;
-  bottom: 0;
-  width: 3px;
-  background: linear-gradient(to bottom, transparent, #4B8BBE, transparent);
-  transform: translateX(-50%);
+  display: none;
 }
 
 .journey-step {
