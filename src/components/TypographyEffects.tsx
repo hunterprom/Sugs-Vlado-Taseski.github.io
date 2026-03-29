@@ -132,6 +132,8 @@ export const FadeUpSection = ({
   );
 };
 
+const smoothSpring = { stiffness: 80, damping: 30, restDelta: 0.001 };
+
 /* ── Scrollytelling: Parallax Section ── */
 export const ParallaxSection = ({
   children,
@@ -147,7 +149,8 @@ export const ParallaxSection = ({
     target: ref,
     offset: ["start end", "end start"],
   });
-  const y = useTransform(scrollYProgress, [0, 1], [`${speed * 100}px`, `-${speed * 100}px`]);
+  const rawY = useTransform(scrollYProgress, [0, 1], [`${speed * 100}px`, `-${speed * 100}px`]);
+  const y = useSpring(rawY, smoothSpring);
 
   return (
     <div ref={ref} style={{ overflow: "hidden" }}>
@@ -169,17 +172,18 @@ export const ScrollRevealSection = ({
   const ref = useRef(null);
   const { scrollYProgress } = useScroll({
     target: ref,
-    offset: ["start 0.85", "start 0.3"],
+    offset: ["start 0.9", "start 0.25"],
   });
-  const opacity = useTransform(scrollYProgress, [0, 1], [0, 1]);
-  const y = useTransform(scrollYProgress, [0, 1], [80, 0]);
-  const scale = useTransform(scrollYProgress, [0, 1], [0.92, 1]);
+  const smoothProgress = useSpring(scrollYProgress, smoothSpring);
+  const opacity = useTransform(smoothProgress, [0, 1], [0, 1]);
+  const y = useTransform(smoothProgress, [0, 1], [60, 0]);
+  const scale = useTransform(smoothProgress, [0, 1], [0.95, 1]);
 
   return (
     <motion.div
       ref={ref}
       className={className}
-      style={{ opacity, y, scale }}
+      style={{ opacity, y, scale, willChange: "transform, opacity" }}
     >
       {children}
     </motion.div>
@@ -199,17 +203,18 @@ export const ScrollSlideIn = ({
   const ref = useRef(null);
   const { scrollYProgress } = useScroll({
     target: ref,
-    offset: ["start 0.9", "start 0.35"],
+    offset: ["start 0.95", "start 0.3"],
   });
+  const smoothProgress = useSpring(scrollYProgress, smoothSpring);
   const x = useTransform(
-    scrollYProgress,
+    smoothProgress,
     [0, 1],
-    [direction === "left" ? -120 : 120, 0]
+    [direction === "left" ? -80 : 80, 0]
   );
-  const opacity = useTransform(scrollYProgress, [0, 0.4], [0, 1]);
+  const opacity = useTransform(smoothProgress, [0, 0.5], [0, 1]);
 
   return (
-    <motion.div ref={ref} className={className} style={{ x, opacity }}>
+    <motion.div ref={ref} className={className} style={{ x, opacity, willChange: "transform, opacity" }}>
       {children}
     </motion.div>
   );
@@ -226,14 +231,15 @@ export const ScrollZoomReveal = ({
   const ref = useRef(null);
   const { scrollYProgress } = useScroll({
     target: ref,
-    offset: ["start 0.9", "start 0.3"],
+    offset: ["start 0.95", "start 0.25"],
   });
-  const scale = useTransform(scrollYProgress, [0, 1], [0.7, 1]);
-  const opacity = useTransform(scrollYProgress, [0, 0.5], [0, 1]);
-  const filter = useTransform(scrollYProgress, [0, 0.6], ["blur(10px)", "blur(0px)"]);
+  const smoothProgress = useSpring(scrollYProgress, smoothSpring);
+  const scale = useTransform(smoothProgress, [0, 1], [0.85, 1]);
+  const opacity = useTransform(smoothProgress, [0, 0.5], [0, 1]);
+  const filter = useTransform(smoothProgress, [0, 0.7], ["blur(8px)", "blur(0px)"]);
 
   return (
-    <motion.div ref={ref} className={className} style={{ scale, opacity, filter }}>
+    <motion.div ref={ref} className={className} style={{ scale, opacity, filter, willChange: "transform, opacity, filter" }}>
       {children}
     </motion.div>
   );
