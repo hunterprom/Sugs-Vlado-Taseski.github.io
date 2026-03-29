@@ -1,4 +1,4 @@
-import { useState, useRef, useEffect, useCallback } from "react";
+import { useState, useRef, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import { useLanguage } from "@/i18n/LanguageContext";
 
@@ -11,13 +11,10 @@ interface SearchResult {
 const SearchBar = () => {
   const [open, setOpen] = useState(false);
   const [query, setQuery] = useState("");
-  const [isListening, setIsListening] = useState(false);
-  const [voiceSupported, setVoiceSupported] = useState(false);
   const inputRef = useRef<HTMLInputElement>(null);
   const containerRef = useRef<HTMLDivElement>(null);
-  const recognitionRef = useRef<any>(null);
   const navigate = useNavigate();
-  const { t, language } = useLanguage();
+  const { t } = useLanguage();
 
   const allPages: SearchResult[] = [
     { title: t("nav.home"), path: "/", icon: "fas fa-home" },
@@ -39,12 +36,6 @@ const SearchBar = () => {
     { title: t("nav.enroll"), path: "/upisi", icon: "fas fa-user-graduate" },
   ];
 
-  // Check for Web Speech API support
-  useEffect(() => {
-    const SpeechRecognition = (window as any).SpeechRecognition || (window as any).webkitSpeechRecognition;
-    setVoiceSupported(!!SpeechRecognition);
-  }, []);
-
   const filtered = query.trim()
     ? allPages.filter((p) => p.title.toLowerCase().includes(query.toLowerCase()))
     : [];
@@ -58,7 +49,6 @@ const SearchBar = () => {
       if (containerRef.current && !containerRef.current.contains(e.target as Node)) {
         setOpen(false);
         setQuery("");
-        stopListening();
       }
     };
     document.addEventListener("mousedown", handleClickOutside);
@@ -74,101 +64,16 @@ const SearchBar = () => {
       if (e.key === "Escape") {
         setOpen(false);
         setQuery("");
-        stopListening();
       }
     };
     document.addEventListener("keydown", handleKey);
     return () => document.removeEventListener("keydown", handleKey);
   }, []);
 
-  const stopListening = useCallback(() => {
-    if (recognitionRef.current) {
-      recognitionRef.current.stop();
-      recognitionRef.current = null;
-    }
-    setIsListening(false);
-  }, []);
-
-  const startListening = useCallback(() => {
-    const SpeechRecognition = (window as any).SpeechRecognition || (window as any).webkitSpeechRecognition;
-    if (!SpeechRecognition) return;
-
-    if (isListening) {
-      stopListening();
-      return;
-    }
-
-    const recognition = new SpeechRecognition();
-    recognitionRef.current = recognition;
-
-    const langMap: Record<string, string> = { mk: "mk-MK", sq: "sq-AL", en: "en-US" };
-    recognition.lang = langMap[language] || "mk-MK";
-    recognition.continuous = true;
-    recognition.interimResults = true;
-    recognition.maxAlternatives = 1;
-
-    let navigated = false;
-    let restartTimeout: ReturnType<typeof setTimeout> | null = null;
-
-    recognition.onstart = () => setIsListening(true);
-
-    recognition.onresult = (event: any) => {
-      // Get the latest result
-      const lastResult = event.results[event.results.length - 1];
-      const transcript = lastResult[0].transcript.trim();
-      setQuery(transcript);
-
-      if (lastResult.isFinal && !navigated) {
-        const match = allPages.find((p) =>
-          p.title.toLowerCase().includes(transcript.toLowerCase()) ||
-          transcript.toLowerCase().includes(p.title.toLowerCase())
-        );
-        if (match) {
-          navigated = true;
-          recognition.stop();
-          setTimeout(() => {
-            navigate(match.path);
-            setOpen(false);
-            setQuery("");
-            setIsListening(false);
-          }, 600);
-        }
-      }
-    };
-
-    recognition.onerror = (event: any) => {
-      // "no-speech" is not a real error, just means silence — allow restart
-      if (event.error === "no-speech") return;
-      setIsListening(false);
-      recognitionRef.current = null;
-    };
-
-    recognition.onend = () => {
-      // If we haven't navigated and user didn't manually stop, restart
-      if (!navigated && recognitionRef.current === recognition) {
-        restartTimeout = setTimeout(() => {
-          try {
-            recognition.start();
-          } catch {
-            setIsListening(false);
-            recognitionRef.current = null;
-          }
-        }, 300);
-      } else {
-        setIsListening(false);
-        recognitionRef.current = null;
-      }
-    };
-
-    recognition.start();
-    if (!open) setOpen(true);
-  }, [isListening, language, open, navigate, allPages, stopListening]);
-
   const handleSelect = (path: string) => {
     navigate(path);
     setOpen(false);
     setQuery("");
-    stopListening();
   };
 
   return (
@@ -196,41 +101,6 @@ const SearchBar = () => {
         <span style={{ opacity: 0.7 }}>Ctrl+K</span>
       </button>
 
-      {voiceSupported && (
-        <button
-          type="button"
-          onClick={startListening}
-          aria-label={t("voice.label")}
-          className={`voice-nav-btn ${isListening ? "voice-active" : ""}`}
-          style={{
-            background: isListening ? "#4B8BBE" : "none",
-            border: `1px solid ${isListening ? "#4B8BBE" : "rgba(75, 139, 190, 0.3)"}`,
-            borderRadius: "8px",
-            padding: "6px 10px",
-            cursor: "pointer",
-            color: isListening ? "white" : "#4B8BBE",
-            fontSize: "0.9rem",
-            transition: "all 0.3s",
-            position: "relative",
-            overflow: "hidden",
-          }}
-        >
-          <i className={`fas ${isListening ? "fa-stop" : "fa-microphone"}`}></i>
-          {isListening && (
-            <span
-              style={{
-                position: "absolute",
-                inset: 0,
-                borderRadius: "8px",
-                border: "2px solid #4B8BBE",
-                animation: "voice-pulse 1.5s infinite",
-                pointerEvents: "none",
-              }}
-            />
-          )}
-        </button>
-      )}
-
       {open && (
         <div
           style={{
@@ -245,7 +115,7 @@ const SearchBar = () => {
             justifyContent: "center",
             paddingTop: "120px",
           }}
-          onClick={() => { setOpen(false); setQuery(""); stopListening(); }}
+          onClick={() => { setOpen(false); setQuery(""); }}
         >
           <div
             style={{
@@ -275,49 +145,7 @@ const SearchBar = () => {
                   color: "#2E6899",
                 }}
               />
-              {voiceSupported && (
-                <button
-                  type="button"
-                  onClick={startListening}
-                  style={{
-                    background: isListening ? "#4B8BBE" : "transparent",
-                    border: "none",
-                    cursor: "pointer",
-                    color: isListening ? "white" : "#4B8BBE",
-                    fontSize: "1.1rem",
-                    borderRadius: "50%",
-                    width: "36px",
-                    height: "36px",
-                    display: "flex",
-                    alignItems: "center",
-                    justifyContent: "center",
-                    transition: "all 0.3s",
-                    flexShrink: 0,
-                  }}
-                  aria-label={t("voice.label")}
-                >
-                  <i className={`fas ${isListening ? "fa-stop" : "fa-microphone"}`}></i>
-                </button>
-              )}
             </div>
-
-            {isListening && (
-              <div style={{
-                padding: "12px 16px",
-                background: "linear-gradient(135deg, #E3F2FD, #f0f7ff)",
-                display: "flex",
-                alignItems: "center",
-                gap: "10px",
-                borderBottom: "1px solid #eee",
-              }}>
-                <div className="voice-wave">
-                  <span></span><span></span><span></span><span></span><span></span>
-                </div>
-                <span style={{ color: "#4B8BBE", fontSize: "0.85rem", fontWeight: 500 }}>
-                  {t("voice.listening")}
-                </span>
-              </div>
-            )}
 
             <div style={{ maxHeight: "320px", overflowY: "auto" }}>
               {filtered.length > 0 ? (
@@ -353,12 +181,6 @@ const SearchBar = () => {
               ) : (
                 <div style={{ padding: "20px", textAlign: "center", color: "#9FBDD6" }}>
                   <p>{t("search.hint")}</p>
-                  {voiceSupported && (
-                    <p style={{ marginTop: "8px", fontSize: "0.8rem" }}>
-                      <i className="fas fa-microphone" style={{ marginRight: "6px" }}></i>
-                      {t("voice.hint")}
-                    </p>
-                  )}
                 </div>
               )}
             </div>
