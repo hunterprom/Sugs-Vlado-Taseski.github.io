@@ -159,20 +159,4 @@ const StaticHomePage = () => {
   );
 };
 
-const AnimatedNumber = ({ target, animate }: { target: number; animate: boolean }) => {
-  const [value, setValue] = useState(0);
-  useEffect(() => {
-    if (!animate) return;
-    let current = 0;
-    const increment = target / 40;
-    const timer = setInterval(() => {
-      current += increment;
-      if (current >= target) { setValue(target); clearInterval(timer); }
-      else setValue(Math.floor(current));
-    }, 20);
-    return () => clearInterval(timer);
-  }, [animate, target]);
-  return <span>{value}</span>;
-};
-
 export default StaticHomePage;
