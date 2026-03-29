@@ -3,9 +3,7 @@ import SiteHeader from "../components/SiteHeader";
 import SiteFooter from "../components/SiteFooter";
 import { useLanguage } from "@/i18n/LanguageContext";
 import "./StaticHomePage.css";
-import elektroTelekom from "@/assets/elektro-telekom.png";
-import kompjuterskaAvtomatika from "@/assets/kompjuterska-avtomatika.png";
-import ImageModal from "../components/ImageModal";
+import elektroSlika1 from "@/assets/elektro-slika-1.jpg";
 
 const ElektrotehnickaPage = () => {
   const { t } = useLanguage();
@@ -23,6 +21,28 @@ const ElektrotehnickaPage = () => {
           </div>
         </section>
 
+        {/* Media Section */}
+        <section className="media-section">
+          <div className="container">
+            <h2 className="section-title">{t("media.title")}</h2>
+            <div className="media-grid">
+              <div className="media-item">
+                <img src={elektroSlika1} alt={t("elektro.title")} className="media-img" />
+              </div>
+              <div className="media-item">
+                <video controls className="media-video" preload="metadata">
+                  <source src="/videos/elektro-video-1.mp4" type="video/mp4" />
+                </video>
+              </div>
+              <div className="media-item">
+                <video controls className="media-video" preload="metadata">
+                  <source src="/videos/elektro-video-2.mp4" type="video/mp4" />
+                </video>
+              </div>
+            </div>
+          </div>
+        </section>
+
         <section className="profili-section">
           <div className="container">
             <h2 className="section-title">{t("elektro.profiles")}</h2>
@@ -30,26 +50,30 @@ const ElektrotehnickaPage = () => {
               <div className="profil-card">
                 <div className="profil-icon"><i className="fas fa-mobile-alt"></i></div>
                 <h3>{t("elektro.telekom")}</h3>
-                <ImageModal src={elektroTelekom} alt={t("elektro.telekom")} className="profil-card-img" />
                 <p>{t("elektro.telekomDesc")}</p>
                 <ul className="profil-opsii">
-                  <li><i className="fas fa-check-circle"></i> Дигитална електроника</li>
-                  <li><i className="fas fa-check-circle"></i> Телекомуникациски системи</li>
-                  <li><i className="fas fa-check-circle"></i> Мобилни технологии</li>
-                  <li><i className="fas fa-check-circle"></i> Сервисирање на електронски уреди</li>
+                  <li><i className="fas fa-check-circle"></i> {t("elektro.telekomSubj1")}</li>
+                  <li><i className="fas fa-check-circle"></i> {t("elektro.telekomSubj2")}</li>
+                  <li><i className="fas fa-check-circle"></i> {t("elektro.telekomSubj3")}</li>
+                  <li><i className="fas fa-check-circle"></i> {t("elektro.telekomSubj4")}</li>
                 </ul>
+                <a href="https://sugsvladotasevski.edu.mk/wp-content/uploads/Nastava2023/%d0%9d%d0%b0%d1%81%d1%82%d0%b0%d0%b2%d0%b5%d0%bd-%d0%bf%d0%bb%d0%b0%d0%bd-%d0%95%d0%a2.pdf" target="_blank" rel="noopener noreferrer" className="profil-plan-link">
+                  <i className="fas fa-file-pdf"></i> {t("elektro.viewPlan")}
+                </a>
               </div>
               <div className="profil-card">
                 <div className="profil-icon"><i className="fas fa-robot"></i></div>
                 <h3>{t("elektro.kompjuterska")}</h3>
-                <ImageModal src={kompjuterskaAvtomatika} alt={t("elektro.kompjuterska")} className="profil-card-img" />
                 <p>{t("elektro.kompjuterskaDesc")}</p>
                 <ul className="profil-opsii">
-                  <li><i className="fas fa-check-circle"></i> PLC програмирање</li>
-                  <li><i className="fas fa-check-circle"></i> Индустриска роботика</li>
-                  <li><i className="fas fa-check-circle"></i> Автоматизација на процеси</li>
-                  <li><i className="fas fa-check-circle"></i> Микроконтролери</li>
+                  <li><i className="fas fa-check-circle"></i> {t("elektro.kompSubj1")}</li>
+                  <li><i className="fas fa-check-circle"></i> {t("elektro.kompSubj2")}</li>
+                  <li><i className="fas fa-check-circle"></i> {t("elektro.kompSubj3")}</li>
+                  <li><i className="fas fa-check-circle"></i> {t("elektro.kompSubj4")}</li>
                 </ul>
+                <a href="https://sugsvladotasevski.edu.mk/wp-content/uploads/Nastava2023/%d0%9d%d0%b0%d1%81%d1%82%d0%b0%d0%b2%d0%b5%d0%bd-%d0%bf%d0%bb%d0%b0%d0%bd-%d0%9a%d0%a2%d0%98%d0%90.pdf" target="_blank" rel="noopener noreferrer" className="profil-plan-link">
+                  <i className="fas fa-file-pdf"></i> {t("elektro.viewPlan")}
+                </a>
               </div>
             </div>
           </div>
@@ -60,10 +84,10 @@ const ElektrotehnickaPage = () => {
             <div className="moznosti-content">
               <h2><i className="fas fa-briefcase"></i> {t("elektro.employment")}</h2>
               <div className="moznosti-grid">
-                <div className="moznost-card"><i className="fas fa-building"></i><h3>Енергетски компании</h3><p>EVN Македонија, МЕПСО</p></div>
-                <div className="moznost-card"><i className="fas fa-wifi"></i><h3>Телеком оператори</h3><p>Македонски Телеком, А1, LycaMobile</p></div>
-                <div className="moznost-card"><i className="fas fa-laptop-code"></i><h3>ИТ и сервисни центри</h3><p>ИТ компании, сервисни центри</p></div>
-                <div className="moznost-card"><i className="fas fa-chart-line"></i><h3>Сопствен бизнис</h3><p>Електроника и автоматика</p></div>
+                <div className="moznost-card"><i className="fas fa-building"></i><h3>{t("elektro.emp1")}</h3><p>{t("elektro.emp1Desc")}</p></div>
+                <div className="moznost-card"><i className="fas fa-wifi"></i><h3>{t("elektro.emp2")}</h3><p>{t("elektro.emp2Desc")}</p></div>
+                <div className="moznost-card"><i className="fas fa-laptop-code"></i><h3>{t("elektro.emp3")}</h3><p>{t("elektro.emp3Desc")}</p></div>
+                <div className="moznost-card"><i className="fas fa-chart-line"></i><h3>{t("elektro.emp4")}</h3><p>{t("elektro.emp4Desc")}</p></div>
               </div>
             </div>
           </div>
@@ -75,11 +99,23 @@ const ElektrotehnickaPage = () => {
             <div className="nastava-grid">
               <div className="nastava-card">
                 <h3><i className="fas fa-book"></i> {t("elektro.theory")}</h3>
-                <ul><li>Електротехника</li><li>Електроника</li><li>Дигитална електроника</li><li>Микропроцесори</li><li>Телекомуникации</li></ul>
+                <ul>
+                  <li>{t("elektro.theory1")}</li>
+                  <li>{t("elektro.theory2")}</li>
+                  <li>{t("elektro.theory3")}</li>
+                  <li>{t("elektro.theory4")}</li>
+                  <li>{t("elektro.theory5")}</li>
+                </ul>
               </div>
               <div className="nastava-card">
                 <h3><i className="fas fa-flask"></i> {t("elektro.practice")}</h3>
-                <ul><li>Лабораториски вежби</li><li>Практика во компании</li><li>Проектна настава</li><li>Работа со современа опрема</li><li>Симулации и софтверски алатки</li></ul>
+                <ul>
+                  <li>{t("elektro.practice1")}</li>
+                  <li>{t("elektro.practice2")}</li>
+                  <li>{t("elektro.practice3")}</li>
+                  <li>{t("elektro.practice4")}</li>
+                  <li>{t("elektro.practice5")}</li>
+                </ul>
               </div>
             </div>
           </div>

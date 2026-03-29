@@ -3,9 +3,7 @@ import SiteHeader from "../components/SiteHeader";
 import SiteFooter from "../components/SiteFooter";
 import { useLanguage } from "@/i18n/LanguageContext";
 import "./StaticHomePage.css";
-import soobrakajTransport from "@/assets/soobrakaj-transport.png";
-import zeleznicka from "@/assets/zeleznicki-soobrakaj.png";
-import ImageModal from "../components/ImageModal";
+import soobrakajSlika1 from "@/assets/soobrakaj-slika-1.jpg";
 
 const SoobrakajnaPage = () => {
   const { t } = useLanguage();
@@ -23,6 +21,23 @@ const SoobrakajnaPage = () => {
           </div>
         </section>
 
+        {/* Media Section */}
+        <section className="media-section">
+          <div className="container">
+            <h2 className="section-title">{t("media.title")}</h2>
+            <div className="media-grid">
+              <div className="media-item">
+                <img src={soobrakajSlika1} alt={t("soobrakaj.title")} className="media-img" />
+              </div>
+              <div className="media-item">
+                <video controls className="media-video" preload="metadata">
+                  <source src="/videos/soobrakaj-video-1.mp4" type="video/mp4" />
+                </video>
+              </div>
+            </div>
+          </div>
+        </section>
+
         <section className="profili-section">
           <div className="container">
             <h2 className="section-title">{t("soobrakaj.profiles")}</h2>
@@ -30,37 +45,30 @@ const SoobrakajnaPage = () => {
               <div className="profil-card">
                 <div className="profil-icon"><i className="fas fa-shipping-fast"></i></div>
                 <h3>{t("soobrakaj.transport")}</h3>
-                <ImageModal src={soobrakajTransport} alt={t("soobrakaj.transport")} className="profil-card-img" />
                 <p>{t("soobrakaj.transportDesc")}</p>
                 <ul className="profil-opsii">
-                  <li><i className="fas fa-check-circle"></i> Логистика и синџири на снабдување</li>
-                  <li><i className="fas fa-check-circle"></i> Шпедиција и царинење</li>
-                  <li><i className="fas fa-check-circle"></i> Транспортна документација</li>
-                  <li><i className="fas fa-check-circle"></i> Менаџмент во транспортот</li>
+                  <li><i className="fas fa-check-circle"></i> {t("soobrakaj.transportSubj1")}</li>
+                  <li><i className="fas fa-check-circle"></i> {t("soobrakaj.transportSubj2")}</li>
+                  <li><i className="fas fa-check-circle"></i> {t("soobrakaj.transportSubj3")}</li>
+                  <li><i className="fas fa-check-circle"></i> {t("soobrakaj.transportSubj4")}</li>
                 </ul>
+                <a href="https://sugsvladotasevski.edu.mk/wp-content/uploads/Nastava2023/%d0%9d%d0%b0%d1%81%d1%82%d0%b0%d0%b2%d0%b5%d0%bd-%d0%bf%d0%bb%d0%b0%d0%bd-%d0%a2%d0%a8.pdf" target="_blank" rel="noopener noreferrer" className="profil-plan-link">
+                  <i className="fas fa-file-pdf"></i> {t("soobrakaj.viewPlan")}
+                </a>
               </div>
               <div className="profil-card">
                 <div className="profil-icon"><i className="fas fa-subway"></i></div>
                 <h3>{t("soobrakaj.zeleznica")}</h3>
-                <ImageModal src={zeleznicka} alt={t("soobrakaj.zeleznica")} className="profil-card-img" />
                 <p>{t("soobrakaj.zeleznicaDesc")}</p>
                 <ul className="profil-opsii">
-                  <li><i className="fas fa-check-circle"></i> Железнички транспорт</li>
-                  <li><i className="fas fa-check-circle"></i> Сигнални системи</li>
-                  <li><i className="fas fa-check-circle"></i> Управување со возен ред</li>
-                  <li><i className="fas fa-check-circle"></i> Безбедност на железница</li>
+                  <li><i className="fas fa-check-circle"></i> {t("soobrakaj.zelezSubj1")}</li>
+                  <li><i className="fas fa-check-circle"></i> {t("soobrakaj.zelezSubj2")}</li>
+                  <li><i className="fas fa-check-circle"></i> {t("soobrakaj.zelezSubj3")}</li>
+                  <li><i className="fas fa-check-circle"></i> {t("soobrakaj.zelezSubj4")}</li>
                 </ul>
-              </div>
-              <div className="profil-card">
-                <div className="profil-icon"><i className="fas fa-train"></i></div>
-                <h3>{t("soobrakaj.vleca")}</h3>
-                <p>{t("soobrakaj.vlecaDesc")}</p>
-                <ul className="profil-opsii">
-                  <li><i className="fas fa-check-circle"></i> Управување со локомотиви</li>
-                  <li><i className="fas fa-check-circle"></i> Влечни средства</li>
-                  <li><i className="fas fa-check-circle"></i> Одржување на возила</li>
-                  <li><i className="fas fa-check-circle"></i> Безбедносни процедури</li>
-                </ul>
+                <a href="https://sugsvladotasevski.edu.mk/wp-content/uploads/Nastava2023/%d0%9d%d0%b0%d1%81%d1%82%d0%b0%d0%b2%d0%b5%d0%bd-%d0%bf%d0%bb%d0%b0%d0%bd-%d0%96%d0%a1.pdf" target="_blank" rel="noopener noreferrer" className="profil-plan-link">
+                  <i className="fas fa-file-pdf"></i> {t("soobrakaj.viewPlan")}
+                </a>
               </div>
             </div>
           </div>
@@ -71,10 +79,10 @@ const SoobrakajnaPage = () => {
             <div className="moznosti-content">
               <h2><i className="fas fa-briefcase"></i> {t("soobrakaj.employment")}</h2>
               <div className="moznosti-grid">
-                <div className="moznost-card"><i className="fas fa-ship"></i><h3>Шпедитерски компании</h3><p>Шпедиција, логистика</p></div>
-                <div className="moznost-card"><i className="fas fa-bus"></i><h3>Јавен превоз</h3><p>Превозни компании</p></div>
-                <div className="moznost-card"><i className="fas fa-train"></i><h3>Железници</h3><p>Македонски железници</p></div>
-                <div className="moznost-card"><i className="fas fa-chart-line"></i><h3>Логистички центри</h3><p>Складишта, дистрибуција</p></div>
+                <div className="moznost-card"><i className="fas fa-ship"></i><h3>{t("soobrakaj.emp1")}</h3><p>{t("soobrakaj.emp1Desc")}</p></div>
+                <div className="moznost-card"><i className="fas fa-bus"></i><h3>{t("soobrakaj.emp2")}</h3><p>{t("soobrakaj.emp2Desc")}</p></div>
+                <div className="moznost-card"><i className="fas fa-train"></i><h3>{t("soobrakaj.emp3")}</h3><p>{t("soobrakaj.emp3Desc")}</p></div>
+                <div className="moznost-card"><i className="fas fa-chart-line"></i><h3>{t("soobrakaj.emp4")}</h3><p>{t("soobrakaj.emp4Desc")}</p></div>
               </div>
             </div>
           </div>
@@ -86,11 +94,24 @@ const SoobrakajnaPage = () => {
             <div className="nastava-grid">
               <div className="nastava-card">
                 <h3><i className="fas fa-book"></i> {t("soobrakaj.theory")}</h3>
-                <ul><li>Транспортна логистика</li><li>Шпедиција и царинско работење</li><li>Железнички транспорт</li><li>Сообраќајно планирање</li><li>Безбедност во сообраќајот</li><li>Економика на транспортот</li></ul>
+                <ul>
+                  <li>{t("soobrakaj.theory1")}</li>
+                  <li>{t("soobrakaj.theory2")}</li>
+                  <li>{t("soobrakaj.theory3")}</li>
+                  <li>{t("soobrakaj.theory4")}</li>
+                  <li>{t("soobrakaj.theory5")}</li>
+                  <li>{t("soobrakaj.theory6")}</li>
+                </ul>
               </div>
               <div className="nastava-card">
                 <h3><i className="fas fa-flask"></i> {t("soobrakaj.practice")}</h3>
-                <ul><li>Теренска настава</li><li>Практика во транспортни компании</li><li>Симулации на транспортни процеси</li><li>Работа со софтвер за логистика</li><li>Симулатор за возење воз</li></ul>
+                <ul>
+                  <li>{t("soobrakaj.practice1")}</li>
+                  <li>{t("soobrakaj.practice2")}</li>
+                  <li>{t("soobrakaj.practice3")}</li>
+                  <li>{t("soobrakaj.practice4")}</li>
+                  <li>{t("soobrakaj.practice5")}</li>
+                </ul>
               </div>
             </div>
           </div>

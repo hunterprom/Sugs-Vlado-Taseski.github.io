@@ -9,11 +9,11 @@ const SiteFooter = () => {
       <div className="container">
         <div className="footer-grid" style={{ gridTemplateColumns: "repeat(auto-fit, minmax(250px, 1fr))" }}>
           <div className="footer-col">
-            <h4><i className="fas fa-school"></i> СУГС „Владо Тасевски"</h4>
+            <h4><i className="fas fa-school"></i> {t("footer.schoolName")}</h4>
             <ul>
-              <li><i className="fas fa-map-marker-alt"></i> III Македонска бригада бб, 1000 Скопје</li>
-              <li><i className="fas fa-phone"></i> <a href="tel:+38922400040">02 2400 040</a></li>
-              <li><i className="fas fa-envelope"></i> <a href="mailto:sugs-vladotasevski-skopje@schools.mk">sugs-vladotasevski-skopje@schools.mk</a></li>
+              <li><i className="fas fa-map-marker-alt"></i> {t("footer.address")}</li>
+              <li><i className="fas fa-phone"></i> <a href="tel:+38922400040">{t("footer.phone")}</a></li>
+              <li><i className="fas fa-envelope"></i> <a href="mailto:sugs-vladotasevski-skopje@schools.mk">{t("footer.email")}</a></li>
             </ul>
             <div className="social-icons">
               <a href="https://www.facebook.com/VladoTasevskiPtt/" target="_blank" rel="noopener noreferrer"><i className="fab fa-facebook-f"></i></a>
@@ -25,7 +25,6 @@ const SiteFooter = () => {
             <h4>{t("footer.usefulLinks")}</h4>
             <ul>
               <li><a href="https://ednevnik.edu.mk" target="_blank" rel="noopener noreferrer"><i className="fas fa-chevron-right"></i> {t("top.eDiary")}</a></li>
-              <li><a href="https://massum.org/mk/" target="_blank" rel="noopener noreferrer"><i className="fas fa-chevron-right"></i> МАССУМ</a></li>
               <li><Link to="/kontakt"><i className="fas fa-chevron-right"></i> {t("footer.contact")}</Link></li>
             </ul>
           </div>

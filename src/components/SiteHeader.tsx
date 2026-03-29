@@ -112,7 +112,7 @@ const SiteHeader = () => {
           <Link to="/" className="logo-area">
             <img src={schoolLogo} alt="СУГС Владо Тасевски лого" className="logo-img" style={{ height: "52px", width: "auto" }} />
             <div className="logo-text">
-              <h1>СУГС „Владо Тасевски"</h1>
+              <h1 style={{ fontFamily: "inherit", fontStyle: "normal", letterSpacing: "normal", fontWeight: 700 }}>СУГС „Владо Тасевски"</h1>
               <span>образование • иновација • традиција</span>
             </div>
           </Link>
@@ -144,6 +144,14 @@ const SiteHeader = () => {
                       <li><Link to="/strucna-sluzba">{t("nav.professional")}</Link></li>
                     </ul>
                   </li>
+                  <li className={`dropdown-nested ${activeSubmenu === "resursi" ? "active" : ""}`}>
+                    <a href="#" onClick={(e) => handleSubmenuClick("resursi", e)}>
+                      {t("nav.resources")} <i className="fas fa-chevron-right"></i>
+                    </a>
+                    <ul className="dropdown-submenu">
+                      <li><Link to="/sport">{t("nav.sport")}</Link></li>
+                    </ul>
+                  </li>
                 </ul>
               </li>
 
@@ -164,8 +172,8 @@ const SiteHeader = () => {
                 </a>
                 <ul className="dropdown-menu">
                   <li><Link to="/vonredni">{t("nav.external")}</Link></li>
-                  <li><Link to="/rezultati">Резултати од уписи</Link></li>
-                  <li><Link to="/poeni-kalkulator">Калкулатор за поени</Link></li>
+                  <li><Link to="/rezultati">{t("nav.enrollResults")}</Link></li>
+                  <li><Link to="/poeni-kalkulator">{t("nav.calculator")}</Link></li>
                 </ul>
               </li>
 
@@ -179,9 +187,6 @@ const SiteHeader = () => {
                 </ul>
               </li>
 
-              <li>
-                <Link to="/sport" className={location.pathname === "/sport" ? "active" : ""}>{t("nav.sport")}</Link>
-              </li>
               <li>
                 <Link to="/kontakt" className={location.pathname === "/kontakt" ? "active" : ""}>{t("nav.contact")}</Link>
               </li>

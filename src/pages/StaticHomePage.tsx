@@ -21,12 +21,13 @@ const StaticHomePage = () => {
   const [statsAnimated, setStatsAnimated] = useState(false);
   const { t } = useLanguage();
 
+  const slideKeys = ["slide.1", "slide.2", "slide.3", "slide.4", "slide.5"];
   const slides = [
-    { img: heroImg1, caption: "Модерни училници" },
-    { img: heroImg2, caption: "Спорт & рекреација" },
-    { img: heroImg3, caption: "Нашето училиште" },
-    { img: heroImg4, caption: "Лоби" },
-    { img: heroImg5, caption: "Дворот на училиштето" },
+    { img: heroImg1, captionKey: slideKeys[0] },
+    { img: heroImg2, captionKey: slideKeys[1] },
+    { img: heroImg3, captionKey: slideKeys[2] },
+    { img: heroImg4, captionKey: slideKeys[3] },
+    { img: heroImg5, captionKey: slideKeys[4] },
   ];
 
   const goToSlide = useCallback((index: number) => setCurrentSlide(index), []);
@@ -70,17 +71,17 @@ const StaticHomePage = () => {
                 <i className="fas fa-star-of-life text-3xl"></i> {t("hero.badge")}
               </motion.span>
 
-              <h1 className="hero-title-split">
+              <h1 className="hero-title-split" style={{ fontFamily: "'Inter', 'Playfair Display', sans-serif" }}>
                 <LineReveal delay={0.3}>
-                  <span className="font-serif" style={{ fontStyle: "italic", letterSpacing: "-0.02em" }}>
+                  <span style={{ fontWeight: 700, letterSpacing: "0.01em" }}>
                     {t("hero.school")}
                   </span>{" "}
-                  <span style={{ letterSpacing: "0.08em", fontWeight: 800 }}>
+                  <span style={{ fontWeight: 700, letterSpacing: "0.01em" }}>
                     {t("hero.name")}
                   </span>
                 </LineReveal>
                 <LineReveal delay={0.5}>
-                  <span className="font-display" style={{ fontWeight: 400, fontStyle: "italic", fontSize: "0.7em", letterSpacing: "0.15em" }}>
+                  <span style={{ fontWeight: 400, fontSize: "0.7em", letterSpacing: "0.15em" }}>
                     {t("hero.city")}
                   </span>
                 </LineReveal>
@@ -102,7 +103,7 @@ const StaticHomePage = () => {
                 transition={{ duration: 0.5, delay: 1.0 }}
               >
                 <Link to="/upisi" className="btn-primary"><i className="fas fa-arrow-right"></i> {t("hero.enroll")}</Link>
-                <Link to="/poeni-kalkulator" className="btn-secondary"><i className="fas fa-calculator"></i> Калкулатор за поени</Link>
+                <Link to="/poeni-kalkulator" className="btn-secondary"><i className="fas fa-calculator"></i> {t("hero.calculator")}</Link>
                 <Link to="/za-nas" className="btn-secondary"><i className="fas fa-info-circle"></i> {t("hero.history")}</Link>
               </motion.div>
             </div>
@@ -118,8 +119,8 @@ const StaticHomePage = () => {
               <div className="gallery-carousel-container">
                 {slides.map((slide, i) => (
                   <div key={i} className={`gallery-slide ${i === currentSlide ? "active" : ""}`}>
-                    <img src={slide.img} alt={slide.caption} />
-                    <div className="gallery-caption"><h3>{slide.caption}</h3></div>
+                    <img src={slide.img} alt={t(slide.captionKey)} />
+                    <div className="gallery-caption"><h3>{t(slide.captionKey)}</h3></div>
                   </div>
                 ))}
               </div>
@@ -199,7 +200,6 @@ const StaticHomePage = () => {
           </div>
         </section>
 
-        {/* News preview section - clickable */}
         <section className="projects-section">
           <div className="container">
             <div className="section-header">
