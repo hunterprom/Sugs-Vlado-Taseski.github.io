@@ -971,6 +971,10 @@ export const translations: Record<Language, Record<string, string>> = {
     "stats.years": "Years of tradition",
     "stats.teachers": "Teachers",
     "stats.students": "Students",
+    "hero.stat.years": "years",
+    "hero.stat.students": "students",
+    "hero.stat.teachers": "teachers",
+    "hero.stat.programs": "programs",
     // Features
     "features.title": "Why choose our school?",
     "features.subtitle": "Modern classrooms, experienced staff and innovative learning methods",
