@@ -67,6 +67,16 @@ const ZaNasPage = () => {
                 <ImageModal src={istorija10} alt="Машинска работилница" />
                 <ImageModal src={istorija11} alt="Планирање на училиштето" />
                 <ImageModal src={istorija12} alt="Изградба на училиштето" />
+                <ImageModal src={classroom1} alt="Училница" />
+                <ImageModal src={classroom2} alt="Училница" />
+                <ImageModal src={classroom3} alt="Училница" />
+                <ImageModal src={classroom4} alt="Училница" />
+                <ImageModal src={solarPanels} alt="Соларни панели" />
+                <ImageModal src={outdoorBench} alt="Двор" />
+                <ImageModal src={fountain} alt="Фонтана" />
+                <ImageModal src={lobbyLogo} alt="Лоби" />
+                <ImageModal src={schoolExterior} alt="Училиште" />
+                <ImageModal src={conferenceRoom} alt="Конференциска сала" />
               </div>
             </div>
           </div>
