@@ -6,9 +6,6 @@ import SiteFooter from "../components/SiteFooter";
 import { TextReveal, LineReveal, MarqueeTicker, FadeUpSection, ScrollRevealSection, ScrollSlideIn, ScrollZoomReveal, ParallaxSection } from "../components/TypographyEffects";
 import { useLanguage } from "@/i18n/LanguageContext";
 import DepartmentsSection from "../components/DepartmentsSection";
-import WhyUsSection from "../components/WhyUsSection";
-import TestimonialSection from "../components/TestimonialSection";
-import CTASection from "../components/CTASection";
 import { noviniData } from "../data/noviniData";
 import "./StaticHomePage.css";
 
@@ -281,12 +278,6 @@ const StaticHomePage = () => {
         {/* Departments / Струки */}
         <DepartmentsSection />
 
-        {/* Why Us */}
-        <WhyUsSection />
-
-        {/* Testimonial */}
-        <TestimonialSection />
-
         {/* News with scroll reveals */}
         <section className="projects-section">
           <div className="container">
@@ -319,9 +310,6 @@ const StaticHomePage = () => {
             </div>
           </div>
         </section>
-
-        {/* CTA */}
-        <CTASection />
       </main>
       <SiteFooter />
     </>
