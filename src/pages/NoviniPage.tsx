@@ -4,8 +4,8 @@ import SiteFooter from "../components/SiteFooter";
 import { useLanguage } from "@/i18n/LanguageContext";
 import { noviniData } from "../data/noviniData";
 import "../pages/StaticHomePage.css";
-import ucilnicaImg from "@/assets/училница-1.png";
-import ucilisteNadvor from "@/assets/училиште-надвор.png";
+import ucilnicaImg from "@/assets/classroom-main-1.png";
+import ucilisteNadvor from "@/assets/school-outside.png";
 
 const NoviniPage = () => {
   const { t } = useLanguage();
