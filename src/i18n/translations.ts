@@ -452,6 +452,10 @@ export const translations: Record<Language, Record<string, string>> = {
     "top.lms": "LMS Schools",
     "top.erasmus": "Erasmus+",
     "top.founded": "Themeluar 1959",
+    // Search
+    "search.placeholder": "Kërko faqen...",
+    "search.noResults": "Nuk ka rezultate",
+    "search.hint": "Shkruani tekstin për kërkim",
     // Hero
     "hero.badge": "ARSIM M\u00CB I MIR\u00CB, ARDHM\u00CBRI M\u00CB E MIR\u00CB!",
     "hero.school": "SHMA",
