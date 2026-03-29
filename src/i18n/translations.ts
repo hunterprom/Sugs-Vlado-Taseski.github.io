@@ -522,7 +522,11 @@ export const translations: Record<Language, Record<string, string>> = {
     // Stats
     "stats.years": "Vite tradit\u00EB",
     "stats.teachers": "Profesor\u00EB",
-    "stats.students": "Nx\u00EBn\u00EBs",
+    "stats.students": "Nxënës",
+    "hero.stat.years": "vite",
+    "hero.stat.students": "nxënës",
+    "hero.stat.teachers": "profesorë",
+    "hero.stat.programs": "drejtime",
     // Features
     "features.title": "Pse t\u00EB zgjidhni shkoll\u00EBn ton\u00EB?",
     "features.subtitle": "Klasa moderne, staf me p\u00EBrvoj\u00EB dhe metoda inovative t\u00EB m\u00EBsimit",
