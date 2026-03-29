@@ -419,7 +419,7 @@
 }
 
 .gallery-dots .dot.active-dot {
-  background: #FBC02D;
+  background: #00D4FF;
   transform: scale(1.2);
 }
 
@@ -463,12 +463,12 @@
 }
 
 .badge {
-  background: #FFF8E1;
+  background: #E0F7FA;
   padding: 4px 12px;
   border-radius: 40px;
   font-size: 0.7rem;
   font-weight: 600;
-  color: #F9A825;
+  color: #00D4FF;
   display: inline-block;
   margin-bottom: 15px;
 }
@@ -494,7 +494,7 @@
 }
 
 .btn-primary {
-  background: #FBC02D;
+  background: #00D4FF;
   color: #1B2A4A;
   padding: 10px 22px;
   border-radius: 40px;
@@ -509,7 +509,7 @@
 }
 
 .btn-primary:hover {
-  background: #F9A825;
+  background: #00B8D9;
   transform: translateY(-2px);
 }
 
@@ -609,7 +609,7 @@
 }
 
 .dot.active-dot {
-  background: #FBC02D;
+  background: #00D4FF;
   width: 24px;
   border-radius: 10px;
 }
