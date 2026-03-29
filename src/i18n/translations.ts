@@ -540,6 +540,8 @@ export const translations: Record<Language, Record<string, string>> = {
     // Back
     "back": "Kthehu n\u00EB fillim",
     // Homepage news
+    "home.deptTitle": "Drejtimet tona",
+    "home.deptSubtitle": "Tre drejtime, gjasht\u00EB profile \u2014 zgjedh t\u00EB ardhmen t\u00EBnde",
     "home.newsTitle": "Lajme",
     "home.newsSubtitle": "Ngjarjet m\u00EB t\u00EB fundit n\u00EB shkoll\u00EBn ton\u00EB",
     // Slides
