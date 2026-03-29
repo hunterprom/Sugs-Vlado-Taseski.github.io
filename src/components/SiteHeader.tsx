@@ -99,10 +99,6 @@ const SiteHeader = () => {
                 </div>
               )}
             </div>
-            <div className="school-badge">
-              <i className="fas fa-graduation-cap"></i>
-              <span>{t("top.founded")}</span>
-            </div>
           </div>
         </div>
       </div>

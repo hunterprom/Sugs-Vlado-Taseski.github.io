@@ -26,28 +26,23 @@ const StrucnaSluzbaPage = () => {
           <div className="container">
             <div className="leadership-grid">
               <div className="leader-card">
-                <i className="fas fa-chalkboard-user" style={{ fontSize: "3rem", color: "#4B8BBE", marginBottom: "15px" }}></i>
-                <h3>Марија Петровска</h3>
-                <p>{t("strucna.pomosnk")}</p>
-              </div>
-              <div className="leader-card">
                 <i className="fas fa-handshake" style={{ fontSize: "3rem", color: "#4B8BBE", marginBottom: "15px" }}></i>
-                <h3>{t("strucna.pedagog")}</h3>
+                <h3>Александра Цветаноска</h3>
                 <p>{t("strucna.pedagog")}</p>
               </div>
               <div className="leader-card">
                 <i className="fas fa-heart" style={{ fontSize: "3rem", color: "#4B8BBE", marginBottom: "15px" }}></i>
-                <h3>{t("strucna.psiholog")}</h3>
+                <h3>Славица Нешевска</h3>
                 <p>{t("strucna.psiholog")}</p>
               </div>
               <div className="leader-card">
                 <i className="fas fa-user-friends" style={{ fontSize: "3rem", color: "#4B8BBE", marginBottom: "15px" }}></i>
-                <h3>{t("strucna.defektolog")}</h3>
+                <h3>Мартина Трајковска</h3>
                 <p>{t("strucna.defektolog")}</p>
               </div>
               <div className="leader-card">
                 <i className="fas fa-users" style={{ fontSize: "3rem", color: "#4B8BBE", marginBottom: "15px" }}></i>
-                <h3>{t("strucna.sociolog")}</h3>
+                <h3>Радмила Рангелова</h3>
                 <p>{t("strucna.sociolog")}</p>
               </div>
             </div>

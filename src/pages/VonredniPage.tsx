@@ -85,14 +85,6 @@ const VonredniPage = () => {
               </div>
             </div>
 
-            <div style={{ display: "flex", gap: "15px", flexWrap: "wrap", justifyContent: "center" }}>
-              <a href="https://sugsvladotasevski.edu.mk/вонредни-ученици/известувања-за-испитни-сесии" target="_blank" rel="noopener noreferrer" className="btn-primary">
-                <i className="fas fa-bell"></i> {t("vonredni.notifications")}
-              </a>
-              <a href="https://sugsvladotasevski.edu.mk/вонредни-ученици/комисии/" target="_blank" rel="noopener noreferrer" className="btn-secondary">
-                <i className="fas fa-users"></i> {t("vonredni.commissions")}
-              </a>
-            </div>
           </div>
         </section>
 

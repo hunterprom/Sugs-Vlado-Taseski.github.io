@@ -81,7 +81,7 @@ const StaticHomePage = () => {
                   </span>
                 </LineReveal>
                 <LineReveal delay={0.5}>
-                  <span style={{ fontWeight: 400, fontSize: "0.7em", letterSpacing: "0.15em" }}>
+                  <span style={{ fontWeight: 700, fontSize: "0.7em", letterSpacing: "0.15em" }}>
                     {t("hero.city")}
                   </span>
                 </LineReveal>
