@@ -1,29 +1,35 @@
 import { useState, useRef, useEffect } from "react";
 import ReactMarkdown from "react-markdown";
+import { useLanguage } from "@/i18n/LanguageContext";
 
 type Msg = { role: "user" | "assistant"; content: string };
 
 const CHAT_URL = `${import.meta.env.VITE_SUPABASE_URL}/functions/v1/enrollment-chat`;
 
-const QUICK_QUESTIONS = [
-  "Кои струки ги нудите?",
-  "Како се запишувам?",
-  "Колку бодови ми требаат?",
-  "Која струка е најбарана?",
-];
-
 const EnrollmentChatbot = () => {
+  const { t, language } = useLanguage();
   const [isOpen, setIsOpen] = useState(false);
   const [messages, setMessages] = useState<Msg[]>([
-    { role: "assistant", content: "Здраво! 👋 Јас сум твојот AI агент за упис. Прашај ме за струките, процесот на запишување, или за споредба на смерови!" },
+    { role: "assistant", content: t("chat.greeting") },
   ]);
   const [input, setInput] = useState("");
   const [isLoading, setIsLoading] = useState(false);
   const messagesEndRef = useRef<HTMLDivElement>(null);
+  const prevLangRef = useRef(language);
+
+  // Reset greeting when language changes
+  useEffect(() => {
+    if (prevLangRef.current !== language) {
+      prevLangRef.current = language;
+      setMessages([{ role: "assistant", content: t("chat.greeting") }]);
+    }
+  }, [language, t]);
 
   useEffect(() => {
     messagesEndRef.current?.scrollIntoView({ behavior: "smooth" });
   }, [messages]);
+
+  const quickQuestions = [t("chat.q1"), t("chat.q2"), t("chat.q3"), t("chat.q4")];
 
   const sendMessage = async (text: string) => {
     if (!text.trim() || isLoading) return;
@@ -42,12 +48,12 @@ const EnrollmentChatbot = () => {
           "Content-Type": "application/json",
           Authorization: `Bearer ${import.meta.env.VITE_SUPABASE_PUBLISHABLE_KEY}`,
         },
-        body: JSON.stringify({ messages: newMessages }),
+        body: JSON.stringify({ messages: newMessages, language }),
       });
 
       if (!resp.ok || !resp.body) {
         const errData = await resp.json().catch(() => ({}));
-        throw new Error(errData.error || "Грешка при комуникација");
+        throw new Error(errData.error || t("chat.commError"));
       }
 
       const reader = resp.body.getReader();
@@ -92,7 +98,7 @@ const EnrollmentChatbot = () => {
         }
       }
     } catch (e: any) {
-      setMessages(prev => [...prev, { role: "assistant", content: `⚠️ ${e.message || "Грешка. Обидете се повторно."}` }]);
+      setMessages(prev => [...prev, { role: "assistant", content: `⚠️ ${e.message || t("chat.error")}` }]);
     } finally {
       setIsLoading(false);
     }
@@ -103,7 +109,7 @@ const EnrollmentChatbot = () => {
       <button
         onClick={() => setIsOpen(!isOpen)}
         className="chatbot-fab"
-        aria-label="Отвори чатбот"
+        aria-label="Chatbot"
       >
         {isOpen ? (
           <i className="fas fa-times" style={{ fontSize: "1.3rem" }}></i>
@@ -120,8 +126,8 @@ const EnrollmentChatbot = () => {
                 <i className="fas fa-robot"></i>
               </div>
               <div>
-                <strong style={{ fontSize: "1rem" }}>AI Агент</strong>
-                <p style={{ fontSize: "0.75rem", opacity: 0.8, margin: 0 }}>Помошник за упис</p>
+                <strong style={{ fontSize: "1rem" }}>{t("chat.title")}</strong>
+                <p style={{ fontSize: "0.75rem", opacity: 0.8, margin: 0 }}>{t("chat.subtitle")}</p>
               </div>
             </div>
             <button onClick={() => setIsOpen(false)} className="chatbot-close">
@@ -155,7 +161,7 @@ const EnrollmentChatbot = () => {
 
           {messages.length <= 1 && (
             <div className="chatbot-quick">
-              {QUICK_QUESTIONS.map((q, i) => (
+              {quickQuestions.map((q, i) => (
                 <button key={i} onClick={() => sendMessage(q)} className="chatbot-quick-btn">
                   {q}
                 </button>
@@ -169,7 +175,7 @@ const EnrollmentChatbot = () => {
               value={input}
               onChange={e => setInput(e.target.value)}
               onKeyDown={e => e.key === "Enter" && sendMessage(input)}
-              placeholder="Постави прашање за упис..."
+              placeholder={t("chat.placeholder")}
               disabled={isLoading}
               className="chatbot-input"
             />

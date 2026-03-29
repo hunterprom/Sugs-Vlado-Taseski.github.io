@@ -417,6 +417,17 @@ export const translations: Record<Language, Record<string, string>> = {
     "novost.6.category": "Натпревари",
     "novost.6.description": "Честитки за Ива Богдановска за освоеното трето место на Европското јуниорско првенство во џудо!",
     "novost.6.content": "Честитки за Ива Богдановска!\n\nСо огромна гордост ја честитаме нашата ученичка Ива Богдановска за освоеното трето место на Европското јуниорско првенство во џудо!\n\nИва, ти си гордост на нашето училиште!\n\nWE ARE THE TEAM VLADO TASEVSKI!",
+    // Chatbot
+    "chat.greeting": "Здраво! 👋 Јас сум твојот AI агент за упис. Прашај ме за струките, процесот на запишување, или за споредба на смерови!",
+    "chat.title": "AI Агент",
+    "chat.subtitle": "Помошник за упис",
+    "chat.placeholder": "Постави прашање за упис...",
+    "chat.error": "Грешка. Обидете се повторно.",
+    "chat.commError": "Грешка при комуникација",
+    "chat.q1": "Кои струки ги нудите?",
+    "chat.q2": "Како се запишувам?",
+    "chat.q3": "Колку бодови ми требаат?",
+    "chat.q4": "Која струка е најбарана?",
   },
   sq: {
     // Nav
@@ -834,6 +845,17 @@ export const translations: Record<Language, Record<string, string>> = {
     "novost.6.category": "Gara",
     "novost.6.description": "Urime p\u00EBr Iva Bogdanovska p\u00EBr vendin e tret\u00EB n\u00EB Kampionatin Europian Junior n\u00EB xhudo!",
     "novost.6.content": "Urime p\u00EBr Iva Bogdanovska!\n\nMe krenari t\u00EB madhe urojm\u00EB nx\u00EBn\u00EBsen ton\u00EB Iva Bogdanovska p\u00EBr vendin e tret\u00EB n\u00EB Kampionatin Europian Junior n\u00EB xhudo!\n\nIva, ti je krenaria e shkoll\u00EBs son\u00EB!\n\nWE ARE THE TEAM VLADO TASEVSKI!",
+    // Chatbot
+    "chat.greeting": "P\u00EBrsh\u00EBndetje! \uD83D\uDC4B Un\u00EB jam agjenti yt AI p\u00EBr regjistrim. M\u00EB pyet p\u00EBr drejtimet, procesin e regjistrimit, ose krahasimin e profileve!",
+    "chat.title": "Agjent AI",
+    "chat.subtitle": "Ndihm\u00EBs p\u00EBr regjistrim",
+    "chat.placeholder": "B\u00EBj nj\u00EB pyetje p\u00EBr regjistrim...",
+    "chat.error": "Gabim. Provoni p\u00EBrs\u00EBri.",
+    "chat.commError": "Gabim n\u00EB komunikim",
+    "chat.q1": "Cilat drejtime i ofroni?",
+    "chat.q2": "Si t\u00EB regjistrohem?",
+    "chat.q3": "Sa pik\u00EB m\u00EB duhen?",
+    "chat.q4": "Cili drejtim \u00EBsht\u00EB m\u00EB i k\u00EBrkuar?",
   },
   en: {
     // Nav
@@ -1251,5 +1273,16 @@ export const translations: Record<Language, Record<string, string>> = {
     "novost.6.category": "Competitions",
     "novost.6.description": "Congratulations to Iva Bogdanovska for winning third place at the European Junior Judo Championship!",
     "novost.6.content": "Congratulations to Iva Bogdanovska!\n\nWe proudly congratulate our student Iva Bogdanovska for winning third place at the European Junior Judo Championship!\n\nIva, you are the pride of our school!\n\nWE ARE THE TEAM VLADO TASEVSKI!",
+    // Chatbot
+    "chat.greeting": "Hello! 👋 I'm your AI enrollment agent. Ask me about departments, the enrollment process, or to compare programs!",
+    "chat.title": "AI Agent",
+    "chat.subtitle": "Enrollment assistant",
+    "chat.placeholder": "Ask a question about enrollment...",
+    "chat.error": "Error. Please try again.",
+    "chat.commError": "Communication error",
+    "chat.q1": "What departments do you offer?",
+    "chat.q2": "How do I enroll?",
+    "chat.q3": "How many points do I need?",
+    "chat.q4": "Which department is most popular?",
   },
 };
