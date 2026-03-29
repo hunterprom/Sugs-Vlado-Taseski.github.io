@@ -869,6 +869,10 @@ export const translations: Record<Language, Record<string, string>> = {
     "top.lms": "LMS Schools",
     "top.erasmus": "Erasmus+",
     "top.founded": "Founded 1959",
+    // Search
+    "search.placeholder": "Search pages...",
+    "search.noResults": "No results found",
+    "search.hint": "Enter text to search",
     // Hero
     "hero.badge": "BETTER EDUCATION, BETTER FUTURE!",
     "hero.school": "MHSS",
