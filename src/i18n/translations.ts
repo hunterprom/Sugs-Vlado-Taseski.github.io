@@ -991,6 +991,7 @@ export const translations: Record<Language, Record<string, string>> = {
     // Homepage news
     "home.deptTitle": "Our Departments",
     "home.deptSubtitle": "Three departments, six profiles — choose your future",
+    "dept.fourYear": "Four-Year Profile",
     "home.newsTitle": "News",
     "home.newsSubtitle": "Latest events at our school",
     // Slides
