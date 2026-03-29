@@ -6,6 +6,9 @@ import SiteFooter from "../components/SiteFooter";
 import { TextReveal, LineReveal, MarqueeTicker, FadeUpSection, ScrollRevealSection, ScrollSlideIn, ScrollZoomReveal, ParallaxSection } from "../components/TypographyEffects";
 import { useLanguage } from "@/i18n/LanguageContext";
 import DepartmentsSection from "../components/DepartmentsSection";
+import WhyUsSection from "../components/WhyUsSection";
+import TestimonialSection from "../components/TestimonialSection";
+import CTASection from "../components/CTASection";
 import { noviniData } from "../data/noviniData";
 import "./StaticHomePage.css";
 
