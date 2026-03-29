@@ -3,6 +3,7 @@ import { Link, useLocation } from "react-router-dom";
 import { useLanguage } from "@/i18n/LanguageContext";
 import { Language } from "@/i18n/translations";
 import schoolLogo from "@/assets/school-logo.png";
+import SearchBar from "./SearchBar";
 
 const langLabels: Record<Language, string> = { mk: "МК", sq: "SQ", en: "EN" };
 const langFlags: Record<Language, string> = { mk: "🇲🇰", sq: "🇦🇱", en: "🇬🇧" };
@@ -99,10 +100,6 @@ const SiteHeader = () => {
                 </div>
               )}
             </div>
-            <div className="school-badge">
-              <i className="fas fa-graduation-cap"></i>
-              <span>{t("top.founded")}</span>
-            </div>
           </div>
         </div>
       </div>
@@ -193,6 +190,7 @@ const SiteHeader = () => {
             </ul>
           </div>
 
+          <SearchBar />
           <Link to="/upisi" className="btn-outline-blue"><i className="fas fa-user-graduate"></i> {t("nav.enroll")}</Link>
         </div>
       </div>

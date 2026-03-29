@@ -15,6 +15,16 @@ import istorija9 from "@/assets/istorija-9.png";
 import istorija10 from "@/assets/istorija-10.png";
 import istorija11 from "@/assets/istorija-11.png";
 import istorija12 from "@/assets/istorija-12.png";
+import classroom1 from "@/assets/classroom-1.jpg";
+import classroom2 from "@/assets/classroom-2.jpg";
+import classroom3 from "@/assets/classroom-3.jpg";
+import classroom4 from "@/assets/classroom-4.jpg";
+import solarPanels from "@/assets/solar-panels.jpg";
+import outdoorBench from "@/assets/outdoor-bench.jpg";
+import fountain from "@/assets/fountain.jpg";
+import lobbyLogo from "@/assets/lobby-logo.jpg";
+import schoolExterior from "@/assets/school-exterior.jpg";
+import conferenceRoom from "@/assets/conference-room.jpg";
 import ImageModal from "../components/ImageModal";
 
 const ZaNasPage = () => {
@@ -57,6 +67,16 @@ const ZaNasPage = () => {
                 <ImageModal src={istorija10} alt="Машинска работилница" />
                 <ImageModal src={istorija11} alt="Планирање на училиштето" />
                 <ImageModal src={istorija12} alt="Изградба на училиштето" />
+                <ImageModal src={classroom1} alt="Училница" />
+                <ImageModal src={classroom2} alt="Училница" />
+                <ImageModal src={classroom3} alt="Училница" />
+                <ImageModal src={classroom4} alt="Училница" />
+                <ImageModal src={solarPanels} alt="Соларни панели" />
+                <ImageModal src={outdoorBench} alt="Двор" />
+                <ImageModal src={fountain} alt="Фонтана" />
+                <ImageModal src={lobbyLogo} alt="Лоби" />
+                <ImageModal src={schoolExterior} alt="Училиште" />
+                <ImageModal src={conferenceRoom} alt="Конференциска сала" />
               </div>
             </div>
           </div>

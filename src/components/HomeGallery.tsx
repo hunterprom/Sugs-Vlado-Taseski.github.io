@@ -9,6 +9,16 @@ import gallery3 from "@/assets/училница-3.png";
 import gallery4 from "@/assets/училиште-надвор.png";
 import gallery5 from "@/assets/училиште-лоби.png";
 import gallery6 from "@/assets/училиште-фонтана.png";
+import classroom1 from "@/assets/classroom-1.jpg";
+import classroom2 from "@/assets/classroom-2.jpg";
+import classroom3 from "@/assets/classroom-3.jpg";
+import classroom4 from "@/assets/classroom-4.jpg";
+import solarPanels from "@/assets/solar-panels.jpg";
+import outdoorBench from "@/assets/outdoor-bench.jpg";
+import fountain from "@/assets/fountain.jpg";
+import lobbyLogo from "@/assets/lobby-logo.jpg";
+import schoolExterior from "@/assets/school-exterior.jpg";
+import conferenceRoom from "@/assets/conference-room.jpg";
 
 const HomeGallery = () => {
   const ref = useRef(null);
@@ -18,11 +28,17 @@ const HomeGallery = () => {
 
   const images = [
     { src: gallery1, altKey: "gallery.img1", labelKey: "gallery.label1", link: "/za-nas" },
-    { src: gallery2, altKey: "gallery.img2", labelKey: "gallery.label2", link: "/za-nas" },
-    { src: gallery3, altKey: "gallery.img3", labelKey: "gallery.label3", link: "/za-nas" },
+    { src: classroom1, altKey: "gallery.img1", labelKey: "gallery.label1", link: "/za-nas" },
     { src: gallery4, altKey: "gallery.img4", labelKey: "gallery.label4", link: "/za-nas" },
-    { src: gallery5, altKey: "gallery.img5", labelKey: "gallery.label5", link: "/za-nas" },
-    { src: gallery6, altKey: "gallery.img6", labelKey: "gallery.label6", link: "/za-nas" },
+    { src: fountain, altKey: "gallery.img6", labelKey: "gallery.label6", link: "/za-nas" },
+    { src: lobbyLogo, altKey: "gallery.img5", labelKey: "gallery.label5", link: "/za-nas" },
+    { src: classroom2, altKey: "gallery.img1", labelKey: "gallery.label1", link: "/za-nas" },
+    { src: solarPanels, altKey: "gallery.img4", labelKey: "gallery.label4", link: "/za-nas" },
+    { src: conferenceRoom, altKey: "gallery.img3", labelKey: "gallery.label3", link: "/za-nas" },
+    { src: schoolExterior, altKey: "gallery.img4", labelKey: "gallery.label4", link: "/za-nas" },
+    { src: classroom3, altKey: "gallery.img1", labelKey: "gallery.label1", link: "/za-nas" },
+    { src: outdoorBench, altKey: "gallery.img4", labelKey: "gallery.label4", link: "/za-nas" },
+    { src: classroom4, altKey: "gallery.img1", labelKey: "gallery.label1", link: "/za-nas" },
   ];
 
   return (
@@ -45,26 +61,22 @@ const HomeGallery = () => {
           </p>
         </motion.div>
 
-        <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
+        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
           {images.map((img, i) => (
             <motion.div
               key={i}
               initial={{ opacity: 0, scale: 0.9 }}
               animate={inView ? { opacity: 1, scale: 1 } : {}}
-              transition={{ duration: 0.4, delay: i * 0.1 }}
+              transition={{ duration: 0.4, delay: i * 0.05 }}
               whileHover={{ scale: 1.03 }}
               whileTap={{ scale: 0.97 }}
-              className={`relative group cursor-pointer overflow-hidden rounded-2xl ${
-                i === 0 || i === 3 ? "row-span-1 md:row-span-2 md:h-full" : ""
-              }`}
+              className="relative group cursor-pointer overflow-hidden rounded-2xl"
               onClick={() => navigate(img.link)}
             >
               <img
                 src={img.src}
                 alt={t(img.altKey)}
-                className={`w-full object-cover transition-transform duration-500 group-hover:scale-110 ${
-                  i === 0 || i === 3 ? "h-64 md:h-full" : "h-48 md:h-56"
-                }`}
+                className="w-full h-48 md:h-56 object-cover transition-transform duration-500 group-hover:scale-110"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-foreground/70 via-foreground/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-5">
                 <span className="text-primary-foreground font-heading font-bold text-lg transform translate-y-4 group-hover:translate-y-0 transition-transform duration-300">
