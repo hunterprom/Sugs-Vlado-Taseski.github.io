@@ -1,6 +1,4 @@
-import { useEffect, useRef, useState, useCallback } from "react";
 import { Link } from "react-router-dom";
-import { motion, useScroll, useTransform } from "framer-motion";
 import SiteHeader from "../components/SiteHeader";
 import SiteFooter from "../components/SiteFooter";
 import { TextReveal, LineReveal, MarqueeTicker, FadeUpSection, ScrollRevealSection, ScrollSlideIn, ScrollZoomReveal, ParallaxSection } from "../components/TypographyEffects";
