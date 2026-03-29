@@ -3,12 +3,12 @@ import { useRef } from "react";
 import { useNavigate } from "react-router-dom";
 import { useLanguage } from "@/i18n/LanguageContext";
 
-import gallery1 from "@/assets/училница-1.png";
-import gallery2 from "@/assets/училница-2.png";
-import gallery3 from "@/assets/училница-3.png";
-import gallery4 from "@/assets/училиште-надвор.png";
-import gallery5 from "@/assets/училиште-лоби.png";
-import gallery6 from "@/assets/училиште-фонтана.png";
+import gallery1 from "@/assets/classroom-main-1.png";
+import gallery2 from "@/assets/classroom-main-2.png";
+import gallery3 from "@/assets/classroom-main-3.png";
+import gallery4 from "@/assets/school-outside.png";
+import gallery5 from "@/assets/school-lobby.png";
+import gallery6 from "@/assets/school-fountain.png";
 import classroom1 from "@/assets/classroom-1.jpg";
 import classroom2 from "@/assets/classroom-2.jpg";
 import classroom3 from "@/assets/classroom-3.jpg";
