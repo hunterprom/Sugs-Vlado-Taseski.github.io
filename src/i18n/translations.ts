@@ -93,6 +93,8 @@ export const translations: Record<Language, Record<string, string>> = {
     // Back
     "back": "Назад кон почетна",
     // Homepage news
+    "home.deptTitle": "Наши струки",
+    "home.deptSubtitle": "Три струки, шест профили — избери ја твојата иднина",
     "home.newsTitle": "Новости",
     "home.newsSubtitle": "Најновите случувања во нашето училиште",
     // Slides
@@ -538,6 +540,8 @@ export const translations: Record<Language, Record<string, string>> = {
     // Back
     "back": "Kthehu n\u00EB fillim",
     // Homepage news
+    "home.deptTitle": "Drejtimet tona",
+    "home.deptSubtitle": "Tre drejtime, gjasht\u00EB profile \u2014 zgjedh t\u00EB ardhmen t\u00EBnde",
     "home.newsTitle": "Lajme",
     "home.newsSubtitle": "Ngjarjet m\u00EB t\u00EB fundit n\u00EB shkoll\u00EBn ton\u00EB",
     // Slides
@@ -983,6 +987,8 @@ export const translations: Record<Language, Record<string, string>> = {
     // Back
     "back": "Back to home",
     // Homepage news
+    "home.deptTitle": "Our Departments",
+    "home.deptSubtitle": "Three departments, six profiles — choose your future",
     "home.newsTitle": "News",
     "home.newsSubtitle": "Latest events at our school",
     // Slides
