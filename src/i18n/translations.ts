@@ -35,6 +35,10 @@ export const translations: Record<Language, Record<string, string>> = {
     "top.lms": "LMS Schools",
     "top.erasmus": "Erasmus+",
     "top.founded": "Основано 1959",
+    // Search
+    "search.placeholder": "Пребарај страница...",
+    "search.noResults": "Нема резултати",
+    "search.hint": "Внесете текст за пребарување",
     // Hero
     "hero.badge": "ПОДОБРО ОБРАЗОВАНИЕ, ПОДОБРА ИДНИНА!",
     "hero.school": "СУГС",
