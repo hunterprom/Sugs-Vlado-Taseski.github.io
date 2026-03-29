@@ -65,6 +65,10 @@ export const translations: Record<Language, Record<string, string>> = {
     "hero.enroll": "Запиши се",
     "hero.history": "Нашата историја",
     "hero.calculator": "Калкулатор за поени",
+    "hero.stat.years": "години",
+    "hero.stat.students": "ученици",
+    "hero.stat.teachers": "професори",
+    "hero.stat.programs": "струки",
     // Marquee
     "marquee": "ЕЛЕКТРОТЕХНИКА ✦ МАШИНСТВО ✦ СООБРАЌАЈ ✦ ИДНИНАТА Е ТУКА",
     // Stats
