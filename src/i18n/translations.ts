@@ -912,6 +912,23 @@ export const translations: Record<Language, Record<string, string>> = {
     "search.placeholder": "Search pages...",
     "search.noResults": "No results found",
     "search.hint": "Enter text to search",
+    // Voice
+    "voice.label": "Voice search",
+    "voice.listening": "Listening... say the page name",
+    "voice.hint": "Or say the page name by voice",
+    // Scrollytelling
+    "scroll.journeyTitle": "Your journey starts here",
+    "scroll.journeySubtitle": "From day one to graduation — experience life at our school",
+    "scroll.step1Title": "Welcome to the school",
+    "scroll.step1Desc": "A modern campus with greenery, a fountain, and spaces for learning and socializing.",
+    "scroll.step2Title": "Modern classrooms",
+    "scroll.step2Desc": "Renovated spaces equipped with the latest technology for interactive learning.",
+    "scroll.step3Title": "Labs and workshops",
+    "scroll.step3Desc": "Hands-on learning with real equipment — from electronics to CNC machines.",
+    "scroll.step4Title": "Life beyond classes",
+    "scroll.step4Desc": "Sports activities, projects, competitions, and unforgettable moments with friends.",
+    "scroll.immersiveTitle": "The future is built here",
+    "scroll.immersiveDesc": "For over 66 years we've been creating engineers, technicians, and innovators who change the world.",
     // Hero
     "hero.badge": "BETTER EDUCATION, BETTER FUTURE!",
     "hero.school": "MHSS",
