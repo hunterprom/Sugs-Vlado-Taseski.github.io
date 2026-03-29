@@ -845,6 +845,17 @@ export const translations: Record<Language, Record<string, string>> = {
     "novost.6.category": "Gara",
     "novost.6.description": "Urime p\u00EBr Iva Bogdanovska p\u00EBr vendin e tret\u00EB n\u00EB Kampionatin Europian Junior n\u00EB xhudo!",
     "novost.6.content": "Urime p\u00EBr Iva Bogdanovska!\n\nMe krenari t\u00EB madhe urojm\u00EB nx\u00EBn\u00EBsen ton\u00EB Iva Bogdanovska p\u00EBr vendin e tret\u00EB n\u00EB Kampionatin Europian Junior n\u00EB xhudo!\n\nIva, ti je krenaria e shkoll\u00EBs son\u00EB!\n\nWE ARE THE TEAM VLADO TASEVSKI!",
+    // Chatbot
+    "chat.greeting": "P\u00EBrsh\u00EBndetje! \uD83D\uDC4B Un\u00EB jam agjenti yt AI p\u00EBr regjistrim. M\u00EB pyet p\u00EBr drejtimet, procesin e regjistrimit, ose krahasimin e profileve!",
+    "chat.title": "Agjent AI",
+    "chat.subtitle": "Ndihm\u00EBs p\u00EBr regjistrim",
+    "chat.placeholder": "B\u00EBj nj\u00EB pyetje p\u00EBr regjistrim...",
+    "chat.error": "Gabim. Provoni p\u00EBrs\u00EBri.",
+    "chat.commError": "Gabim n\u00EB komunikim",
+    "chat.q1": "Cilat drejtime i ofroni?",
+    "chat.q2": "Si t\u00EB regjistrohem?",
+    "chat.q3": "Sa pik\u00EB m\u00EB duhen?",
+    "chat.q4": "Cili drejtim \u00EBsht\u00EB m\u00EB i k\u00EBrkuar?",
   },
   en: {
     // Nav
