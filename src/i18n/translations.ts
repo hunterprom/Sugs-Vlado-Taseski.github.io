@@ -483,7 +483,24 @@ export const translations: Record<Language, Record<string, string>> = {
     // Search
     "search.placeholder": "Kërko faqen...",
     "search.noResults": "Nuk ka rezultate",
-    "search.hint": "Shkruani tekstin për kërkim",
+    "search.hint": "Shkruani tekstin p\u00EBr k\u00EBrkim",
+    // Voice
+    "voice.label": "K\u00EBrkim me z\u00EB",
+    "voice.listening": "Po d\u00EBgjoj... thoni emrin e faqes",
+    "voice.hint": "Ose thoni emrin e faqes me z\u00EB",
+    // Scrollytelling
+    "scroll.journeyTitle": "Udh\u00EBtimi yt fillon k\u00EBtu",
+    "scroll.journeySubtitle": "Nga dita e par\u00EB deri n\u00EB diplomim",
+    "scroll.step1Title": "Mir\u00EB se vini n\u00EB shkoll\u00EB",
+    "scroll.step1Desc": "Kampus modern me gjelbrim dhe hap\u00EBsir\u00EB p\u00EBr m\u00EBsim.",
+    "scroll.step2Title": "Klasa bashk\u00EBkohore",
+    "scroll.step2Desc": "Hap\u00EBsira t\u00EB rinovuara me teknologji t\u00EB fundit.",
+    "scroll.step3Title": "Laborator\u00EB dhe punishte",
+    "scroll.step3Desc": "M\u00EBsim praktik me pajisje reale.",
+    "scroll.step4Title": "Jeta jasht\u00EB m\u00EBsimit",
+    "scroll.step4Desc": "Aktivitete sportive, projekte dhe momente t\u00EB paharrueshme.",
+    "scroll.immersiveTitle": "E ardhmja nd\u00EBrtohet k\u00EBtu",
+    "scroll.immersiveDesc": "M\u00EB shum\u00EB se 66 vjet krijojm\u00EB inxhinier\u00EB dhe inovator\u00EB.",
     // Hero
     "hero.badge": "ARSIM M\u00CB I MIR\u00CB, ARDHM\u00CBRI M\u00CB E MIR\u00CB!",
     "hero.school": "SHMA",
