@@ -219,27 +219,7 @@ const CinematicHero = () => {
         {/* RIGHT — Bento Cards */}
         <div className="cinematic-bento">
           {floatingCards.map((card, i) => (
-            <motion.div
-              key={i}
-              className={`cinematic-bento-card ${card.circle ? "cinematic-bento-circle" : ""}`}
-              data-index={i}
-              style={{
-                x: useTransform(springX, (v) => v * (0.3 + i * 0.12)),
-                y: useTransform(springY, (v) => v * (0.3 + i * 0.12)),
-              }}
-              initial={{ opacity: 0, scale: 0.8, rotate: card.rot * 2 }}
-              animate={{ opacity: 1, scale: 1, rotate: card.rot }}
-              transition={{ duration: 0.5, delay: card.delay, type: "spring", stiffness: 100 }}
-            >
-              <motion.div
-                className="cinematic-bento-card-inner"
-                animate={{ y: [0, i % 2 === 0 ? -8 : 8, 0] }}
-                transition={{ duration: 3 + i * 0.5, repeat: Infinity, ease: "easeInOut", delay: i * 0.3 }}
-              >
-                <img src={card.img} alt={card.label} />
-                <div className="cinematic-bento-label">{card.label}</div>
-              </motion.div>
-            </motion.div>
+            <BentoCard key={i} card={card} index={i} springX={springX} springY={springY} />
           ))}
 
           {/* SVG connection lines */}
