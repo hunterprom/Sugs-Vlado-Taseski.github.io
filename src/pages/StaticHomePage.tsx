@@ -212,10 +212,10 @@ const StaticHomePage = () => {
                   <Link to={`/novini/${item.slug}`} className="project-card" style={{ textDecoration: "none", display: "block" }}>
                     <i className={item.icon}></i>
                     <div style={{ display: 'flex', gap: '10px', marginBottom: '8px', alignItems: 'center' }}>
-                      <span style={{ fontSize: '0.7rem', color: '#9FBDD6' }}>{item.date}</span>
+                      <span style={{ fontSize: '0.7rem', color: '#9FBDD6' }}>{t(item.dateKey)}</span>
                     </div>
-                    <h3>{item.title}</h3>
-                    <p>{item.description}</p>
+                    <h3>{t(item.titleKey)}</h3>
+                    <p>{t(item.descriptionKey)}</p>
                   </Link>
                 </FadeUpSection>
               ))}

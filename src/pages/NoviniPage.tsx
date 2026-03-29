@@ -27,11 +27,11 @@ const NoviniPage = () => {
               <Link to={`/novini/${item.slug}`} className="project-card" key={idx} style={{ textDecoration: 'none', cursor: 'pointer' }}>
                 <i className={item.icon}></i>
                 <div style={{ display: 'flex', gap: '10px', marginBottom: '8px', alignItems: 'center' }}>
-                  <span className="badge">{item.category}</span>
-                  <span style={{ fontSize: '0.75rem', color: '#90CAF9' }}>{item.date}</span>
+                  <span className="badge">{t(item.categoryKey)}</span>
+                  <span style={{ fontSize: '0.75rem', color: '#90CAF9' }}>{t(item.dateKey)}</span>
                 </div>
-                <h3>{item.title}</h3>
-                <p>{item.description}</p>
+                <h3>{t(item.titleKey)}</h3>
+                <p>{t(item.descriptionKey)}</p>
               </Link>
             ))}
           </div>
