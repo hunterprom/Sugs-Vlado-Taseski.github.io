@@ -281,6 +281,12 @@ const StaticHomePage = () => {
         {/* Departments / Струки */}
         <DepartmentsSection />
 
+        {/* Why Us */}
+        <WhyUsSection />
+
+        {/* Testimonial */}
+        <TestimonialSection />
+
         {/* News with scroll reveals */}
         <section className="projects-section">
           <div className="container">
