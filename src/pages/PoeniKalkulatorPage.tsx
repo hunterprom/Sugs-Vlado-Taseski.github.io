@@ -28,7 +28,6 @@ const PoeniKalkulatorPage = () => {
     setError(null);
     setCalculations({});
 
-    // Parse values
     const avg = uspeh.map(v => parseFloat(v));
     const mak = makedonski.map(v => parseInt(v));
     const ang = angliski.map(v => parseInt(v));
@@ -37,61 +36,47 @@ const PoeniKalkulatorPage = () => {
     const pov = povedenie.map(v => parseInt(v));
     const dip = parseInt(diplomi);
 
-    // Validate GPA (2-5)
     for (let i = 0; i < 4; i++) {
       if (isNaN(avg[i]) || avg[i] < 2 || avg[i] > 5) {
         setError(`${t("kalkulator.errorGpa")} ${grades[i]} ${t("kalkulator.grade")}`);
         return;
       }
     }
-
-    // Validate Macedonian (2-5)
     for (let i = 0; i < 4; i++) {
       if (isNaN(mak[i]) || mak[i] < 2 || mak[i] > 5) {
         setError(`${t("kalkulator.errorMacedonian")} ${grades[i]} ${t("kalkulator.grade")}`);
         return;
       }
     }
-
-    // Validate English (2-5)
     for (let i = 0; i < 4; i++) {
       if (isNaN(ang[i]) || ang[i] < 2 || ang[i] > 5) {
         setError(`${t("kalkulator.errorEnglish")} ${grades[i]} ${t("kalkulator.grade")}`);
         return;
       }
     }
-
-    // Validate Math (2-5)
     for (let i = 0; i < 4; i++) {
       if (isNaN(mat[i]) || mat[i] < 2 || mat[i] > 5) {
         setError(`${t("kalkulator.errorMath")} ${grades[i]} ${t("kalkulator.grade")}`);
         return;
       }
     }
-
-    // Validate Physics (2-5)
     for (let i = 0; i < 2; i++) {
       if (isNaN(fiz[i]) || fiz[i] < 2 || fiz[i] > 5) {
         setError(`${t("kalkulator.errorPhysics")} ${i === 0 ? "8" : "9"} ${t("kalkulator.grade")}`);
         return;
       }
     }
-
-    // Validate Behavior
     for (let i = 0; i < 4; i++) {
       if (isNaN(pov[i]) || pov[i] === 0) {
         setError(`${t("kalkulator.errorBehavior")} ${grades[i]} ${t("kalkulator.grade")}`);
         return;
       }
     }
-
-    // Validate Diplomas (0, 1, 3, or 5)
     if (isNaN(dip) || (dip !== 0 && dip !== 1 && dip !== 3 && dip !== 5)) {
       setError(t("kalkulator.errorDiplomas"));
       return;
     }
 
-    // Calculate averages
     const averageSuccess = ((avg[0] + avg[1] + avg[2] + avg[3]) / 4) * 10;
     const averageMacedonian = (mak[0] + mak[1] + mak[2] + mak[3]) / 4;
     const averageEnglish = (ang[0] + ang[1] + ang[2] + ang[3]) / 4;
@@ -114,18 +99,85 @@ const PoeniKalkulatorPage = () => {
     setResult(Math.round(totalPoints * 100) / 100);
   };
 
-  const inputStyle: React.CSSProperties = {
-    width: "70px", padding: "8px", borderRadius: "8px", border: "1px solid #BBDEFB",
-    textAlign: "center", fontSize: "0.9rem", color: "#2E6899",
-  };
+  /* ── Shared row for desktop grid ── */
+  const DesktopRow = ({ label, values, setter, calcValue, type = "number", options, placeholder = "5" }: {
+    label: string;
+    values: string[];
+    setter: (idx: number, val: string) => void;
+    calcValue: string;
+    type?: "number" | "select";
+    options?: { value: string; label: string }[];
+    placeholder?: string;
+  }) => (
+    <div className="calc-row">
+      <div className="calc-label">{label}</div>
+      {values.map((v, i) => (
+        <div key={i} className="calc-input-cell">
+          {type === "select" ? (
+            <select value={v} onChange={e => setter(i, e.target.value)} className="calc-select">
+              {options?.map(o => <option key={o.value} value={o.value}>{o.label}</option>)}
+            </select>
+          ) : (
+            <input type="number" step={placeholder === "5.00" ? "0.01" : "1"} min="2" max="5" value={v} onChange={e => setter(i, e.target.value)} className="calc-input" placeholder={placeholder} />
+          )}
+        </div>
+      ))}
+      <div className="calc-result-cell">{calcValue}</div>
+    </div>
+  );
 
-  const labelStyle: React.CSSProperties = {
-    fontWeight: 600, color: "#2E6899", fontSize: "0.9rem", minWidth: "200px",
-  };
+  /* ── Mobile card for each subject ── */
+  const MobileCard = ({ label, values, setter, calcValue, gradeLabels, type = "number", options, placeholder = "5" }: {
+    label: string;
+    values: string[];
+    setter: (idx: number, val: string) => void;
+    calcValue: string;
+    gradeLabels: string[];
+    type?: "number" | "select";
+    options?: { value: string; label: string }[];
+    placeholder?: string;
+  }) => (
+    <div className="calc-mobile-card">
+      <div className="calc-mobile-card-header">{label}</div>
+      <div className="calc-mobile-card-inputs">
+        {values.map((v, i) => (
+          <div key={i} className="calc-mobile-field">
+            <span className="calc-mobile-grade">{gradeLabels[i]}</span>
+            {type === "select" ? (
+              <select value={v} onChange={e => setter(i, e.target.value)} className="calc-select">
+                {options?.map(o => <option key={o.value} value={o.value}>{o.label}</option>)}
+              </select>
+            ) : (
+              <input type="number" step={placeholder === "5.00" ? "0.01" : "1"} min="2" max="5" value={v} onChange={e => setter(i, e.target.value)} className="calc-input" placeholder={placeholder} />
+            )}
+          </div>
+        ))}
+      </div>
+      {calcValue && <div className="calc-mobile-result">= {calcValue}</div>}
+    </div>
+  );
 
-  const calcStyle: React.CSSProperties = {
-    fontWeight: 700, color: "#4B8BBE", fontSize: "0.9rem", textAlign: "center",
-  };
+  const behaviorOptions = [
+    { value: "", label: t("kalkulator.choose") },
+    { value: "5", label: t("kalkulator.exemplary") },
+    { value: "3", label: t("kalkulator.good") },
+    { value: "1", label: t("kalkulator.unsatisfactory") },
+  ];
+
+  const diplomaOptions = [
+    { value: "", label: t("kalkulator.choose") },
+    { value: "0", label: "0" },
+    { value: "1", label: "1" },
+    { value: "3", label: "3" },
+    { value: "5", label: "5" },
+  ];
+
+  const subjects = [
+    { label: t("kalkulator.gpa"), values: uspeh, setter: (i: number, v: string) => updateArr(setUspeh, i, v), calc: calculations.uspeh || "", grades: grades.map(g => `${g} ${t("kalkulator.grade")}`), placeholder: "5.00" },
+    { label: t("kalkulator.macedonian"), values: makedonski, setter: (i: number, v: string) => updateArr(setMakedonski, i, v), calc: calculations.makedonski || "", grades: grades.map(g => `${g} ${t("kalkulator.grade")}`) },
+    { label: t("kalkulator.english"), values: angliski, setter: (i: number, v: string) => updateArr(setAngliski, i, v), calc: calculations.angliski || "", grades: grades.map(g => `${g} ${t("kalkulator.grade")}`) },
+    { label: t("kalkulator.math"), values: matematika, setter: (i: number, v: string) => updateArr(setMatematika, i, v), calc: calculations.matematika || "", grades: grades.map(g => `${g} ${t("kalkulator.grade")}`) },
+  ];
 
   return (
     <>
@@ -141,106 +193,96 @@ const PoeniKalkulatorPage = () => {
 
         <section style={{ padding: "50px 0" }}>
           <div className="container" style={{ maxWidth: "950px" }}>
-            <div style={{ background: "white", borderRadius: "20px", padding: "30px", boxShadow: "0 4px 20px rgba(0,0,0,0.06)" }}>
-              {/* Header row */}
-              <div style={{ display: "grid", gridTemplateColumns: "200px repeat(4, 1fr) 90px", gap: "10px", marginBottom: "15px", textAlign: "center" }}>
-                <div style={labelStyle}>{t("kalkulator.subject")}</div>
-                {grades.map((g, i) => (
-                  <div key={i} style={{ fontWeight: 700, color: "#4B8BBE", fontSize: "0.85rem" }}>{g} {t("kalkulator.grade")}</div>
-                ))}
-                <div style={{ fontWeight: 700, color: "#4B8BBE", fontSize: "0.85rem" }}>{t("kalkulator.calc")}</div>
-              </div>
+            <div className="calc-container">
 
-              {/* GPA */}
-              <div style={{ display: "grid", gridTemplateColumns: "200px repeat(4, 1fr) 90px", gap: "10px", marginBottom: "12px", alignItems: "center" }}>
-                <div style={labelStyle}>{t("kalkulator.gpa")}</div>
-                {grades.map((_, i) => (
-                  <div key={i} style={{ textAlign: "center" }}>
-                    <input type="number" step="0.01" min="2" max="5" value={uspeh[i]} onChange={e => updateArr(setUspeh, i, e.target.value)} style={inputStyle} placeholder="5.00" />
-                  </div>
-                ))}
-                <div style={calcStyle}>{calculations.uspeh || ""}</div>
-              </div>
-
-              {/* Macedonian */}
-              <div style={{ display: "grid", gridTemplateColumns: "200px repeat(4, 1fr) 90px", gap: "10px", marginBottom: "12px", alignItems: "center" }}>
-                <div style={labelStyle}>{t("kalkulator.macedonian")}</div>
-                {grades.map((_, i) => (
-                  <div key={i} style={{ textAlign: "center" }}>
-                    <input type="number" min="2" max="5" value={makedonski[i]} onChange={e => updateArr(setMakedonski, i, e.target.value)} style={inputStyle} placeholder="5" />
-                  </div>
-                ))}
-                <div style={calcStyle}>{calculations.makedonski || ""}</div>
-              </div>
-
-              {/* English */}
-              <div style={{ display: "grid", gridTemplateColumns: "200px repeat(4, 1fr) 90px", gap: "10px", marginBottom: "12px", alignItems: "center" }}>
-                <div style={labelStyle}>{t("kalkulator.english")}</div>
-                {grades.map((_, i) => (
-                  <div key={i} style={{ textAlign: "center" }}>
-                    <input type="number" min="2" max="5" value={angliski[i]} onChange={e => updateArr(setAngliski, i, e.target.value)} style={inputStyle} placeholder="5" />
-                  </div>
-                ))}
-                <div style={calcStyle}>{calculations.angliski || ""}</div>
-              </div>
-
-              {/* Math */}
-              <div style={{ display: "grid", gridTemplateColumns: "200px repeat(4, 1fr) 90px", gap: "10px", marginBottom: "12px", alignItems: "center" }}>
-                <div style={labelStyle}>{t("kalkulator.math")}</div>
-                {grades.map((_, i) => (
-                  <div key={i} style={{ textAlign: "center" }}>
-                    <input type="number" min="2" max="5" value={matematika[i]} onChange={e => updateArr(setMatematika, i, e.target.value)} style={inputStyle} placeholder="5" />
-                  </div>
-                ))}
-                <div style={calcStyle}>{calculations.matematika || ""}</div>
-              </div>
-
-              {/* Physics - only 8th and 9th */}
-              <div style={{ display: "grid", gridTemplateColumns: "200px repeat(4, 1fr) 90px", gap: "10px", marginBottom: "12px", alignItems: "center" }}>
-                <div style={labelStyle}>{t("kalkulator.physics")}</div>
-                <div style={{ textAlign: "center", color: "#9FBDD6" }}>---</div>
-                <div style={{ textAlign: "center", color: "#9FBDD6" }}>---</div>
-                <div style={{ textAlign: "center" }}>
-                  <input type="number" min="2" max="5" value={fizika[0]} onChange={e => updateArr(setFizika, 0, e.target.value)} style={inputStyle} placeholder="5" />
+              {/* ══ DESKTOP VIEW ══ */}
+              <div className="calc-desktop">
+                {/* Header */}
+                <div className="calc-row calc-header-row">
+                  <div className="calc-label">{t("kalkulator.subject")}</div>
+                  {grades.map((g, i) => (
+                    <div key={i} className="calc-col-header">{g} {t("kalkulator.grade")}</div>
+                  ))}
+                  <div className="calc-col-header">{t("kalkulator.calc")}</div>
                 </div>
-                <div style={{ textAlign: "center" }}>
-                  <input type="number" min="2" max="5" value={fizika[1]} onChange={e => updateArr(setFizika, 1, e.target.value)} style={inputStyle} placeholder="5" />
-                </div>
-                <div style={calcStyle}>{calculations.fizika || ""}</div>
-              </div>
 
-              {/* Behavior */}
-              <div style={{ display: "grid", gridTemplateColumns: "200px repeat(4, 1fr) 90px", gap: "10px", marginBottom: "12px", alignItems: "center" }}>
-                <div style={labelStyle}>{t("kalkulator.behavior")}</div>
-                {grades.map((_, i) => (
-                  <div key={i} style={{ textAlign: "center" }}>
-                    <select value={povedenie[i]} onChange={e => updateArr(setPovedenie, i, e.target.value)} style={{ ...inputStyle, width: "80px", fontSize: "0.8rem", padding: "6px 4px" }}>
-                      <option value="">{t("kalkulator.choose")}</option>
-                      <option value="5">{t("kalkulator.exemplary")}</option>
-                      <option value="3">{t("kalkulator.good")}</option>
-                      <option value="1">{t("kalkulator.unsatisfactory")}</option>
+                {subjects.map((s, i) => (
+                  <DesktopRow key={i} label={s.label} values={s.values} setter={s.setter} calcValue={s.calc} placeholder={s.placeholder || "5"} />
+                ))}
+
+                {/* Physics - only 8th and 9th */}
+                <div className="calc-row">
+                  <div className="calc-label">{t("kalkulator.physics")}</div>
+                  <div className="calc-input-cell"><span style={{ color: "#9FBDD6" }}>---</span></div>
+                  <div className="calc-input-cell"><span style={{ color: "#9FBDD6" }}>---</span></div>
+                  <div className="calc-input-cell">
+                    <input type="number" min="2" max="5" value={fizika[0]} onChange={e => updateArr(setFizika, 0, e.target.value)} className="calc-input" placeholder="5" />
+                  </div>
+                  <div className="calc-input-cell">
+                    <input type="number" min="2" max="5" value={fizika[1]} onChange={e => updateArr(setFizika, 1, e.target.value)} className="calc-input" placeholder="5" />
+                  </div>
+                  <div className="calc-result-cell">{calculations.fizika || ""}</div>
+                </div>
+
+                {/* Behavior */}
+                <DesktopRow
+                  label={t("kalkulator.behavior")}
+                  values={povedenie}
+                  setter={(i, v) => updateArr(setPovedenie, i, v)}
+                  calcValue={calculations.povedenie || ""}
+                  type="select"
+                  options={behaviorOptions}
+                />
+
+                {/* Diplomas */}
+                <div className="calc-row">
+                  <div className="calc-label">{t("kalkulator.diplomas")}</div>
+                  <div style={{ gridColumn: "span 4" }}>
+                    <select value={diplomi} onChange={e => setDiplomi(e.target.value)} className="calc-select" style={{ width: "120px" }}>
+                      {diplomaOptions.map(o => <option key={o.value} value={o.value}>{o.label}</option>)}
                     </select>
                   </div>
-                ))}
-                <div style={calcStyle}>{calculations.povedenie || ""}</div>
-              </div>
-
-              {/* Diplomas */}
-              <div style={{ display: "grid", gridTemplateColumns: "200px 1fr 90px", gap: "10px", marginBottom: "20px", alignItems: "center" }}>
-                <div style={labelStyle}>{t("kalkulator.diplomas")}</div>
-                <div>
-                  <select value={diplomi} onChange={e => setDiplomi(e.target.value)} style={{ ...inputStyle, width: "120px", fontSize: "0.85rem" }}>
-                    <option value="">{t("kalkulator.choose")}</option>
-                    <option value="0">0</option>
-                    <option value="1">1</option>
-                    <option value="3">3</option>
-                    <option value="5">5</option>
-                  </select>
+                  <div className="calc-result-cell">{calculations.diplomi || ""}</div>
                 </div>
-                <div style={calcStyle}>{calculations.diplomi || ""}</div>
               </div>
 
-              {/* Error message */}
+              {/* ══ MOBILE VIEW ══ */}
+              <div className="calc-mobile">
+                {subjects.map((s, i) => (
+                  <MobileCard key={i} label={s.label} values={s.values} setter={s.setter} calcValue={s.calc} gradeLabels={s.grades} placeholder={s.placeholder || "5"} />
+                ))}
+
+                <MobileCard
+                  label={t("kalkulator.physics")}
+                  values={fizika}
+                  setter={(i, v) => updateArr(setFizika, i, v)}
+                  calcValue={calculations.fizika || ""}
+                  gradeLabels={[`8 ${t("kalkulator.grade")}`, `9 ${t("kalkulator.grade")}`]}
+                />
+
+                <MobileCard
+                  label={t("kalkulator.behavior")}
+                  values={povedenie}
+                  setter={(i, v) => updateArr(setPovedenie, i, v)}
+                  calcValue={calculations.povedenie || ""}
+                  gradeLabels={grades.map(g => `${g} ${t("kalkulator.grade")}`)}
+                  type="select"
+                  options={behaviorOptions}
+                />
+
+                <div className="calc-mobile-card">
+                  <div className="calc-mobile-card-header">{t("kalkulator.diplomas")}</div>
+                  <div className="calc-mobile-card-inputs">
+                    <div className="calc-mobile-field" style={{ flex: 1 }}>
+                      <select value={diplomi} onChange={e => setDiplomi(e.target.value)} className="calc-select" style={{ width: "100%" }}>
+                        {diplomaOptions.map(o => <option key={o.value} value={o.value}>{o.label}</option>)}
+                      </select>
+                    </div>
+                  </div>
+                  {calculations.diplomi && <div className="calc-mobile-result">= {calculations.diplomi}</div>}
+                </div>
+              </div>
+
               {error && (
                 <div style={{ textAlign: "center", color: "#e53935", fontWeight: 600, marginBottom: "15px", padding: "10px", background: "#ffebee", borderRadius: "10px" }}>
                   {error}
