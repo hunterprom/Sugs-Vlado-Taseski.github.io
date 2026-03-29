@@ -190,6 +190,7 @@ const SiteHeader = () => {
             </ul>
           </div>
 
+          <SearchBar />
           <Link to="/upisi" className="btn-outline-blue"><i className="fas fa-user-graduate"></i> {t("nav.enroll")}</Link>
         </div>
       </div>
