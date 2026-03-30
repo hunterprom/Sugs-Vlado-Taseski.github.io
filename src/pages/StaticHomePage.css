@@ -2808,7 +2808,7 @@
 /* Bento grid */
 .cinematic-bento {
   position: relative;
-  height: 480px;
+  height: 560px;
   perspective: 800px;
 }
 
@@ -2830,38 +2830,39 @@
 }
 
 .cinematic-bento-card[data-index="0"] {
-  width: 65%;
-  height: 80%;
-  top: 3%;
+  width: 48%;
+  height: 55%;
+  top: 0;
   left: 0;
 }
 
 .cinematic-bento-card[data-index="1"] {
-  width: 55%;
-  height: 48%;
+  width: 48%;
+  height: 55%;
   top: 0;
   right: 0;
 }
 
 .cinematic-bento-card[data-index="2"] {
-  width: 42%;
-  height: 38%;
-  top: 6%;
-  right: 3%;
+  width: 31%;
+  height: 40%;
+  bottom: 0;
+  left: 0;
   z-index: 3;
 }
 
 .cinematic-bento-card[data-index="3"] {
-  width: 52%;
-  height: 42%;
+  width: 31%;
+  height: 40%;
   bottom: 0;
-  right: 0;
+  left: 34%;
 }
 
 .cinematic-bento-card[data-index="4"] {
-  width: 32%;
-  bottom: 3%;
-  left: 12%;
+  width: 31%;
+  height: 40%;
+  bottom: 0;
+  right: 0;
   z-index: 4;
 }
 
