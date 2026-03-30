@@ -125,7 +125,7 @@ const CinematicHero = () => {
       <motion.div className="cinematic-hero-bg" style={{ y: bgY }}>
         <div className="cinematic-hero-gradient" />
         <div className="cinematic-hero-noise" />
-        <div className="cinematic-hero-grid-pattern" />
+        <div className="cinematic-hero-grid-pattern bg-primary text-secondary-foreground" />
         <div className="cinematic-hero-blob cinematic-blob-cyan" />
         <div className="cinematic-hero-blob cinematic-blob-orange" />
       </motion.div>
