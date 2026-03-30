@@ -6,6 +6,7 @@ import { useLanguage } from "@/i18n/LanguageContext";
 import classroom1 from "@/assets/classroom-1.jpg";
 import elektroLab from "@/assets/elektro-lab.png";
 import studentsActivities from "@/assets/students-activities.png";
+import studentsVideo from "@/assets/students-video.mp4";
 import schoolExterior from "@/assets/school-exterior.jpg";
 import gallery1 from "@/assets/gallery-1.png";
 
