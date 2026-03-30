@@ -295,7 +295,17 @@ const CinematicHero = () => {
       </motion.div>
 
       {/* Scroll indicator */}
-      <motion.div className="cinematic-scroll-indicator" style={{ opacity: scrollIndicatorOpacity }}>
+      <motion.div
+        className="cinematic-scroll-indicator"
+        style={{ opacity: scrollIndicatorOpacity }}
+        onClick={() => {
+          const hero = heroRef.current;
+          if (hero) {
+            const nextSection = hero.nextElementSibling as HTMLElement;
+            if (nextSection) nextSection.scrollIntoView({ behavior: 'smooth' });
+          }
+        }}
+      >
         <motion.div
           animate={{ y: [0, 8, 0] }}
           transition={{ duration: 2, repeat: Infinity }}
