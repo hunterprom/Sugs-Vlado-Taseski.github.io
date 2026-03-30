@@ -236,6 +236,21 @@ const CinematicHero = () => {
             <BentoCard key={i} card={card} index={i} springX={springX} springY={springY} />
           ))}
 
+          {/* Decorative floating particles */}
+          <div className="cinematic-deco-particles hidden md:block">
+            {/* 4 circles */}
+            <div className="cinematic-deco-circle" style={{ width: 8, height: 8, top: '5%', left: '10%', animation: 'decoFloat1 10s ease-in-out infinite' }} />
+            <div className="cinematic-deco-circle" style={{ width: 6, height: 6, top: '30%', right: '5%', animation: 'decoFloat2 14s ease-in-out 1.5s infinite' }} />
+            <div className="cinematic-deco-circle" style={{ width: 10, height: 10, bottom: '20%', left: '45%', animation: 'decoFloat3 12s ease-in-out 3s infinite' }} />
+            <div className="cinematic-deco-circle" style={{ width: 7, height: 7, bottom: '45%', right: '15%', animation: 'decoFloat1 16s ease-in-out 4.5s infinite' }} />
+            {/* 2 plus shapes */}
+            <div className="cinematic-deco-plus" style={{ top: '15%', right: '25%', animation: 'decoFloat2 11s ease-in-out 6s infinite' }}>+</div>
+            <div className="cinematic-deco-plus" style={{ bottom: '35%', left: '5%', animation: 'decoFloat3 18s ease-in-out 7.5s infinite' }}>+</div>
+            {/* 2 diamonds */}
+            <div className="cinematic-deco-diamond" style={{ top: '60%', right: '8%', animation: 'decoFloat1 13s ease-in-out 9s infinite' }} />
+            <div className="cinematic-deco-diamond" style={{ top: '10%', left: '50%', animation: 'decoFloat2 15s ease-in-out 10.5s infinite' }} />
+          </div>
+
           {/* SVG connection lines */}
           <svg className="cinematic-bento-lines" viewBox="0 0 500 500" fill="none">
             <motion.path
