@@ -2808,23 +2808,33 @@
 }
 
 .cinematic-trust {
-  display: flex;
-  gap: 20px;
+  display: inline-flex;
+  align-items: center;
+  gap: 24px;
   flex-wrap: wrap;
+  background: rgba(255, 255, 255, 0.06);
+  border-radius: 50px;
+  padding: 10px 24px;
 }
 
 .cinematic-trust span {
   display: flex;
   align-items: center;
-  gap: 6px;
-  font-size: 0.78rem;
-  color: rgba(255, 255, 255, 0.45);
+  gap: 8px;
+  font-size: 0.95rem;
+  color: rgba(255, 255, 255, 0.85);
   font-weight: 500;
 }
 
 .cinematic-trust i {
-  color: rgba(0, 212, 255, 0.6);
-  font-size: 0.7rem;
+  color: #00D4FF;
+  font-size: 1rem;
+}
+
+.cinematic-trust-separator {
+  color: rgba(255, 255, 255, 0.25);
+  font-size: 0.6rem;
+  user-select: none;
 }
 
 /* Bento grid */
