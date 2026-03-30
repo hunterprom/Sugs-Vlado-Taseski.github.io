@@ -200,7 +200,7 @@ const CinematicHero = () => {
               {t("hero.enroll")} <i className="fas fa-arrow-right" />
             </Link>
             <Link to="/nastava" className="cinematic-btn-secondary">
-              <i className="fas fa-compass" /> Истражи ги програмите
+              <i className="fas fa-compass" /> {t("hero.explorePrograms")}
             </Link>
           </motion.div>
 
