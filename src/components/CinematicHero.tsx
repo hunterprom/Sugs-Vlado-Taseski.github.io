@@ -177,8 +177,8 @@ const CinematicHero = () => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: stagger * 2 }}
           >
-            Твојата техничка иднина започнува{" "}
-            <span className="cinematic-headline-accent">тука.</span>
+            {t("hero.headline1")}{" "}
+            <span className="cinematic-headline-accent">{t("hero.headlineAccent")}</span>
           </motion.h1>
 
           <motion.p
