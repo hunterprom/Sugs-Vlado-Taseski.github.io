@@ -4,6 +4,8 @@ import SiteFooter from "../components/SiteFooter";
 import { useLanguage } from "@/i18n/LanguageContext";
 import "./StaticHomePage.css";
 import soobrakajSlika1 from "@/assets/soobrakaj-slika-1.jpg";
+import brochureSoobrakaj from "@/assets/brochure-soobrakaj.png";
+import brochureZeleznica from "@/assets/brochure-zeleznica.png";
 
 const SoobrakajnaPage = () => {
   const { t } = useLanguage();
@@ -27,6 +29,9 @@ const SoobrakajnaPage = () => {
             <h2 className="section-title">{t("media.title")}</h2>
             <div className="media-grid">
               <div className="media-item">
+                <img src={brochureSoobrakaj} alt="Сообраќајна струка - брошура" className="media-img" />
+              </div>
+              <div className="media-item">
                 <img src={soobrakajSlika1} alt={t("soobrakaj.title")} className="media-img" />
               </div>
               <div className="media-item">
@@ -43,6 +48,7 @@ const SoobrakajnaPage = () => {
             <h2 className="section-title">{t("soobrakaj.profiles")}</h2>
             <div className="profili-grid">
               <div className="profil-card">
+                <img src={brochureSoobrakaj} alt="Техничар за транспорт и шпедиција" className="profil-brochure-img" />
                 <div className="profil-icon"><i className="fas fa-shipping-fast"></i></div>
                 <h3>{t("soobrakaj.transport")}</h3>
                 <p>{t("soobrakaj.transportDesc")}</p>
@@ -57,6 +63,7 @@ const SoobrakajnaPage = () => {
                 </a>
               </div>
               <div className="profil-card">
+                <img src={brochureZeleznica} alt="Техничар за железнички сообраќај" className="profil-brochure-img" />
                 <div className="profil-icon"><i className="fas fa-subway"></i></div>
                 <h3>{t("soobrakaj.zeleznica")}</h3>
                 <p>{t("soobrakaj.zeleznicaDesc")}</p>

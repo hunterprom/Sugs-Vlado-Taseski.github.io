@@ -4,6 +4,8 @@ import SiteFooter from "../components/SiteFooter";
 import { useLanguage } from "@/i18n/LanguageContext";
 import "./StaticHomePage.css";
 import elektroSlika1 from "@/assets/elektro-slika-1.jpg";
+import brochureElektro from "@/assets/brochure-elektro.png";
+import brochureElektroKomp from "@/assets/brochure-elektro-kompjuterska.png";
 
 const ElektrotehnickaPage = () => {
   const { t } = useLanguage();
@@ -21,11 +23,14 @@ const ElektrotehnickaPage = () => {
           </div>
         </section>
 
-        {/* Media Section */}
+        {/* Brochure Overview */}
         <section className="media-section">
           <div className="container">
             <h2 className="section-title">{t("media.title")}</h2>
             <div className="media-grid">
+              <div className="media-item">
+                <img src={brochureElektro} alt="Електро струка - брошура" className="media-img" />
+              </div>
               <div className="media-item">
                 <img src={elektroSlika1} alt={t("elektro.title")} className="media-img" />
               </div>
@@ -48,6 +53,7 @@ const ElektrotehnickaPage = () => {
             <h2 className="section-title">{t("elektro.profiles")}</h2>
             <div className="profili-grid">
               <div className="profil-card">
+                <img src={brochureElektro} alt="Електротехничар за електроника и телекомуникации" className="profil-brochure-img" />
                 <div className="profil-icon"><i className="fas fa-mobile-alt"></i></div>
                 <h3>{t("elektro.telekom")}</h3>
                 <p>{t("elektro.telekomDesc")}</p>
@@ -62,6 +68,7 @@ const ElektrotehnickaPage = () => {
                 </a>
               </div>
               <div className="profil-card">
+                <img src={brochureElektroKomp} alt="Електротехничар за компјутерска техника и автоматика" className="profil-brochure-img" />
                 <div className="profil-icon"><i className="fas fa-robot"></i></div>
                 <h3>{t("elektro.kompjuterska")}</h3>
                 <p>{t("elektro.kompjuterskaDesc")}</p>
