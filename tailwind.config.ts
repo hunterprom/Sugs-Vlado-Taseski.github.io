@@ -14,9 +14,9 @@ export default {
     },
     extend: {
       fontFamily: {
-        heading: ["Inter", "sans-serif"],
-        body: ["Inter", "sans-serif"],
-        display: ["Playfair Display", "Georgia", "serif"],
+        heading: ["Sora", "sans-serif"],
+        body: ["Plus Jakarta Sans", "sans-serif"],
+        display: ["Sora", "sans-serif"],
       },
       colors: {
         border: "hsl(var(--border))",
@@ -61,6 +61,25 @@ export default {
           "accent-foreground": "hsl(var(--sidebar-accent-foreground))",
           border: "hsl(var(--sidebar-border))",
           ring: "hsl(var(--sidebar-ring))",
+        },
+        // Custom project colors
+        "navy": {
+          900: "#060E1E",
+          800: "#0F1A2E",
+          700: "#162544",
+          600: "#1B2A4A",
+        },
+        "cyan": {
+          DEFAULT: "#00D4FF",
+          light: "rgba(0,212,255,0.15)",
+        },
+        "warm": {
+          DEFAULT: "#FF7043",
+          light: "rgba(255,112,67,0.12)",
+        },
+        "surface": {
+          light: "#F7F9FC",
+          alt: "#EDF1F7",
         },
       },
       borderRadius: {
