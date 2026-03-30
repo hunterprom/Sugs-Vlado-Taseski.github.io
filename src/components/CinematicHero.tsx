@@ -37,7 +37,7 @@ const AnimatedCounter = ({ target, suffix, animate }: { target: number; suffix: 
     }, 25);
     return () => clearInterval(timer);
   }, [animate, target]);
-  return <span>{value}{suffix}</span>;
+  return <span className="text-primary-foreground">{value}{suffix}</span>;
 };
 
 // Floating particles
@@ -259,7 +259,7 @@ const CinematicHero = () => {
             <div className="cinematic-stat" key={i}>
               <i className={s.icon} />
               <strong><AnimatedCounter target={s.target} suffix={s.suffix} animate={statsVisible} /></strong>
-              <span>{t(s.labelKey)}</span>
+              <span className="text-primary-foreground">{t(s.labelKey)}</span>
             </div>
           ))}
         </div>
