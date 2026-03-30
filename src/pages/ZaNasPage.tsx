@@ -21,10 +21,10 @@ import classroom3 from "@/assets/classroom-3.jpg";
 import classroom4 from "@/assets/classroom-4.jpg";
 import solarPanels from "@/assets/solar-panels.jpg";
 import outdoorBench from "@/assets/outdoor-bench.jpg";
-import fountain from "@/assets/fountain.jpg";
+import fountain from "@/assets/fountain.png";
 import lobbyLogo from "@/assets/lobby-logo.jpg";
 import schoolExterior from "@/assets/school-exterior.jpg";
-import conferenceRoom from "@/assets/conference-room.jpg";
+import conferenceRoom from "@/assets/conference-room.png";
 import ImageModal from "../components/ImageModal";
 
 const ZaNasPage = () => {

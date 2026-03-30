@@ -1,7 +1,7 @@
 import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
 import { Zap, Wrench, Car, Cpu, ArrowRight } from "lucide-react";
-import elektroImg from "@/assets/elektro-lab.jpg";
+import elektroImg from "@/assets/elektro-lab.png";
 import masinskiImg from "@/assets/masinski-lab.jpg";
 import soobrakajImg from "@/assets/soobrakaj-lab.jpg";
 
