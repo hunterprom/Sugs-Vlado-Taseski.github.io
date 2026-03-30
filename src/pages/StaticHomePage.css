@@ -2558,26 +2558,21 @@
   position: absolute;
   inset: 0;
   background: 
-    radial-gradient(ellipse 90% 70% at 15% 35%, rgba(0, 212, 255, 0.2) 0%, transparent 65%),
-    radial-gradient(ellipse 50% 60% at 85% 20%, rgba(99, 102, 241, 0.25) 0%, transparent 55%),
-    radial-gradient(ellipse 60% 50% at 60% 80%, rgba(236, 72, 153, 0.1) 0%, transparent 50%),
-    radial-gradient(ellipse 40% 40% at 40% 60%, rgba(0, 212, 255, 0.08) 0%, transparent 50%),
-    linear-gradient(160deg, #050e1f 0%, #0c1e3d 20%, #162d56 40%, #1e3f72 60%, #2a5298 80%, #1a3260 100%);
+    radial-gradient(ellipse at 25% 50%, rgba(0, 212, 255, 0.10) 0%, transparent 55%),
+    radial-gradient(ellipse at 80% 20%, rgba(255, 112, 67, 0.06) 0%, transparent 50%),
+    radial-gradient(ellipse at 60% 80%, rgba(0, 212, 255, 0.05) 0%, transparent 40%),
+    linear-gradient(160deg, #060E1E 0%, #0B1A30 30%, #0F1F3A 60%, #0A1628 100%);
   animation: gradientShift 12s ease-in-out infinite alternate;
-}
-
-@keyframes gradientShift {
-  0% { filter: hue-rotate(0deg) brightness(1); }
-  50% { filter: hue-rotate(8deg) brightness(1.05); }
-  100% { filter: hue-rotate(-5deg) brightness(0.98); }
 }
 
 .cinematic-hero-noise {
   position: absolute;
   inset: 0;
-  opacity: 0.035;
-  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
-  background-size: 128px;
+  opacity: 0.4;
+  mix-blend-mode: overlay;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.03'/%3E%3C/svg%3E");
+  background-size: 256px;
+  pointer-events: none;
 }
 
 .cinematic-hero-grid-pattern {
