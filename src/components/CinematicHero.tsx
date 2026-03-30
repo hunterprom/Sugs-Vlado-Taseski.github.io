@@ -182,7 +182,7 @@ const CinematicHero = () => {
           </motion.h1>
 
           <motion.p
-            className="cinematic-subtitle"
+            className="cinematic-subtitle text-primary-foreground"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ duration: 0.3, delay: stagger * 3 }}
