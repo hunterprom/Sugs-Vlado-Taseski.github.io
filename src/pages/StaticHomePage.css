@@ -1459,7 +1459,43 @@
 /* Projects Page */
 .projects-section {
   padding: 50px 0;
-  background: #F5F9FF;
+  background: linear-gradient(180deg, #0a1525 0%, #0e1c32 50%, #0b1628 100%);
+  color: #d0dce8;
+  position: relative;
+}
+
+.projects-section::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 5%;
+  right: 5%;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(0, 212, 255, 0.2), transparent);
+}
+
+.projects-section .section-header h2,
+.projects-section .section-header p {
+  color: #d0dce8;
+}
+
+.projects-section .project-card {
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(0, 212, 255, 0.1);
+  color: #b8c8d8;
+}
+
+.projects-section .project-card h3 {
+  color: #ffffff;
+}
+
+.projects-section .project-card i {
+  color: #00D4FF;
+}
+
+.projects-section .btn-primary {
+  background: linear-gradient(135deg, #00D4FF, #3b7dd8);
+  color: #fff;
 }
 
 .projects-grid {
