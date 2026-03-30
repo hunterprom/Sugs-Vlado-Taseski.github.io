@@ -3003,17 +3003,69 @@
   flex-direction: column;
   align-items: center;
   gap: 6px;
-  color: rgba(255, 255, 255, 0.4);
+  color: rgba(255, 255, 255, 0.7);
+  cursor: pointer;
+  transition: opacity 0.3s;
 }
 
 .cinematic-scroll-indicator i {
-  font-size: 1.2rem;
+  font-size: 1.5rem;
+  animation: scrollBounce 2s ease-in-out infinite;
 }
 
 .cinematic-scroll-indicator span {
-  font-size: 0.65rem;
+  font-size: 0.75rem;
   letter-spacing: 0.1em;
   text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.5);
+}
+
+@keyframes scrollBounce {
+  0%, 100% { transform: translateY(0); opacity: 0.7; }
+  50% { transform: translateY(8px); opacity: 1; }
+}
+
+/* Decorative floating particles */
+.cinematic-deco-particles {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  pointer-events: none;
+}
+
+.cinematic-deco-circle {
+  position: absolute;
+  border-radius: 50%;
+  background: rgba(0, 212, 255, 0.18);
+}
+
+.cinematic-deco-plus {
+  position: absolute;
+  color: rgba(0, 212, 255, 0.12);
+  font-size: 14px;
+  font-weight: 300;
+  line-height: 1;
+}
+
+.cinematic-deco-diamond {
+  position: absolute;
+  width: 8px;
+  height: 8px;
+  background: rgba(255, 112, 67, 0.10);
+  transform: rotate(45deg);
+}
+
+@keyframes decoFloat1 {
+  0%, 100% { transform: translate(0, 0); }
+  50% { transform: translate(8px, -12px); }
+}
+@keyframes decoFloat2 {
+  0%, 100% { transform: translate(0, 0); }
+  50% { transform: translate(-6px, 10px); }
+}
+@keyframes decoFloat3 {
+  0%, 100% { transform: translate(0, 0); }
+  50% { transform: translate(10px, 6px); }
 }
 
 /* Mobile */
