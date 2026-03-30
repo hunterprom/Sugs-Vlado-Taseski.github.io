@@ -19,9 +19,9 @@ const floatingCards = [
 
 const stats = [
   { icon: "fas fa-calendar-alt", target: 65, suffix: "+", labelKey: "hero.stat.years" },
-  { icon: "fas fa-users", target: 500, suffix: "+", labelKey: "hero.stat.students" },
+  { icon: "fas fa-users", target: 900, suffix: "+", labelKey: "hero.stat.students" },
   { icon: "fas fa-graduation-cap", target: 90, suffix: "+", labelKey: "hero.stat.teachers" },
-  { icon: "fas fa-wrench", target: 3, suffix: "", labelKey: "hero.stat.programs" },
+  { icon: "fas fa-wrench", target: 8, suffix: "", labelKey: "hero.stat.programs" },
 ];
 
 const AnimatedCounter = ({ target, suffix, animate }: { target: number; suffix: string; animate: boolean }) => {
