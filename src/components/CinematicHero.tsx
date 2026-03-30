@@ -4,10 +4,10 @@ import { motion, useScroll, useTransform, useMotionValue, useSpring, AnimatePres
 import { useLanguage } from "@/i18n/LanguageContext";
 
 import classroom1 from "@/assets/classroom-1.jpg";
-import elektroLab from "@/assets/elektro-lab.jpg";
-import studentsActivities from "@/assets/students-activities.jpg";
+import elektroLab from "@/assets/elektro-lab.png";
+import studentsActivities from "@/assets/students-activities.png";
 import schoolExterior from "@/assets/school-exterior.jpg";
-import gallery1 from "@/assets/gallery-1.jpg";
+import gallery1 from "@/assets/gallery-1.png";
 
 const floatingCards = [
   { img: classroom1, label: "Ученици во работилница", w: 300, h: 400, x: 0, y: 0, rot: 2, delay: 0.6 },
