@@ -168,7 +168,7 @@ const CinematicHero = () => {
             transition={{ duration: 0.3, delay: stagger }}
           >
             <span className="cinematic-badge-dot" />
-            <i className="fas fa-star-of-life" /> Основано 1959 • Скопје
+            <i className="fas fa-star-of-life" /> {t("hero.foundedBadge")}
           </motion.div>
 
           <motion.h1
@@ -177,8 +177,8 @@ const CinematicHero = () => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: stagger * 2 }}
           >
-            Твојата техничка иднина започнува{" "}
-            <span className="cinematic-headline-accent">тука.</span>
+            {t("hero.headline1")}{" "}
+            <span className="cinematic-headline-accent">{t("hero.headlineAccent")}</span>
           </motion.h1>
 
           <motion.p
@@ -200,7 +200,7 @@ const CinematicHero = () => {
               {t("hero.enroll")} <i className="fas fa-arrow-right" />
             </Link>
             <Link to="/nastava" className="cinematic-btn-secondary">
-              <i className="fas fa-compass" /> Истражи ги програмите
+              <i className="fas fa-compass" /> {t("hero.explorePrograms")}
             </Link>
           </motion.div>
 
@@ -210,9 +210,9 @@ const CinematicHero = () => {
             animate={{ opacity: 1 }}
             transition={{ duration: 0.3, delay: stagger * 5 }}
           >
-            <span><i className="fas fa-award" /> Erasmus+ партнер</span>
-            <span><i className="fas fa-trophy" /> Меѓународни медали</span>
-            <span><i className="fas fa-laptop-code" /> Модерни лаборатории</span>
+            <span><i className="fas fa-award" /> {t("hero.trustErasmus")}</span>
+            <span><i className="fas fa-trophy" /> {t("hero.trustMedals")}</span>
+            <span><i className="fas fa-laptop-code" /> {t("hero.trustLabs")}</span>
           </motion.div>
         </div>
 
@@ -273,7 +273,7 @@ const CinematicHero = () => {
         >
           <i className="fas fa-chevron-down" />
         </motion.div>
-        <span>Скролај за повеќе</span>
+        <span>{t("hero.scrollMore")}</span>
       </motion.div>
     </motion.section>
   );
