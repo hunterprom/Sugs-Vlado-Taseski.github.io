@@ -273,7 +273,7 @@ const CinematicHero = () => {
         >
           <i className="fas fa-chevron-down" />
         </motion.div>
-        <span>Скролај за повеќе</span>
+        <span>{t("hero.scrollMore")}</span>
       </motion.div>
     </motion.section>
   );
