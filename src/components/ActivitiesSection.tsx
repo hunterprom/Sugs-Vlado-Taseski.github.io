@@ -2,7 +2,7 @@ import { motion, useInView } from "framer-motion";
 import { useRef, useEffect } from "react";
 import { useLocation } from "react-router-dom";
 import { Trophy, Globe, Plane, Camera, Calendar } from "lucide-react";
-import activitiesImg from "@/assets/students-activities.jpg";
+import activitiesImg from "@/assets/students-activities.png";
 
 const activities = [
   { icon: Trophy, title: "Натпревари", id: "natprevari", desc: "Учество на национални и меѓународни натпревари по техника, роботика и иновации." },

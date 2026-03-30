@@ -9,8 +9,8 @@ import { noviniData } from "../data/noviniData";
 import "./StaticHomePage.css";
 import classroom1 from "@/assets/classroom-1.jpg";
 import classroom3 from "@/assets/classroom-3.jpg";
-import conferenceRoom from "@/assets/conference-room.jpg";
-import fountain from "@/assets/fountain.jpg";
+import conferenceRoom from "@/assets/conference-room.png";
+import fountain from "@/assets/fountain.png";
 import lobbyLogo from "@/assets/lobby-logo.jpg";
 import schoolExterior from "@/assets/school-exterior.jpg";
 
