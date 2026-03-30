@@ -248,7 +248,7 @@ const CinematicHero = () => {
 
       {/* Stats strip */}
       <motion.div
-        className="cinematic-stats-strip"
+        className="cinematic-stats-strip text-secondary-foreground bg-primary"
         ref={statsRef}
         initial={{ opacity: 0, y: 30 }}
         animate={{ opacity: 1, y: 0 }}
