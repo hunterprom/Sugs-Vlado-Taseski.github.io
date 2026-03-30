@@ -2540,7 +2540,7 @@
 /* ========== CINEMATIC HERO ========== */
 .cinematic-hero {
   position: relative;
-  min-height: 120vh;
+  min-height: 110vh;
   display: flex;
   flex-direction: column;
   justify-content: center;
