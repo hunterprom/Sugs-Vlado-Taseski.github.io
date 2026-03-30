@@ -2830,38 +2830,38 @@
 }
 
 .cinematic-bento-card[data-index="0"] {
-  width: 55%;
-  height: 75%;
-  top: 5%;
+  width: 65%;
+  height: 80%;
+  top: 3%;
   left: 0;
 }
 
 .cinematic-bento-card[data-index="1"] {
-  width: 48%;
-  height: 40%;
+  width: 55%;
+  height: 48%;
   top: 0;
   right: 0;
 }
 
 .cinematic-bento-card[data-index="2"] {
-  width: 35%;
-  height: 30%;
-  top: 8%;
-  right: 5%;
+  width: 42%;
+  height: 38%;
+  top: 6%;
+  right: 3%;
   z-index: 3;
 }
 
 .cinematic-bento-card[data-index="3"] {
-  width: 45%;
-  height: 35%;
+  width: 52%;
+  height: 42%;
   bottom: 0;
-  right: 2%;
+  right: 0;
 }
 
 .cinematic-bento-card[data-index="4"] {
-  width: 28%;
-  bottom: 5%;
-  left: 15%;
+  width: 32%;
+  bottom: 3%;
+  left: 12%;
   z-index: 4;
 }
 
