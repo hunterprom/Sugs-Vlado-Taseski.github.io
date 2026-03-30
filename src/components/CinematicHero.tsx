@@ -223,7 +223,9 @@ const CinematicHero = () => {
             transition={{ duration: 0.3, delay: stagger * 5 }}
           >
             <span><i className="fas fa-award" /> {t("hero.trustErasmus")}</span>
+            <span className="cinematic-trust-separator">•</span>
             <span><i className="fas fa-trophy" /> {t("hero.trustMedals")}</span>
+            <span className="cinematic-trust-separator">•</span>
             <span><i className="fas fa-laptop-code" /> {t("hero.trustLabs")}</span>
           </motion.div>
         </div>
