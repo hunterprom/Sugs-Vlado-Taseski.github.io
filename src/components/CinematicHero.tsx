@@ -11,9 +11,9 @@ import schoolExterior from "@/assets/school-exterior.jpg";
 import gallery1 from "@/assets/gallery-1.png";
 
 const floatingCards = [
-  { img: classroom1, label: "Ученици во работилница", w: 300, h: 400, x: 0, y: 0, rot: 2, delay: 0.6 },
+  { img: classroom1, label: "Ученици во работилница", w: 300, h: 400, x: 0, y: 0, rot: 2, delay: 0.6, videoUrl: studentsVideo },
   { img: elektroLab, label: "Лабораторија за електротехника", w: 250, h: 200, x: 30, y: -20, rot: -3, delay: 0.75 },
-  { img: studentsActivities, label: "Ученици", w: 200, h: 150, x: 60, y: 10, rot: 1.5, delay: 0.9, videoUrl: studentsVideo },
+  { img: studentsActivities, label: "Ученици", w: 200, h: 150, x: 60, y: 10, rot: 1.5, delay: 0.9 },
   { img: schoolExterior, label: "Erasmus+ патување", w: 220, h: 180, x: 10, y: 50, rot: -1, delay: 1.05 },
   { img: gallery1, label: "Медал", w: 150, h: 150, x: 55, y: 35, rot: 0, delay: 1.2, circle: true },
 ];
