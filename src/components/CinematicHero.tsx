@@ -168,7 +168,7 @@ const CinematicHero = () => {
             transition={{ duration: 0.3, delay: stagger }}
           >
             <span className="cinematic-badge-dot" />
-            <i className="fas fa-star-of-life" /> Основано 1959 • Скопје
+            <i className="fas fa-star-of-life" /> {t("hero.foundedBadge")}
           </motion.div>
 
           <motion.h1
