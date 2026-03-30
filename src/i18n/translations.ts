@@ -525,6 +525,14 @@ export const translations: Record<Language, Record<string, string>> = {
     "hero.enroll": "Regjistrohu",
     "hero.history": "Historia jon\u00EB",
     "hero.calculator": "Kalkulator pik\u00EBsh",
+    "hero.headline1": "E ardhmja jote teknike fillon",
+    "hero.headlineAccent": "k\u00EBtu.",
+    "hero.foundedBadge": "Themeluar 1959 \u2022 Shkup",
+    "hero.explorePrograms": "Eksploro programet",
+    "hero.trustErasmus": "Partner Erasmus+",
+    "hero.trustMedals": "Medalje nd\u00EBrkomb\u00EBtare",
+    "hero.trustLabs": "Laborator\u00EB moderne",
+    "hero.scrollMore": "L\u00EBviz posht\u00EB p\u00EBr m\u00EB shum\u00EB",
     // Marquee
     "marquee": "ELEKTROTEKNIK\u00CB \u2726 MAKINERI \u2726 KOMUNIKACION \u2726 E ARDHMJA \u00CBSHT\u00CB K\u00CBTU",
     // Stats
