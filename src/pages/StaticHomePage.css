@@ -2808,9 +2808,8 @@
 /* Bento grid */
 .cinematic-bento {
   position: relative;
-  height: 580px;
+  height: 650px;
   perspective: 800px;
-  gap: 12px;
 }
 
 .cinematic-bento-card {
@@ -2831,49 +2830,40 @@
 }
 
 .cinematic-bento-card[data-index="0"] {
-  width: 56%;
-  height: 58%;
+  width: 58%;
+  height: 60%;
   top: 0;
   left: 0;
 }
 
 .cinematic-bento-card[data-index="1"] {
-  width: 42%;
-  height: 38%;
+  width: 40%;
+  height: 40%;
   top: 0;
   right: 0;
 }
 
 .cinematic-bento-card[data-index="2"] {
-  width: 42%;
+  width: 40%;
   height: 22%;
-  top: 40%;
+  top: 42%;
   right: 0;
   z-index: 3;
 }
 
 .cinematic-bento-card[data-index="3"] {
-  width: 34%;
+  width: 36%;
   height: 38%;
   bottom: 0;
   left: 0;
 }
 
 .cinematic-bento-card[data-index="4"] {
-  width: 34%;
+  width: 36%;
   height: 38%;
   bottom: 0;
-  left: 36%;
+  left: 38%;
   z-index: 4;
-}
-
-.cinematic-bento-card[data-index="4"] ~ .cinematic-bento-card-extra {
-  display: none;
-}
-
-/* 6th implicit slot: bottom-right aligns with card 1&2 column */
-.cinematic-bento-card[data-index="4"] {
-  right: auto;
 }
 
 .cinematic-bento-circle {
