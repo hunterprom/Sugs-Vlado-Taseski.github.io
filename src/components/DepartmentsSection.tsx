@@ -4,18 +4,14 @@ import { useLanguage } from "@/i18n/LanguageContext";
 import { ScrollZoomReveal, TextReveal, LineReveal, ScrollSlideIn } from "./TypographyEffects";
 import { useState } from "react";
 
-import elektroLab from "@/assets/elektro-lab.jpg";
-import elektroSlika from "@/assets/elektro-slika-1.jpg";
-import elektroTelekom from "@/assets/elektro-telekom.png";
-import masinskaSlika from "@/assets/masinska-slika-1.jpg";
-import masinskaStruka from "@/assets/masinska-struka.png";
-import masinskaEnerg from "@/assets/masinska-energetski.png";
-import proizvodno from "@/assets/proizvodno-masinstvo.png";
-import masinskaLab from "@/assets/masinski-lab.jpg";
-import soobrakajSlika from "@/assets/soobrakaj-slika-1.jpg";
-import soobrakajTransport from "@/assets/soobrakaj-transport.png";
-import soobrakajLab from "@/assets/soobrakaj-lab.jpg";
-import zeleznicki from "@/assets/zeleznicki-soobrakaj.png";
+import brochureElektro from "@/assets/brochure-elektro.png";
+import brochureElektroKomp from "@/assets/brochure-elektro-kompjuterska.png";
+import brochureMasinska from "@/assets/brochure-masinska.png";
+import brochureEnergetski from "@/assets/brochure-masinska-energetski.png";
+import brochureProizvodno from "@/assets/brochure-proizvodno.png";
+import brochureKompUpravuvanje from "@/assets/brochure-kompjutersko-upravuvanje.png";
+import brochureSoobrakaj from "@/assets/brochure-soobrakaj.png";
+import brochureZeleznica from "@/assets/brochure-zeleznica.png";
 
 interface Profile {
   nameKey: string;
