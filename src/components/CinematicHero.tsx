@@ -259,7 +259,7 @@ const CinematicHero = () => {
             <div className="cinematic-stat" key={i}>
               <i className={s.icon} />
               <strong><AnimatedCounter target={s.target} suffix={s.suffix} animate={statsVisible} /></strong>
-              <span>{t(s.labelKey)}</span>
+              <span className="text-primary-foreground">{t(s.labelKey)}</span>
             </div>
           ))}
         </div>
