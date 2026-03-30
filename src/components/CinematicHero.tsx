@@ -6,13 +6,14 @@ import { useLanguage } from "@/i18n/LanguageContext";
 import classroom1 from "@/assets/classroom-1.jpg";
 import elektroLab from "@/assets/elektro-lab.png";
 import studentsActivities from "@/assets/students-activities.png";
+import studentsVideo from "@/assets/students-video.mp4";
 import schoolExterior from "@/assets/school-exterior.jpg";
 import gallery1 from "@/assets/gallery-1.png";
 
 const floatingCards = [
   { img: classroom1, label: "Ученици во работилница", w: 300, h: 400, x: 0, y: 0, rot: 2, delay: 0.6 },
   { img: elektroLab, label: "Лабораторија за електротехника", w: 250, h: 200, x: 30, y: -20, rot: -3, delay: 0.75 },
-  { img: studentsActivities, label: "Ученици", w: 200, h: 150, x: 60, y: 10, rot: 1.5, delay: 0.9, embedUrl: "https://www.instagram.com/reel/C6_aMVQtpEI/embed/" },
+  { img: studentsActivities, label: "Ученици", w: 200, h: 150, x: 60, y: 10, rot: 1.5, delay: 0.9, videoUrl: studentsVideo },
   { img: schoolExterior, label: "Erasmus+ патување", w: 220, h: 180, x: 10, y: 50, rot: -1, delay: 1.05 },
   { img: gallery1, label: "Медал", w: 150, h: 150, x: 55, y: 35, rot: 0, delay: 1.2, circle: true },
 ];
@@ -70,18 +71,19 @@ const BentoCard = ({ card, index, springX, springY }: { card: typeof floatingCar
         animate={{ y: [0, index % 2 === 0 ? -8 : 8, 0] }}
         transition={{ duration: 3 + index * 0.5, repeat: Infinity, ease: "easeInOut", delay: index * 0.3 }}
       >
-        {card.embedUrl ? (
-          <iframe
-            src={card.embedUrl}
-            title={card.label}
-            style={{ width: "100%", height: "100%", border: "none", borderRadius: "inherit", minHeight: "280px" }}
-            allowFullScreen
-            loading="lazy"
+        {card.videoUrl ? (
+          <video
+            src={card.videoUrl}
+            autoPlay
+            loop
+            muted
+            playsInline
+            style={{ width: "100%", height: "100%", objectFit: "cover", borderRadius: "inherit" }}
           />
         ) : (
           <img src={card.img} alt={card.label} />
         )}
-        {!card.embedUrl && <div className="cinematic-bento-label">{card.label}</div>}
+        {!card.videoUrl && <div className="cinematic-bento-label">{card.label}</div>}
       </motion.div>
     </motion.div>
   );
