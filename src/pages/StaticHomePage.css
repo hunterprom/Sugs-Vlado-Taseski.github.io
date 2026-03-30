@@ -2933,6 +2933,8 @@
   gap: 10px;
   padding: 18px 20px;
   justify-content: center;
+  flex: 1;
+  min-width: 0;
 }
 
 .cinematic-stat i {
