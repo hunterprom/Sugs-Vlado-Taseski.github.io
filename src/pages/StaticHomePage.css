@@ -1923,6 +1923,19 @@
 .scrollytelling-section {
   padding: 80px 0;
   background: linear-gradient(180deg, #f8fafd 0%, #e8f0f8 100%);
+  position: relative;
+}
+
+.scrollytelling-section::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 10%;
+  right: 10%;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, rgba(0, 212, 255, 0.3), rgba(99, 102, 241, 0.2), rgba(0, 212, 255, 0.3), transparent);
+  border-radius: 2px;
+}
   overflow: hidden;
 }
 
