@@ -2537,133 +2537,67 @@
   }
 }
 
-/* ========== CINEMATIC HERO ========== */
-.cinematic-hero {
+/* ========== CINEMATIC FULLBLEED HERO ========== */
+.cinematic-fullbleed-wrapper {
+  display: flex;
+  flex-direction: column;
+}
+
+.cinematic-fullbleed-hero {
   position: relative;
   min-height: 100vh;
   display: flex;
-  flex-direction: column;
-  justify-content: center;
+  align-items: center;
   overflow: hidden;
-  background: #0A1628;
 }
 
-.cinematic-hero-bg {
+.cinematic-fullbleed-bg {
   position: absolute;
   inset: 0;
   z-index: 0;
 }
 
-.cinematic-hero-gradient {
+.cinematic-fullbleed-bg img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* Cinematic gradient overlay: dark left → lighter right */
+.cinematic-fullbleed-overlay {
   position: absolute;
   inset: 0;
-  background: linear-gradient(135deg, #1e3a5f 0%, #2a5298 50%, #3b7dd8 100%);
+  z-index: 1;
+  background: linear-gradient(
+    to right,
+    rgba(10, 22, 40, 0.92) 0%,
+    rgba(10, 22, 40, 0.85) 35%,
+    rgba(10, 22, 40, 0.55) 65%,
+    rgba(10, 22, 40, 0.35) 100%
+  );
 }
 
 .cinematic-hero-noise {
   position: absolute;
   inset: 0;
+  z-index: 2;
   opacity: 0.03;
   background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
   background-size: 128px;
-}
-
-.cinematic-hero-grid-pattern {
-  position: absolute;
-  inset: 0;
-  opacity: 0.03;
-  background-image: 
-    linear-gradient(rgba(0,212,255,0.3) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(0,212,255,0.3) 1px, transparent 1px);
-  background-size: 60px 60px;
-}
-
-.cinematic-hero-blob {
-  position: absolute;
-  border-radius: 50%;
-  filter: blur(120px);
-  animation: blobPulse 10s ease-in-out infinite;
-}
-
-.cinematic-blob-cyan {
-  width: 500px;
-  height: 500px;
-  top: -10%;
-  right: -5%;
-  background: rgba(0, 212, 255, 0.08);
-}
-
-.cinematic-blob-orange {
-  width: 400px;
-  height: 400px;
-  bottom: -10%;
-  left: -5%;
-  background: rgba(255, 165, 0, 0.05);
-}
-
-@keyframes blobPulse {
-  0%, 100% { transform: scale(1); }
-  50% { transform: scale(1.15); }
-}
-
-/* Particles */
-.cinematic-particles {
-  position: absolute;
-  inset: 0;
-  z-index: 1;
   pointer-events: none;
 }
 
-.cinematic-particle {
-  position: absolute;
-  border-radius: 50%;
-}
-
-.cinematic-particle-circle {
-  background: rgba(0, 212, 255, 0.4);
-  border-radius: 50%;
-}
-
-.cinematic-particle-cross {
-  background: transparent;
+/* Content positioned left */
+.cinematic-fullbleed-content {
   position: relative;
+  z-index: 3;
+  max-width: 620px;
+  padding-top: 120px;
+  padding-bottom: 140px;
 }
 
-.cinematic-particle-cross::before,
-.cinematic-particle-cross::after {
-  content: '';
-  position: absolute;
-  background: rgba(255, 165, 0, 0.35);
-  border-radius: 1px;
-}
-
-.cinematic-particle-cross::before {
-  width: 100%;
-  height: 2px;
-  top: 50%;
-  transform: translateY(-50%);
-}
-
-.cinematic-particle-cross::after {
-  width: 2px;
-  height: 100%;
-  left: 50%;
-  transform: translateX(-50%);
-}
-
-/* Inner layout */
-.cinematic-hero-inner {
-  position: relative;
-  z-index: 2;
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 60px;
-  align-items: center;
-  padding-top: 100px;
-  padding-bottom: 120px;
-}
-
-/* Content side */
+/* Badge */
 .cinematic-badge {
   display: inline-flex;
   align-items: center;
@@ -2801,124 +2735,34 @@
   font-size: 0.7rem;
 }
 
-/* Bento grid */
-.cinematic-bento {
-  position: relative;
-  height: 480px;
-  perspective: 800px;
-}
-
-.cinematic-bento-card {
-  position: absolute;
-  border-radius: 16px;
-  overflow: hidden;
-  border: 1px solid rgba(0, 212, 255, 0.15);
-  background: rgba(255, 255, 255, 0.04);
-  backdrop-filter: blur(12px);
-  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
-  cursor: pointer;
-  transition: border-color 0.3s, box-shadow 0.3s;
-}
-
-.cinematic-bento-card:hover {
-  border-color: rgba(0, 212, 255, 0.5);
-  box-shadow: 0 12px 40px rgba(0, 212, 255, 0.15);
-}
-
-.cinematic-bento-card[data-index="0"] {
-  width: 55%;
-  height: 75%;
-  top: 5%;
-  left: 0;
-}
-
-.cinematic-bento-card[data-index="1"] {
-  width: 48%;
-  height: 40%;
-  top: 0;
-  right: 0;
-}
-
-.cinematic-bento-card[data-index="2"] {
-  width: 35%;
-  height: 30%;
-  top: 8%;
-  right: 5%;
-  z-index: 3;
-}
-
-.cinematic-bento-card[data-index="3"] {
-  width: 45%;
-  height: 35%;
-  bottom: 0;
-  right: 2%;
-}
-
-.cinematic-bento-card[data-index="4"] {
-  width: 28%;
-  bottom: 5%;
-  left: 15%;
-  z-index: 4;
-}
-
-.cinematic-bento-circle {
-  border-radius: 50% !important;
-  aspect-ratio: 1;
-}
-
-.cinematic-bento-circle .cinematic-bento-card-inner {
-  border-radius: 50%;
-}
-
-.cinematic-bento-card-inner {
-  width: 100%;
-  height: 100%;
-  position: relative;
-}
-
-.cinematic-bento-card-inner img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  display: block;
-}
-
-.cinematic-bento-label {
+/* Animated progress bar at bottom of hero */
+.cinematic-progress-bar {
   position: absolute;
   bottom: 0;
   left: 0;
   right: 0;
-  padding: 8px 12px;
-  background: linear-gradient(to top, rgba(10,22,40,0.85), transparent);
-  color: rgba(255, 255, 255, 0.8);
-  font-size: 0.72rem;
-  font-weight: 500;
-}
-
-.cinematic-bento-circle .cinematic-bento-label {
-  text-align: center;
-  border-radius: 0 0 50% 50%;
-}
-
-.cinematic-bento-lines {
-  position: absolute;
-  inset: 0;
-  width: 100%;
-  height: 100%;
-  z-index: 0;
-  pointer-events: none;
-}
-
-/* Stats strip */
-.cinematic-stats-strip {
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  right: 0;
+  height: 3px;
+  background: rgba(255, 255, 255, 0.08);
   z-index: 5;
-  background: rgba(22, 37, 68, 0.8);
-  backdrop-filter: blur(12px);
-  border-top: 1px solid rgba(0, 212, 255, 0.15);
+}
+
+.cinematic-progress-track {
+  height: 100%;
+  background: linear-gradient(90deg, #00D4FF, #00B4D8);
+  animation: progressSweep 5s linear infinite;
+  box-shadow: 0 0 10px rgba(0, 212, 255, 0.5);
+}
+
+@keyframes progressSweep {
+  0% { width: 0%; }
+  100% { width: 100%; }
+}
+
+/* Stats strip — separate dark bar below hero */
+.cinematic-stats-bar {
+  background: rgba(10, 22, 40, 0.95);
+  border-top: 1px solid rgba(0, 212, 255, 0.12);
+  border-bottom: 1px solid rgba(0, 212, 255, 0.08);
 }
 
 .cinematic-stats-inner {
@@ -2958,7 +2802,7 @@
 /* Scroll indicator */
 .cinematic-scroll-indicator {
   position: absolute;
-  bottom: 80px;
+  bottom: 30px;
   left: 50%;
   transform: translateX(-50%);
   z-index: 6;
@@ -2981,29 +2825,35 @@
 
 /* Mobile */
 @media (max-width: 768px) {
-  .cinematic-hero-inner {
-    grid-template-columns: 1fr;
-    gap: 32px;
-    padding-top: 80px;
-    padding-bottom: 140px;
+  .cinematic-fullbleed-overlay {
+    background: rgba(10, 22, 40, 0.80);
+  }
+
+  .cinematic-fullbleed-content {
+    text-align: center;
+    max-width: 100%;
+    padding-top: 100px;
+    padding-bottom: 120px;
   }
 
   .cinematic-headline {
     font-size: 2.25rem;
   }
 
-  .cinematic-bento {
-    display: none;
+  .cinematic-ctas {
+    justify-content: center;
   }
 
-  .cinematic-hero-inner::after {
-    content: '';
-    display: block;
-    width: 100%;
-    height: 250px;
-    border-radius: 16px;
-    background: linear-gradient(135deg, #162544, #1B2A4A);
-    border: 1px solid rgba(0,212,255,0.15);
+  .cinematic-trust {
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+  }
+
+  .cinematic-badge {
+    margin-left: auto;
+    margin-right: auto;
   }
 
   .cinematic-stats-inner {
@@ -3022,23 +2872,12 @@
   }
 
   .cinematic-scroll-indicator {
-    bottom: 90px;
-  }
-
-  .cinematic-particles {
-    display: none;
-  }
-
-  .cinematic-trust {
-    flex-direction: column;
-    gap: 8px;
+    bottom: 20px;
   }
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .cinematic-bento-card-inner,
-  .cinematic-particle,
-  .cinematic-hero-blob,
+  .cinematic-progress-track,
   .cinematic-badge {
     animation: none !important;
   }
