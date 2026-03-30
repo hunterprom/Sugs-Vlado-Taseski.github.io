@@ -1994,7 +1994,7 @@
 /* ═══════════════════════════════════════════ */
 .scrollytelling-section {
   padding: 80px 0;
-  background: linear-gradient(180deg, #f8fafd 0%, #e8f0f8 100%);
+  background: linear-gradient(180deg, #e8f0f8 0%, #f8fafd 40%, #e8f0f8 70%, #1a2a44 100%);
   position: relative;
   overflow: hidden;
 }
