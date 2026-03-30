@@ -977,6 +977,14 @@ export const translations: Record<Language, Record<string, string>> = {
     "hero.enroll": "Enroll Now",
     "hero.history": "Our History",
     "hero.calculator": "Points Calculator",
+    "hero.headline1": "Your technical future starts",
+    "hero.headlineAccent": "here.",
+    "hero.foundedBadge": "Founded 1959 • Skopje",
+    "hero.explorePrograms": "Explore programs",
+    "hero.trustErasmus": "Erasmus+ partner",
+    "hero.trustMedals": "International medals",
+    "hero.trustLabs": "Modern laboratories",
+    "hero.scrollMore": "Scroll for more",
     // Marquee
     "marquee": "ELECTRICAL ENGINEERING \u2726 MECHANICAL ENGINEERING \u2726 TRAFFIC \u2726 THE FUTURE IS HERE",
     // Stats
