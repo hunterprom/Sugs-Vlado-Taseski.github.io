@@ -2390,7 +2390,7 @@
 .dept-profile-img-main {
   position: relative;
   width: 100%;
-  aspect-ratio: 3/4;
+  max-height: 200px;
   overflow: hidden;
 }
 
