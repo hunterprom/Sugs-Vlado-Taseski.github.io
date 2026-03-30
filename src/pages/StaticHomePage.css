@@ -2540,12 +2540,12 @@
 /* ========== CINEMATIC HERO ========== */
 .cinematic-hero {
   position: relative;
-  min-height: 100vh;
+  min-height: 110vh;
   display: flex;
   flex-direction: column;
   justify-content: center;
   overflow: hidden;
-  background: #0A1628;
+  background: #060d1f;
 }
 
 .cinematic-hero-bg {
