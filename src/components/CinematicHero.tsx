@@ -37,7 +37,7 @@ const AnimatedCounter = ({ target, suffix, animate }: { target: number; suffix: 
     }, 25);
     return () => clearInterval(timer);
   }, [animate, target]);
-  return <span>{value}{suffix}</span>;
+  return <span className="text-primary-foreground">{value}{suffix}</span>;
 };
 
 // Floating particles
