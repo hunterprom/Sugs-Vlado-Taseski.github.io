@@ -4,6 +4,10 @@ import SiteFooter from "../components/SiteFooter";
 import { useLanguage } from "@/i18n/LanguageContext";
 import "./StaticHomePage.css";
 import masinskaSlika1 from "@/assets/masinska-slika-1.jpg";
+import brochureMasinska from "@/assets/brochure-masinska.png";
+import brochureEnergetski from "@/assets/brochure-masinska-energetski.png";
+import brochureProizvodno from "@/assets/brochure-proizvodno.png";
+import brochureKompUpravuvanje from "@/assets/brochure-kompjutersko-upravuvanje.png";
 
 const MasinskaPage = () => {
   const { t } = useLanguage();
@@ -27,6 +31,9 @@ const MasinskaPage = () => {
             <h2 className="section-title">{t("media.title")}</h2>
             <div className="media-grid">
               <div className="media-item">
+                <img src={brochureMasinska} alt="Машинска струка - брошура" className="media-img" />
+              </div>
+              <div className="media-item">
                 <img src={masinskaSlika1} alt={t("masinska.title")} className="media-img" />
               </div>
               <div className="media-item">
@@ -43,6 +50,7 @@ const MasinskaPage = () => {
             <h2 className="section-title">{t("masinska.profiles")}</h2>
             <div className="profili-grid">
               <div className="profil-card">
+                <img src={brochureEnergetski} alt="Машинско-енергетски техничар" className="profil-brochure-img" />
                 <div className="profil-icon"><i className="fas fa-fire"></i></div>
                 <h3>{t("masinska.energetski")}</h3>
                 <p>{t("masinska.energetskiDesc")}</p>
@@ -57,6 +65,7 @@ const MasinskaPage = () => {
                 </a>
               </div>
               <div className="profil-card">
+                <img src={brochureProizvodno} alt="Техничар за производно машинство" className="profil-brochure-img" />
                 <div className="profil-icon"><i className="fas fa-industry"></i></div>
                 <h3>{t("masinska.proizvodno")}</h3>
                 <p>{t("masinska.proizvodnoDesc")}</p>
@@ -71,6 +80,7 @@ const MasinskaPage = () => {
                 </a>
               </div>
               <div className="profil-card">
+                <img src={brochureKompUpravuvanje} alt="Техничар за компјутерско управување" className="profil-brochure-img" />
                 <div className="profil-icon"><i className="fas fa-desktop"></i></div>
                 <h3>{t("masinska.kompjutersko")}</h3>
                 <p>{t("masinska.kompjuterskoDesc")}</p>
