@@ -210,9 +210,9 @@ const CinematicHero = () => {
             animate={{ opacity: 1 }}
             transition={{ duration: 0.3, delay: stagger * 5 }}
           >
-            <span><i className="fas fa-award" /> Erasmus+ партнер</span>
-            <span><i className="fas fa-trophy" /> Меѓународни медали</span>
-            <span><i className="fas fa-laptop-code" /> Модерни лаборатории</span>
+            <span><i className="fas fa-award" /> {t("hero.trustErasmus")}</span>
+            <span><i className="fas fa-trophy" /> {t("hero.trustMedals")}</span>
+            <span><i className="fas fa-laptop-code" /> {t("hero.trustLabs")}</span>
           </motion.div>
         </div>
 
