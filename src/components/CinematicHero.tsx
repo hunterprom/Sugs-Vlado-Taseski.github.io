@@ -256,7 +256,7 @@ const CinematicHero = () => {
       >
         <div className="container cinematic-stats-inner">
           {stats.map((s, i) => (
-            <div className="cinematic-stat" key={i}>
+            <div className="cinematic-stat text-primary-foreground" key={i}>
               <i className={s.icon} />
               <strong><AnimatedCounter target={s.target} suffix={s.suffix} animate={statsVisible} /></strong>
               <span className="text-primary-foreground">{t(s.labelKey)}</span>
