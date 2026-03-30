@@ -1,6 +1,6 @@
 import { useEffect, useRef, useState, useCallback } from "react";
 import { Link } from "react-router-dom";
-import { motion, useScroll, useTransform, useMotionValue, useSpring, AnimatePresence } from "framer-motion";
+import { motion, useScroll, useTransform, useMotionValue, useSpring } from "framer-motion";
 import { useLanguage } from "@/i18n/LanguageContext";
 
 import classroom1 from "@/assets/classroom-1.jpg";
@@ -10,15 +10,15 @@ import schoolExterior from "@/assets/school-exterior.jpg";
 import gallery1 from "@/assets/gallery-1.jpg";
 
 const floatingCards = [
-  { img: classroom1, label: "Ученици во работилница", w: 300, h: 400, x: 0, y: 0, rot: 2, delay: 0.6 },
-  { img: elektroLab, label: "Лабораторија за електротехника", w: 250, h: 200, x: 30, y: -20, rot: -3, delay: 0.75 },
-  { img: studentsActivities, label: "Спортска сала", w: 200, h: 150, x: 60, y: 10, rot: 1.5, delay: 0.9 },
-  { img: schoolExterior, label: "Erasmus+ патување", w: 220, h: 180, x: 10, y: 50, rot: -1, delay: 1.05 },
-  { img: gallery1, label: "Медал", w: 150, h: 150, x: 55, y: 35, rot: 0, delay: 1.2, circle: true },
+  { img: classroom1, label: "Ученици во електро-лабораторија", w: 320, h: 420, rot: 2, delay: 0.6, accentPos: "left", accentColor: "#00D4FF" },
+  { img: elektroLab, label: "CNC работилница", w: 260, h: 190, rot: -2, delay: 0.75 },
+  { img: studentsActivities, label: "Спортска сала", w: 180, h: 180, rot: 0, delay: 0.9 },
+  { img: schoolExterior, label: "Erasmus+ Германија", w: 240, h: 170, rot: -1, delay: 1.05, accentPos: "bottom", accentColor: "#FF7043" },
+  { img: gallery1, label: "🏅", w: 130, h: 130, rot: 0, delay: 1.2, circle: true },
 ];
 
 const stats = [
-  { icon: "fas fa-calendar-alt", target: 65, suffix: "+", labelKey: "hero.stat.years" },
+  { icon: "fas fa-clock", target: 65, suffix: "+", labelKey: "hero.stat.years" },
   { icon: "fas fa-users", target: 500, suffix: "+", labelKey: "hero.stat.students" },
   { icon: "fas fa-graduation-cap", target: 90, suffix: "+", labelKey: "hero.stat.teachers" },
   { icon: "fas fa-wrench", target: 3, suffix: "", labelKey: "hero.stat.programs" },
@@ -29,49 +29,50 @@ const AnimatedCounter = ({ target, suffix, animate }: { target: number; suffix: 
   useEffect(() => {
     if (!animate) return;
     let current = 0;
-    const increment = target / 40;
+    const increment = target / 60;
     const timer = setInterval(() => {
       current += increment;
       if (current >= target) { setValue(target); clearInterval(timer); }
       else setValue(Math.floor(current));
-    }, 25);
+    }, 33);
     return () => clearInterval(timer);
   }, [animate, target]);
   return <span>{value}{suffix}</span>;
 };
 
-// Floating particles
-const particles = Array.from({ length: 12 }, (_, i) => ({
+const particles = Array.from({ length: 8 }, (_, i) => ({
   id: i,
-  size: Math.random() * 6 + 3,
+  size: Math.random() * 6 + 4,
   x: Math.random() * 100,
   y: Math.random() * 100,
   duration: Math.random() * 7 + 8,
   delay: Math.random() * 5,
+  color: i % 2 === 0 ? "rgba(0,212,255,0.15)" : "rgba(255,112,67,0.12)",
   shape: i % 3 === 0 ? "cross" : "circle",
 }));
 
-// Individual card component to avoid hooks-in-loop
 const BentoCard = ({ card, index, springX, springY }: { card: typeof floatingCards[0]; index: number; springX: any; springY: any }) => {
   const cardX = useTransform(springX, (v: number) => v * (0.3 + index * 0.12));
   const cardY = useTransform(springY, (v: number) => v * (0.3 + index * 0.12));
 
   return (
     <motion.div
-      className={`cinematic-bento-card ${card.circle ? "cinematic-bento-circle" : ""}`}
+      className={`cin-bento-card ${card.circle ? "cin-bento-circle" : ""}`}
       data-index={index}
       style={{ x: cardX, y: cardY }}
       initial={{ opacity: 0, scale: 0.8, rotate: card.rot * 2 }}
       animate={{ opacity: 1, scale: 1, rotate: card.rot }}
-      transition={{ duration: 0.5, delay: card.delay, type: "spring", stiffness: 100 }}
+      transition={{ duration: 0.6, delay: card.delay, type: "spring", stiffness: 80 }}
     >
       <motion.div
-        className="cinematic-bento-card-inner"
-        animate={{ y: [0, index % 2 === 0 ? -8 : 8, 0] }}
-        transition={{ duration: 3 + index * 0.5, repeat: Infinity, ease: "easeInOut", delay: index * 0.3 }}
+        className="cin-bento-inner"
+        animate={{ y: [0, index % 2 === 0 ? -10 : 10, 0] }}
+        transition={{ duration: 3.5 + index * 0.5, repeat: Infinity, ease: "easeInOut", delay: index * 0.3 }}
       >
+        {card.accentPos === "left" && <div className="cin-accent-bar cin-accent-left" style={{ background: card.accentColor }} />}
+        {card.accentPos === "bottom" && <div className="cin-accent-bar cin-accent-bottom" style={{ background: card.accentColor }} />}
         <img src={card.img} alt={card.label} />
-        <div className="cinematic-bento-label">{card.label}</div>
+        <div className="cin-bento-label">{card.label}</div>
       </motion.div>
     </motion.div>
   );
@@ -83,7 +84,6 @@ const CinematicHero = () => {
   const [statsVisible, setStatsVisible] = useState(false);
   const statsRef = useRef<HTMLDivElement>(null);
 
-  // Mouse parallax
   const mouseX = useMotionValue(0);
   const mouseY = useMotionValue(0);
   const springX = useSpring(mouseX, { stiffness: 50, damping: 20 });
@@ -97,15 +97,10 @@ const CinematicHero = () => {
     mouseY.set(y);
   }, [mouseX, mouseY]);
 
-  // Scroll parallax
-  const { scrollYProgress } = useScroll({
-    target: heroRef,
-    offset: ["start start", "end start"],
-  });
+  const { scrollYProgress } = useScroll({ target: heroRef, offset: ["start start", "end start"] });
   const bgY = useTransform(scrollYProgress, [0, 1], ["0%", "30%"]);
   const scrollIndicatorOpacity = useTransform(scrollYProgress, [0, 0.15], [1, 0]);
 
-  // Stats intersection
   useEffect(() => {
     if (!statsRef.current) return;
     const obs = new IntersectionObserver(([e]) => { if (e.isIntersecting) setStatsVisible(true); }, { threshold: 0.5 });
@@ -113,167 +108,87 @@ const CinematicHero = () => {
     return () => obs.disconnect();
   }, []);
 
-  const stagger = 0.15;
+  const s = 0.15;
 
   return (
-    <motion.section
-      className="cinematic-hero"
-      ref={heroRef}
-      onMouseMove={handleMouseMove}
-    >
-      {/* Background layers */}
-      <motion.div className="cinematic-hero-bg" style={{ y: bgY }}>
-        <div className="cinematic-hero-gradient" />
-        <div className="cinematic-hero-noise" />
-        <div className="cinematic-hero-grid-pattern" />
-        <div className="cinematic-hero-blob cinematic-blob-cyan" />
-        <div className="cinematic-hero-blob cinematic-blob-orange" />
+    <motion.section className="cin-hero noise-overlay" ref={heroRef} onMouseMove={handleMouseMove}>
+      <motion.div className="cin-hero-bg" style={{ y: bgY }}>
+        <div className="cin-hero-gradient" />
+        <div className="cin-hero-grid" />
+        <div className="cin-blob cin-blob-cyan" />
+        <div className="cin-blob cin-blob-orange" />
       </motion.div>
 
-      {/* Floating particles */}
-      <div className="cinematic-particles">
+      <div className="cin-particles">
         {particles.map((p) => (
           <motion.div
             key={p.id}
-            className={`cinematic-particle cinematic-particle-${p.shape}`}
-            style={{
-              width: p.size,
-              height: p.size,
-              left: `${p.x}%`,
-              top: `${p.y}%`,
-            }}
-            animate={{
-              y: [0, -30, 0, 20, 0],
-              x: [0, 15, -10, 5, 0],
-              opacity: [0.3, 0.7, 0.4, 0.6, 0.3],
-            }}
-            transition={{
-              duration: p.duration,
-              delay: p.delay,
-              repeat: Infinity,
-              ease: "linear",
-            }}
+            className={`cin-particle cin-particle-${p.shape}`}
+            style={{ width: p.size, height: p.size, left: `${p.x}%`, top: `${p.y}%`, background: p.shape === "circle" ? p.color : "transparent" }}
+            animate={{ y: [0, -30, 0, 20, 0], x: [0, 15, -10, 5, 0], opacity: [0.3, 0.7, 0.4, 0.6, 0.3] }}
+            transition={{ duration: p.duration, delay: p.delay, repeat: Infinity, ease: "linear" }}
           />
         ))}
       </div>
 
-      {/* Main content */}
-      <div className="container cinematic-hero-inner">
-        {/* LEFT — Content */}
-        <div className="cinematic-hero-content">
-          <motion.div
-            className="cinematic-badge"
-            initial={{ opacity: 0, y: -15 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.3, delay: stagger }}
-          >
-            <span className="cinematic-badge-dot" />
-            <i className="fas fa-star-of-life" /> Основано 1959 • Скопје
+      <div className="container cin-hero-inner">
+        <div className="cin-hero-content">
+          <motion.div className="cin-badge" initial={{ opacity: 0, y: -15 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.3, delay: s }}>
+            <span className="cin-badge-dot" />
+            <i className="fas fa-star-of-life" /> Основано 1959 • Скопје, Северна Македонија
           </motion.div>
 
-          <motion.h1
-            className="cinematic-headline"
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5, delay: stagger * 2 }}
-          >
-            Твојата техничка иднина започнува{" "}
-            <span className="cinematic-headline-accent">тука.</span>
+          <motion.h1 className="cin-headline" initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.5, delay: s * 2 }}>
+            Твојата техничка иднина<br />започнува <span className="cin-accent-text">тука.</span>
           </motion.h1>
 
-          <motion.p
-            className="cinematic-subtitle"
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ duration: 0.3, delay: stagger * 3 }}
-          >
-            {t("hero.subtitle")}
+          <motion.p className="cin-subtitle" initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ duration: 0.3, delay: s * 3 }}>
+            Три технички струки. 500+ ученици. 65 години традиција. Модерни лаборатории и Erasmus+ можности.
           </motion.p>
 
-          <motion.div
-            className="cinematic-ctas"
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.4, delay: stagger * 4 }}
-          >
-            <Link to="/upisi" className="cinematic-btn-primary">
-              {t("hero.enroll")} <i className="fas fa-arrow-right" />
+          <motion.div className="cin-ctas" initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.4, delay: s * 4 }}>
+            <Link to="/upisi" className="cin-btn-primary">
+              Запиши се за 2026/27 <i className="fas fa-arrow-right" />
             </Link>
-            <Link to="/nastava" className="cinematic-btn-secondary">
-              <i className="fas fa-compass" /> Истражи ги програмите
+            <Link to="/nastava" className="cin-btn-secondary">
+              Истражи ги програмите
             </Link>
           </motion.div>
 
-          <motion.div
-            className="cinematic-trust"
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ duration: 0.3, delay: stagger * 5 }}
-          >
-            <span><i className="fas fa-award" /> Erasmus+ партнер</span>
-            <span><i className="fas fa-trophy" /> Меѓународни медали</span>
-            <span><i className="fas fa-laptop-code" /> Модерни лаборатории</span>
+          <motion.div className="cin-trust" initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ duration: 0.3, delay: s * 5 }}>
+            <span>✓ Erasmus+ партнер</span>
+            <span>✓ МОН акредитирано</span>
+            <span>✓ 65+ години</span>
           </motion.div>
         </div>
 
-        {/* RIGHT — Bento Cards */}
-        <div className="cinematic-bento">
+        <div className="cin-bento">
           {floatingCards.map((card, i) => (
             <BentoCard key={i} card={card} index={i} springX={springX} springY={springY} />
           ))}
-
-          {/* SVG connection lines */}
-          <svg className="cinematic-bento-lines" viewBox="0 0 500 500" fill="none">
-            <motion.path
-              d="M150 200 Q 250 150, 350 250"
-              stroke="rgba(0,212,255,0.15)"
-              strokeWidth="1.5"
-              strokeDasharray="8 6"
-              initial={{ pathLength: 0 }}
-              animate={{ pathLength: 1 }}
-              transition={{ duration: 2, delay: 1.5 }}
-            />
-            <motion.path
-              d="M100 350 Q 200 300, 300 400"
-              stroke="rgba(255,165,0,0.1)"
-              strokeWidth="1"
-              strokeDasharray="6 8"
-              initial={{ pathLength: 0 }}
-              animate={{ pathLength: 1 }}
-              transition={{ duration: 2, delay: 1.8 }}
-            />
+          <svg className="cin-bento-lines" viewBox="0 0 500 500" fill="none">
+            <motion.path d="M150 200 Q 250 150, 350 250" stroke="rgba(0,212,255,0.12)" strokeWidth="1.5" strokeDasharray="8 6" initial={{ pathLength: 0 }} animate={{ pathLength: 1 }} transition={{ duration: 2, delay: 1.5 }} />
           </svg>
         </div>
       </div>
 
-      {/* Stats strip */}
-      <motion.div
-        className="cinematic-stats-strip"
-        ref={statsRef}
-        initial={{ opacity: 0, y: 30 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.4, delay: stagger * 7 }}
-      >
-        <div className="container cinematic-stats-inner">
-          {stats.map((s, i) => (
-            <div className="cinematic-stat" key={i}>
-              <i className={s.icon} />
-              <strong><AnimatedCounter target={s.target} suffix={s.suffix} animate={statsVisible} /></strong>
-              <span>{t(s.labelKey)}</span>
+      <motion.div className="cin-stats" ref={statsRef} initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.4, delay: s * 7 }}>
+        <div className="container cin-stats-inner">
+          {stats.map((st, i) => (
+            <div className="cin-stat" key={i}>
+              <i className={st.icon} />
+              <strong><AnimatedCounter target={st.target} suffix={st.suffix} animate={statsVisible} /></strong>
+              <span>{t(st.labelKey)}</span>
             </div>
           ))}
         </div>
       </motion.div>
 
-      {/* Scroll indicator */}
-      <motion.div className="cinematic-scroll-indicator" style={{ opacity: scrollIndicatorOpacity }}>
-        <motion.div
-          animate={{ y: [0, 8, 0] }}
-          transition={{ duration: 2, repeat: Infinity }}
-        >
+      <motion.div className="cin-scroll-ind" style={{ opacity: scrollIndicatorOpacity }}>
+        <motion.div animate={{ y: [0, 8, 0] }} transition={{ duration: 2, repeat: Infinity }}>
           <i className="fas fa-chevron-down" />
         </motion.div>
-        <span>Скролај за повеќе</span>
+        <span>Скролај</span>
       </motion.div>
     </motion.section>
   );
