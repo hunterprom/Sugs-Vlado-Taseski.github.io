@@ -1031,7 +1031,7 @@ export const translations: Record<Language, Record<string, string>> = {
     "hero.school": "MHSS",
     "hero.name": "\u201EVlado Tasevski\u201C",
     "hero.city": "Skopje",
-    "hero.subtitle": "We are the Team VLADO TASEVSKI! Education is the foundation of every nation. We are proud of every generation that passed through our classrooms.",
+    "hero.subtitle": "We are Team „Vlado Tasevski“ – a place where the future is created.\nHere we don't just learn lessons, we build knowledge, character, and ambition.\nBe part of the generation that will make a difference.",
     "hero.enroll": "Enroll Now",
     "hero.history": "Our History",
     "hero.calculator": "Points Calculator",
