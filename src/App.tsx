@@ -22,6 +22,7 @@ import StrucnaSluzbaPage from "./pages/StrucnaSluzbaPage";
 import PoeniKalkulatorPage from "./pages/PoeniKalkulatorPage";
 import RezultatiPage from "./pages/RezultatiPage";
 import VonredniPage from "./pages/VonredniPage";
+import StrukiPage from "./pages/StrukiPage";
 import NotFound from "./pages/NotFound";
 import EnrollmentChatbot from "./components/EnrollmentChatbot";
 
