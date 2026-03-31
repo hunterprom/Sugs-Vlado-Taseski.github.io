@@ -156,8 +156,14 @@ const DepartmentsSection = () => {
   const { t } = useLanguage();
   const [activeDept, setActiveDept] = useState(0);
 
+  React.useEffect(() => {
+    const handler = (e: Event) => setActiveDept((e as CustomEvent).detail);
+    window.addEventListener("setDeptTab", handler);
+    return () => window.removeEventListener("setDeptTab", handler);
+  }, []);
+
   return (
-    <section className="departments-home-section">
+    <section className="departments-home-section" id="departments-section">
       <div className="container">
         <ScrollZoomReveal>
           <div className="section-header" style={{ marginBottom: "50px" }}>

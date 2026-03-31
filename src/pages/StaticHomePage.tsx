@@ -84,16 +84,26 @@ const StaticHomePage = () => {
             </ScrollZoomReveal>
             <div className="cards-grid">
               {[
-                { icon: "fas fa-laptop-code", title: t("features.digital"), desc: t("features.digitalDesc"), link: "/elektrotehnicka" },
-                { icon: "fas fa-chalkboard-user", title: t("features.quality"), desc: t("features.qualityDesc"), link: "/nastavnici" },
-                { icon: "fas fa-futbol", title: t("features.sport"), desc: t("features.sportDesc"), link: "/sport" },
+                { icon: "fas fa-microchip", title: t("elektro.title"), desc: t("elektro.subtitle"), dept: 0 },
+                { icon: "fas fa-cogs", title: t("masinska.title"), desc: t("masinska.subtitle"), dept: 1 },
+                { icon: "fas fa-truck", title: t("soobrakaj.title"), desc: t("soobrakaj.subtitle"), dept: 2 },
               ].map((card, i) => (
                 <ScrollSlideIn key={i} direction={i % 2 === 0 ? "left" : "right"}>
-                  <div className="card">
+                  <div
+                    className="card"
+                    style={{ cursor: "pointer" }}
+                    onClick={() => {
+                      const el = document.getElementById("departments-section");
+                      if (el) {
+                        el.scrollIntoView({ behavior: "smooth" });
+                        window.dispatchEvent(new CustomEvent("setDeptTab", { detail: card.dept }));
+                      }
+                    }}
+                  >
                     <div className="card-icon"><i className={card.icon}></i></div>
                     <h3 className="font-display">{card.title}</h3>
                     <p>{card.desc}</p>
-                    <Link to={card.link} className="card-link">{t("features.learnMore")} <i className="fas fa-chevron-right"></i></Link>
+                    <span className="card-link">{t("features.learnMore")} <i className="fas fa-chevron-right"></i></span>
                   </div>
                 </ScrollSlideIn>
               ))}
