@@ -12,7 +12,7 @@ import classroom3 from "@/assets/classroom-3.jpg";
 import conferenceRoom from "@/assets/conference-room.png";
 import fountain from "@/assets/fountain.png";
 import lobbyLogo from "@/assets/lobby-logo.jpg";
-import schoolExterior from "@/assets/school-exterior.jpg";
+import schoolExterior from "@/assets/school-exterior.png";
 
 const StaticHomePage = () => {
   const { t } = useLanguage();
