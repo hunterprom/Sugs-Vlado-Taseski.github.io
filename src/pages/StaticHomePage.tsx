@@ -7,7 +7,7 @@ import DepartmentsSection from "../components/DepartmentsSection";
 import CinematicHero from "../components/CinematicHero";
 import { noviniData } from "../data/noviniData";
 import "./StaticHomePage.css";
-import classroom1 from "@/assets/classroom-1.jpg";
+import classroom1 from "@/assets/classroom-modern.png";
 import classroom3 from "@/assets/classroom-3.jpg";
 import conferenceRoom from "@/assets/conference-room.png";
 import fountain from "@/assets/fountain.png";
