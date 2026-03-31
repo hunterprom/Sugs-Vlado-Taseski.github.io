@@ -2729,6 +2729,7 @@
   line-height: 1.7;
   max-width: 500px;
   margin-bottom: 32px;
+  white-space: pre-line;
 }
 
 .cinematic-ctas {
