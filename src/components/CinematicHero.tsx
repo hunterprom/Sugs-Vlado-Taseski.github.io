@@ -211,6 +211,9 @@ const CinematicHero = () => {
             <Link to="/upisi" className="cinematic-btn-primary">
               {t("hero.enroll")} <i className="fas fa-arrow-right" />
             </Link>
+            <Link to="/nastava" className="cinematic-btn-secondary">
+              <i className="fas fa-compass" /> {t("hero.explorePrograms")}
+            </Link>
           </motion.div>
 
           <motion.div
