@@ -546,7 +546,7 @@ export const translations: Record<Language, Record<string, string>> = {
     "hero.school": "SHMA",
     "hero.name": "\u201EVlado Tasevski\u201C",
     "hero.city": "Shkup",
-    "hero.subtitle": "Ne jemi Ekipi VLLADO TASEVSKI! Edukimi dhe arsimi jan\u00EB themelet e nj\u00EB shteti. Krenarohemi me t\u00EB gjitha gjeneratat q\u00EB kan\u00EB kaluar n\u00EBp\u00EBr klasat tona.",
+    "hero.subtitle": "Ne jemi ekipi i „Vlado Tasevski“ – vendi ku krijohet e ardhmja.\nKëtu nuk mësojmë vetëm mësime, por ndërtojmë njohuri, karakter dhe ambicie.\nBëhu pjesë e gjeneratës që do të bëjë diferencën.",
     "hero.enroll": "Regjistrohu",
     "hero.history": "Historia jon\u00EB",
     "hero.calculator": "Kalkulator pik\u00EBsh",
