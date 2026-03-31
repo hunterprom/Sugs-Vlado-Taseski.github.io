@@ -7,7 +7,7 @@ import classroom1 from "@/assets/classroom-1.jpg";
 import elektroLab from "@/assets/elektro-lab.png";
 import studentsActivities from "@/assets/students-activities.png";
 import studentsVideo from "@/assets/students-video.mp4";
-import schoolExterior from "@/assets/school-exterior.jpg";
+import schoolExterior from "@/assets/school-exterior.png";
 import gallery1 from "@/assets/gallery-1.png";
 
 const floatingCards = [
@@ -194,7 +194,7 @@ const CinematicHero = () => {
           </motion.h1>
 
           <motion.p
-            className="cinematic-subtitle text-primary-foreground"
+            className="cinematic-subtitle text-primary-foreground my-0"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ duration: 0.3, delay: stagger * 3 }}
