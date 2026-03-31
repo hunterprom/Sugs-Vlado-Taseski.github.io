@@ -66,12 +66,6 @@ const NovostPage = () => {
               return <p key={i} style={{ marginBottom: "8px" }}>{line}</p>;
             })}
           </div>
-
-          <div style={{ textAlign: "center", marginTop: "30px" }}>
-            <a href={novost.link} target="_blank" rel="noopener noreferrer" className="btn-primary">
-              <i className="fas fa-external-link-alt"></i> {t("novost.readOfficial")}
-            </a>
-          </div>
         </div>
       </section>
 
