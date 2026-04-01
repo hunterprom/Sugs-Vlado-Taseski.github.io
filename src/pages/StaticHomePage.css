@@ -2999,17 +2999,48 @@
   }
 
   .cinematic-bento {
+    height: 280px;
+    width: 100%;
+    margin-top: 16px;
+  }
+
+  .cinematic-bento-card[data-index="0"] {
+    width: 55%;
+    height: 70%;
+    top: 0;
+    left: 0;
+  }
+
+  .cinematic-bento-card[data-index="1"] {
+    width: 42%;
+    height: 55%;
+    top: 0;
+    right: 0;
+    left: auto;
+  }
+
+  .cinematic-bento-card[data-index="2"] {
+    width: 35%;
+    height: 28%;
+    bottom: 0;
+    top: auto;
+    left: 0;
+  }
+
+  .cinematic-bento-card[data-index="3"] {
+    width: 35%;
+    height: 28%;
+    bottom: 0;
+    top: auto;
+    left: 37%;
+  }
+
+  .cinematic-bento-card[data-index="4"] {
     display: none;
   }
 
-  .cinematic-hero-inner::after {
-    content: '';
-    display: block;
-    width: 100%;
-    height: 250px;
-    border-radius: 16px;
-    background: linear-gradient(135deg, #162544, #1B2A4A);
-    border: 1px solid rgba(0,212,255,0.15);
+  .cinematic-bento-lines {
+    display: none;
   }
 
   .cinematic-stats-inner {
